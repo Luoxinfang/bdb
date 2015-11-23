@@ -1,0 +1,216 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.eot");
+  /* IE9*/
+  src: url("../fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg");
+  /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.clearfix {
+  *zoom: 1;
+}
+
+.row {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/* 定位 */
+.pr {
+  position: relative;
+}
+
+.pa {
+  position: absolute;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.fl, .fr {
+  _display: inline;
+}
+
+/* 文本对齐方式 */
+.tc {
+  text-align: center;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tr {
+  text-align: right;
+}
+
+/* 字体大小 */
+.fz-14 {
+  font-size: 14px;
+}
+
+.fz-16 {
+  font-size: 16px;
+}
+
+.fz-18 {
+  font-size: 18px;
+}
+
+.fz-20 {
+  font-size: 20px;
+}
+
+.fz-22 {
+  font-size: 22px;
+}
+
+.fz-24 {
+  font-size: 24px;
+}
+
+.fz-30 {
+  font-size: 30px;
+}
+
+/* 字体颜色 */
+.fc-3 {
+  color: #333;
+}
+
+.fc-7 {
+  color: #777;
+}
+
+.fc-9 {
+  color: #999;
+}
+
+.fc-red {
+  color: #e4393c;
+}
+
+/* 行高 */
+.lh-20 {
+  line-height: 20px;
+}
+
+.lh-24 {
+  line-height: 24px;
+}
+
+.lh-30 {
+  line-height: 30px;
+}
+
+/* 背景颜色 */
+.bg-white {
+  background: #fff;
+}
+
+.bg-f0 {
+  background: #f0f0f0;
+}
+
+.bg-f3 {
+  background: #f3f3f3;
+}
+
+.bg-f6 {
+  background: #f6f6f6;
+}
+
+/* 边框 */
+.bd-e6 {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* 外边距 */
+.mb5 {
+  margin-bottom: 5px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.mb20 {
+  margin-bottom: 20px;
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.mb40 {
+  margin-bottom: 40px;
+}
+
+.mt70 {
+  margin-top: 70px;
+}
+
+/* 内边距 */
+.pt10 {
+  padding-top: 10px;
+}
+
+.va-m {
+  vertical-align: middle;
+}
+
+.lk-red {
+  color: #e4393c;
+}
+
+.lk-red:hover {
+  text-decoration: underline;
+}
+
+/**块级元素**/
+.dib {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}

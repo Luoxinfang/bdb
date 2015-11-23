@@ -1,0 +1,21 @@
+{
+  "name": "yog",
+  "version": "0.5.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "debug-win": "set NODE_DEBUG=yog/dispatcher,yog/loader,yog/plugins,yog/recv-reload&set YOG_DEBUG=true&node app.js",
+    "debug": "env NODE_DEBUG=yog/dispatcher,yog/loader,yog/plugins,yog/recv-reload YOG_DEBUG=true node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fex-team/yog2.git"
+  },
+  "author": "fis@baidu.com",
+  "license": "BSD",
+  "dependencies": {
+    "lodash": "2.4.1",
+    "debuglog": "1.0.1",
+    "yog2-kernel": "0.3.6"
+  }
+}

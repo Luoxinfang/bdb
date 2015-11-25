@@ -15,10 +15,7 @@ fis.media('debug').match('*', {
         to: '/'
     })
 });
-//将hz下面我们自己的js模块化
-fis.match('/client/js/{hz-lib,hz-plugin}/**.js', {
-    isMod: true
-});
+
 // 启用 fis-spriter-csssprites 插件
 fis.match('::package', {
     spriter: fis.plugin('csssprites')
@@ -31,7 +28,7 @@ fis.config.set('settings.spriter.csssprites', {
     //使用矩阵排列方式，默认为线性`linear`
     layout: 'matrix'
 });
-//生产环境设置
+//==========生产环境设置=============================
 fis.media('prod').match('*', {
     deploy: fis.plugin('http-push', {
         receiver: 'http://127.0.0.1:8085/yog/upload',
@@ -42,14 +39,15 @@ fis.media('prod').match('*', {
 fis.media('prod').match('/**.tpl', {
     optimizer: fis.plugin('tpl')
 });
-//把common模块公用的css压缩成global.css
-fis.media('prod').match('client/**.css', {
-    packTo: 'client/css/global.css'
+//把公用的css压缩成global.css
+fis.media('prod').match('client/{css,widget}/**.css', {
+    packTo: 'css/global.css'
 });
-//把common模块公用的js压缩成lib.js
+//把公用的js压缩成lib.js
 fis.media('prod').match('client/js/{lib,plugin}/*.js', {
-    packTo: 'client/js/lib.js'
+    packTo: 'js/lib.js',
 });
-fis.media('prod').match('client/js/{hz-lib,hz-plugin}/*.js', {
-    packTo: 'client/js/hz.js'
+//所有css,js全部加上文件指纹
+fis.media('prod').match('/**.{css,js}',{
+    useHash: true
 });

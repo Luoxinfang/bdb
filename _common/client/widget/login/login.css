@@ -63,7 +63,7 @@
   background: rgba(230, 205, 205, .9);
 }
 .wd-login .btn-reg{
-  margin-left: .45rem;
+  float: right;
   width: 3rem;
   background: rgba(222, 169, 148, 0.35);
 }

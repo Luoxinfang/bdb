@@ -1,8 +1,8 @@
 <!doctype html>
-{%html lang="en" framework="_common:js/lib/mod.js"%}
+{%html framework="_common:js/lib/mod.js"%}
   {%head%}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{app.description}}">
     <meta name="author" content="{{app.author}}">

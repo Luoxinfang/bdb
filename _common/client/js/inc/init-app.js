@@ -14,7 +14,6 @@
       if (clientWidth) {
         doc.documentElement.style.fontSize = 1 * (clientWidth / 10) + 'px';
       }
-
     },
     event: function () {
       doc.addEventListener('DOMContentLoaded', this.setHtmlFontSize.bind(this), false);

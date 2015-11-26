@@ -3,11 +3,9 @@ module.exports = function (router) {
   var appInfo = yog.require('_common/model/app.js');
   var resObj = {
     app: appInfo.getInfo()
-
   };
 
   router.get('*', function (req, res, next) {
-
     next();
   });
 
@@ -22,6 +20,10 @@ module.exports = function (router) {
   //关于我们
   router.get('/about', function (req, res, next) {
     res.render('cus/page/about.tpl', resObj);
+  });
+  //WEUI
+  router.get('/weui', function (req, res, next) {
+    res.render('cus/page/weui.tpl', resObj);
   });
 
 };

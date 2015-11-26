@@ -11,11 +11,18 @@ module.exports = function (router) {
 
   //首页
   router.get('/', function (req, res, next) {
-    res.render('cus/page/index.tpl', resObj);
+    resObj.app.title = '用户登录';
+    res.render('cus/page/user/login.tpl', resObj);
+  });
+  //登录
+  router.get('/login', function (req, res, next) {
+    resObj.app.title = '用户登录';
+    res.render('cus/page/user/login.tpl', resObj);
   });
   //注册
-  router.get('/reg', function (req, res, next) {
-    res.render('cus/page/reg.tpl', resObj);
+  router.get('/reg-tel', function (req, res, next) {
+    resObj.app.title = '用户注册';
+    res.render('cus/page/user/reg-tel.tpl', resObj);
   });
   //关于我们
   router.get('/about', function (req, res, next) {

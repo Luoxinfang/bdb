@@ -28,12 +28,12 @@
       </div>
     </div>
 
-    {%script%}
-      //设置屏幕的高度
-      var height = Math.max(document.documentElement.clientHeight,
-                            document.body.offsetHeight);
-      document.getElementById('container').style.height =  height + 'px';
+    <!--{%script%}-->
+      <!--//设置屏幕的高度-->
+      <!--var height = Math.max(document.documentElement.clientHeight,-->
+                            <!--document.body.offsetHeight);-->
+      <!--document.getElementById('container').style.height =  height + 'px';-->
 
-    {%endscript%}
+    <!--{%endscript%}-->
   {%endbody%}
 {%endhtml%}

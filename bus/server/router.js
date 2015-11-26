@@ -13,6 +13,12 @@ module.exports = function (router) {
 
     //首页
     router.get('/', function (req, res, next) {
-        res.render('bus/page/index.tpl', resObj);
+        resObj.app.title = '用户登录';
+        res.render('bus/page/user/login.tpl', resObj);
+    });
+    //登录
+    router.get('/login', function (req, res, next) {
+        resObj.app.title = '用户登录';
+        res.render('bus/page/user/login.tpl', resObj);
     });
 };

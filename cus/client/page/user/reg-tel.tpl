@@ -1,0 +1,1 @@
+{% extends '_common:page/user/reg_tel.tpl' %}

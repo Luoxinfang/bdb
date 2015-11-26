@@ -44,7 +44,6 @@ fis.media('prod').match('widget/(*)/**.js', {
 	packTo: 'js/$1.js'
 });
 fis.media('prod').match('widget/(*)/**.css', {
-	useHash: true,
 	packTo: 'css/$1.css'
 });
 //所有css,js全部加上文件指纹

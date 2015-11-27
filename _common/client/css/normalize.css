@@ -111,3 +111,73 @@ h1, h2, h3, h4, h5, h6 {
 input:focus {
     outline: none;
 }
+
+/*
+	weui.css
+*/
+.weui_btn_default {
+    background-color: #f34433;
+    color: #fff;
+}
+.weui_btn_default:not(.weui_btn_disabled):visited {
+    color: #fff;
+}
+.weui_btn_default:not(.weui_btn_disabled):active {
+    color: #fff;
+    background-color: #d22f32;
+}
+.weui_btn_primary {
+    color: #f34433;
+    background-color: #fff;
+}
+.weui_btn_primary:not(.weui_btn_disabled):visited {
+    color: #fff;
+}
+.weui_btn_primary:not(.weui_btn_disabled):active {
+    color: #f34433;
+    background-color: #e5e5e5;
+}
+.weui_btn_warn {
+    background-color: #f34433;
+}
+.weui_btn_warn:not(.weui_btn_disabled):visited {
+    color: #fff;
+}
+.weui_btn_warn:not(.weui_btn_disabled):active {
+    color: #fff;
+    background-color: #d22f32;
+}
+.weui_btn_disabled {
+    color: #fff;
+    background-color: #cecece;
+}
+.weui_btn_disabled.weui_btn_default {
+    color: #fff;
+    background-color: #cecece;
+}
+.weui_btn_plain_primary {
+    color: #f34433;
+    background-color: #fff;
+    border: 1px solid #edeef1;
+}
+.weui_btn_plain_primary:active {
+    border-color: #edeef1;
+}
+.weui_btn_plain_primary:after {
+    border-width: 0;
+}
+.weui_btn_plain_default {
+    color: #f34433;
+    background-color: #fff;
+    border: 1px solid #edeef1;
+}
+.weui_btn_plain_default:active {
+    border-color: #edeef1;
+}
+.weui_btn_plain_default:after {
+    border-width: 0;
+}
+
+.weui_btn:after {
+    border: 1px solid rgba(0,0,0,.1);
+}

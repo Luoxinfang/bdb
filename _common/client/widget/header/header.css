@@ -1,8 +1,6 @@
 .header {
   /* 头部 */
   position: relative;
-  width: 10rem;
-  margin: 0 auto;
   text-align: center;
   height: 0.9375rem;
   padding: 0.234375rem 0;
@@ -18,10 +16,9 @@
 }
 .header-pa {
   /* 顶部头部 */
+  width: 100%;
   position: absolute;
   top: 0;
-  left: 50%;
-  margin-left: -5rem;
 }
 .header .left {
   /* 左侧内容 */

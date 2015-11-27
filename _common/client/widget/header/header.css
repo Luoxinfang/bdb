@@ -16,10 +16,9 @@
 }
 .header-pa {
   /* 顶部头部 */
+  widows: 100%;
   position: absolute;
   top: 0;
-  left: 50%;
-  margin-left: -5rem;
 }
 .header .left {
   /* 左侧内容 */

@@ -16,7 +16,7 @@
 }
 .header-pa {
   /* 顶部头部 */
-  widows: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
 }

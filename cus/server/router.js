@@ -25,7 +25,7 @@ module.exports = function (router) {
   });
   //注册
   router.get('/reg-tel', function (req, res, next) {
-    resObj.app.title = '用户注册';
+    resObj.app.title = resObj.headerTitle = '用户注册';
     res.render('cus/page/user/reg-tel.tpl', resObj);
   });
   //关于我们

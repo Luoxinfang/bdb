@@ -2,11 +2,11 @@
   /* 头部 */
   position: relative;
   text-align: center;
-  height: 0.9375rem;
-  padding: 0.234375rem 0;
-  line-height: 0.9375rem;
+  height: 1.25rem;
+  /*padding: 0.234375rem 0;*/
+  line-height: 1.25rem;
   background-color: #f5f5f5;
-  border-bottom: 2px solid #e7e7e8;
+  border-bottom: 1px solid #e7e7e8;
 }
 .header-top {
   /* 透明头部 */

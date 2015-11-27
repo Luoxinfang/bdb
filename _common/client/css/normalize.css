@@ -1,23 +1,7 @@
 /*
   normalize.css
 */
-
-html,body,input{
-  padding: 0;
-  margin: 0;
-}
-html{
-  font-size: 54px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-body{
-  font-size: 12px;
-}
-
-input{
-  border:none;
-  outline: none;
-  border-radius: 0;
-}
+html, body, input { padding: 0; margin: 0; font-family: "Droid Sans Fallback","Microsoft YaHei","Heiti SC"; }
+html { font-size: 64px; width: 100%; height: 100%; }
+body { min-height: 100%; font-size: 12px; }
+input { border: none; outline: none; border-radius: 0; }

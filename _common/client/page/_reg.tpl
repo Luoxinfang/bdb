@@ -8,7 +8,7 @@
     <meta name="author" content="{{app.author}}">
     <title>{{app.title}}</title>
     {%require "_common:css/normalize.css"%}
-    <link rel="stylesheet" href="../css/_index.css?__inline"/>
+    <link rel="stylesheet" href="../css/_login.css?__inline"/>
     <script src="../js/inc/init-app.js?__inline"></script>
     {%require "_common:js/lib/zepto.js"%}
 

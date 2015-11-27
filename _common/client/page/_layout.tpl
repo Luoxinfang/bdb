@@ -8,6 +8,7 @@
     <meta name="author" content="{{app.author}}">
     <title>{{app.title}}</title>
     {% require "_common:css/normalize.css" %}
+    {% require "_common:css/global.css" %}
     <script src="../js/inc/init-app.js?__inline"></script>
     {% require "_common:js/lib/zepto.js" %}
     {% block head %}{% endblock %}
@@ -17,12 +18,5 @@
 
     {% block body %}{% endblock %}
 
-    {% script %}
-    //设置屏幕的高度
-    var height = Math.max(document.documentElement.clientHeight,
-    document.body.offsetHeight);
-    document.getElementById('container').style.height =  height + 'px';
-    document.getElementById('container').style.position = 'relative';
-    {% endscript %}
   {% endbody %}
 {% endhtml %}

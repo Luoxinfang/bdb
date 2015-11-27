@@ -47,7 +47,6 @@ body {
 }
 
 button, input, textarea, select {
-    font-size: 100%;
     font-family: inherit;
     color: inherit;
     -webkit-appearance: none;
@@ -107,7 +106,6 @@ li, ol, ul {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    font-size: 100%;
 }
 
 input:focus {

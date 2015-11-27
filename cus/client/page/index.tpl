@@ -6,32 +6,8 @@
 {% endblock %}
 
 {% block body %}
-<div class="header">
-	
-</div>
-<div class="header-pa">
-	<div class="header header-top">
-		<div class="left"></div>
-		<span class="fs-1">标题</span>
-		<div class="right s-gup">
-			<span class="fl icon-search"></span>
-			<span class="fr icon-msg"></span>
-		</div>
-	</div>
-</div>
-<div class="header">
-	<div class="left"></div>
-	<span class="fs-1">标题</span>
-	<div class="right">
-		<span class="fs-2 fc-1">时间排序</span>
-	</div>
-</div>
-<div class="header header-top">
-	<div class="left"></div>
-	<span class="fs-1">标题</span>
-	<div class="right s-gup">
-		<span class="fl icon-search"></span>
-		<span class="fr icon-msg"></span>
-	</div>
-</div>
+<div style="height: 0.9375rem; padding: 0.234375rem 0; border-bottom: 2px solid transparent; background-color: rgba(0,0,0,.2);"></div>
+{% widget '_common:widget/header/header-top.tpl' %}
+{% widget '_common:widget/header/header.tpl' %}
+
 {% endblock %}

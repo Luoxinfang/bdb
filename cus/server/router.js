@@ -3,6 +3,8 @@ module.exports = function (router) {
   var appInfo = yog.require('_common/model/app.js');
   var resObj = {
     app: appInfo.getInfo()
+    ,headerBack: true //默认头部带返回按钮
+    ,headerTitle: '百多宝' //默认头部标题
   };
 
   router.get('*', function (req, res, next) {
@@ -11,6 +13,9 @@ module.exports = function (router) {
 
   //首页
   router.get('/', function (req, res, next) {
+    resObj.headerMenu = true;
+    resObj.headerRGup1 = true;
+    resObj.headerSort = '时间排序';
     res.render('cus/page/index.tpl', resObj);
   });
   //登录

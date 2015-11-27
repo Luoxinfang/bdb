@@ -7,8 +7,8 @@
   height: 0.9375rem;
   padding: 0.234375rem 0;
   line-height: 0.9375rem;
-  background-color: #fff;
-  border-bottom: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  border-bottom: 2px solid #e7e7e8;
 }
 .header-top {
   /* 透明头部 */
@@ -53,6 +53,10 @@
   /* 返回图标 */
   background-image: url('');
 }
+.icon-menu {
+  /* 菜单图标 */
+  background-image: url('');
+}
 .icon-search {
   /* 搜索图标 */
   background-image: url('');
@@ -60,4 +64,23 @@
 .icon-msg {
   /* 消息图标 */
   background-image: url('');
+}
+.icon-like {
+  /* 喜欢图标 */
+  background-image: url('');
+}
+.icon-share {
+  /* 分享图标 */
+  background-image: url('');
+}
+.header-top .icon-back {
+  /*透明头部返回图标*/
+  background-image: url('');
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.header-top .icon-menu {
+  /*透明头部菜单图标*/
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
 }

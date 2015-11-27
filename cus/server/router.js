@@ -32,4 +32,7 @@ module.exports = function (router) {
     res.render('cus/page/weui.tpl', resObj);
   });
 
+  router.get('/home', function (req, res, next) {
+    res.render('cus/page/home.tpl', resObj);
+  });
 };

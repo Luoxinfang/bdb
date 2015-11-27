@@ -16,5 +16,6 @@
         {% endblock %}
 
     {% endbody %}
+    {% endbody %}
 
 {% endhtml %}

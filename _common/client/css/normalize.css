@@ -28,17 +28,17 @@ input {
     add lilian
 */
 html, body {
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -webkit-overflow-scrolling: touch;
 }
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, p, th, td {
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, p, th, td, a, span, i, b, em {
     padding: 0;
     margin: 0;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {

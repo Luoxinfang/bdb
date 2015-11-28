@@ -1,24 +1,23 @@
-/*form css*/
+/*文本输入类型表单*/
 .form {
-    padding: 20px 18px;
-    font-size: 14px;
+    padding: 0.3125rem 0.28125rem;
 }
 
 .form .form-ul {
-    margin-bottom: 5px;
+    margin-bottom: 0.15625rem;
 }
 
 .form .form-ul:last-of-type {
-    margin-bottom: 30px;
+    margin-bottom: 0.9375rem;
 }
 
 .form li.form-li-input {
     background: #fff;
-    height: 45px;
+    height: 1.40625rem;
     border: 1px solid #e7e7e8;
     border-top: 0px;
     position: relative;
-    padding-left: 10px;
+    padding-left: 0.3125rem;
 }
 
 .form li.form-li-input input {
@@ -27,6 +26,7 @@
     width: 80%;
     height: 100%;
     line-height: 100%;
+    font-size: 0.4375rem;
 }
 
 .form li.form-li-input:first-child {
@@ -58,11 +58,11 @@
     visibility: visible;
 }
 
-.form li.form-li-input:first-child .right-bt {
+.form li.form-li-input:first-child .right-btn {
     border-top-right-radius: 5px;
 }
 
-.form li.form-li-input:last-child .right-bt {
+.form li.form-li-input:last-child .right-btn {
     border-bottom-right-radius: 5px;
 }
 
@@ -73,29 +73,30 @@
     float: left;
 }
 
-.form li .right-bt {
+.form li .right-btn {
     float: right;
-    height: 45px;
-    line-height: 45px;
+    height: 1.40625rem;
+    line-height: 1.40625rem;
     width: 25%;
     background: #2297f6;
     color: #fff;
-    font-size: 12px;
+    font-size: 0.375rem;
 }
 
-.form li .right-bt:active {
+.form li .right-btn:active {
     background: #0983e6;
 }
 
+/*列表类型表单*/
 .form-list {
-    padding: 10px 0px;
-    font-size: 14px;
+    padding: 0.3125rem 0;
+    font-size: 0.4375rem;
 }
 
 .form-list .form-ul {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 10px;
+    padding-left: 0.46875rem;
+    padding-right: 0.46875rem;
+    margin-bottom: 0.3125rem;
     background: #fff;
     border-top: 1px solid #e7e7e8;
     border-bottom: 1px solid #e7e7e8;
@@ -103,8 +104,8 @@
 
 .form-list li {
     text-align: left;
-    height: 45px;
-    line-height: 45px;
+    height: 1.40625rem;
+    line-height: 1.40625rem;
     border-bottom: 1px solid #e7e7e8;
     position: relative;
 }

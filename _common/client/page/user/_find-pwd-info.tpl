@@ -1,6 +1,5 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    <link rel="stylesheet" href="../../css/user/_reg_tel.css?__inline"/>
     <link rel="stylesheet" href="../../css/form.css"/>
 {% endblock %}
 
@@ -18,11 +17,16 @@
                     <div>
                         <input type="tel" id="message" placeholder="请输入验证码" maxlength="4" />
                     </div>
-                    <!--获取验证码按钮不可点增加类bt-disabled即可-->
-                    <a id="getMessage" class="right-bt">获取验证码</a>
+                    <!--获取验证码按钮不可点增加类btn-disabled即可-->
+                    <a id="getMessage" class="right-btn">获取验证码</a>
                 </li>
             </ul>
-            <a class="bt bt-white">下一步</a>
+            <ul class="form-ul">
+                <li class='form-li-input'>
+                    <input type="text" id="cardNo" placeholder="请输入身份证号" maxlength="18"/>
+                </li>
+            </ul>
+            <a class="btn btn-white">下一步</a>
         </div>
     </div>
 {% endblock %}

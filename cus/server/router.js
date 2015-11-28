@@ -23,10 +23,35 @@ module.exports = function (router) {
     resObj.app.title = '用户登录';
     res.render('cus/page/user/login.tpl', resObj);
   });
-  //注册
+  //注册 —— 输入电话号码
   router.get('/reg-tel', function (req, res, next) {
-    resObj.app.title = resObj.headerTitle = '用户注册';
+    resObj.app.title = resObj.headerTitle = '注册';
     res.render('cus/page/user/reg-tel.tpl', resObj);
+  });
+  //注册 —— 设置密码
+  router.get('/reg-pwd', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '注册';
+    res.render('cus/page/user/reg-pwd.tpl', resObj);
+  });
+  //找回密码 —— 输入信息
+  router.get('/find-pwd-info', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '找回密码';
+    res.render('cus/page/user/find-pwd-info.tpl', resObj);
+  });
+  //找回密码 —— 设置新密码
+  router.get('/find-pwd-new', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '找回密码';
+    res.render('cus/page/user/find-pwd-new.tpl', resObj);
+  });
+  //绑定第三方账号 —— 输入信息
+  router.get('/bind-account-info', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '绑定第三方账号';
+    res.render('cus/page/user/bind-account-info.tpl', resObj);
+  });
+  //绑定第三方账号 —— 设置新密码
+  router.get('/bind-account-pwd', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '绑定第三方账号';
+    res.render('cus/page/user/bind-account-pwd.tpl', resObj);
   });
   //关于我们
   router.get('/about', function (req, res, next) {

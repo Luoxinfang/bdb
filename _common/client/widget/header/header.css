@@ -52,6 +52,34 @@
   background: rgba(0, 0, 0, 0.2);
   border-radius: 0.46875rem;
 }
+.header .nav {
+  display: block;
+  width: 5.3125rem;
+  height: 0.9375rem;
+  margin: 0 auto;
+}
+.header .nav .li {
+  width: 50%;
+  height: 0.9375rem;
+  line-height: 0.9375rem;
+  float: left;
+  color: #f34433;
+  background-color: #fff;
+  font-size: 0.46875rem;
+  cursor: pointer;
+}
+.header .nav .li.on {
+  color: #fff;
+  background-color: #f34433;
+}
+.header .nav .li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.header .nav .li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 .icon-back:after {
   /* 返回图标 */
   background-image: url('icon/back_b.png');

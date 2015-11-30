@@ -114,6 +114,11 @@ input:focus {
 /*
 	weui.css
 */
+.weui_btn{
+    font-size: 0.4375rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+}
 .weui_btn_default {
     background-color: #f34433;
     color: #fff;
@@ -179,4 +184,33 @@ input:focus {
 
 .weui_btn:after {
     border: 1px solid rgba(0,0,0,.1);
+}
+/*lilian btn*/
+.btn {
+    font-size: 0.4375rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%; }
+
+.btn.btn-white {
+    background: #fff;
+    color: #f34433;
+    border: 1px solid #e7e7e8; }
+
+.btn.btn-white:active {
+    background: #e5e5e5; }
+
+.btn.btn-red {
+    background: #f34433;
+    border: 1px solid #f34433;
+    color: #fff; }
+
+.btn.btn-red:active {
+    background: #f22e1b; }
+
+.btn-disabled,.btn-disabled:active{
+    color: #fff!important;
+    background: #cecece!important;
 }

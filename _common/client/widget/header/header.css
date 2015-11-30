@@ -1,14 +1,12 @@
 .header {
   /* 头部 */
   position: relative;
-  width: 10rem;
-  margin: 0 auto;
   text-align: center;
-  height: 0.9375rem;
-  padding: 0.234375rem 0;
-  line-height: 0.9375rem;
+  height: 1.25rem;
+  /*padding: 0.234375rem 0;*/
+  line-height: 1.25rem;
   background-color: #f5f5f5;
-  border-bottom: 2px solid #e7e7e8;
+  border-bottom: 1px solid #e7e7e8;
 }
 .header-top {
   /* 透明头部 */
@@ -18,10 +16,9 @@
 }
 .header-pa {
   /* 顶部头部 */
+  width: 100%;
   position: absolute;
   top: 0;
-  left: 50%;
-  margin-left: -5rem;
 }
 .header .left {
   /* 左侧内容 */

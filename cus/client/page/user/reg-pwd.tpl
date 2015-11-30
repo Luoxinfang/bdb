@@ -1,0 +1,1 @@
+{% extends '_common:page/user/_reg-pwd.tpl' %}

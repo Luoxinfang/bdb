@@ -1,0 +1,133 @@
+@commonPath: '../../../../_common/client/less/';
+@import "@{commonPath}/public/variable.less";
+
+.index {
+	background-color: #fff;
+	transition: all 0.8s ease-in-out;
+	-webkit-transition: all 0.8s ease-in-out;
+	&.small {
+		transform: translateX(380/64rem) scale(0.8,0.8);
+		-webkit-transform: translateX(380/64rem) scale(0.8,0.9);
+		transition: all 0.8s ease-in-out;
+		-webkit-transition: all 0.8s ease-in-out;
+	}
+	.category {
+		padding: 30/64rem 0 20/64rem;
+		a {
+			width: 25%;
+			float: left;
+			text-align: center;
+			color: #7f7f7f;
+			font-size: 26/64rem;
+			line-height: 45/64rem;
+		}
+		.icon {
+			display: inline-block;
+			width: 100/64rem;
+			height: 100/64rem;
+			background-size: contain;
+			&-01 {
+				background-image: url('./icon/icon-01.png');
+			}
+			&-02 {
+				background-image: url('./icon/icon-02.png');
+			}
+			&-03 {
+				background-image: url('./icon/icon-03.png');
+			}
+			&-04 {
+				background-image: url('./icon/icon-04.png');
+			}
+		}
+	}
+	.list {
+		padding-top: 10/64rem;
+		.title {
+			height: 30/64rem;
+			line-height: 30/64rem;
+			padding: 0 20/64rem;
+			border-bottom: 2px solid #f34433;
+			.sl {
+				width: 140/64rem;
+				text-align: center;
+				height: 30/64rem;
+				float: left;
+				color: #fff;
+				font-size: 18/64rem;
+				margin-left: -20/64rem;
+				margin-top: 0;
+				background: url('./icon/act-01.png') no-repeat;
+				background-size: contain;
+			}
+			.sr {
+				float: right;
+				color: #f34433;
+				font-size: 22/64rem;
+			}
+		}
+		&-02 {
+			.title { border-bottom-color: #2297f6; }
+			.title .sl { background-image: url('./icon/act-02.png'); }
+			.title .sr { color: #2297f6; }
+		}
+		&-03 {
+			.title { border-bottom-color: #55d12c; }
+			.title .sl { background-image: url('./icon/act-03.png'); }
+			.title .sr { color: #55d12c; }
+		}
+		&-04 {
+			.title { border-bottom-color: #3f51b5; }
+			.title .sl { background-image: url('./icon/act-04.png'); }
+			.title .sr { color: #3f51b5; }
+		}
+		&-05 {
+			.title { border-bottom-color: #f9b115; }
+			.title .sl { background-image: url('./icon/act-05.png'); }
+			.title .sr { color: #f9b115; }
+		}
+		&-06 {
+			.title { border-bottom-color: #673bb7; }
+			.title .sl { background-image: url('./icon/act-06.png'); }
+			.title .sr { color: #673bb7; }
+		}
+		.content {
+			padding: 20/64rem;
+			.col {
+				position: relative;
+				background: #eee;
+				margin-top: 20/64rem;
+				&-1 {
+					width: 290/64rem;
+					height: 170/64rem;
+				}
+				&-2 {
+					width: 290/64rem;
+					height: 360/64rem;
+				}
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+.mark {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+	padding: 10/@rem;
+	top: -5px;
+	left: -5px;
+	background: url('http://pic.ffpic.com/files/2013/1230/1226lyzwbz7.jpg') no-repeat;
+	background-size: contain;
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+}
+.me {
+	position: absolute;
+	width: 440/@rem;
+	height: 100%;
+	top: 0;
+}

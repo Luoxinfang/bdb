@@ -1,6 +1,7 @@
 .header {
 	/* 头部 */
 	position: fixed;
+	z-index: 2;
 	top: 0;
 	left: 50%;
 	margin-left: -5rem;
@@ -42,8 +43,8 @@
 	.s-gup { /* 130图标组 */
 		width: 130/64rem;
 		height: 60/64rem;
-		background: rgba(0, 0, 0, .2);
-		border-radius: 30/64rem;
+		background: url('./icon/bg_r.png') no-repeat;
+		background-size: contain;
 	}
 }
 
@@ -52,7 +53,7 @@
 		background-image: url('./icon/back_b.png');
 	}
 	&-me:after { /* 菜单图标 */
-		background-image: url('./icon/me_b.png');
+		background-image: url('./icon/me_w.png');
 	}
 	&-search:after { /* 搜索图标 */
 		background-image: url('./icon/search_w.png');
@@ -69,19 +70,15 @@
 }
 
 .header-top .icon-back { /*透明头部返回图标*/
-	background-color: rgba(0, 0, 0, 0.2);
-	border-radius: 50%;
+	background-image: url('./icon/bg_l.png');
+	background-size: contain;
 }
 
 .header-top .icon-back:after {
 	background-image: url('./icon/back_w.png');
 }
 
-.header-top .icon-me { /*透明头部返回图标*/
-	background-color: rgba(0, 0, 0, 0.2);
-	border-radius: 50%;
-}
-
-.header-top .icon-me:after {
-	background-image: url('./icon/me_w.png');
+.header-top .icon-me { /*透明头部菜单图标*/
+	background-image: url('./icon/bg_l.png');
+	background-size: contain;
 }

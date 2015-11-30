@@ -13,7 +13,7 @@ module.exports = function (router) {
 
   //首页
   router.get('/', function (req, res, next) {
-    resObj.headerMenu = true;
+    resObj.headerMe = true;
     resObj.headerRGup1 = true;
     resObj.headerSort = '时间排序';
     res.render('cus/page/index.tpl', resObj);

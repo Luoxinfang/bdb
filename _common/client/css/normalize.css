@@ -32,7 +32,7 @@ html, body {
     -webkit-overflow-scrolling: touch;
 }
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, p, th, td, a, span, i, b, em {
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, p, th, td, a, span, i, b, em, textarea {
     padding: 0;
     margin: 0;
     -webkit-box-sizing: border-box;
@@ -74,6 +74,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 input::-webkit-input-placeholder {
     color: #9a9a9a;
+    line-height: 110%;
 }
 
 table {

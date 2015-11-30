@@ -1,0 +1,20 @@
+.message-list {
+    margin-top: 10px;
+    height: 118px
+}
+
+.message-list .message_text {
+    font-size: 30px;
+    background-color: #fff;
+    border-bottom: 2px solid #edeef1;
+    padding: 10px 20px;
+}
+
+.nick-image {
+    width: 200px;
+    height: 200px;
+    float: left;
+    background-image: url("http://img1.2345.com/duoteimg/qqTxImg/2013/12/ka_3/04-054658_103.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}

@@ -5,6 +5,7 @@ module.exports = function (router) {
     app: appInfo.getInfo()
     ,headerBack: true //默认头部带返回按钮
     ,headerTitle: '百多宝' //默认头部标题
+    ,headerSort: false
   };
 
   router.get('*', function (req, res, next) {

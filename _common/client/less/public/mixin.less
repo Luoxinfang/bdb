@@ -5,3 +5,24 @@
 }
 
 header { width: 600/@rem; }
+
+.ellipsis () {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.transition(@var){
+  transition: @var;
+  -o-transition: @var;
+  -moz-transition: @var;
+  -webkit-transition: @var;
+}
+
+.transform(@var){
+  transform: @var;
+  -o-transform: @var;
+  -ms-transform: @var;
+  -moz-transform: @var;
+  -webkit-transform: @var;
+}

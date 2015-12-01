@@ -10,19 +10,19 @@
 		{% widget '_common:widget/header/header-top.tpl' %}
 		{% widget '_common:widget/banner/banner.tpl' %}
 		<div class="category clearfix">
-			<a href="">
+			<a href="/cus/auction/list">
 				<i class="icon icon-01"></i><br/>
 				<span>翡翠</span>
 			</a>
-			<a href="">
+			<a href="/cus/auction/list">
 				<i class="icon icon-02"></i><br/>
 				<span>黄金</span>
 			</a>
-			<a href="">
+			<a href="/cus/auction/list">
 				<i class="icon icon-03"></i><br/>
 				<span>钻石</span>
 			</a>
-			<a href="">
+			<a href="/cus/auction/list">
 				<i class="icon icon-04"></i><br/>
 				<span>更多</span>
 			</a>
@@ -34,11 +34,31 @@
 			</div>
 			<div class="content clearfix">
 				<div class="fl">
-					<div class="col col-1"></div>
-					<div class="col col-1"></div>
+					<div class="col col-1">
+						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝蓝宝石专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">723</span>
+					</div>
+					<div class="col col-1">
+						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝珍珠专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">431</span>
+					</div>
 				</div>
 				<div class="fr">
-					<div class="col col-2"></div>
+					<div class="col col-2">
+						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">高端首饰拍卖专场</p>
+							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+							<p class="s-2 bdt pt10">01/01-01/05</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">579</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -81,11 +101,12 @@
 {% endblock %}
 
 {% block beforeBody %}
-	<div class="mark"></div>
+	<div class="bg-mark"></div>
 {% endblock %}
 
 {% block afterBody %}
 	<div class="me">
 
 	</div>
+	<div class="r-mark"></div>
 {% endblock %}

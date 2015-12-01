@@ -5,7 +5,7 @@
 {%  block body %}
     {% widget '_common:widget/header/header.tpl' %}
     <div id="content">
-        <!--注册表单-->
+        <!--银行卡管理表单-->
         <div class="form">
 
             <ul class="form-ul">

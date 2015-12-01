@@ -8,18 +8,20 @@
     <meta name="author" content="{{app.author}}">
     <title>{{app.title}}</title>
     {% require "_common:css/weui.css" %}
-    {% require "_common:css/normalize.css" %}
-    {% require "_common:css/global.css" %}
-    <script src="../js/inc/init-app.js?__inline"></script>
+    {% require "_common:less/normalize.less" %}
+    {% require "_common:less/global.less" %}
     {% require "_common:js/lib/zepto.js" %}
+    <script src="../js/inc/init-app.js?__inline"></script>
     {% block head %}{% endblock %}
   {% endhead %}
 
   {% body %}
-    {% block beforeBody %}{% endblock %}
-    <div class="body-container">
-      {% block body %}{% endblock %}
+    <div class="wrapper">
+      {% block header %}{% endblock %}
+      <div class="body-container">
+        {% block body %}{% endblock %}
+      </div>
+      {% block footer %}{% endblock %}
     </div>
-    {% block afterBody %}{% endblock %}
   {% endbody %}
 {% endhtml %}

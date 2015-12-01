@@ -101,14 +101,14 @@
 				}
 				.collect-cnt {
 					position: absolute;
-					bottom: 13/@rem;
-					right: 20/@rem;
+					bottom: 13/@rem-pre;
+					right: 20/@rem-pre;
 				}
 				&-1 {
 					width: 290/64rem;
 					height: 170/64rem;
 					.d-1 {
-						max-height: 50/@rem;
+						max-height: 50/@rem-pre;
 						overflow: hidden;
 					}
 				}
@@ -124,21 +124,21 @@
 					width: 100%;
 					left: 0;
 					bottom: 0;
-					padding: 10/@rem 0 10/@rem 20/@rem;
-					line-height: 30/@rem;
+					padding: 10/@rem-pre 0 10/@rem-pre 20/@rem-pre;
+					line-height: 30/@rem-pre;
 					background: rgba(0,0,0,.75);
 				}
 				.s-1 {
-					height: 30/@rem;
-					padding-right: 80/@rem;
+					height: 30/@rem-pre;
+					padding-right: 80/@rem-pre;
 					color: #fff;
-					font-size: 22/@rem;
+					font-size: 22/@rem-pre;
 					.ellipsis;
 				}
 				.s-2 {
-					padding-right: 20/@rem;
+					padding-right: 20/@rem-pre;
 					color: #cecece;
-					font-size: 18/@rem;
+					font-size: 18/@rem-pre;
 				}
 				.bdt {
 					border-top: 1px solid rgba(255,255,255,.2);
@@ -151,50 +151,50 @@
 	// 背景图片
 	position: absolute;
 	opacity: 0;
-	width: 640/@rem;
+	width: 640/@rem-pre;
 	height: 100%;
 	top: 0;
 	left: 50%;
-	margin-left: -960/@rem;
+	margin-left: -960/@rem-pre;
 	background: url('http://pic.ffpic.com/files/2013/1230/1226lyzwbz7.jpg') no-repeat;
 	filter: blur(10px);
 	-webkit-filter: blur(10px);
 	.transition(all 0.8s ease-in-out);
 	&.show{
 		opacity: 1;
-		margin-left: -320/@rem;
+		margin-left: -320/@rem-pre;
 		.transition(all 0.8s ease-in-out);
 	}
 }
 .r-mark {
 	// 首页遮罩
 	position: absolute;
-	width: 200/@rem;
+	width: 200/@rem-pre;
 	top: 0;
 	left: 50%;
-	margin-left: -520/@rem;
+	margin-left: -520/@rem-pre;
 	height: 100%;
 	opacity: 0;
 	.transition(all 0.8s ease-in-out);
 	&.show {
 		opacity: 1;
-		margin-left: 120/@rem;
+		margin-left: 120/@rem-pre;
 		.transition(all 0.8s ease-in-out);
 	}
 }
 .me {
 	// 我
 	position: absolute;
-	width: 440/@rem;
+	width: 440/@rem-pre;
 	top: 0;
 	left: 50%;
-	margin-left: -760/@rem;
+	margin-left: -760/@rem-pre;
 	height: 100%;
 	opacity: 0;
 	.transition(all 0.8s ease-in-out);
 	&.show {
 		opacity: 1;
-		margin-left: -320/@rem;
+		margin-left: -320/@rem-pre;
 		.transition(all 0.8s ease-in-out);
 	}
 }

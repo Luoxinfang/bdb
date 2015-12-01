@@ -1,0 +1,213 @@
+/*
+  normalize.css
+*/
+html, body, input {
+    padding: 0;
+    margin: 0;
+    font-family: "Droid Sans Fallback", "Microsoft YaHei", "Heiti SC";
+}
+
+html,body {
+    height: 100%;
+    min-height: 100%;
+}
+
+input {
+    border: none;
+    outline: none;
+    border-radius: 0;
+}
+
+/*
+    add lilian
+*/
+html, body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, p, th, td, a, span, i, b, em, textarea {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus, select:active {
+    background-color: transparent;
+}
+
+input[type=text]::-ms-clear, input[type=tel]::-ms-clear, input[type=number]::-ms-clear {
+    display: none;
+}
+
+body, a, img, label, button, input, textarea, select {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+input::-webkit-input-placeholder {
+    color: #9a9a9a;
+    line-height: 130%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a, img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+i, b, em {
+    font-style: normal;
+    font-weight: normal;
+}
+
+img {
+    border: 0;
+}
+
+a{
+    text-align: center;
+}
+
+li, ol, ul {
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+input:focus {
+    outline: none;
+}
+
+/*
+	weui.css
+*/
+.weui_btn{
+    font-size: 0.4375rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+}
+.weui_btn_default {
+    background-color: #f34433;
+    color: #fff;
+}
+.weui_btn_default:not(.weui_btn_disabled):visited {
+    color: #fff;
+}
+.weui_btn_default:not(.weui_btn_disabled):active {
+    color: #fff;
+    background-color: #d22f32;
+}
+.weui_btn_primary {
+    color: #f34433;
+    background-color: #fff;
+}
+.weui_btn_primary:not(.weui_btn_disabled):visited {
+    color: #fff;
+}
+.weui_btn_primary:not(.weui_btn_disabled):active {
+    color: #f34433;
+    background-color: #e5e5e5;
+}
+.weui_btn_warn {
+    background-color: #f34433;
+}
+.weui_btn_warn:not(.weui_btn_disabled):visited {
+    color: #fff;
+}
+.weui_btn_warn:not(.weui_btn_disabled):active {
+    color: #fff;
+    background-color: #d22f32;
+}
+.weui_btn_disabled {
+    color: #fff;
+    background-color: #cecece;
+}
+.weui_btn_disabled.weui_btn_default {
+    color: #fff;
+    background-color: #cecece;
+}
+.weui_btn_plain_primary {
+    color: #f34433;
+    background-color: #fff;
+    border: 1px solid #edeef1;
+}
+.weui_btn_plain_primary:active {
+    border-color: #edeef1;
+}
+.weui_btn_plain_primary:after {
+    border-width: 0;
+}
+.weui_btn_plain_default {
+    color: #f34433;
+    background-color: #fff;
+    border: 1px solid #edeef1;
+}
+.weui_btn_plain_default:active {
+    border-color: #edeef1;
+}
+.weui_btn_plain_default:after {
+    border-width: 0;
+}
+
+.weui_btn:after {
+    border: 1px solid rgba(0,0,0,.1);
+}
+/*lilian btn*/
+.btn {
+    font-size: 0.4375rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    border-radius: 5px;
+    display: inline-block;
+    width: 100%; }
+
+.btn.btn-white {
+    background: #fff;
+    color: #f34433;
+    border: 1px solid #e7e7e8; }
+
+.btn.btn-white:active {
+    background: #e5e5e5; }
+
+.btn.btn-red {
+    background: #f34433;
+    border: 1px solid #f34433;
+    color: #fff; }
+
+.btn.btn-red:active {
+    background: #f22e1b; }
+
+.btn-disabled,.btn-disabled:active{
+    border:none!important;
+    color: #fff!important;
+    background: #cecece!important;
+}

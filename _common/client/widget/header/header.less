@@ -1,5 +1,5 @@
-@commonPath: '../../../../_common/client/less/';
-@import "@{commonPath}/public/mixin.less";
+
+@import "@{_common}/public/mixin";
 
 .header {
 	/* 头部 */
@@ -87,22 +87,22 @@
 }
 
 .header-tab {
-	height: 90/@rem;
-	line-height: 90/@rem;
+	height: 90/@rem-pre;
+	line-height: 90/@rem-pre;
 	text-align: center;
 	background: @listColor;
 	a {
 		display: inline-block;
-		height: 90/@rem;
+		height: 90/@rem-pre;
 		float: left;
 		color: #7f7f7f;
 		font-size: @fontSize3;
-		border-bottom: 2/@rem solid @lineColor;
+		border-bottom: 2/@rem-pre solid @lineColor;
 	}
 	a.on {
 		color: #f34433;
 		font-size: @fontSize2;
-		border-bottom: 5/@rem solid @mainColor2;
+		border-bottom: 5/@rem-pre solid @mainColor2;
 	}
 	&.tab-3 a {
 		width: 33.3333%;

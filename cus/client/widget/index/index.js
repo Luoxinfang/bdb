@@ -17,7 +17,23 @@ module.exports = {
 				height: '90%',
 				overflow: 'hidden'
 			});
-			$('.mark').show();
+			$('.bg-mark').addClass('show');
+			$('.me').addClass('show');
+			$('.r-mark').addClass('show');
+		});
+		$(document).on('click','.r-mark',function() {
+			$('.index').removeClass('small');
+			$('body').css({
+				height: 'auto',
+				overflow: 'auto'
+			});
+			$('.body-container').css({
+				height: 'auto',
+				overflow: 'auto'
+			});
+			$('.bg-mark').removeClass('show');
+			$('.me').removeClass('show');
+			$('.r-mark').removeClass('show');
 		});
 	}
 };

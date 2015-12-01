@@ -53,6 +53,32 @@ module.exports = function (router) {
     resObj.app.title = resObj.headerTitle = '绑定第三方账号';
     res.render('cus/page/user/bind-account-pwd.tpl', resObj);
   });
+  //修改密码
+  router.get('/change-pwd', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '修改密码';
+    res.render('cus/page/user/change-pwd.tpl', resObj);
+  });
+  //更换手机号 —— 验证
+  router.get('/change-tel-info', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '更换手机号';
+    res.render('cus/page/user/change-tel-info.tpl', resObj);
+  });
+  //更换手机号 —— 输入新号码
+  router.get('/change-tel-new', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '更换手机号';
+    res.render('cus/page/user/change-tel-new.tpl', resObj);
+  });
+  //收货地址
+  router.get('/receipt-address', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '收货地址';
+    res.render('cus/page/user/receipt-address.tpl', resObj);
+  });
+  //我的钱包 —— 首页
+  router.get('/wallet', function (req, res, next) {
+    resObj.app.title = resObj.headerTitle = '我的钱包';
+    res.render('cus/page/wallet/index.tpl', resObj);
+  });
+
   //关于我们
   router.get('/about', function (req, res, next) {
     res.render('cus/page/about.tpl', resObj);

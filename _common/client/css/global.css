@@ -141,12 +141,14 @@ body {
 	width: 0.3125rem;
 	height: 0.3125rem;
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 .icon-40 {
 	display: inline-block;
 	width: 0.625rem;
 	height: 0.625rem;
 	background-size: contain;
+	background-repeat: no-repeat;
 }
 .icon-60 {
 	display: inline-block;
@@ -160,6 +162,7 @@ body {
 	width: 0.65625rem;
 	height: 0.65625rem;
 	background-size: contain;
+	background-repeat: no-repeat;
 	margin-top: 0.140625rem;
 }
 /* 外边距 */

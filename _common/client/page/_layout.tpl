@@ -16,8 +16,10 @@
   {% endhead %}
 
   {% body %}
+    {% block beforeBody %}{% endblock %}
     <div class="body-container">
-    {% block body %}{% endblock %}
+      {% block body %}{% endblock %}
     </div>
+    {% block afterBody %}{% endblock %}
   {% endbody %}
 {% endhtml %}

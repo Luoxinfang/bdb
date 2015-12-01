@@ -20,13 +20,27 @@
     padding-left: 0.3125rem;
 }
 
-.form li.form-li-input input {
-    display: block;
-    border-style: none;
-    width: 80%;
-    height: 100%;
-    line-height: 100%;
-    font-size: 0.4375rem;
+.form li.form-li-input input,.form textarea {
+     display: block;
+     border-style: none;
+     width: 80%;
+     height: 100%;
+     line-height: 100%;
+     font-size: 0.4375rem;
+ }
+
+.form li.form-li-textarea{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 3.125rem;
+}
+
+.form textarea {
+    width: 100%;
+}
+
+.form li.form-li-input input:disabled {
+    background: transparent;
 }
 
 .form li.form-li-input:first-child {
@@ -120,4 +134,8 @@
 
 .form-list li.form-li:active {
     background: #f2f2f2;
+}
+
+.form-list a {
+    color: inherit;
 }

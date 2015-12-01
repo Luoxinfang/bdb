@@ -1,6 +1,6 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    <link rel="stylesheet" href="../../css/form.css"/>
+    <link rel="stylesheet" href="../../less/public/form.less"/>
 {% endblock %}
 
 {% block body %}

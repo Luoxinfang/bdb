@@ -74,7 +74,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 
 input::-webkit-input-placeholder {
     color: #9a9a9a;
-    line-height: 110%;
+    line-height: 130%;
 }
 
 table {
@@ -212,6 +212,7 @@ input:focus {
     background: #f22e1b; }
 
 .btn-disabled,.btn-disabled:active{
+    border:none!important;
     color: #fff!important;
     background: #cecece!important;
 }

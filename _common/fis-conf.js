@@ -32,6 +32,7 @@ fis.config.set('settings.spriter.csssprites', {
 fis.media('prod').match('*', {
     deploy: fis.plugin('http-push', {
         receiver: 'http://127.0.0.1:8085/yog/upload',
+
         to: '/'
     })
 });

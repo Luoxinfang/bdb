@@ -46,6 +46,34 @@
 		background: url('./icon/bg_r.png') no-repeat;
 		background-size: contain;
 	}
+	.nav {
+		display: block;
+		width: 340/64rem;
+		height: 60/64rem;
+		margin: 0 auto;
+		.li {
+			width: 50%;
+			height: 60/64rem;
+			line-height: 60/64rem;
+			float: left;
+			color: #f34433;
+			background-color: #fff;
+			font-size: 30/64rem;
+			cursor: pointer;
+			&.on {
+				color: #fff;
+				background-color: #f34433;
+			}
+			&:first-child {
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+			&:last-child {
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+		}
+	}
 }
 
 .icon {

@@ -1,7 +1,7 @@
 {% extends '_common/page/_layout.tpl' %}
 
 {% block head %}
-	{% require 'cus:widget/index/index.css' %}
+	{% require 'cus:widget/index/index.less' %}
 	{% require 'cus:widget/index/index.js' %}
 {% endblock %}
 
@@ -100,11 +100,11 @@
 	{% endscript %}
 {% endblock %}
 
-{% block beforeBody %}
+{% block header %}
 	<div class="bg-mark"></div>
 {% endblock %}
 
-{% block afterBody %}
+{% block footer %}
 	<div class="me">
 
 	</div>

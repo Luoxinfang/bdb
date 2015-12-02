@@ -1,4 +1,1 @@
-{% extends '_common/page/_layout.tpl' %}
-{%  block body %}
-{% widget '_common:widget/header/header.tpl' %}
-{% endblock %}
+{% extends '_common:page/account/_card-management.tpl' %}

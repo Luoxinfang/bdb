@@ -3,12 +3,8 @@
 
 .header {
 	/* 头部 */
-	position: fixed;
-	z-index: 2;
-	top: 0;
-	left: 50%;
-	margin-left: -5rem;
-	width: 10rem;
+	position: relative;
+	width: @rem-full-aliquots;
 	text-align: center;
 	height: 90/64rem;
 	padding: 15/64rem 0;
@@ -34,6 +30,9 @@
 		bottom: 0;
 		left: 20/64rem;
 		margin: auto 0;
+	}
+	.center {
+		margin: 0 auto;
 	}
 	.right { /* 右侧内容 */
 		position: absolute;

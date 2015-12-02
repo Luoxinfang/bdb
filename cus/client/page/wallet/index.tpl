@@ -1,7 +1,7 @@
 {% extends '_common/page/_layout.tpl' %}
 
 {% block head %}
-    {% require "_common:css/form.css" %}
+    {% require "_common:less/public/form.less" %}
     {% require "cus:widget/wallet/index/index.less" %}
 {% endblock %}
 

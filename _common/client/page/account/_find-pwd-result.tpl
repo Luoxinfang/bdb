@@ -1,4 +1,4 @@
-{% extends '_common:page/_layout.tpl' %}
+{% extends '_common:page/_result.tpl' %}
 {% block head %}
     <link rel="stylesheet" href="../../less/public/form.less"/>
 {% endblock %}
@@ -6,10 +6,12 @@
 {% block body %}
     {% widget '_common:widget/header/header.tpl' %}
     <div id="content">
+        <!--注册表单-->
         <div class="form">
+
             <ul class="form-ul">
                 <li class='form-li-input'>
-                    <input type="tel" id="pwd" placeholder="请输入新的手机号" maxlength="11" autoconmplete='on' />
+                    <input type="tel" id="tel" placeholder="请输入你的手机号码" maxlength="11" autoconmplete='on' />
                 </li>
                 <li class="form-li-input has-right-bt">
                     <div>
@@ -19,7 +21,7 @@
                     <a id="getMessage" class="right-btn">获取验证码</a>
                 </li>
             </ul>
-            <a class="btn btn-red">完成</a>
+            <a class="btn btn-white">绑定账号</a>
         </div>
     </div>
 {% endblock %}

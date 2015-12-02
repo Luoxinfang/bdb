@@ -4,8 +4,13 @@
 	<link rel="stylesheet" href="../../less/user/login.less?__inline"/>
 {%endblock%}
 
+{% block header %}
+  <div class="header" style="height: 100px;">
+    实现固定顶部
+  </div>
+{% endblock %}
+
 {%block body%}
-	<div class="wrapper">
 		<div class="container" id="container">
 			<div class="logo"></div>
 			<div class="login-wrap">
@@ -16,13 +21,10 @@
 			</div>
 			{%block content%}{%endblock%}
 		</div>
-	</div>
-
-	{%script%}
-	//设置屏幕的高度
-	var height = Math.max(document.documentElement.clientHeight,
-	document.body.offsetHeight);
-	document.getElementById('container').style.height =  height + 'px';
-	{%endscript%}
-
 {%endblock%}
+
+{% block footer %}
+	<div class="footer" style="height: 100px;">
+    实现固定底部
+  </div>
+{% endblock %}

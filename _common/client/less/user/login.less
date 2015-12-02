@@ -1,28 +1,32 @@
+@import "../public/variable";
 @import "../public/mixin";
 
 .container {
-  width: @rem-width;
+  height: 110%;
   margin: 0 auto;
   overflow: hidden;
   background-size: 100% 100%;
   font-size: .4rem;
-  color: #ffffff;
-  a&:visited {
-    color: #ffffff;
+  color: @white;
+  a {
+    color: @white;
+    &:visited {
+      color: @white;
+    }
   }
-  .logo{
+  .logo {
     width: 3.75rem;
     height: 3.75rem;
     margin: .8rem auto 0 auto;
     background-size: contain;
     background-image: url('../../icon/logo.png');
   }
-  .login-wrap{
+  .login-wrap {
     width: 8.6rem;
     height: 6.2rem;
     margin: 1.5rem auto 0 auto;
   }
-  .login-other{
+  .login-other {
     margin: .75rem auto;
     width: 8.6rem;
   }

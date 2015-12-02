@@ -1,0 +1,117 @@
+/*文本输入类型表单*/
+.form {
+    padding: 0.3125rem 0.28125rem;
+    .form-ul {
+        margin-bottom: 0.15625rem;
+    }
+    .form-ul:last-of-type {
+        margin-bottom: 0.9375rem;
+    }
+    .form-li-input {
+        background: #fff;
+        height: 1.40625rem;
+        line-height: 1.40625rem;
+        border: 1px solid #e7e7e8;
+        border-top: 0px;
+        position: relative;
+        padding-left: 0.3125rem;
+    }
+    .form-li-input input,textarea {
+        display: block;
+        border-style: none;
+        width: 100%;
+        height: 100%;
+        line-height: 100%;
+        font-size: 0.4375rem;
+    }
+    .form-li-textarea{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: 3.125rem;
+    }
+    textarea {
+        width: 100%;
+    }
+    .form-li-input input:disabled {
+        background: transparent;
+    }
+    .form-li-input:first-child {
+        border-top: 1px solid #e7e7e8;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    .form-li-input:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    li.form-li-input:first-child .right-btn {
+        border-top-right-radius: 5px;
+    }
+    li.form-li-input:last-child .right-btn {
+        border-bottom-right-radius: 5px;
+    }
+    li.has-right-bt > div {
+        height: 100%;
+        width: 75%;
+        position: relative;
+        float: left;
+    }
+    li .right-btn {
+        float: right;
+        height: 1.40625rem;
+        line-height: 1.40625rem;
+        width: 25%;
+        background: #2297f6;
+        color: #fff;
+        font-size: 0.375rem;
+    }
+    li .right-btn:active {
+        background: #0983e6;
+    }
+    /*左侧有label*/
+    .has-label{
+        label{
+            color: #000;
+            display: inline-block;
+            width: 144/64rem;
+            position: absolute;
+            font-size: 0.40625rem;
+        }
+        input{
+            padding-left: 144/64rem;
+        }
+    }
+}
+
+/*列表类型表单*/
+.form-list {
+    padding: 0.3125rem 0;
+    font-size: 0.4375rem;
+    .form-ul {
+        padding-left: 0.46875rem;
+        padding-right: 0.46875rem;
+        margin-bottom: 0.3125rem;
+        background: #fff;
+        border-top: 1px solid #e7e7e8;
+        border-bottom: 1px solid #e7e7e8;
+    }
+    li {
+        text-align: left;
+        height: 1.40625rem;
+        line-height: 1.40625rem;
+        border-bottom: 1px solid #e7e7e8;
+        position: relative;
+    }
+    li:last-of-type {
+        border: 0;
+    }
+    li.form-li .select-text {
+        float: right;
+    }
+    li.form-li:active {
+        background: #f2f2f2;
+    }
+    a {
+        color: inherit;
+    }
+}

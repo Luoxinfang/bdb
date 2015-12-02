@@ -1,7 +1,8 @@
-
-@mix-width: 640px;
-@rem-width: 10rem;
-@rem: @mix-width/@rem-width;
+//基本设置
+@max-width: 640px; //px 最大宽度
+@rem-max: 10rem; //rem 最大值
+@rem-full-aliquots: 10; //rem 全等份量
+@rem-pre: @max-width/@rem-max; //rem 一等份量
 
 //灰阶配色
 @titleColor: #f5f5f5;
@@ -10,14 +11,15 @@
 @bgColor: #edeef1;
 
 //字体大小
-@fontSize1: 34/@rem;
-@fontSize2: 30/@rem;
-@fontSize3: 26/@rem;
-@fontSize4: 22/@rem;
-@fontSize5: 18/@rem;
-@fontSize6: 14/@rem;
+@fontSize1: 34/@rem-pre;
+@fontSize2: 30/@rem-pre;
+@fontSize3: 26/@rem-pre;
+@fontSize4: 22/@rem-pre;
+@fontSize5: 18/@rem-pre;
+@fontSize6: 14/@rem-pre;
 
 //主要用色
+@white: #ffffff;
 @mainColor1: #d22f32;
 @mainColor2: #f34433;
 @mainColor3: #393b42;

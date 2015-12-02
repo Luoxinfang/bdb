@@ -27,7 +27,6 @@ module.exports = function (router) {
     resObj.app.title = resObj.header.title = '百多宝';
     resObj.header.me = true;
     resObj.header.rGup1 = true;
-    resObj.header.sort = '时间排序';
     res.render('cus/page/index.tpl', resObj);
   });
   //登录
@@ -126,6 +125,15 @@ module.exports = function (router) {
     resObj.app.title = resObj.header.title = '拍卖列表';
     resObj.header.sort = "时间排序";
     res.render('cus/page/auction/list.tpl', resObj);
+  });
+  //拍品
+  router.get('/auction/detail', function (req, res, next) {
+    resObj.app.title = '拍品';
+    resObj.header.title = '千年古玉';
+    resObj.header.back = true;
+    resObj.header.backUrl = '/cus/auction/list';
+    resObj.header.rGup2 = true;
+    res.render('cus/page/auction/detail.tpl', resObj);
   });
   //关于我们
   router.get('/about', function (req, res, next) {

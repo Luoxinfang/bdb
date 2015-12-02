@@ -1,0 +1,24 @@
+.set-list{
+  margin-top: 0.15625rem;
+  background-color: #fff;
+}
+
+.set-list .set-item {
+  display:block;
+  height:0.9375rem;
+  line-height:0.9375rem;
+  background-color: #fff;
+  border-bottom: 2px solid #e7e7e8;
+  text-align: left;
+  margin-left: 0.3125rem;
+}
+
+.set-list .set-item span  {
+  color: #393b42;
+  font-size: 0.46875rem;
+  display: inherit;
+}
+
+.set-list .set-item:last-child{
+  border-bottom:0;
+}

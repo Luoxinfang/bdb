@@ -1,13 +1,21 @@
 @import "@{_common}/public/mixin";
 
-.index {
-	// 首页
-	background-color: #fff;
-	.transition(all 0.8s ease-in-out);
+body.body-me {
+	width: 10rem;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.wrapper {
 	&.small {
 		.transform(translateX(380/64rem) scale(0.8,0.8));
 		.transition(all 0.8s ease-in-out);
 	}
+}
+
+.index {
+	// 首页
+	background-color: #fff;
 	.category {
 		padding: 30/64rem 0 20/64rem;
 		a {

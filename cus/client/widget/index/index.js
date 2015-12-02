@@ -8,25 +8,18 @@ module.exports = {
 	},
 	events: function () {
 		$(document).on('click','.icon-me',function(){
-			$('.index').addClass('small');
-			$('body').css({
-				height: '100%',
-				overflow: 'hidden'
-			});
-			$('.body-container').css({
-				height: '90%',
-				overflow: 'hidden'
-			});
+			$('.wrapper').addClass('small');
+			$('body').addClass('body-me');
 			$('.bg-mark').addClass('show');
 			$('.me').addClass('show');
 			$('.r-mark').addClass('show');
 		});
 		$(document).on('click','.r-mark',function() {
-			$('.index').removeClass('small');
-			$('body').css({
-				height: 'auto',
-				overflow: 'auto'
+			$('.wrapper').css({
+				'transition':'all 0.8s ease-in-out'
 			});
+			$('.wrapper').removeClass('small');
+			$('body').removeClass('body-me');
 			$('.body-container').css({
 				height: 'auto',
 				overflow: 'auto'

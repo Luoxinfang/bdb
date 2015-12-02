@@ -3,8 +3,11 @@
     <link rel="stylesheet" href="../../less/public/form.less"/>
 {% endblock %}
 
-{% block body %}
+{% block header %}
     {% widget '_common:widget/header/header.tpl' %}
+{% endblock %}
+
+{% block body %}
     <div id="content">
         <!--注册表单-->
         <div class="form">

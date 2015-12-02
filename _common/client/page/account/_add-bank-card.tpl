@@ -11,8 +11,11 @@
     </style>
 {% endblock %}
 
-{% block body %}
+{% block header %}
     {% widget '_common:widget/header/header.tpl' %}
+{% endblock %}
+
+{% block body %}
     <div id="content">
         <div class="form">
             <ul class="form-ul">

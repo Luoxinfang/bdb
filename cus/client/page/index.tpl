@@ -5,9 +5,16 @@
 	{% require 'cus:widget/index/index.js' %}
 {% endblock %}
 
+{% block beforeWrapper %}
+	<div class="bg-mark"></div>
+{% endblock %}
+
+{% block header %}
+	{% widget '_common:widget/header/header-top.tpl' %}
+{% endblock %}
+
 {% block body %}
 	<div class="index">
-		{% widget '_common:widget/header/header-top.tpl' %}
 		{% widget '_common:widget/banner/banner.tpl' %}
 		<div class="category clearfix">
 			<a href="/cus/auction/list">
@@ -100,11 +107,7 @@
 	{% endscript %}
 {% endblock %}
 
-{% block header %}
-	<div class="bg-mark"></div>
-{% endblock %}
-
-{% block footer %}
+{% block afterWrapper %}
 	<div class="me">
 
 	</div>

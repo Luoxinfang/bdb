@@ -16,6 +16,7 @@
   {% endhead %}
 
   {% body %}
+    {% block beforeWrapper %}{% endblock %}
     <div class="wrapper">
       {% block header %}{% endblock %}
       <div class="body-container">
@@ -23,5 +24,6 @@
       </div>
       {% block footer %}{% endblock %}
     </div>
+    {% block afterWrapper %}{% endblock %}
   {% endbody %}
 {% endhtml %}

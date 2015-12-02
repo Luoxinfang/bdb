@@ -5,8 +5,11 @@
     {% require "cus:widget/wallet/index/index.less" %}
 {% endblock %}
 
-{% block body %}
+{% block header %}
     {% widget '_common:widget/header/header.tpl' %}
+{% endblock %}
+
+{% block body %}
     <div id="content">
         <div id="head-pic">
             <p class="fs-1">￥ 1510.00</p>

@@ -7,17 +7,28 @@
 	width: @rem-full-aliquots;
 	text-align: center;
 	height: 90/64rem;
-	padding: 15/64rem 0;
 	line-height: 60/64rem;
-	background-color: #f5f5f5;
-	border-bottom: 2px solid #e7e7e8;
+	padding: 15/64rem 0;
 	&-wrap { /* 头部容器 */
 		height: 90/64rem;
+		.header {
+			background-color: #f5f5f5;
+			border-bottom: 2px solid #e7e7e8;
+		}
 	}
 	&-top { /* 透明头部 */
-		background: transparent;
-		border-bottom-color: transparent;
-		color: #fff;
+		width: @rem-max;
+		height: 90/64rem;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -@rem-max/2;
+		z-index: 2;
+		.header {
+			background: transparent;
+			border-bottom-color: transparent;
+			color: #fff;
+		}
 	}
 	&-pa { /* 顶部头部 */
 		width: 100%;

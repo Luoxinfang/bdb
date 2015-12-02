@@ -196,6 +196,7 @@ body.body-me {
 	top: 0;
 	left: 50%;
 	margin-left: -760/@rem-pre;
+	padding-left: 20/@rem-pre;
 	height: 100%;
 	opacity: 0;
 	.transition(all 0.8s ease-in-out);
@@ -203,5 +204,36 @@ body.body-me {
 		opacity: 1;
 		margin-left: -320/@rem-pre;
 		.transition(all 0.8s ease-in-out);
+	}
+	.user {
+		position: relative;
+		height: 200/@rem-pre;
+		padding-top: 30/@rem-pre;
+		padding-left: 190/@rem-pre;
+		.photo {
+			position: absolute;
+			top: 30/@rem-pre;
+			left: 30/@rem-pre;
+		}
+		.name {
+			padding-top: 25/@rem-pre;
+			line-height: 60/@rem-pre;
+			color: @white;
+			font-size: @fontSize2;
+		}
+		.rank {
+			line-height: 60/@rem-pre;
+		}
+	}
+	.menu {
+		padding-left: 30/@rem-pre;
+		border-top: 1px solid fadeout(@lineColor,80%);
+		a {
+			display: block;
+			text-align: left;
+			line-height: 90/@rem-pre;
+			color: @white;
+			font-size: @fontSize2;
+		}
 	}
 }

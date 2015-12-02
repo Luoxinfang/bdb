@@ -11,5 +11,78 @@
 		float: left;
 		margin: 10/@rem-pre 0 10/@rem-pre 20/@rem-pre;
 		background: #fff;
+		img {
+			display: block;
+			width: 100%;
+			height: 200/@rem-pre;
+		}
+		.store {
+			display: block;
+			padding: 0 10/@rem-pre 0 20/@rem-pre;
+			height: 40/@rem-pre;
+			line-height: 40/@rem-pre;
+			color: @mainColor3;
+			font-size: @fontSize3;
+			span {
+				display: inline-block;
+				max-width: 160/@rem-pre;
+				float: left;
+				.ellipsis;
+			}
+			.icon-22 {
+				float: right;
+				margin-right: 10/@rem-pre;
+				margin-top: 9/@rem-pre;
+			}
+		}
+		.tlt {
+			display: block;
+			padding: 0 20/@rem-pre;
+			text-align: left;
+			height: 40/@rem-pre;
+			line-height: 40/@rem-pre;
+			color: @mainColor2;
+			font-size: @fontSize2;
+			.ellipsis;
+		}
+		.desc {
+			padding: 0 20/@rem-pre;
+			height: 30/@rem-pre;
+			line-height: 30/@rem-pre;
+			color: @mainColor4;
+			font-size: @fontSize4;
+			.ellipsis;
+		}
+		.time {
+			margin-left: 20/@rem-pre;
+			height: 50/@rem-pre;
+			line-height: 50/@rem-pre;
+			color: @mainColor4;
+			font-size: @fontSize4;
+			border-top: 1px solid @lineColor;
+		}
+		.collect-cnt {
+			position: absolute;
+			bottom: 13/@rem-pre;
+			right: 20/@rem-pre;
+		}
+	}
+	&-detail {
+		.store {
+			position: relative;
+			height: 70/@rem-pre;
+			margin-top: -70/@rem-pre;
+			line-height: 70/@rem-pre;
+			padding: 0 20/@rem-pre;
+			color: @white;
+			font-size: @fontSize2;
+			background: fadeout(#000,40%);
+			.name {
+				float: left;
+			}
+			.time {
+				float: right;
+			}
+		}
 	}
 }

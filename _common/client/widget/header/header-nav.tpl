@@ -1,5 +1,3 @@
-{% require '_common:widget/header/header.css' %}
-
 <div class="header-wrap">
     <div class="header">
         {% if header.back %} {#是否有返回按钮，默认：有#}

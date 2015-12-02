@@ -74,11 +74,69 @@
 				<span class="sl">秒杀专场</span>
 				<a href="" class="sr">更多</a>
 			</div>
+			<div class="content clearfix">
+				<div class="fl">
+					<div class="col col-1">
+						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝蓝宝石专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">723</span>
+					</div>
+					<div class="col col-1">
+						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝珍珠专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">431</span>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="col col-2">
+						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">高端首饰拍卖专场</p>
+							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+							<p class="s-2 bdt pt10">01/01-01/05</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">579</span>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="list list-03">
 			<div class="title">
 				<span class="sl">秒杀专场</span>
 				<a href="" class="sr">更多</a>
+			</div>
+			<div class="content clearfix">
+				<div class="fl">
+					<div class="col col-1">
+						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝蓝宝石专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">723</span>
+					</div>
+					<div class="col col-1">
+						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝珍珠专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">431</span>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="col col-2">
+						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">高端首饰拍卖专场</p>
+							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+							<p class="s-2 bdt pt10">01/01-01/05</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">579</span>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="list list-04">
@@ -86,17 +144,104 @@
 				<span class="sl">秒杀专场</span>
 				<a href="" class="sr">更多</a>
 			</div>
+			<div class="content clearfix">
+				<div class="fl">
+					<div class="col col-1">
+						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝蓝宝石专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">723</span>
+					</div>
+					<div class="col col-1">
+						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝珍珠专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">431</span>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="col col-2">
+						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">高端首饰拍卖专场</p>
+							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+							<p class="s-2 bdt pt10">01/01-01/05</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">579</span>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="list list-05">
 			<div class="title">
 				<span class="sl">秒杀专场</span>
 				<a href="" class="sr">更多</a>
 			</div>
+			<div class="content clearfix">
+				<div class="fl">
+					<div class="col col-1">
+						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝蓝宝石专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">723</span>
+					</div>
+					<div class="col col-1">
+						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝珍珠专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">431</span>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="col col-2">
+						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">高端首饰拍卖专场</p>
+							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+							<p class="s-2 bdt pt10">01/01-01/05</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">579</span>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="list list-06">
 			<div class="title">
 				<span class="sl">秒杀专场</span>
 				<a href="" class="sr">更多</a>
+			</div>
+			<div class="content clearfix">
+				<div class="fl">
+					<div class="col col-1">
+						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝蓝宝石专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">723</span>
+					</div>
+					<div class="col col-1">
+						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">百多宝珍珠专场</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">431</span>
+					</div>
+				</div>
+				<div class="fr">
+					<div class="col col-2">
+						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+						<div class="d-1">
+							<p class="s-1">高端首饰拍卖专场</p>
+							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+							<p class="s-2 bdt pt10">01/01-01/05</p>
+						</div>
+						<span class="collect-cnt icon-collect-cnt">579</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -109,7 +254,18 @@
 
 {% block afterWrapper %}
 	<div class="me">
-
+		<div class="user">
+			<div class="photo">{% widget '_common:widget/user/user-photo.tpl' %}</div>
+			<p class="name">大魔王</p>
+			<div class="rank"></div>
+		</div>
+		<div class="menu">
+			<a href="">我的钱包</a>
+			<a href="">我的订单</a>
+			<a href="">穿越到卖家版</a>
+			<a href="">系统设置</a>
+			<a href="">退出登陆</a>
+		</div>
 	</div>
 	<div class="r-mark"></div>
 {% endblock %}

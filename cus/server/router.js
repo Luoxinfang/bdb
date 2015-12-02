@@ -14,6 +14,7 @@ module.exports = function (router) {
       ,msg: false       //右侧消息图标
       ,nav: ['系统消息','用户消息']     //头部nav数组
       ,tab: ['全部','进行中','未开始']  //头部tab数组
+      ,set:false
     }
   };
 
@@ -119,6 +120,13 @@ module.exports = function (router) {
   //系统设置
   router.get('/sys-settings', function (req, res, next) {
     resObj.app.title = resObj.header.title = '系统设置';
+    resObj.header.set=['安全','推送设置','更新版本','关于百多宝','投诉建议']
+    res.render('cus/page/user/sys-settings.tpl', resObj);
+  });
+  //安全设置
+  router.get('/safety-settings', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '系统设置';
+    resObj.header.set=['修改密码','更换手机号']
     res.render('cus/page/user/sys-settings.tpl', resObj);
   });
 };

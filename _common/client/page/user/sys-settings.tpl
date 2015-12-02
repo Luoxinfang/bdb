@@ -6,11 +6,9 @@
     {% widget '_common:widget/header/header.tpl' %}
 
     <div class="set-list">
-                <a href="" class="set-item"><span >安全</span></a>
-                <a href="" class="set-item"><span href="">推送设置</span></a>
-                <a href="" class="set-item"><span href="">更新版本</span></a>
-                <a href="" class="set-item"><span href="">关于百多宝</span></a>
-                <a href="" class="set-item"><span href="">投诉建议</span></a>
+                {% for item in header.set -%}
+                    <a href="" class="set-item"><span >{{ item }}</span></a>
+                {%- endfor %}
     </div>
 
 {% endblock %}

@@ -4,6 +4,7 @@
     <style>
         .form .has-multi-line{
             height: 1.71875rem;
+            line-height: 1.71875rem;;
         }
         .has-label-div{
             padding-left: 2.25rem;
@@ -15,6 +16,7 @@
         }
         .has-label-div span{
             color: #7f7f7f;
+            display: block;
         }
     </style>
 {% endblock %}

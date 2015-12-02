@@ -38,31 +38,43 @@ module.exports = function (router) {
   //注册 —— 输入电话号码
   router.get('/reg-tel', function (req, res, next) {
     resObj.app.title = resObj.header.title = '注册';
+    resObj.header.backUrl = '/cus/login';
     res.render('cus/page/user/reg-tel.tpl', resObj);
   });
   //注册 —— 设置密码
   router.get('/reg-pwd', function (req, res, next) {
     resObj.app.title = resObj.header.title = '注册';
+    resObj.header.backUrl = '/cus/reg-tel';
     res.render('cus/page/user/reg-pwd.tpl', resObj);
   });
   //找回密码 —— 输入信息
   router.get('/find-pwd-info', function (req, res, next) {
     resObj.app.title = resObj.header.title = '找回密码';
+    resObj.header.backUrl = '/cus/login';
     res.render('cus/page/user/find-pwd-info.tpl', resObj);
   });
   //找回密码 —— 设置新密码
   router.get('/find-pwd-new', function (req, res, next) {
     resObj.app.title = resObj.header.title = '找回密码';
+    resObj.header.backUrl = '/cus/find-pwd-info';
     res.render('cus/page/user/find-pwd-new.tpl', resObj);
+  });
+  //找回密码 —— 找回密码结果页
+  router.get('/find-pwd-result', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '找回密码';
+    resObj.header.back = false;
+    res.render('cus/page/user/find-pwd-result.tpl', resObj);
   });
   //绑定第三方账号 —— 输入信息
   router.get('/bind-account-info', function (req, res, next) {
     resObj.app.title = resObj.header.title = '绑定第三方账号';
+    resObj.header.back = false;
     res.render('cus/page/user/bind-account-info.tpl', resObj);
   });
   //绑定第三方账号 —— 设置新密码
   router.get('/bind-account-pwd', function (req, res, next) {
     resObj.app.title = resObj.header.title = '绑定第三方账号';
+    resObj.header.backUrl = '/cus/bind-account-info';
     res.render('cus/page/user/bind-account-pwd.tpl', resObj);
   });
   //修改密码
@@ -78,6 +90,7 @@ module.exports = function (router) {
   //更换手机号 —— 输入新号码
   router.get('/change-tel-new', function (req, res, next) {
     resObj.app.title = resObj.header.title = '更换手机号';
+    resObj.header.backUrl = '/cus/change-tel-info';
     res.render('cus/page/user/change-tel-new.tpl', resObj);
   });
   //收货地址
@@ -89,6 +102,24 @@ module.exports = function (router) {
   router.get('/wallet', function (req, res, next) {
     resObj.app.title = resObj.header.title = '我的钱包';
     res.render('cus/page/wallet/index.tpl', resObj);
+  });
+  //我的钱包 —— 提现
+  router.get('/withdrawals', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '提现';
+    resObj.header.backUrl = '/cus/wallet';
+    res.render('cus/page/wallet/withdrawals.tpl', resObj);
+  });
+  //我的钱包 —— 提现结果页
+  router.get('/withdrawals-result', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '提现';
+    resObj.header.backUrl = '/cus/wallet';
+    res.render('cus/page/wallet/withdrawals-result.tpl', resObj);
+  });
+  //我的钱包 ——添加银行卡
+  router.get('/add-bank-card', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '添加银行卡';
+    resObj.header.backUrl = '/cus/wallet';
+    res.render('cus/page/wallet/add-bank-card.tpl', resObj);
   });
   //拍卖列表
   router.get('/auction/list', function (req, res, next) {

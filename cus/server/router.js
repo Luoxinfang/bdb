@@ -168,6 +168,11 @@ module.exports = function (router) {
     resObj.header.set=['修改密码','更换手机号']
     res.render('cus/page/user/sys-settings.tpl', resObj);
   });
+  //推送设置
+  router.get('/push-settings', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '推送设置';
+    res.render('cus/page/settings/push-settings.tpl', resObj);
+  });
   //版本更新
   router.get('/version-update', function (req, res, next) {
     resObj.app.title = resObj.header.title = '版本更新';

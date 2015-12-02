@@ -129,4 +129,19 @@ module.exports = function (router) {
     resObj.header.set=['修改密码','更换手机号']
     res.render('cus/page/user/sys-settings.tpl', resObj);
   });
+  //版本更新
+  router.get('/version-update', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '版本更新';
+    res.render('cus/page/settings/version-update.tpl', resObj);
+  });
+  //关于百多宝
+  router.get('/about-bdb', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '关于百多宝';
+    res.render('cus/page/settings/about-bdb.tpl', resObj);
+  });
+  //投诉建议
+  router.get('/suggestions', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '投诉建议';
+    res.render('cus/page/settings/suggestions.tpl', resObj);
+  });
 };

@@ -87,5 +87,22 @@ module.exports = function (router) {
   router.get('/weui', function (req, res, next) {
     res.render('cus/page/weui.tpl', resObj);
   });
-
+  //系统消息
+  router.get('/sys-message', function (req, res, next) {
+    res.render('cus/page/user/sys-message.tpl', resObj);
+  });
+  //用户消息
+  router.get('/user-message', function (req, res, next) {
+    res.render('cus/page/user/user-message.tpl', resObj);
+  });
+  //卡片管理
+  router.get('/card-management', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '银行卡管理';
+    res.render('cus/page/user/card-management.tpl', resObj);
+  });
+  //系统设置
+  router.get('/sys-settings', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '系统设置';
+    res.render('cus/page/user/sys-settings.tpl', resObj);
+  });
 };

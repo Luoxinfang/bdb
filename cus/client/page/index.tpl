@@ -1,7 +1,7 @@
 {% extends '_common/page/_layout.tpl' %}
 
 {% block head %}
-	{% require 'cus:widget/index/index.less' %}
+	{% require 'cus:widget/index/index.css' %}
 	{% require 'cus:widget/index/index.js' %}
 {% endblock %}
 

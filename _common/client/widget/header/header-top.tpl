@@ -1,4 +1,5 @@
-{% require '_common:widget/header/header.css' %}
+{% require '_common:widget/header/header.less' %}
+
 <div class="header header-top">
 	{% if header.back && !header.me %} {#是否有返回按钮，默认：有#}
 		<div class="left icon-60 icon-back"></div>
@@ -6,9 +7,9 @@
 	{% if header.me %} {#是否有菜单按钮，默认：无#}
 		<div class="left icon-60 icon-me"></div>
 	{% endif %}
-	<span class="fs-1">
+	<div class="center fs-1">
 		{{ header.title }}
-	</span>
+	</div>
 	{% if header.rGup1 %} {#搜索图标和消息图标#}
 	<div class="right s-gup">
 		<span class="fl icon-60 icon-search"></span>

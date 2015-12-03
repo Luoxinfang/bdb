@@ -12,14 +12,14 @@
 		</div>
 		{% if header.rGup1 %} {#搜索图标和消息图标#}
 		<div class="right s-gup">
-			<span class="fl icon-60 icon-search"></span>
-			<span class="fr icon-60 icon-msg"></span>
+			<a href="/cus/auction/search" class="fl icon-60 icon-search"></a>
+			<a class="fr icon-60 icon-msg"></a>
 		</div>
 		{% endif %}
 		{% if header.rGup2 %} {#收藏图标和分享图标#}
 			<div class="right s-gup">
-				<span class="fl icon-60 icon-collect"></span>
-				<span class="fr icon-60 icon-share"></span>
+				<a class="fl icon-60 icon-collect"></a>
+				<a class="fr icon-60 icon-share"></a>
 			</div>
 		{% endif %}
 	</div>

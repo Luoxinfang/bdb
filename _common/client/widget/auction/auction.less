@@ -86,6 +86,7 @@
 			}
 			.name {
 				float: left;
+				color: @white;
 				margin-left: 110/@rem-pre;
 			}
 			.time {
@@ -197,7 +198,85 @@
 			}
 		}
 	}
+	&-nav {
+		position: relative;
+		width: @rem-max;
+		height: 90/@rem-pre;
+		padding: 10/@rem-pre 0;
+		text-align: center;
+		color: @mainColor2;
+		font-size: @fontSize3;
+		background: @white;
+		.category, .sort {
+			width: 270/@rem-pre;
+			line-height: 70/@rem-pre;
+			color: @mainColor2;
+			float: left;
+			border-right: 1px solid @lineColor;
+		}
+		.msg {
+			width: 100/@rem-pre;
+			height: 70/@rem-pre;
+			position: absolute;
+			top: 10/@rem-pre;
+			right: 0;
+			&:after {
+				content: '';
+				display: block;
+				width: 60/@rem-pre;
+				height: 60/@rem-pre;
+				background: url('../../icon/icon-chat.png') no-repeat;
+				background-size: contain;
+				margin: 5/@rem-pre auto 0 auto;
+			}
+		}
+	}
 }
+
+.category {
+	&-tlt {
+		margin-top: 10/@rem-pre;
+		padding-left: 20/@rem-pre;
+		line-height: 26/@rem-pre;
+		color: @mainColor4;
+		font-size: @fontSize3;
+	}
+	&-list {
+		padding-left: 20/@rem-pre;
+	}
+	&-item {
+		position: relative;
+		width: 190/@rem-pre;
+		height: 80/@rem-pre;
+		float: left;
+		margin: 10/@rem-pre 15/@rem-pre 10/@rem-pre 0;
+		line-height: 80/@rem-pre;
+		color: @mainColor3;
+		font-size: @fontSize2;
+		background: @white;
+		border: 1px solid @lineColor;
+		border-radius: 5px;
+		&.choosed {
+			color: @mainColor2;
+			border-color: @mainColor2;
+		}
+	}
+}
+
+.search-list {
+	background: @white;
+	a {
+		display: block;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
+		margin-left: 20/@rem-pre;
+		text-align: left;
+		color: @mainColor3;
+		font-size: @fontSize2;
+		border-bottom: 1px solid @lineColor;
+	}
+}
+
 .footer {
 	.btn-l {
 		width: 160/@rem-pre;

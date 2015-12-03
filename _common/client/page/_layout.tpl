@@ -2,11 +2,11 @@
 {% html framework="_common:js/lib/mod.js" %}
   {% head %}
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{app.description}}">
     <meta name="author" content="{{app.author}}">
     <title>{{app.title}}</title>
+    <link rel="apple-touch-icon" sizes="114x114" href="../icon/logo.png" />
     {% require "_common:css/weui.css" %}
     {% require "_common:less/normalize.less" %}
     {% require "_common:less/global.less" %}

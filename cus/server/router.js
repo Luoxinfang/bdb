@@ -151,6 +151,13 @@ module.exports = function (router) {
     obj.header.backUrl = '/cus/wallet';
     res.render('cus/page/wallet/withdrawals.tpl', obj);
   });
+  //我的钱包 —— 充值
+  router.get('/recharges', function (req, res, next) {
+    var obj = deepClone(resObj);
+    obj.app.title = obj.header.title = '充值';
+    obj.header.backUrl = '/cus/wallet';
+    res.render('cus/page/wallet/recharges.tpl', resObj);
+  });
   //我的钱包 —— 提现结果页
   router.get('/withdrawals-result', function (req, res, next) {
     var obj = deepClone(resObj);
@@ -250,12 +257,14 @@ module.exports = function (router) {
   });
   //退款
   router.get('/to-return', function (req, res, next) {
-    resObj.app.title = resObj.header.title = '退款';
+    var obj = deepClone(resObj);
+    obj.app.title = obj.header.title = '退款';
     res.render('cus/page/user/to-return.tpl', resObj);
   });
   //申请平台介入
   router.get('/application-bdb', function (req, res, next) {
-    resObj.app.title = resObj.header.title = '申请平台介入';
+    var obj = deepClone(resObj);
+    obj.app.title = obj.header.title = '申请平台介入';
     res.render('cus/page/user/application-bdb.tpl', resObj);
   });
 };

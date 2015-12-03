@@ -1,50 +1,22 @@
 module.exports = function (router) {
-
+  var _ = require('lodash');
   var appInfo = yog.require('_common/model/app.js');
   var resObj = {
-    app: appInfo.getInfo()
-    ,header: {
-      title: '百多宝'    //header标题
-      ,back: true       //返回按钮（默认：有）
-      ,backUrl: '/cus'  //返回链接（默认：用户首页）
-      ,me: false        //首页我
-      ,rGup1: false     //右侧搜索和消息图标
-      ,rGup2: false     //右侧收藏和分享图标
-      ,sort: false      //右侧排序或文字
-      ,msg: false       //右侧消息图标
-      ,nav: ['系统消息','用户消息']     //头部nav数组
-      ,tab: ['全部','进行中','未开始']  //头部tab数组
-      ,set:false
+    app: appInfo.getInfo(),
+    header: {
+      title: '百多宝',   //header标题
+      back: true,       //返回按钮（默认：有）
+      backUrl: '/cus',  //返回链接（默认：用户首页）
+      me: false,        //首页我
+      rGup1: false,     //右侧搜索和消息图标
+      rGup2: false,     //右侧收藏和分享图标
+      sort: false,      //右侧排序或文字
+      msg: false,       //右侧消息图标
+      nav: ['系统消息','用户消息'],     //头部nav数组
+      tab: ['全部','进行中','未开始'],  //头部tab数组
+      set:false
     }
   };
-
-  var isClass = function (o) {
-    if (o === null) return "Null";
-    if (o === undefined) return "Undefined";
-    return Object.prototype.toString.call(o).slice(8, -1);
-  }
-  // 深度克隆方法，修改配置前先拷贝再修改，防止配置冲突
-  var deepClone = function (obj) {
-    var result, oClass = isClass(obj);
-    if (oClass === "Object") {
-      result = {};
-    } else if (oClass === "Array") {
-      result = [];
-    } else {
-      return obj;
-    }
-    for (key in obj) {
-      var copy = obj[key];
-      if (isClass(copy) == "Object") {
-        result[key] = arguments.callee(copy);//递归调用
-      } else if (isClass(copy) == "Array") {
-        result[key] = arguments.callee(copy);
-      } else {
-        result[key] = obj[key];
-      }
-    }
-    return result;
-  }
 
   router.get('*', function (req, res, next) {
     next();
@@ -52,24 +24,20 @@ module.exports = function (router) {
 
   //首页
   router.get('/', function (req, res, next) {
-    var obj = deepClone(resObj);
-    obj.app.title = obj.header.title = '百多宝';
-    obj.header.me = true;
-    obj.header.rGup1 = true;
-    res.render('cus/page/index.tpl', obj);
+    //resObj.app.title = obj.header.title = '百多宝';
+    resObj.header.me = true;
+    resObj.header.rGup1 = true;
+    res.render('cus/page/index.tpl', resObj);
   });
   //登录
   router.get('/login', function (req, res, next) {
-    var obj = deepClone(resObj);
-    obj.app.title = '用户登录';
-    res.render('cus/page/user/login.tpl', obj);
+    res.render('cus/page/user/login.tpl', resObj);
   });
   //注册 —— 输入电话号码
   router.get('/reg-tel', function (req, res, next) {
-    var obj = deepClone(resObj);
-    obj.app.title = obj.header.title = '注册';
-    obj.header.backUrl = '/cus/login';
-    res.render('cus/page/user/reg-tel.tpl', obj);
+    resObj.header.title = '注册';
+    resObj.header.backUrl = '/cus/login';
+    res.render('cus/page/user/reg-tel.tpl', resObj);
   });
   //注册 —— 设置密码
   router.get('/reg-pwd', function (req, res, next) {

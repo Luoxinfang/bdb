@@ -5,8 +5,7 @@
     .result-icon{
       height:5.625rem;
       background-size: 3.125rem;
-      background-position: center center;
-      background-repeat: no-repeat;
+      background: no-repeat center center;
     }
     .result-icon-success{
       background-image: url("../icon/success.png");

@@ -191,6 +191,15 @@ module.exports = function (router) {
     obj.auctionStatus = req.query.status == null ? 0 : req.query.status;
     res.render('cus/page/auction/detail.tpl', obj);
   });
+  //店铺首页
+  router.get('/store', function (req, res, next) {
+    var obj = deepClone(resObj);
+    obj.app.title = '店铺';
+    obj.header.title = '小唐的店铺';
+    obj.header.back = true;
+    obj.header.rGup2 = true;
+    res.render('cus/page/store.tpl', obj);
+  });
   //关于我们
   router.get('/about', function (req, res, next) {
     var obj = deepClone(resObj);

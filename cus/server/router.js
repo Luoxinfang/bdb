@@ -248,4 +248,14 @@ module.exports = function (router) {
     obj.app.title = obj.header.title = '投诉建议';
     res.render('cus/page/settings/suggestions.tpl', obj);
   });
+  //退款
+  router.get('/to-return', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '退款';
+    res.render('cus/page/user/to-return.tpl', resObj);
+  });
+  //申请平台介入
+  router.get('/application-bdb', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '申请平台介入';
+    res.render('cus/page/user/application-bdb.tpl', resObj);
+  });
 };

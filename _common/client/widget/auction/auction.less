@@ -22,7 +22,7 @@
 			height: 40/@rem-pre;
 			line-height: 40/@rem-pre;
 			color: @mainColor3;
-			font-size: @fontSize3;
+			font-size: @fontSize4;
 			span {
 				display: inline-block;
 				max-width: 160/@rem-pre;
@@ -42,7 +42,7 @@
 			height: 40/@rem-pre;
 			line-height: 40/@rem-pre;
 			color: @mainColor2;
-			font-size: @fontSize2;
+			font-size: @fontSize3;
 			.ellipsis;
 		}
 		.desc {
@@ -50,7 +50,7 @@
 			height: 30/@rem-pre;
 			line-height: 30/@rem-pre;
 			color: @mainColor4;
-			font-size: @fontSize4;
+			font-size: @fontSize5;
 			.ellipsis;
 		}
 		.time {
@@ -58,7 +58,7 @@
 			height: 50/@rem-pre;
 			line-height: 50/@rem-pre;
 			color: @mainColor4;
-			font-size: @fontSize4;
+			font-size: @fontSize5;
 			border-top: 1px solid @lineColor;
 		}
 		.collect-cnt {
@@ -68,6 +68,8 @@
 		}
 	}
 	&-detail {
+		background: @white;
+		border-bottom: 2px solid @lineColor;
 		.store {
 			position: relative;
 			height: 70/@rem-pre;
@@ -75,14 +77,138 @@
 			line-height: 70/@rem-pre;
 			padding: 0 20/@rem-pre;
 			color: @white;
-			font-size: @fontSize2;
+			font-size: @fontSize3;
 			background: fadeout(#000,40%);
+			.photo {
+				position: absolute;
+				left: 20/@rem-pre;
+				bottom: 10/@rem-pre;
+			}
 			.name {
 				float: left;
+				margin-left: 110/@rem-pre;
 			}
 			.time {
 				float: right;
 			}
 		}
+		.desc {
+			padding: 22/@rem-pre 20/@rem-pre 22/@rem-pre 0;
+			margin-left: 20/@rem-pre;
+			line-height: 42/@rem-pre;
+			color: @mainColor4;
+			font-size: @fontSize3;
+			border-bottom: 1px solid @lineColor;
+			text-indent: 40/@rem-pre;
+			p {
+				max-height: 126/@rem-pre;
+				overflow: hidden;
+			}
+		}
+		.price {
+			margin-left: 20/@rem-pre;
+			height: 60/@rem-pre;
+			line-height: 60/@rem-pre;
+			a {
+				display: block;
+				width: 33.33%;
+				float: left;
+				padding-left: 50/@rem-pre;
+				color: #36b3a4;
+				font-size: @fontSize4;
+			}
+		}
+		.collect-cnt {
+			position: absolute;
+			top: 100/@rem-pre;
+			right: 20/@rem-pre;
+		}
+	}
+	&-status {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		text-align: center;
+		height: 160/@rem-pre;
+		line-height: 160/@rem-pre;
+	}
+	&-dialog {
+		background: @white;
+		.li {
+			margin-left: 20/@rem-pre;
+			height: 110/@rem-pre;
+			padding-top: 20/@rem-pre;
+			padding-right: 20/@rem-pre;
+			border-bottom: 1px solid @lineColor;
+			.user-img {
+				width: 64/@rem-pre;
+				height: 64/@rem-pre;
+				border: 2px solid @bgColor;
+				border-radius: 50%;
+				float: left;
+			}
+			.d-c {
+				width: 316/@rem-pre;
+				float: left;
+			}
+			.d-r {
+				width: 180/@rem-pre;
+				float: right;
+			}
+			.name {
+				max-width: 270/@rem-pre;
+				height: 30/@rem-pre;
+				line-height: 30/@rem-pre;
+				float: left;
+				color: @mainColor3;
+				font-size: @fontSize2;
+				.ellipsis;
+			}
+			.emoji {
+				float: right;
+				margin-top: 5/@rem-pre;
+			}
+			.price {
+				height: 26/@rem-pre;
+				line-height: 26/@rem-pre;
+				color: @mainColor4;
+				font-size: 26/@rem-pre;
+				float: left;
+			}
+			.state {
+				height: 26/@rem-pre;
+				line-height: 26/@rem-pre;
+				color: @mainColor4;
+				font-size: 26/@rem-pre;
+			}
+			.time {
+				height: 22/@rem-pre;
+				line-height: 22/@rem-pre;
+				color: @mainColor4;
+				font-size: 22/@rem-pre;
+				margin-top: 18/@rem-pre;
+			}
+			&:first-child {
+				.state, .price {
+					color: @mainColor2;
+				}
+			}
+		}
+	}
+}
+.footer {
+	.btn-l {
+		width: 160/@rem-pre;
+		float: left;
+	}
+	.btn-c {
+		width: 240/@rem-pre;
+		float: left;
+	}
+	.btn-r {
+		width: 160/@rem-pre;
+		float: left;
 	}
 }

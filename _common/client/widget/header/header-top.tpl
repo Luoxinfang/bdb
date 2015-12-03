@@ -2,10 +2,10 @@
 <div class="header-top">
 	<div class="header">
 		{% if header.back && !header.me %} {#是否有返回按钮，默认：有#}
-			<div class="left icon-60 icon-back"></div>
+			<a class="left icon-60 icon-back" {% if header.backUrl %}href="{{ header.backUrl }}"{% endif %} ></a>
 		{% endif %}
 		{% if header.me %} {#是否有菜单按钮，默认：无#}
-			<div class="left icon-60 icon-me"></div>
+			<a class="left icon-60 icon-me"></a>
 		{% endif %}
 		<div class="center fs-1">
 			{{ header.title }}

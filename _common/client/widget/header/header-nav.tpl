@@ -1,3 +1,4 @@
+{% require '_common:widget/header/header.less' %}
 <div class="header-wrap">
     <div class="header">
         {% if header.back %} {#是否有返回按钮，默认：有#}
@@ -6,7 +7,6 @@
         <ul class="nav">
         {% for item in header.nav %}
             {% if loop.index==1 %}
-                {#<a href="" class="on">{{ item }}</a>#}
                 <li class="li on">{{ item }}</li>
             {% else %}
                 <li class="li">{{ item }}</li>

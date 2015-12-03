@@ -1,6 +1,6 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    <link rel="stylesheet" href="../../less/public/form.less"/>
+    {% require "_common:less/public/form.less" %}
     <style>
         .form .has-multi-line{
             height: 1.71875rem;

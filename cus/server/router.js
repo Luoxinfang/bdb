@@ -200,6 +200,19 @@ module.exports = function (router) {
     obj.header.rGup2 = true;
     res.render('cus/page/store.tpl', obj);
   });
+  //搜索页面
+  router.get('/auction/search', function (req, res, next) {
+    var obj = deepClone(resObj);
+    obj.app.title = '拍品搜索';
+    res.render('cus/page/auction/search.tpl', obj);
+  });
+  //拍品分类
+  router.get('/auction/category', function (req, res, next) {
+    var obj = deepClone(resObj);
+    obj.app.title = '拍品分类';
+    obj.header.title = '分类';
+    res.render('cus/page/auction/category.tpl', obj);
+  });
   //关于我们
   router.get('/about', function (req, res, next) {
     var obj = deepClone(resObj);

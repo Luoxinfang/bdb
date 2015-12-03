@@ -87,6 +87,44 @@
 			}
 		}
 	}
+	.search-box {
+		position: relative;
+		width: 540/@rem-pre;
+		height: 60/@rem-pre;
+		line-height: 60/@rem-pre;
+		margin-left: 90/@rem-pre;
+		input {
+			width: 410/@rem-pre;
+			height: 60/@rem-pre;
+			float: left;
+			padding-left: 20/@rem-pre;
+			padding-right: 80/@rem-pre;
+			color: @mainColor3;
+			font-size: @fontSize2;
+			background: @bgColor;
+			border-right: 2px solid @white;
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+		.search {
+			width: 120/@rem-pre;
+			height: 60/@rem-pre;
+			line-height: 60/@rem-pre;
+			float: left;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		.reset {
+			display: none;
+			width: 40/@rem-pre;
+			height: 40/@rem-pre;
+			position: absolute;
+			top: 10/@rem-pre;
+			left: 350/@rem-pre;
+			background: url('../../icon/icon-reset.png') no-repeat;
+			background-size: contain;
+		}
+	}
 }
 
 .icon {

@@ -118,4 +118,34 @@ module.exports = function (router) {
         resObj.header.backUrl = '/bus/wallet';
         res.render('bus/page/wallet/add-bank-card.tpl', resObj);
     });
+    //订单管理 ——首页
+    router.get('/order', function (req, res, next) {
+        resObj.app.title = resObj.header.title = '订单管理';
+        resObj.header.tab = ['待发货','待付款','已发货','退款中'];
+        //假数据
+        resObj.data = {
+            form:'bus',
+            status:'待发货',//待发货  待付款  已发货  退款中
+            dataList:[
+                {
+                    date: '2015-09-09',
+                    name: '满绿翡翠吊玉',
+                    money: '48000.00',
+                    num: '1',
+                    pay: '48000.00',
+                    'img-url':''
+                },
+                {
+                    date: '2015-09-09',
+                    name: '满绿翡翠吊玉',
+                    money: '48000.00',
+                    num: '1',
+                    pay: '48000.00',
+                    'img-url':''
+                }
+            ]
+         };
+        //resObj.header.backUrl = '/bus/wallet';
+        res.render('bus/page/order/index.tpl', resObj);
+    });
 };

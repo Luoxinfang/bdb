@@ -188,4 +188,9 @@ module.exports = function (router) {
     resObj.app.title = resObj.header.title = '投诉建议';
     res.render('cus/page/settings/suggestions.tpl', resObj);
   });
+  //退款
+  router.get('/to-return', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '退款';
+    res.render('cus/page/user/to-return.tpl', resObj);
+  });
 };

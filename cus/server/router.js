@@ -254,4 +254,9 @@ module.exports = function (router) {
     resObj.app.title = resObj.header.title = '退款';
     res.render('cus/page/user/to-return.tpl', resObj);
   });
+  //申请平台介入
+  router.get('/application-bdb', function (req, res, next) {
+    resObj.app.title = resObj.header.title = '申请平台介入';
+    res.render('cus/page/user/application-bdb.tpl', resObj);
+  });
 };

@@ -2,7 +2,7 @@
 
 {% block head %}
 	{% require 'cus:widget/index/index.css' %}
-	{% require 'cus:widget/index/index.js' %}
+	{% require 'cus:widget/index/order.js' %}
 {% endblock %}
 
 {% block beforeWrapper %}
@@ -247,7 +247,7 @@
 	</div>
 	{% script %}
 	$(function(){
-		require('cus:widget/index/index.js').init();
+		require('cus:widget/index/order.js').init();
 	})
 	{% endscript %}
 {% endblock %}

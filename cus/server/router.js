@@ -203,6 +203,7 @@ module.exports = function (router) {
   router.get('/card-management', function (req, res, next) {
     var obj = _.cloneDeep(resObj);
     obj.header.title = '银行卡管理';
+    obj.header.sort = '删除';
     res.render('cus/page/user/card-management.tpl', obj);
   });
   //系统设置

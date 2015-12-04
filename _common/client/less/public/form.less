@@ -1,11 +1,32 @@
+@import "@{_common}/public/mixin";
 /*文本输入类型表单*/
 .form {
     padding: 0.3125rem 0.28125rem;
     .form-ul {
+        position: relative;
         margin-bottom: 0.15625rem;
     }
     .form-ul:last-of-type {
         margin-bottom: 0.9375rem;
+    }
+    &.delet {
+        .form-ul {
+            margin-left: 80/@rem-pre;
+            a{
+                width: 60/@rem-pre;
+                height:60/@rem-pre;
+                display: block;
+                background-image:url("../../icon/icon_delete.png") ;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                left: -80px;
+                cursor: pointer;
+            }
+        }
     }
     .form-li-input {
         background: #fff;
@@ -38,11 +59,10 @@
         .card-type {
             font-size: 0.46875rem;
             line-height: 0.46875rem;
-            width: 2.34375rem;
-            text-align: right;
             padding: 0.234375rem 0rem;
             margin-top: 0.234375rem;
-            margin-right: 0.3125rem;
+            position: absolute;
+            right: 20px;
         }
         p {
             font-size: 0.46875rem;

@@ -22,9 +22,7 @@
 
 {% block body %}
 	{% if auctionStatus == 0 || auctionStatus == 1 %}
-	<div class="auction-status">
-		未开始
-	</div>
+	<div class="auction-status"></div>
 	{% endif %}
 	{% if auctionStatus == 2 || auctionStatus == 3 %}
 		<div class="auction-dialog">

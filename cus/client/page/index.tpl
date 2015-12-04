@@ -257,7 +257,7 @@
 		<div class="user">
 			<div class="photo">{% widget '_common:widget/user/user-photo.tpl' %}</div>
 			<p class="name">大魔王</p>
-			<div class="rank"></div>
+			<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 		</div>
 		<div class="menu">
 			<a href="">我的钱包</a>

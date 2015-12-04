@@ -2,8 +2,10 @@
 {% block head%}
     {% require '_common:widget/auction/auction.less' %}
 {% endblock %}
-{% block body %}
+{% block header %}
     {% widget '_common:widget/header/header-nav.tpl' %}
+{% endblock %}
+{% block body %}
     <div class="auction-dialog">
         <div class="li">
             <img src="http://img2.imgtn.bdimg.com/it/u=1341923083,1900907467&fm=23&gp=0.jpg" alt="" class="user-img">

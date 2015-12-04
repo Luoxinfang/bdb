@@ -1,6 +1,6 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    <link rel="stylesheet" href="../../css/user/sys-set.css"/>
+    {% require "_common:less/user/settings.less" %}
 {% endblock %}
 {%  block body %}
     {% widget '_common:widget/header/header.tpl' %}

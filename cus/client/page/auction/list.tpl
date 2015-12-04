@@ -14,8 +14,9 @@
 			</a>
 			<a href="/cus/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr  icon-22 icon-pei"></i>
-				<i class="fr  icon-22 icon-gold"></i>
+				<i class="fr icon-22 icon-pei"></i>
+				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
 			<p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
@@ -28,8 +29,9 @@
 			</a>
 			<a href="/cus/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr  icon-22 icon-pei"></i>
-				<i class="fr  icon-22 icon-gold"></i>
+				<i class="fr icon-22 icon-pei"></i>
+				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
 			<p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
@@ -42,8 +44,9 @@
 			</a>
 			<a href="/cus/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr  icon-22 icon-pei"></i>
-				<i class="fr  icon-22 icon-gold"></i>
+				<i class="fr icon-22 icon-pei"></i>
+				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
 			<p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
@@ -56,8 +59,9 @@
 			</a>
 			<a href="/cus/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr  icon-22 icon-pei"></i>
-				<i class="fr  icon-22 icon-gold"></i>
+				<i class="fr icon-22 icon-pei"></i>
+				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
 			<p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
@@ -70,8 +74,9 @@
 			</a>
 			<a href="/cus/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr  icon-22 icon-pei"></i>
-				<i class="fr  icon-22 icon-gold"></i>
+				<i class="fr icon-22 icon-pei"></i>
+				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
 			<p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
@@ -84,8 +89,9 @@
 			</a>
 			<a href="/cus/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr  icon-22 icon-pei"></i>
-				<i class="fr  icon-22 icon-gold"></i>
+				<i class="fr icon-22 icon-pei"></i>
+				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
 			<p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>

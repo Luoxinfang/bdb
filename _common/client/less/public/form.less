@@ -1,11 +1,32 @@
+@import "@{_common}/public/mixin";
 /*文本输入类型表单*/
 .form {
     padding: 0.3125rem 0.28125rem;
     .form-ul {
+        position: relative;
         margin-bottom: 0.15625rem;
     }
     .form-ul:last-of-type {
         margin-bottom: 0.9375rem;
+    }
+    &.delet {
+        .form-ul {
+            margin-left: 80/@rem-pre;
+            a{
+                width: 60/@rem-pre;
+                height:60/@rem-pre;
+                display: block;
+                background-image:url("../../icon/icon_delete.png") ;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                left: -80px;
+                cursor: pointer;
+            }
+        }
     }
     .form-li-input {
         background: #fff;
@@ -15,6 +36,41 @@
         border-top: 0px;
         position: relative;
         padding:0 0.3125rem;
+    }
+    .form-li-text {
+        background: #fff;
+        height: 2.34375rem;
+        border: 1px solid #e7e7e8;
+        border-top: 0px;
+        position: relative;
+        padding-left: 0.3125rem;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius:5px;
+        .card-name {
+            color: #2297F6;
+            font-size: 0.46875rem;
+            line-height: 0.46875rem;
+            width: 5.625rem;
+            padding: 0.234375rem 0rem;
+            margin-top: 0.234375rem;
+        }
+        .card-type {
+            font-size: 0.46875rem;
+            line-height: 0.46875rem;
+            padding: 0.234375rem 0rem;
+            margin-top: 0.234375rem;
+            position: absolute;
+            right: 20px;
+        }
+        p {
+            font-size: 0.46875rem;
+            margin-right: 0.3125rem;
+            line-height: 0.46875rem;
+            font-size: 0.46875rem;
+            padding: 0.234375rem 0rem;
+        }
     }
     .form-li-input input,textarea {
         display: block;
@@ -93,6 +149,16 @@
         }
     }
 }
+.icon-add {
+    width:60/@rem-pre;
+    height:60/@rem-pre;
+    background-image: url("../../icon/add.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-color: #fff;
+    margin-top: -40px;
+}
 
 /*列表类型表单*/
 .form-list {
@@ -124,44 +190,5 @@
     }
     a {
         color: inherit;
-    }
-
-    .form li.form-li-text {
-        background: #fff;
-        height: 2.34375rem;
-        border: 1px solid #e7e7e8;
-        border-top: 0px;
-        position: relative;
-        padding-left: 0.3125rem;
-    }
-    .form li.form-li-text .card-name {
-        color: #2297F6;
-        font-size: 0.46875rem;
-        line-height: 0.46875rem;
-        width: 5.625rem;
-        padding: 0.234375rem 0rem;
-        margin-top: 0.234375rem;
-    }
-    .form li.form-li-text .card-type {
-        font-size: 0.46875rem;
-        line-height: 0.46875rem;
-        width: 2.34375rem;
-        text-align: right;
-        padding: 0.234375rem 0rem;
-        margin-top: 0.234375rem;
-        margin-right: 0.3125rem;
-    }
-    .form li.form-li-text p {
-        font-size: 0.46875rem;
-        margin-right: 0.3125rem;
-        line-height: 0.46875rem;
-        font-size: 0.46875rem;
-        padding: 0.234375rem 0rem;
-    }
-    .form li.form-li-text  {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        border-top-left-radius: 5px;
-        border-top-right-radius:5px;
     }
 }

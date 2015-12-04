@@ -1,9 +1,11 @@
 @import "@{_common}/public/mixin";
 
 .auction {
+	//拍卖列表
 	&-list {
 		padding: 10/@rem-pre 0;
 	}
+	//拍卖列表item
 	&-item {
 		position: relative;
 		width: 290/@rem-pre;
@@ -67,6 +69,7 @@
 			right: 20/@rem-pre;
 		}
 	}
+	//拍品详情
 	&-detail {
 		background: @white;
 		border-bottom: 2px solid @lineColor;
@@ -125,6 +128,7 @@
 			right: 20/@rem-pre;
 		}
 	}
+	//拍卖状态
 	&-status {
 		position: absolute;
 		width: 100%;
@@ -132,9 +136,19 @@
 		bottom: 0;
 		margin: auto 0;
 		text-align: center;
-		height: 160/@rem-pre;
+		height: 112/@rem-pre;
 		line-height: 160/@rem-pre;
+		&:after {
+			content: '';
+			display: block;
+			width: 272/@rem-pre;
+			height: 112/@rem-pre;
+			background: url('../../icon/unbegun.png') no-repeat;
+			background-size: contain;
+			margin: 0 auto;
+		}
 	}
+	//拍卖竞价框
 	&-dialog {
 		background: @white;
 		.li {
@@ -244,6 +258,7 @@
 			}
 		}
 	}
+	//店铺选项（全部类别，默认排序，聊天）
 	&-nav {
 		position: relative;
 		width: @rem-max;
@@ -278,7 +293,7 @@
 		}
 	}
 }
-
+//拍品类别
 .category {
 	&-tlt {
 		margin-top: 10/@rem-pre;
@@ -308,7 +323,7 @@
 		}
 	}
 }
-
+//搜索联想列表
 .search-list {
 	background: @white;
 	a {
@@ -322,7 +337,7 @@
 		border-bottom: 1px solid @lineColor;
 	}
 }
-
+//底部
 .footer {
 	.btn-l {
 		width: 160/@rem-pre;

@@ -1,6 +1,6 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    <link rel="stylesheet" href="../../less/public/form.less"/>
+    {% require '_common:less/public/form.less' %}
 {% endblock %}
 
 {% block header %}
@@ -20,6 +20,8 @@
                     <textarea id="address" placeholder="补充说明..."></textarea>
                 </li>
             </ul>
+            <a class="icon-add"></a>
         </div>
+
     </div>
 {% endblock %}

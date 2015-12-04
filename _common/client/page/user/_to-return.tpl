@@ -20,6 +20,7 @@
                     <textarea id="address" placeholder="补充说明..."></textarea>
                 </li>
             </ul>
+            <a class="icon-add"></a>
         </div>
     </div>
 {% endblock %}

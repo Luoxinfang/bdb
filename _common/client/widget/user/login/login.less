@@ -1,0 +1,66 @@
+/*
+ widget login
+*/
+@import "@{_common}/public/variable";
+.wd-login {
+  .group-ipt {
+    overflow: hidden;
+    position: relative;
+    width: 520/@rem-pre;
+    padding: 0 20/@rem-pre;
+    background: fadeout(@white, 15%);
+    border-radius: 10/@rem-pre;
+    .ipt {
+      width: 100%;
+      height: 88/@rem-pre;
+      line-height: 32/@rem-pre;
+      color: @mainColor3;
+      font-size: @fontSize3;
+      background: transparent;
+      &::-webkit-input-placeholder {
+        color: @mainColor5;
+      }
+    }
+    .username {
+      border-bottom: 2px solid rgba(220, 220, 220, .35);
+    }
+  }
+  .remember {
+    margin-top: 20/@rem-pre;
+  }
+  /*Custom checkbox*/
+  .btn-remember {
+    -webkit-appearance: none;
+    width: 24/@rem-pre;
+    height: 24/@rem-pre;
+    background: #ffffff;
+    border: 1px solid #cecece;
+    &:checked {
+      background-size: contain;
+      background-image: url('../../../icon/checked.png?__sprite');
+    }
+  }
+  .forgot-pwd {
+    float: right;
+  }
+  .group-btn {
+    margin-top: 40/@rem-pre;
+    a {
+      height: 80/@rem-pre;
+      line-height: 80/@rem-pre;
+      text-align: center;
+      border-radius: 10/@rem-pre;
+      display: inline-block;
+    }
+  }
+  #btn-login {
+    width: 295/@rem-pre;
+    background: fadeout(@white, 15%);
+  }
+  .btn-reg {
+    float: right;
+    width: 200/@rem-pre;
+    background: rgba(222, 169, 148, 0.35);
+  }
+}
+

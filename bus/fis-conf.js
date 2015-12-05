@@ -2,7 +2,7 @@
  * @file FIS 配置
  * @author xf.radish
  */
-fis.config.set('namespace', 'bus');
+fis.config.set('namespace', 'cus');
 //设置git目录下面的文件是不解析
 fis.set('project.ignore', [
 	'.git/**'
@@ -17,17 +17,6 @@ fis.media('debug').match('*', {
 		to: '/'
 	})
 });
-// 启用 fis-spriter-csssprites 插件
-fis.match('::package', {
-	spriter: fis.plugin('csssprites')
-});
-fis.config.set('settings.spriter.csssprites', {
-	//图之间的边距
-	margin: 0,
-	//使用矩阵排列方式，默认为线性`linear`
-	layout: 'matrix'
-});
-
 //==================生产环境配置==================
 fis.media('prod').match('*', {
 	deploy: fis.plugin('http-push', {
@@ -44,10 +33,17 @@ fis.media('prod').match('widget/(*)/**.js', {
 	packTo: 'js/$1.js'
 });
 fis.media('prod').match('widget/(*)/**.css', {
-	useHash: true,
 	packTo: 'css/$1.css'
 });
 //所有css,js全部加上文件指纹
 fis.media('prod').match('/**.{css,js}',{
 	useHash: true
+});
+// 启用 fis-spriter-csssprites 插件
+fis.media('prod').match('::package', {
+	spriter: fis.plugin('csssprites')
+});
+fis.config.set('settings.spriter.csssprites', {
+	margin: 0,	//图之间的边距
+	layout: 'matrix' //使用矩阵排列方式，默认为线性`linear`
 });

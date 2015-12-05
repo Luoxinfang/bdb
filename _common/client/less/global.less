@@ -5,7 +5,8 @@
 body {
   background-color: #edeef1;
 }
-.wrapper{
+
+.wrapper {
   width: @rem-max;
   margin: 0 auto;
   height: 100%;
@@ -13,9 +14,10 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .body-container {
   position: relative;
-  flex: 1;//占满空白区
+  flex: 1; //占满空白区
   width: @rem-max;
   height: inherit;
   overflow: auto;
@@ -332,4 +334,40 @@ body {
   display: inline-block;
   *display: inline;
   *zoom: 1;
+}
+
+/*lilian btn*/
+.btn {
+  font-size: 0.4375rem;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+.btn.btn-white {
+  background: #fff;
+  color: #f34433;
+  border: 1px solid #e7e7e8;
+}
+
+.btn.btn-white:active {
+  background: #e5e5e5;
+}
+
+.btn.btn-red {
+  background: #f34433;
+  border: 1px solid #f34433;
+  color: #fff;
+}
+
+.btn.btn-red:active {
+  background: #f22e1b;
+}
+
+.btn-disabled, .btn-disabled:active {
+  border: none !important;
+  color: #fff !important;
+  background: #cecece !important;
 }

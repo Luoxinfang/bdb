@@ -1,8 +1,6 @@
 module.exports = function (router) {
   var _ = require('lodash');
-  var appInfo = yog.require('_common/model/app.js');
   var resObj = {
-    app: appInfo.getInfo(),
     header: {
       title: '百多宝',   //header标题
       back: true,       //返回按钮（默认：有）
@@ -24,10 +22,9 @@ module.exports = function (router) {
 
   //首页
   router.get('/', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.me = true;
-    obj.header.rGup1 = true;
-    res.render('cus/page/index.tpl', obj);
+    resObj.header.me = true;
+    resObj.header.rGup1 = true;
+    res.render('cus/page/index.tpl', resObj);
   });
   //登录
   router.get('/login', function (req, res, next) {

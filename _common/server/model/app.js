@@ -14,7 +14,7 @@ module.exports = {
   },
   //返回开发者信息
   getAuthor: function () {
-    return '前端团队'
+    return '百多宝前端团队'
   }
 };
 

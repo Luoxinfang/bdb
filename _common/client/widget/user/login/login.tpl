@@ -9,7 +9,7 @@
     <a class="forgot-pwd" href="/forgot-pwd">忘记密码?</a>
   </div>
   <div class="group-btn">
-    <a class="btn-login">登录</a>
+    <a class="btn btn-white" id="btn-login">登录</a>
     <a class="btn-reg" href="/reg-tel">注册</a>
   </div>
 </div>

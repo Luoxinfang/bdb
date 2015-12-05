@@ -1,0 +1,1 @@
+{% extends '_common:page/settings/_suggestions.tpl' %}

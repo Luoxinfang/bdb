@@ -1,5 +1,5 @@
 module.exports = function (router) {
-
+    var _ = require('lodash');
     var appInfo = yog.require('_common/model/app.js');
     var resObj = {
         app: appInfo.getInfo()
@@ -130,68 +130,68 @@ module.exports = function (router) {
     //系统消息
     router.get('/sys-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
-        res.render('cus/page/user/sys-message.tpl', obj);
+        res.render('bus/page/user/sys-message.tpl', obj);
     });
     //用户消息
     router.get('/user-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
-        res.render('cus/page/user/user-message.tpl', obj);
+        res.render('bus/page/user/user-message.tpl', obj);
     });
     //卡片管理
     router.get('/card-management', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '银行卡管理';
         obj.header.sort = '删除';
-        res.render('cus/page/user/card-management.tpl', obj);
+        res.render('bus/page/account/card-management.tpl', obj);
     });
     //系统设置
     router.get('/sys-settings', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '系统设置';
         obj.header.set=['安全','推送设置','更新版本','关于百多宝','投诉建议']
-        res.render('cus/page/user/sys-settings.tpl', obj);
+        res.render('bus/page/settings/sys-settings.tpl', obj);
     });
     //安全设置
     router.get('/safety-settings', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '系统设置';
         obj.header.set=['修改密码','更换手机号']
-        res.render('cus/page/user/sys-settings.tpl', obj);
+        res.render('bus/page/settings/sys-settings.tpl', obj);
     });
     //推送设置
     router.get('/push-settings', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '推送设置';
-        res.render('cus/page/settings/push-settings.tpl', obj);
+        res.render('bus/page/settings/push-settings.tpl', obj);
     });
     //版本更新
     router.get('/version-update', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '版本更新';
-        res.render('cus/page/settings/version-update.tpl', obj);
+        res.render('bus/page/settings/version-update.tpl', obj);
     });
     //关于百多宝
     router.get('/about-bdb', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '关于百多宝';
-        res.render('cus/page/settings/about-bdb.tpl', obj);
+        res.render('bus/page/settings/about-bdb.tpl', obj);
     });
     //投诉建议
     router.get('/suggestions', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '投诉建议';
-        res.render('cus/page/settings/suggestions.tpl', obj);
+        res.render('bus/page/settings/suggestions.tpl', obj);
     });
     //退款
     router.get('/to-return', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '退款';
-        res.render('cus/page/user/to-return.tpl', obj);
+        res.render('bus/page/user/to-return.tpl', obj);
     });
     //申请平台介入
     router.get('/application-bdb', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '申请平台介入';
-        res.render('cus/page/user/application-bdb.tpl', obj);
+        res.render('bus/page/user/application-bdb.tpl', obj);
     });
 };

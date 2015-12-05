@@ -320,6 +320,20 @@
 		&.choosed {
 			color: @mainColor2;
 			border-color: @mainColor2;
+			&:after {
+				content: '';
+				display: block;
+				width: 36/@rem-pre;
+				height: 36/@rem-pre;
+				position: absolute;
+				right: -1px;
+				bottom: -1px;
+				background: url('../../icon/icon36-choosed.png') no-repeat;
+				background-size: contain;
+				border-bottom-right-radius: 5px;
+				border-right: 1px solid @mainColor2;
+				border-bottom: 1px solid @mainColor2;
+			}
 		}
 	}
 }

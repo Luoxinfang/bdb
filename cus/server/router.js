@@ -13,7 +13,12 @@ module.exports = function (router) {
       nav: ['系统消息','用户消息'],     //头部nav数组
       tab: ['全部','进行中','未开始'],  //头部tab数组
       set:false
-    }
+    },
+    banner: [
+      {imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'},
+      {imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'},
+      {imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'}
+    ]
   };
 
   router.get('*', function (req, res, next) {
@@ -99,10 +104,18 @@ module.exports = function (router) {
     obj.header.backUrl = '/cus/change-tel-info';
     res.render('cus/page/user/change-tel-new.tpl', obj);
   });
+  //个人主页
+  router.get('/user/personal-card', function (req, res, next) {
+    var obj = _.cloneDeep(resObj);
+    obj.header.title = '个人主页';
+    obj.banner = [{imgUrl:'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];
+    res.render('cus/page/user/personal-card.tpl', obj);
+  });
   //收货地址
   router.get('/receipt-address', function (req, res, next) {
     var obj = _.cloneDeep(resObj);
     obj.header.title = '收货地址';
+    obj.header.backUrl = '/cus/user/personal-card';
     res.render('cus/page/user/receipt-address.tpl', obj);
   });
   //我的钱包 —— 首页
@@ -110,6 +123,13 @@ module.exports = function (router) {
     var obj = _.cloneDeep(resObj);
     obj.header.title = '我的钱包';
     res.render('cus/page/wallet/index.tpl', obj);
+  });
+  //我的钱包 —— 交易明细
+  router.get('/wallet/trans-list', function (req, res, next) {
+    var obj = _.cloneDeep(resObj);
+    obj.header.title = '交易明细';
+    obj.header.sort = '筛选';
+    res.render('cus/page/wallet/trans-list.tpl', obj);
   });
   //我的钱包 —— 提现
   router.get('/withdrawals', function (req, res, next) {
@@ -163,6 +183,7 @@ module.exports = function (router) {
     obj.header.title = '小唐的店铺';
     obj.header.back = true;
     obj.header.rGup2 = true;
+    obj.banner = [{imgUrl:'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'}];
     res.render('cus/page/store.tpl', obj);
   });
   //搜索页面

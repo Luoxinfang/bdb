@@ -22,6 +22,12 @@
 				<a class="fr icon-60 icon-share"></a>
 			</div>
 		{% endif %}
+		{#需要可以自己利用参数扩展#}
+		{% if header.msg %} {#消息图标，默认：无，需要的话直接配置header.msg为true#}
+			<div class="right">
+				<span class="icon-60 icon-msg"></span>
+			</div>
+		{% endif %}
 	</div>
 </div>
 

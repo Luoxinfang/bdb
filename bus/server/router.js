@@ -142,6 +142,20 @@ module.exports = function (router) {
         obj.header.tab = ['已开始','未开始','已介绍'];
         res.render('bus/page/activity/activity-status.tpl',obj);
     });
+    //国庆专场
+    router.get('/national-day',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '国庆专场';
+        obj.header.tab = ['拍卖中','未开始','已结束'];
+        res.render('bus/page/activity/national-day.tpl',obj);
+    });
+    //平台活动
+    router.get('/bdb-activity',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '平台活动';
+        obj.header.tab = ['已开始','已介绍'];
+        res.render('bus/page/activity/bdb-activity.tpl',obj);
+    });
     //系统消息
     router.get('/sys-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);

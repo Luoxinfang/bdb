@@ -127,6 +127,21 @@ module.exports = function (router) {
         //resObj.header.backUrl = '/bus/wallet';
         res.render('bus/page/order/index.tpl', resObj);
     });
+    //商家端我的百多宝
+    router.get('/mybdb',function(req,res,next){
+       var obj = _.cloneDeep(resObj);
+        obj.header.title = '我的百多宝';
+        obj.header.back = false;
+        obj.header.msg = true;
+       res.render('bus/page/user/mybdb.tpl',obj);
+    });
+    //活动
+    router.get('/activity-status',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '活动';
+        obj.header.tab = ['已开始','未开始','已介绍'];
+        res.render('bus/page/activity/activity-status.tpl',obj);
+    });
     //系统消息
     router.get('/sys-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);

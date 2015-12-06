@@ -1,0 +1,40 @@
+@import "@{_common}/public/mixin";
+
+.actionsheet-wrap {
+	.actionsheet{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		.transform(translate(0,100%));
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		z-index: 99;
+		width: @rem-max;
+		left: 50%;
+		margin-left: -@rem-max/2;
+		padding: 20/@rem-pre;
+		background-color: #EFEFF4;
+		-webkit-transition: -webkit-transform .3s;
+		transition: transform .3s;
+	}
+	.mask, .mask-transition, .mask-transparent {
+		position: fixed;
+		z-index: 98;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,.6);
+	}
+	.mask-transition {
+		display: none;
+		background: 0 0;
+		.transition(background .3s);
+	}
+	.fade-toggle {
+		background: rgba(0,0,0,.6);
+	}
+	.actionsheet-toggle {
+		.transform(translate(0,0));
+	}
+}

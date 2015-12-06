@@ -1,0 +1,9 @@
+/*
+@commonPath : '../../../../../_common/client/less';
+@import "@{commonPath}/public/variable.less";
+
+@import "@{_common}/public/variable.less";
+*/
+.container {
+  background-image: url("icon/bg.png");
+}

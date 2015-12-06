@@ -247,7 +247,7 @@
 	</div>
 	{% script %}
 	$(function(){
-		require('cus:widget/index/order.js').init();
+		require('cus:widget/index/index.js').init();
 	})
 	{% endscript %}
 {% endblock %}
@@ -255,16 +255,16 @@
 {% block afterWrapper %}
 	<div class="me">
 		<div class="user">
-			<div class="photo">{% widget '_common:widget/user/user-photo.tpl' %}</div>
+			<a class="photo" href="/cus/user/personal-card">{% widget '_common:widget/user/user-photo.tpl' %}</a>
 			<p class="name">大魔王</p>
 			<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 		</div>
 		<div class="menu">
-			<a href="">我的钱包</a>
-			<a href="">我的订单</a>
-			<a href="">穿越到卖家版</a>
-			<a href="">系统设置</a>
-			<a href="">退出登陆</a>
+			<a href="/cus/wallet">我的钱包</a>
+			<a href="/cus/user/order-list">我的订单</a>
+			<a href="/bus">穿越到卖家版</a>
+			<a href="/cus/sys-settings">系统设置</a>
+			<a href="/cus/logout">退出登陆</a>
 		</div>
 	</div>
 	<div class="r-mark"></div>

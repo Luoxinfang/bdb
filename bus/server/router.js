@@ -6,6 +6,7 @@ module.exports = function (router) {
             leftIcon: 'back',     //头部左侧默认返回按钮
             leftUrl: '/cus',      //头部左侧图标默认链接
             rightIcon: false,     //右侧单个图标
+            rightUrl: false,      //右侧图标链接
             rightIcons: false,    //右侧图标组
             sort: false,          //右侧排序或文字
             nav: ['系统消息', '用户消息'],     //头部nav数组

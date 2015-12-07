@@ -6,19 +6,21 @@
 	position: relative;
 	width: @rem-full-aliquots;
 	text-align: center;
-	height: 90/64rem;
-	line-height: 60/64rem;
-	padding: 15/64rem 0;
-	&-wrap { /* 头部容器 */
-		height: 90/64rem;
+	height: 90/@rem-pre;
+	line-height: 60/@rem-pre;
+	padding: 15/@rem-pre;
+	&-wrap {
+		//头部容器
+		height: 90/@rem-pre;
 		.header {
 			background-color: #f5f5f5;
 			border-bottom: 2px solid #e7e7e8;
 		}
 	}
-	&-top { /* 透明头部 */
+	&-top {
+		//透明头部
 		width: @rem-max;
-		height: 90/64rem;
+		height: 90/@rem-pre;
 		position: absolute;
 		top: 0;
 		left: 50%;
@@ -30,48 +32,58 @@
 			color: #fff;
 		}
 	}
-	&-pa { /* 顶部头部 */
+	&-pa {
+		//顶部头部
 		width: 100%;
 		position: absolute;
 		top: 0;
 	}
-	.left { /* 左侧内容 */
+	.left {
+		//左侧内容
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		left: 20/64rem;
+		left: 20/@rem-pre;
 		margin: auto 0;
 	}
 	.center {
 		margin: 0 auto;
 	}
-	.right { /* 右侧内容 */
+	.right {
+		//右侧内容
 		position: absolute;
 		top: 0;
 		bottom: 0;
-		right: 20/64rem;
+		right: 20/@rem-pre;
 		margin: auto 0;
-		height: 60/64rem;
+		height: 60/@rem-pre;
 	}
-	.s-gup { /* 130图标组 */
-		width: 130/64rem;
-		height: 60/64rem;
+	.s-gup {
+		//130图标组
+		width: 130/@rem-pre;
+		height: 60/@rem-pre;
 		background: url('./icon/bg_r.png') no-repeat;
 		background-size: contain;
+		.icon-60:first-child {
+			float: left;
+		}
+		.icon-60:last-child {
+			float: right;
+		}
 	}
 	.nav {
 		display: block;
-		width: 340/64rem;
-		height: 60/64rem;
+		width: 340/@rem-pre;
+		height: 60/@rem-pre;
 		margin: 0 auto;
 		.li {
 			width: 50%;
-			height: 60/64rem;
-			line-height: 60/64rem;
+			height: 60/@rem-pre;
+			line-height: 60/@rem-pre;
 			float: left;
 			color: #f34433;
 			background-color: #fff;
-			font-size: 30/64rem;
+			font-size: 30/@rem-pre;
 			cursor: pointer;
 			&.on {
 				color: #fff;
@@ -87,6 +99,7 @@
 			}
 		}
 	}
+	//搜索框
 	.search-box {
 		position: relative;
 		width: 540/@rem-pre;
@@ -128,40 +141,71 @@
 }
 
 .icon {
-	&-back:after { /* 返回图标 */
+	//返回图标
+	&-back:after {
 		background-image: url('./icon/back_b.png');
 	}
-	&-me:after { /* 菜单图标 */
+	//菜单图标
+	&-me:after {
+		background-image: url('./icon/me_b.png');
+	}
+	//搜索图标
+	&-search:after {
+		background-image: url('./icon/search_b.png');
+	}
+	//消息图标
+	&-msg:after {
+		background-image: url('./icon/message_b.png');
+	}
+	//聊天图标
+	&-chat:after {
+		background-image: url('./icon/chat_b.png');
+	}
+	//收藏图标
+	&-collect:after {
+		background-image: url('./icon/collect_b.png');
+	}
+	//分享图标
+	&-share:after {
+		background-image: url('./icon/share_b.png');
+	}
+}
+
+.header-top {
+	.left.icon-60 {
+		background-image: url('./icon/bg_l.png');
+		background-size: contain;
+	}
+	//返回图标
+	.icon-back:after {
+		background-image: url('./icon/back_w.png');
+	}
+	//菜单图标
+	.icon-me:after {
 		background-image: url('./icon/me_w.png');
 	}
-	&-search:after { /* 搜索图标 */
+	//搜索图标
+	.icon-search:after {
 		background-image: url('./icon/search_w.png');
 	}
-	&-msg:after { /* 消息图标 */
+	//消息图标
+	.icon-msg:after {
 		background-image: url('./icon/message_w.png');
 	}
-	&-collect:after { /* 收藏图标 */
+	//聊天图标
+	.icon-chat:after {
+		background-image: url('./icon/chat_w.png');
+	}
+	//收藏图标
+	.icon-collect:after {
 		background-image: url('./icon/collect_w.png');
 	}
-	&-share:after { /* 分享图标 */
+	//分享图标
+	.icon-share:after {
 		background-image: url('./icon/share_w.png');
 	}
 }
-
-.header-top .icon-back { /*透明头部返回图标*/
-	background-image: url('./icon/bg_l.png');
-	background-size: contain;
-}
-
-.header-top .icon-back:after {
-	background-image: url('./icon/back_w.png');
-}
-
-.header-top .icon-me { /*透明头部菜单图标*/
-	background-image: url('./icon/bg_l.png');
-	background-size: contain;
-}
-
+//头部tab
 .header-tab {
 	height: 90/@rem-pre;
 	line-height: 90/@rem-pre;
@@ -190,6 +234,6 @@
 		width: 25%;
 	}
 	&.tab-5 a {
-		width: 25%;
+		width: 20%;
 	}
 }

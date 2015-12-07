@@ -1,6 +1,6 @@
 module.exports ={
   form:'bus',
-  status:'dfh',//dfh待发货  dfk待付款  yfh已发货  tkz退款中 ywc已完成 ygb已关闭
+  status:'dfh',//dfh待发货  dfk待付款  yfh已发货  tkz退款中
   dataList:[
     {
       date: '2015-09-09',

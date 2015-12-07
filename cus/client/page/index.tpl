@@ -261,7 +261,7 @@
 		</div>
 		<div class="menu">
 			<a href="/cus/wallet">我的钱包</a>
-			<a href="/cus/user/order-list">我的订单</a>
+			<a href="/cus/order">我的订单</a>
 			<a href="/bus">穿越到卖家版</a>
 			<a href="/cus/sys-settings">系统设置</a>
 			<a href="/cus/logout">退出登陆</a>

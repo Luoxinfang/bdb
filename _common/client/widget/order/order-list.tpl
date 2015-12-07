@@ -37,6 +37,7 @@
                     <span class="icon-xxpf"></span>
                 </div>
             </div>
+            {% if data.status != 'ygb' %}
             <div class="line3">
                 {% if data.status == 'dfh' %}
                     <a class="btn btn-red">确定发货</a>
@@ -50,7 +51,11 @@
                 {% if data.status == 'tkz' %}
                     <a class="btn btn-red">确定退款</a>
                 {% endif %}
+                {% if data.status == 'ywc' %}
+                    <a class="btn btn-red">评价</a>
+                {% endif %}
             </div>
+            {% endif %}
         </li>
     {% endfor %}
      </ul>

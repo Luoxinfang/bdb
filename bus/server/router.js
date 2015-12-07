@@ -127,6 +127,34 @@ module.exports = function (router) {
         //resObj.header.backUrl = '/bus/wallet';
         res.render('bus/page/order/index.tpl', resObj);
     });
+    //订单管理 ——已完成
+    router.get('/completed', function (req, res, next) {
+        resObj.app.title = resObj.header.title = '订单管理';
+        resObj.header.sort = '已完成';
+        //假数据
+        resObj.data = yog.require('bus/test/order.js');
+        resObj.data.status = 'ywc';
+        //resObj.header.backUrl = '/bus/wallet';
+        res.render('bus/page/order/completed.tpl', resObj);
+    });
+    //订单管理 ——已关闭
+    router.get('/closed', function (req, res, next) {
+        resObj.app.title = resObj.header.title = '订单管理';
+        resObj.header.sort = '已关闭';
+        //假数据
+        resObj.data = yog.require('bus/test/order.js');
+        resObj.data.status = 'ygb';
+        //resObj.header.backUrl = '/bus/wallet';
+        res.render('bus/page/order/closed.tpl', resObj);
+    });
+    //评论
+    router.get('/evaluation', function (req, res, next) {
+        resObj.app.title = resObj.header.title = '评论';
+        //假数据
+        resObj.data = yog.require('bus/test/order.js');
+        //resObj.header.backUrl = '/bus/wallet';
+        res.render('bus/page/order/evaluation.tpl', resObj);
+    });
     //商家端我的百多宝
     router.get('/mybdb',function(req,res,next){
        var obj = _.cloneDeep(resObj);

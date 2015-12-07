@@ -2,7 +2,7 @@
  * @file FIS 配置
  * @author xf.radish
  */
-fis.config.set('namespace', 'cus');
+fis.config.set('namespace', 'bus');
 //设置git目录下面的文件是不解析
 fis.set('project.ignore', [
 	'.git/**'

@@ -1,8 +1,8 @@
 {% require '_common:widget/header/header.less' %}
 <div class="header-wrap">
     <div class="header">
-        {% if header.back %} {#是否有返回按钮，默认：有#}
-            <div class="left icon-60 icon-back"></div>
+        {% if header.leftIcon %}
+            <a {% if header.backUrl %}href="{{ header.backUrl }}" {% endif %}class="left icon-60 icon-back"></a>
         {% endif %}
         <div>
             <ul class="nav">

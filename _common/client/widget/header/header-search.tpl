@@ -2,8 +2,8 @@
 
 <div class="header-wrap">
 	<div class="header">
-		{% if header.back %} {#是否有返回按钮，默认：有#}
-			<a class="left icon-60 icon-back" {% if header.backUrl %}href="{{ header.backUrl }}"{% endif %} ></a>
+		{% if header.leftIcon %}
+			<a {% if header.backUrl %}href="{{ header.backUrl }}" {% endif %}class="left icon-60 icon-back"></a>
 		{% endif %}
 		<div class="search-box">
 			<input type="text" placeholder="关键字">

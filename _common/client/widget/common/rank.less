@@ -1,25 +1,39 @@
 @import "@{_common}/public/mixin";
 
 .rank {
-	float: left;
+	display: inline-block;
+	vertical-align: top;
 	height: 30/@rem-pre;
+	line-height: 30/@rem-pre;
 	padding: 0 10/@rem-pre;
 	border-radius: 15/@rem-pre;
 	background: fadeout(#b9b9c8,80%);
 	i {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
 		width: 24/@rem-pre;
 		height: 30/@rem-pre;
-		float: left;
-		background-size: contain;
-		background-repeat: no-repeat;
+		line-height:30/@rem-pre;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 24/@rem-pre;
+			height: 30/@rem-pre;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
 	}
-	&-16 {
+	&-16:after {
 		background-image: url('../../icon/rank-16.png');
 	}
-	&-04 {
+	&-04:after {
 		background-image: url('../../icon/rank-04.png');
 	}
-	&-01 {
+	&-01:after {
 		background-image: url('../../icon/rank-01.png');
 	}
 }

@@ -136,11 +136,11 @@ module.exports = function (router) {
        res.render('bus/page/user/mybdb.tpl',obj);
     });
     //活动
-    router.get('/activity-status',function(req,res,next) {
+    router.get('/activity-index',function(req,res,next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '活动';
         obj.header.tab = ['已开始','未开始','已介绍'];
-        res.render('bus/page/activity/activity-status.tpl',obj);
+        res.render('bus/page/activity/activity-index.tpl',obj);
     });
     //国庆专场
     router.get('/national-day',function(req,res,next) {

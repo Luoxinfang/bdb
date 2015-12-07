@@ -8,12 +8,12 @@
 {% endblock %}
 {% block body %}
     <div class="bdb-list">
-        <a href=""><i class="icon icon-01"></i><span>拍卖行</span></a>
-        <a href=""><i class="icon icon-02"></i><span>店铺活动</span></a>
-        <a href=""><i class="icon icon-03"></i><span>货架</span></a>
-        <a href=""><i class="icon icon-04"></i><span>平台活动</span></a>
-        <a href=""><i class="icon icon-05"></i><span>订单管理</span></a>
-        <a href=""><i class="icon icon-06"></i><span>店铺</span></a>
+        <a href=""><i class="icon icon-01"></i><div class="w-1">拍卖行</div></a>
+        <a href=""><i class="icon icon-02"></i><div class="w-1">店铺活动</div></a>
+        <a href=""><i class="icon icon-03"></i><div class="w-1">货架</div></a>
+        <a href=""><i class="icon icon-04"></i><div class="w-1">平台活动</div></a>
+        <a href=""><i class="icon icon-05"></i><div class="w-1">订单管理</div></a>
+        <a href=""><i class="icon icon-06"></i><div class="w-1">店铺</div></a>
     </div>
 
 {% endblock %}

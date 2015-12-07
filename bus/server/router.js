@@ -156,6 +156,12 @@ module.exports = function (router) {
         obj.header.tab = ['已开始','已介绍'];
         res.render('bus/page/activity/bdb-activity.tpl',obj);
     });
+    //添加活动
+    router.get('/add-activity',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '发起活动';
+        res.render('bus/page/activity/add-activity.tpl',obj);
+    });
     //系统消息
     router.get('/sys-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);

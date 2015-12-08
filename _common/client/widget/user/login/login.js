@@ -34,9 +34,8 @@ module.exports = {
 			dataType: 'json',
 			url: '/_common/session',
 			data: {
-				userName: userName,
-				password: password,
-				captcha: captcha
+				uname: userName,
+				pwd: password
 			},
 			success: function (data) {
 				if ('00000' === data.status) {

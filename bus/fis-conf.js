@@ -36,7 +36,7 @@ fis.media('prod').match('widget/(*)/**.css', {
 	packTo: 'css/$1.css'
 });
 //所有css,js全部加上文件指纹
-fis.media('prod').match('/**.{css,js}',{
+fis.media('prod').match('client/**.{css,js}',{
 	useHash: true
 });
 // 启用 fis-spriter-csssprites 插件

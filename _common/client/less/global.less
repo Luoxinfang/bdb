@@ -392,3 +392,37 @@ body {
   color: #fff !important;
   background: #cecece !important;
 }
+
+/**top tip**/
+.top-tip {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50/@rem-pre;
+  line-height: 50/@rem-pre;
+  text-align: center;
+  color: @mainColor2;
+  font-size: @fontSize2;
+  background-color: @bgColor1;
+  &-wrapper{
+    clear: both;
+    display: inline-block;
+
+  }
+  &-icon{
+    float: left;
+    display: inline-block;
+    width: 26/@rem-pre;
+    height: 26/@rem-pre;
+    background-size: contain;
+    margin: 12/@rem-pre 2/@rem-pre 0 0;
+    &.warn{
+      background-image: url("../icon/warn-exc.png");
+    }
+  }
+  &-content{
+    float: left;
+  }
+}

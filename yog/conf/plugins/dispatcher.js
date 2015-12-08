@@ -47,7 +47,12 @@ module.exports.dispatcher = {
 		 * 如cus.bdbvip.com:8085/ 转发成 bdbvip.com:8085/cus/
 		 */
 		router.use('/', function (req, res, next) {
-			var secondHostname = req.hostname.split('.')[0];
+			var secondHostname = '';
+			if (req.hostname == 'localhost' || -1 !== req.ip.indexOf(req.hostname)) {
+				secondHostname = 'cus';
+			} else {
+				secondHostname = req.hostname.split('.')[0];
+			}
 			return yog.dispatcher.router(secondHostname)(req, res, next);
 		})
 	},

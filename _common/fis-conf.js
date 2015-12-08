@@ -28,6 +28,11 @@ fis.config.set('settings.spriter.csssprites', {
     //使用矩阵排列方式，默认为线性`linear`
     layout: 'matrix'
 });
+//将hz下面我们自己的js模块化
+fis.match('/client/js/bdb/**.js', {
+    isMod: true
+});
+
 //==========生产环境设置=============================
 fis.media('prod').match('*', {
     deploy: fis.plugin('http-push', {

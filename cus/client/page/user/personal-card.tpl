@@ -68,7 +68,7 @@
 		</a>
 	</div>
 
-	{% widget '_common:widget/common/actionsheet.tpl' %}
+	{% widget '_common:widget/actionsheet/actionsheet.tpl' %}
 	<div class="actionsheet-wrap" id="actionsheet-01">
 		<div class="mask mask-transition" style="display: none;"></div>
 		<div class="actionsheet">

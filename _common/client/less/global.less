@@ -256,68 +256,76 @@ body {
 
 //外边距
 .mb5 {
-  margin-bottom: 5/@rem-pre;
+  margin-bottom: 5/@rem-pre !important;
 }
 
 .mt10 {
-  margin-top: 10/@rem-pre;
+  margin-top: 10/@rem-pre !important;
 }
 
 .mt20 {
-  margin-top: 20/@rem-pre;
+  margin-top: 20/@rem-pre !important;
 }
 
 .mt40 {
-  margin-top: 40/@rem-pre;
+  margin-top: 40/@rem-pre !important;
 }
 
 .mr10 {
-  margin-right: 10/@rem-pre;
+  margin-right: 10/@rem-pre !important;
 }
 
 .mb10 {
-  margin-bottom: 10/@rem-pre;
+  margin-bottom: 10/@rem-pre !important;
 }
 
 .ml20 {
-  margin-left: 20/@rem-pre;
+  margin-left: 20/@rem-pre !important;
 }
 
 .mr20 {
-  margin-right: 20/@rem-pre;
+  margin-right: 20/@rem-pre !important;
 }
 
 .mb20 {
-  margin-bottom: 20/@rem-pre;
+  margin-bottom: 20/@rem-pre !important;
 }
 
 .mb30 {
-  margin-bottom: 30/@rem-pre;
+  margin-bottom: 30/@rem-pre !important;
 }
 
 .mb40 {
-  margin-bottom: 40/@rem-pre;
+  margin-bottom: 40/@rem-pre !important;
 }
 
 .mt70 {
-  margin-top: 70/@rem-pre;
+  margin-top: 70/@rem-pre !important;
 }
 
 //内边距
 .pt10 {
-  padding-top: 10/@rem-pre;
+  padding-top: 10/@rem-pre !important;
 }
 
 .pr10 {
-  padding-right: 10/@rem-pre;
+  padding-right: 10/@rem-pre !important;
+}
+
+.pb0 {
+  padding-bottom: 0 !important;
 }
 
 .pb10 {
-  padding-bottom: 10/@rem-pre;
+  padding-bottom: 10/@rem-pre !important;
+}
+
+.pb20 {
+  padding-bottom: 20/@rem-pre !important;
 }
 
 .pl10 {
-  padding-left: 10/@rem-pre;
+  padding-left: 10/@rem-pre !important;
 }
 
 .va-m {
@@ -342,8 +350,8 @@ body {
 /*lilian btn*/
 .btn {
   width: 100%;
-  height: 70/@rem-pre;
-  line-height: 70/@rem-pre;
+  height: 80/@rem-pre;
+  line-height: 80/@rem-pre;
   font-size: 0.4375rem;
   border-radius: 5px;
   display: block;
@@ -373,10 +381,15 @@ body {
   padding: 0 40/@rem-pre;
 }
 
-.btn.btn-135 {
+.btn.btn-w135 {
   width: 135/@rem-pre;
   display: inline-block;
   padding: 0;
+}
+
+.btn.btn-h70 {
+  height: 70/@rem-pre;
+  line-height: 70/@rem-pre;
 }
 
 .btn.btn-white:active {
@@ -391,4 +404,38 @@ body {
   border: none !important;
   color: #fff !important;
   background: #cecece !important;
+}
+
+/**top tip**/
+.top-tip {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50/@rem-pre;
+  line-height: 50/@rem-pre;
+  text-align: center;
+  color: @mainColor2;
+  font-size: @fontSize2;
+  background-color: @bgColor1;
+  &-wrapper{
+    clear: both;
+    display: inline-block;
+
+  }
+  &-icon{
+    float: left;
+    display: inline-block;
+    width: 26/@rem-pre;
+    height: 26/@rem-pre;
+    background-size: contain;
+    margin: 12/@rem-pre 2/@rem-pre 0 0;
+    &.warn{
+      background-image: url("../icon/warn-exc.png");
+    }
+  }
+  &-content{
+    float: left;
+  }
 }

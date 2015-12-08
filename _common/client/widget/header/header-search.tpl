@@ -3,7 +3,7 @@
 <div class="header-wrap">
 	<div class="header">
 		{% if header.leftIcon %}
-			<a {% if header.backUrl %}href="{{ header.backUrl }}" {% endif %}class="left icon-60 icon-back"></a>
+			<a {% if header.leftUrl %}href="{{ header.leftUrl }}" {% endif %}class="left icon-60 icon-back"></a>
 		{% endif %}
 		<div class="search-box">
 			<input type="text" placeholder="关键字">
@@ -14,7 +14,5 @@
 </div>
 
 {% script %}
-$(function(){
-	require('_common:widget/header/header-search.js').init();
-})
+	require('header-search.js').init();
 {% endscript %}

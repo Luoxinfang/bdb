@@ -13,3 +13,7 @@
     <a class="btn-reg" href="/reg-tel">注册</a>
   </div>
 </div>
+{%require "_common:js/plugin/zepto-cookie.js"%}
+{% script %}
+require("login.js").init();
+{% endscript %}

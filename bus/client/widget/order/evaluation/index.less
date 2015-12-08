@@ -47,5 +47,52 @@
 }
 //评论区域
 .evaluation{
-
+  .eva-icon{
+    height:80/64rem;
+    line-height:80/64rem;
+    display: flex;
+    font-size: 0.46875rem;
+    color: #7f7f7f;
+    li{
+      flex: 1;
+      margin: 0;
+      padding-left: (20+55)/64rem;
+      &.eva-good{
+        background: url("icon/good.png") 20/64rem center no-repeat;
+        background-size: 48/64rem;
+        &.on{
+          background-image: url("icon/good-on.png");
+          color: #55d12c;
+        }
+      }
+      &.eva-commonly{
+        background: url("icon/commonly.png") 20/64rem center no-repeat;
+        background-size: 48/64rem;
+        &.on{
+          background-image: url("icon/commonly-on.png");
+          color: #fb8004;
+        }
+      }
+      &.eva-bad{
+        background: url("icon/bad.png") 20/64rem center no-repeat;
+        background-size: 48/64rem;
+        &.on{
+          background-image: url("icon/bad-on.png");
+          color: #393b42;
+        }
+      }
+    }
+  }
+  .eva-text{
+    padding: 20/64rem;
+    height: (120+40)/64rem;
+    textarea{
+      width: 100%;
+      height: 100%;
+      background: #e7e7e8;
+      border-radius:5px ;
+      border: 0;
+      padding: 20/64rem;
+    }
+  }
 }

@@ -31,7 +31,15 @@
                         </div>
                         {#评论区域#}
                         <div class="evaluation">
-
+                            <ul class="eva-icon">
+                                {#选中效果加on类#}
+                                <li class="eva-good on">好评</li>
+                                <li class="eva-commonly">中评</li>
+                                <li class="eva-bad">差评</li>
+                            </ul>
+                            <div class="eva-text">
+                                <textarea id="eva_text" placeholder="说点什么..."></textarea>
+                            </div>
                         </div>
                     </li>
                 {% endfor %}

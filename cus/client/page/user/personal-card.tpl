@@ -62,7 +62,7 @@
 				广东省 深圳市 龙岗区 布吉科技园路慢城7-4号16F.
 			</div>
 		</div>
-		<a href="/cus/receipt-address" class="address-item address-add">
+		<a href="/receipt-address" class="address-item address-add">
 			<div class="add">+</div>
 			<div class="tip">添加收货地址</div>
 		</a>

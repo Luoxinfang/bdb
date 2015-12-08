@@ -17,19 +17,19 @@
 	<div class="index">
 		{% widget '_common:widget/banner/banner.tpl' %}
 		<div class="category clearfix">
-			<a href="/cus/auction/list">
+			<a href="/auction/list">
 				<i class="icon icon-01"></i><br/>
 				<span>翡翠</span>
 			</a>
-			<a href="/cus/auction/list">
+			<a href="/auction/list">
 				<i class="icon icon-02"></i><br/>
 				<span>黄金</span>
 			</a>
-			<a href="/cus/auction/list">
+			<a href="/auction/list">
 				<i class="icon icon-03"></i><br/>
 				<span>钻石</span>
 			</a>
-			<a href="/cus/auction/list">
+			<a href="/auction/list">
 				<i class="icon icon-04"></i><br/>
 				<span>更多</span>
 			</a>
@@ -255,16 +255,16 @@
 {% block afterWrapper %}
 	<div class="me">
 		<div class="user">
-			<a class="photo" href="/cus/user/personal-card">{% widget '_common:widget/user/user-photo.tpl' %}</a>
+			<a class="photo" href="/user/personal-card">{% widget '_common:widget/user/user-photo.tpl' %}</a>
 			<p class="name">大魔王</p>
 			<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 		</div>
 		<div class="menu">
-			<a href="/cus/wallet">我的钱包</a>
-			<a href="/cus/order">我的订单</a>
+			<a href="/wallet">我的钱包</a>
+			<a href="/order">我的订单</a>
 			<a href="/bus">穿越到卖家版</a>
-			<a href="/cus/sys-settings">系统设置</a>
-			<a href="/cus/logout">退出登陆</a>
+			<a href="/sys-settings">系统设置</a>
+			<a href="/logout">退出登陆</a>
 		</div>
 	</div>
 	<div class="r-mark"></div>

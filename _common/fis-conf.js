@@ -28,11 +28,15 @@ fis.config.set('settings.spriter.csssprites', {
     //使用矩阵排列方式，默认为线性`linear`
     layout: 'matrix'
 });
+//将hz下面我们自己的js模块化
+fis.match('/client/js/bdb/**.js', {
+    isMod: true
+});
+
 //==========生产环境设置=============================
 fis.media('prod').match('*', {
     deploy: fis.plugin('http-push', {
         receiver: 'http://127.0.0.1:8085/yog/upload',
-
         to: '/'
     })
 });
@@ -49,6 +53,6 @@ fis.media('prod').match('client/js/{lib,plugin}/*.js', {
     packTo: 'js/lib.js',
 });
 //所有css,js全部加上文件指纹
-fis.media('prod').match('/**.{css,js}',{
+fis.media('prod').match('client/**.{css,js}',{
     useHash: true
 });

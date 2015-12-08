@@ -4,6 +4,5 @@
 
 {% extends '_common:page/user/_login.tpl' %}
 
-{% block content %}
-
+{% block header %}
 {% endblock %}

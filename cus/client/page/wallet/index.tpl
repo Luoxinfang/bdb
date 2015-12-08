@@ -17,13 +17,13 @@
         <div class="form-list">
             <ul class="form-ul">
                 <li class="form-li">
-                    <a href="/cus/wallet/trans-list">交易明细</a>
+                    <a href="/wallet/trans-list">交易明细</a>
                 </li>
                 <li class="form-li">
-                    <a href="/cus/recharges">充值</a>
+                    <a href="/recharges">充值</a>
                 </li>
                 <li class="form-li">
-                    <a href="/cus/withdrawals">提现</a>
+                    <a href="/withdrawals">提现</a>
                 </li>
             </ul>
             <ul class="form-ul">

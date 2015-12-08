@@ -220,6 +220,12 @@ module.exports = function (router) {
         obj.header.title = '地区选择';
         res.render('bus/page/address/input-email.tpl',obj);
     });
+    //展示模板
+    router.get('/show-template',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '展示模板';
+        res.render('bus/page/user/show-template.tpl',obj);
+    });
     //系统消息
     router.get('/sys-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);

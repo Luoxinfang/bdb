@@ -9,7 +9,9 @@ module.exports = {
 	 */
 	topTips: function (opt) {
 		var $dom = $('#top-tip'),iconName = 'warn';
-		if (0 === $dom.length) {
+		if ($dom.length) {
+			$dom.show();
+		}else{
 			var html = [];
 			html.push('<div id="top-tip" class="top-tip">');
 			html.push('<div class="top-tip-wrapper">')
@@ -27,5 +29,8 @@ module.exports = {
 			type: 'warn',
 			content: content
 		});
+	},
+	hideTopTips: function () {
+		$('#top-tip').hide();
 	}
 };

@@ -4,7 +4,7 @@
 var B = require('_common:js/bdb/core.js');
 module.exports = {
 	init: function () {
-		var userIdRemembered = $.cookie.set('user_id_remembered');
+		var userIdRemembered = $.cookie.get('user_id_remembered');
 		if (userIdRemembered) {
 			$('#username').val(userIdRemembered);
 		}

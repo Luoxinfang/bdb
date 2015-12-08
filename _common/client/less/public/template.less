@@ -1,0 +1,53 @@
+@import "@{_common}/public/mixin";
+
+.template {
+  padding: 20/@rem-pre 0;
+  .tpl-item {
+    width: 100%;
+    background-color: #fff;
+    height: 400/@rem-pre;
+    position: relative;
+    padding: 20/@rem-pre 20/@rem-pre;
+    .left-tpl {
+      padding-right: 20/@rem-pre;
+      width: 250/@rem-pre;
+      height: 360/@rem-pre;
+      border-right: 2px solid #e7e7e8 ;
+      float: left;
+      .item-left {
+        width: 230/@rem-pre;
+        height: 360/@rem-pre;
+        position: absolute;
+      }
+    }
+    .item-right {
+      float: right;
+      width: 5.15625rem;
+      height: 5.3125rem;
+      margin-top: 20/@rem-pre;
+      .lf-1 {
+        line-height: 30/@rem-pre;
+        margin-bottom: 30/@rem-pre;
+      }
+      .lf-2 {
+        line-height: 26/@rem-pre;
+        margin-bottom: 30/@rem-pre;
+      }
+      .btn-l {
+        position: absolute;
+        width: 140/@rem-pre;
+        bottom: 20/@rem-pre;
+        height: 60/@rem-pre;
+        line-height: 60/@rem-pre;
+      }
+      .btn-2 {
+        position: absolute;
+        width: 140/@rem-pre;
+        bottom: 20/@rem-pre;
+        height: 60/@rem-pre;
+        right: 20/@rem-pre;
+        line-height: 60/@rem-pre;
+      }
+    }
+  }
+}

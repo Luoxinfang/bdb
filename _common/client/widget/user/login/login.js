@@ -32,7 +32,7 @@ module.exports = {
 		$.ajax({
 			type: 'post',
 			dataType: 'json',
-			url: '/common/session',
+			url: '/_common/session',
 			data: {
 				userName: userName,
 				password: password,

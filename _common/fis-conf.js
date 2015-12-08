@@ -37,7 +37,6 @@ fis.match('/client/js/bdb/**.js', {
 fis.media('prod').match('*', {
     deploy: fis.plugin('http-push', {
         receiver: 'http://127.0.0.1:8085/yog/upload',
-
         to: '/'
     })
 });
@@ -54,6 +53,6 @@ fis.media('prod').match('client/js/{lib,plugin}/*.js', {
     packTo: 'js/lib.js',
 });
 //所有css,js全部加上文件指纹
-fis.media('prod').match('/**.{css,js}',{
+fis.media('prod').match('client/**.{css,js}',{
     useHash: true
 });

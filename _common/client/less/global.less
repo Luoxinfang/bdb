@@ -249,6 +249,9 @@ body {
   &-7day {
     background-image: url('../icon/icon22-7.png');
   }
+  &-radio {
+    background-image: url('../icon/radio.png');
+  }
 }
 
 //外边距
@@ -358,13 +361,22 @@ body {
   border: 1px solid #e7e7e8;
 }
 
-.btn.btn-inline {
+.btn.btn-sm {
   width: auto;
   display: inline-block;
   padding: 0 15/@rem-pre;
-  &.btn-lg {
-    padding: 0 40/@rem-pre;
-  }
+}
+
+.btn.btn-lg {
+  width: auto;
+  display: inline-block;
+  padding: 0 40/@rem-pre;
+}
+
+.btn.btn-135 {
+  width: 135/@rem-pre;
+  display: inline-block;
+  padding: 0;
 }
 
 .btn.btn-white:active {

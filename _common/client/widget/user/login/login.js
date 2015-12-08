@@ -4,7 +4,7 @@
 
 module.exports = {
 	init: function () {
-		var userIdRemembered = $.cookie('user_id_remembered');
+		var userIdRemembered = $.cookie.set('user_id_remembered');
 		if (userIdRemembered) {
 			$('#username').val(userIdRemembered);
 		}
@@ -41,9 +41,9 @@ module.exports = {
 			success: function (data) {
 				if ('00000' === data.status) {
 					if (rememberMe) {
-						$.cookie('user_id_remembered', userName);
+						$.cookie.set('user_id_remembered', userName);
 					} else {
-						$.cookie('user_id_remembered', null);
+						$.cookie.set('user_id_remembered', null);
 					}
 					window.location.href = '/';
 				} else {

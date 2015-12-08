@@ -11,7 +11,7 @@
 		{% widget '_common:widget/user/user-photo.tpl' %}
 		<div class="tlt">翡翠世家</div>
 		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
-		<a href="/cus/store" class="url btn btn-white btn-135">进入店铺</a>
+		<a href="/cus/store" class="url btn btn-white btn-w135 btn-h70">进入店铺</a>
 	</div>
 	<div class="order-auction mt20">
 		<div class="order-item">
@@ -70,12 +70,12 @@
 {% block footer %}
 {% require '_common:widget/footer/footer.less' %}
 <div class="footer">
-	<a class="btn btn-red btn-135 fr showDialog" dialog="payWay">付款</a>
+	<a class="btn btn-red btn-w135 btn-h70 fr showDialog" dialog="payWay">付款</a>
 </div>
-{% widget '_common:widget/common/dialog.tpl' %}
+{% widget '_common:widget/dialog/dialog.tpl' %}
 <div class="dialog-wrap order-pay" id="payWay">
 	<div class="dialog-mask"></div>
-	<div class="dialog">
+	<div class="dialog pb0">
 		<div class="dialog-hd">选择支付方式</div>
 		<div class="dialog-bd">
 			<label for="way-1" class="way">
@@ -93,7 +93,28 @@
 				<input type="radio" name="payWay" id="way-3">
 				<i class="icon-40 icon-radio"></i>
 			</label>
-			<a class="sure">确定</a>
+			<a class="sure showDialog closeDialog" dialog="pay">确定</a>
+		</div>
+	</div>
+</div>
+<div class="dialog-wrap order-pay" id="pay">
+	<div class="dialog-mask"></div>
+	<div class="dialog pb10">
+		<div class="dialog-close closeDialog"></div>
+		<div class="dialog-hd">确认付款</div>
+		<div class="dialog-bd">
+			<div class="price">￥1500.00</div>
+			{% widget '_common:widget/password/password.tpl' %}
+			<div class="password-wrap">
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<input type="number" class="password" >
+			</div>
+			<div class="tip">请输入支付密码</div>
 		</div>
 	</div>
 </div>

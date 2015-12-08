@@ -22,5 +22,5 @@
 </div>
 
 {% script %}
-    require('_common:widget/header/header-nav.js').init();
+    require('header-nav.js').init();
 {% endscript %}

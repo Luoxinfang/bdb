@@ -23,7 +23,5 @@
 </div>
 
 {% script %}
-	$(function(){
-	require('_common:widget/header/header-top.js').init();
-	})
+	require('header-top.js').init();
 {% endscript %}

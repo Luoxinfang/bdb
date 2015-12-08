@@ -167,7 +167,7 @@ module.exports = function (router) {
     });
     //评论
     router.get('/evaluation', function (req, res, next) {
-        resObj.app.title = resObj.header.title = '评论';
+        resObj.header.title = '评论';
         //假数据
         resObj.data = yog.require('bus/test/order.js');
         //resObj.header.backUrl = '/bus/wallet';

@@ -79,10 +79,6 @@
 			padding-right: 20/64rem;
 			padding-left: 0;
 			.btn{
-				width: auto;
-				padding: 0 12/64rem;
-				height: 70/64rem;
-				line-height:70/64rem;
 				float: right;
 			}
 		}
@@ -214,6 +210,29 @@
 			line-height: 150/@rem-pre;
 			color: @mainColor2;
 			font-size: 40/@rem-pre;
+		}
+	}
+	//订单评论
+	&-comment {
+		background: @bgColor;
+		.comment {
+			height: 220/@rem-pre;
+			background: @white;
+			margin-bottom: 20/@rem-pre;
+			.dt {
+				height: 80/@rem-pre;
+			}
+			textarea {
+				width: 100%;
+				padding: 15/@rem-pre;
+				height: 120/@rem-pre;
+				line-height: 30/@rem-pre;
+				color: @mainColor3;
+				font-size: @fontSize3;
+				background: @bgColor;
+				border: none;
+				border-radius: 5px;
+			}
 		}
 	}
 }

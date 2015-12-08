@@ -144,6 +144,10 @@ body {
   color: #7f7f7f !important;
 }
 
+.fc-i {
+  color: inherit !important;
+}
+
 //背景颜色
 .bg-f {
   background: #ffffff;
@@ -217,13 +221,19 @@ body {
     display: inline-block;
     width: 60/@rem-pre;
     height: 60/@rem-pre;
-    text-align: center;
   }
   &-60:after {
     content: '';
     display: block;
     width: 60/@rem-pre;
     height: 60/@rem-pre;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &-200 {
+    display: inline-block;
+    width: 200/@rem-pre;
+    height: 200/@rem-pre;
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -240,17 +250,29 @@ body {
     color: #fff;
     font-size: 14/@rem-pre;
   }
+  //金牌卖家
   &-gold {
     background-image: url('../icon/icon22-gold.png');
   }
+  //先行赔付
   &-pei {
     background-image: url('../icon/icon22-pei.png');
   }
+  //7天退货
   &-7day {
     background-image: url('../icon/icon22-7.png');
   }
   &-radio {
     background-image: url('../icon/radio.png');
+  }
+  &-suc {
+    background-image: url('../icon/success.png');
+  }
+  &-warn {
+    background-image: url('../icon/success-2.png');
+  }
+  &-fail {
+    background-image: url('../icon/fail.png');
   }
 }
 
@@ -352,7 +374,7 @@ body {
   width: 100%;
   height: 80/@rem-pre;
   line-height: 80/@rem-pre;
-  font-size: 0.4375rem;
+  font-size: @fontSize2;
   border-radius: 5px;
   display: block;
 }
@@ -383,6 +405,12 @@ body {
 
 .btn.btn-w135 {
   width: 135/@rem-pre;
+  display: inline-block;
+  padding: 0;
+}
+
+.btn.btn-w240 {
+  width: 240/@rem-pre;
   display: inline-block;
   padding: 0;
 }

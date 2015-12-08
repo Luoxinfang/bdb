@@ -174,8 +174,28 @@ module.exports = function (router) {
 		obj.header.title = '订单详情';
 		obj.header.leftUrl = '/order';
 		obj.header.rightIcon = 'chat';
+		obj.order = {status: '' + req.query.status};
 		obj.data = yog.require('cus/test/order.js');
 		res.render('cus/page/order/detail.tpl', obj);
+	});
+	//订单结果
+	router.get('/order/result', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '我的订单';
+		obj.header.leftIcon = false;
+		obj.result = {status: '' + req.query.status};
+		if (obj.result.status == 'confirmReceipt') {
+			obj.header.title = '确认收货';
+			obj.header.sort = '完成';
+		}
+		res.render('cus/page/order/result.tpl', obj);
+	});
+	//订单评论
+	router.get('/order/comment', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '评论';
+		obj.header.leftUrl = '/order';
+		res.render('cus/page/order/comment.tpl', obj);
 	});
 	//拍卖列表
 	router.get('/auction/list', function (req, res, next) {

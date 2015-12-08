@@ -28,6 +28,24 @@ module.exports ={
       num: '1',
       pay: '8800.00',
       'img-url':''
+    },
+    {
+      status:'dpj',
+      date: '2015-09-24',
+      name: '蓝宝石耳钉',
+      money: '8800.00',
+      num: '1',
+      pay: '8800.00',
+      'img-url':''
+    },
+    {
+      status:'ywc',
+      date: '2015-09-24',
+      name: '蓝宝石耳钉',
+      money: '8800.00',
+      num: '1',
+      pay: '8800.00',
+      'img-url':''
     }
   ]
 };

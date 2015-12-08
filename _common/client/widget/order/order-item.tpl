@@ -19,7 +19,7 @@
           退款中
         {% endif %}
       </span>
-		<a href="/cus/order/detail">订单详情</a>
+		<a href="/order/detail">订单详情</a>
 	</div>
 	<div class="line2">
 		<div class="order-img">

@@ -10,10 +10,10 @@
 {% block body %}
 <div class="auction-list clearfix">
         <div class="auction-item">
-            <a href="/cus/auction/detail">
+            <a href="/auction/detail">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/cus/store" class="store mt10">
+            <a href="/store" class="store mt10">
                 <span>小唐的店铺</span>
                 <i class="fr icon-22 icon-pei"></i>
                 <i class="fr icon-22 icon-7day"></i>
@@ -25,10 +25,10 @@
             <a class="collect-cnt icon-collect-cnt">431</a>
         </div>
         <div class="auction-item">
-            <a href="/cus/auction/detail?status=1">
+            <a href="/auction/detail?status=1">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/cus/store" class="store mt10">
+            <a href="/store" class="store mt10">
                 <span>小唐的店铺</span>
                 <i class="fr icon-22 icon-pei"></i>
                 <i class="fr icon-22 icon-7day"></i>
@@ -40,10 +40,10 @@
             <a class="collect-cnt icon-collect-cnt">431</a>
         </div>
         <div class="auction-item">
-            <a href="/cus/auction/detail?status=2">
+            <a href="/auction/detail?status=2">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/cus/store" class="store mt10">
+            <a href="/store" class="store mt10">
                 <span>小唐的店铺</span>
                 <i class="fr icon-22 icon-pei"></i>
                 <i class="fr icon-22 icon-7day"></i>
@@ -55,10 +55,10 @@
             <a class="collect-cnt icon-collect-cnt">431</a>
         </div>
         <div class="auction-item">
-            <a href="/cus/auction/detail?status=3">
+            <a href="/auction/detail?status=3">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/cus/store" class="store mt10">
+            <a href="/store" class="store mt10">
                 <span>小唐的店铺</span>
                 <i class="fr icon-22 icon-pei"></i>
                 <i class="fr icon-22 icon-7day"></i>
@@ -70,10 +70,10 @@
             <a class="collect-cnt icon-collect-cnt">431</a>
         </div>
         <div class="auction-item">
-            <a href="/cus/auction/detail">
+            <a href="/auction/detail">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/cus/store" class="store mt10">
+            <a href="/store" class="store mt10">
                 <span>小唐的店铺</span>
                 <i class="fr icon-22 icon-pei"></i>
                 <i class="fr icon-22 icon-7day"></i>
@@ -85,10 +85,10 @@
             <a class="collect-cnt icon-collect-cnt">431</a>
         </div>
         <div class="auction-item">
-            <a href="/cus/auction/detail">
+            <a href="/auction/detail">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/cus/store" class="store mt10">
+            <a href="/store" class="store mt10">
                 <span>小唐的店铺</span>
                 <i class="fr icon-22 icon-pei"></i>
                 <i class="fr icon-22 icon-7day"></i>

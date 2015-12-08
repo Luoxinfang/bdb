@@ -11,7 +11,7 @@
 		{% widget '_common:widget/user/user-photo.tpl' %}
 		<div class="tlt">翡翠世家</div>
 		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
-		<a href="/cus/store" class="url btn btn-white btn-135">进入店铺</a>
+		<a href="/cus/store" class="url btn btn-white btn-w135 btn-h70">进入店铺</a>
 	</div>
 	<div class="order-auction mt20">
 		<div class="order-item">
@@ -70,9 +70,9 @@
 {% block footer %}
 {% require '_common:widget/footer/footer.less' %}
 <div class="footer">
-	<a class="btn btn-red btn-135 fr showDialog" dialog="payWay">付款</a>
+	<a class="btn btn-red btn-w135 btn-h70 fr showDialog" dialog="payWay">付款</a>
 </div>
-{% widget '_common:widget/common/dialog.tpl' %}
+{% widget '_common:widget/dialog/dialog.tpl' %}
 <div class="dialog-wrap order-pay" id="payWay">
 	<div class="dialog-mask"></div>
 	<div class="dialog">

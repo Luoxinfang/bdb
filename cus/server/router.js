@@ -4,7 +4,7 @@ module.exports = function (router) {
 		header: {
 			title: '百多宝',       //header标题
 			leftIcon: 'back',     //左侧默认返回按钮
-			leftUrl: '/cus',      //左侧图标默认链接
+			leftUrl: '/',      //左侧图标默认链接
 			rightIcon: false,     //右侧单个图标
 			rightUrl: false,      //右侧图标链接
 			rightIcons: false,    //右侧图标组
@@ -29,7 +29,7 @@ module.exports = function (router) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.leftIcon = 'me';
 		obj.header.leftUrl = false;
-		obj.header.rightIcons = [{icon: 'search', url: '/cus/auction/search'}, {icon: 'msg', url: false}];
+		obj.header.rightIcons = [{icon: 'search', url: '/auction/search'}, {icon: 'msg', url: false}];
 		res.render('cus/page/index.tpl', obj);
 	});
 	//登录
@@ -41,28 +41,28 @@ module.exports = function (router) {
 	router.get('/reg-tel', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '注册';
-		obj.header.leftUrl = '/cus/login';
+		obj.header.leftUrl = '/login';
 		res.render('cus/page/user/reg-tel.tpl', obj);
 	});
 	//注册 —— 设置密码
 	router.get('/reg-pwd', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '注册';
-		obj.header.leftUrl = '/cus/reg-tel';
+		obj.header.leftUrl = '/reg-tel';
 		res.render('cus/page/user/reg-pwd.tpl', obj);
 	});
 	//找回密码 —— 输入信息
 	router.get('/find-pwd-info', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '找回密码';
-		obj.header.leftUrl = '/cus/login';
+		obj.header.leftUrl = '/login';
 		res.render('cus/page/user/find-pwd-info.tpl', obj);
 	});
 	//找回密码 —— 设置新密码
 	router.get('/find-pwd-new', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '找回密码';
-		obj.header.leftUrl = '/cus/find-pwd-info';
+		obj.header.leftUrl = '/find-pwd-info';
 		res.render('cus/page/user/find-pwd-new.tpl', obj);
 	});
 	//找回密码 —— 找回密码结果页
@@ -83,7 +83,7 @@ module.exports = function (router) {
 	router.get('/bind-account-pwd', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '绑定第三方账号';
-		obj.header.leftUrl = '/cus/bind-account-info';
+		obj.header.leftUrl = '/bind-account-info';
 		res.render('cus/page/user/bind-account-pwd.tpl', obj);
 	});
 	//修改密码
@@ -102,7 +102,7 @@ module.exports = function (router) {
 	router.get('/change-tel-new', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '更换手机号';
-		obj.header.leftUrl = '/cus/change-tel-info';
+		obj.header.leftUrl = '/change-tel-info';
 		res.render('cus/page/user/change-tel-new.tpl', obj);
 	});
 	//个人主页
@@ -116,7 +116,7 @@ module.exports = function (router) {
 	router.get('/receipt-address', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '收货地址';
-		obj.header.leftUrl = '/cus/user/personal-card';
+		obj.header.leftUrl = '/user/personal-card';
 		res.render('cus/page/user/receipt-address.tpl', obj);
 	});
 	//我的钱包 —— 首页
@@ -136,28 +136,28 @@ module.exports = function (router) {
 	router.get('/withdrawals', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '提现';
-		obj.header.leftUrl = '/cus/wallet';
+		obj.header.leftUrl = '/wallet';
 		res.render('cus/page/wallet/withdrawals.tpl', obj);
 	});
 	//我的钱包 —— 充值
 	router.get('/recharges', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '充值';
-		obj.header.leftUrl = '/cus/wallet';
+		obj.header.leftUrl = '/wallet';
 		res.render('cus/page/wallet/recharges.tpl', obj);
 	});
 	//我的钱包 —— 提现结果页
 	router.get('/withdrawals-result', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '提现';
-		obj.header.leftUrl = '/cus/wallet';
+		obj.header.leftUrl = '/wallet';
 		res.render('cus/page/wallet/withdrawals-result.tpl', obj);
 	});
 	//我的钱包 ——添加银行卡
 	router.get('/add-bank-card', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '添加银行卡';
-		obj.header.leftUrl = '/cus/wallet';
+		obj.header.leftUrl = '/wallet';
 		res.render('cus/page/wallet/add-bank-card.tpl', obj);
 	});
 	//订单管理 ——所有订单
@@ -172,7 +172,7 @@ module.exports = function (router) {
 	router.get('/order/detail', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '订单详情';
-		obj.header.leftUrl = '/cus/order';
+		obj.header.leftUrl = '/order';
 		obj.header.rightIcon = 'chat';
 		obj.data = yog.require('cus/test/order.js');
 		res.render('cus/page/order/detail.tpl', obj);
@@ -188,7 +188,7 @@ module.exports = function (router) {
 	router.get('/auction/detail', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '千年古玉';
-		obj.header.leftUrl = '/cus/auction/list';
+		obj.header.leftUrl = '/auction/list';
 		obj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
 		obj.userPhotoSize = 100;
 		obj.auctionStatus = req.query.status == null ? 0 : req.query.status;

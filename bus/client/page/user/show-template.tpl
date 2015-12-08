@@ -1,6 +1,6 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    {% require '_common:less/public/show-template.less' %}
+    {% require '_common:less/public/template.less' %}
 {% endblock %}
 
 {% block header %}

@@ -31,6 +31,16 @@
 	&-wrap {
 		display: none;
 	}
+	&-close {
+		display: inline-block;
+		position: absolute;
+		top: -10/@rem-pre;
+		right: -10/@rem-pre;
+		width: 40/@rem-pre;
+		height: 40/@rem-pre;
+		background: url('../../icon/icon-reset.png') no-repeat;
+		background-size: contain;
+	}
 	.sure {
 		display: block;
 		height: 90/@rem-pre;
@@ -44,5 +54,12 @@
 		&:active{
 			background: #e5e5e5;
 		}
+	}
+	.tip {
+		text-align: center;
+		height: 60/@rem-pre;
+		line-height: 60/@rem-pre;
+		color: @mainColor4;
+		font-size: @fontSize3;
 	}
 }

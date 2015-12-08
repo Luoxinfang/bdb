@@ -208,6 +208,18 @@ module.exports = function (router) {
         obj.header.title = '发起活动';
         res.render('bus/page/activity/add-activity.tpl',obj);
     });
+    //地区选择
+    router.get('/select-address',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '地区选择';
+        res.render('bus/page/address/select-address.tpl',obj);
+    });
+    //输入邮箱
+    router.get('/input-email',function(req,res,next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '地区选择';
+        res.render('bus/page/address/input-email.tpl',obj);
+    });
     //系统消息
     router.get('/sys-message', function (req, res, next) {
         var obj = _.cloneDeep(resObj);

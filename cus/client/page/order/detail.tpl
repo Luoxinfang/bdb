@@ -9,6 +9,12 @@
 		<div class="order-status">订单状态：待发货</div>
 	{% elseif order.status == 'dsh' %}
 		<div class="order-status">订单状态：待收货</div>
+	{% elseif order.status == 'ywc' %}
+		<div class="order-status">订单状态：交易完成</div>
+	{% elseif order.status == 'dpj' %}
+		<div class="order-status">订单状态：待评价</div>
+	{% elseif order.status == 'tkz' %}
+		<div class="order-status">订单状态：申请退货</div>
 	{% endif %}
 {% endblock %}
 

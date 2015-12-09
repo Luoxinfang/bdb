@@ -220,7 +220,52 @@
 			background: @white;
 			margin-bottom: 20/@rem-pre;
 			.dt {
+				padding: 0 20/@rem-pre;
 				height: 80/@rem-pre;
+			}
+			.item {
+				width: 33.33%;
+				height: 80/@rem-pre;
+				line-height: 80/@rem-pre;
+				color: @mainColor4;
+				font-size: @fontSize3;
+				float: left;
+				span {
+					position: relative;
+					display: inline-block;
+					padding-left: 50/@rem-pre;
+					&:after {
+						content: '';
+						display: inline-block;
+						width: 40/@rem-pre;
+						height: 40/@rem-pre;
+						position: absolute;
+						left: 0;
+						top: 0;
+						bottom: 0;
+						margin: auto 0;
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+					&.good:after {
+						background-image: url('../../icon/icon-good.png');
+					}
+					&.mid:after {
+						background-image: url('../../icon/icon-mid.png');
+					}
+					&.bad:after {
+						background-image: url('../../icon/icon-bad.png');
+					}
+				}
+				input[type='radio']:checked+span.good:after {
+					background-image: url('../../icon/icon-good-1.png');
+				}
+				input[type='radio']:checked+span.mid:after {
+					background-image: url('../../icon/icon-mid-1.png');
+				}
+				input[type='radio']:checked+span.bad:after {
+					background-image: url('../../icon/icon-bad-1.png');
+				}
 			}
 			textarea {
 				width: 100%;
@@ -232,6 +277,80 @@
 				background: @bgColor;
 				border: none;
 				border-radius: 5px;
+			}
+		}
+	}
+	//订单评星
+	&-rate {
+		background-color: @white;
+		.item {
+			height: 90/@rem-pre;
+			line-height: 90/@rem-pre;
+			margin-left: 20/@rem-pre;
+			padding-right: 20/@rem-pre;
+			color: @mainColor3;
+			font-size: @fontSize3;
+			border-top: 1px solid @lineColor;
+			&:first-child {
+				border-top: none;
+			}
+			.sl {
+				width: 200/@rem-pre;
+				float: left;
+			}
+			.dr {
+				position: relative;
+				width: 310/@rem-pre;
+				height: 90/@rem-pre;
+				float: right;
+				margin-right: -20/@rem-pre;
+			}
+			.stars {
+				position: absolute;
+				width: 300/@rem-pre;
+				height: 40/@rem-pre;
+				top: 25/@rem-pre;
+				left: 0;
+				background: @white;
+				.icon-40 {
+					margin: 0 10/@rem-pre;
+					float: left;
+				}
+				&-0 {
+					display: block;
+					z-index: 1;
+				}
+				&-1 {
+					display: none;
+					z-index: 2;
+				}
+				&-2 {
+					display: none;
+					z-index: 3;
+				}
+				&-3 {
+					display: none;
+					z-index: 4;
+				}
+				&-4 {
+					display: none;
+					z-index: 5;
+				}
+				&-5 {
+					display: none;
+					z-index: 6;
+				}
+			}
+			.radio {
+				position: relative;
+				width: 60/@rem-pre;
+				height: 90/@rem-pre;
+				float: left;
+				opacity: 0;
+				z-index: 7;
+				&:checked+.stars {
+					display: block;
+				}
 			}
 		}
 	}

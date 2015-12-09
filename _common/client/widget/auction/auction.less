@@ -110,16 +110,46 @@
 			}
 		}
 		.price {
-			margin-left: 20/@rem-pre;
+			margin: 0 20/@rem-pre;
 			height: 60/@rem-pre;
 			line-height: 60/@rem-pre;
-			a {
-				display: block;
-				width: 33.33%;
+			.item {
+				width: 180/@rem-pre;
 				float: left;
-				padding-left: 50/@rem-pre;
-				color: #36b3a4;
-				font-size: @fontSize4;
+				margin-left: 30/@rem-pre;
+				&:first-child {
+					margin-left: 0;
+				}
+				span {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					padding-left: 40/@rem-pre;
+					color: #36b3a4;
+					font-size: @fontSize4;
+					&:after {
+						content: '';
+						display: inline-block;
+						width: 40/@rem-pre;
+						height: 40/@rem-pre;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						margin: auto 0;
+						left: 0;
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+					&.qi:after {
+						background-image: url('../../icon/icon-qi.png');
+					}
+					&.jia:after {
+						background-image: url('../../icon/icon-jia.png');
+					}
+					&.bao:after {
+						background-image: url('../../icon/icon-bao.png');
+					}
+				}
 			}
 		}
 		.collect-cnt {

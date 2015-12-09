@@ -20,8 +20,7 @@
                     <textarea id="address" placeholder="补充说明..."></textarea>
                 </li>
             </ul>
-            <a class="icon-add mt-20"></a>
+            <a class="icon-add btn-file mt-20"><input type="file" class="file" accept="image/*"></a>
         </div>
-
     </div>
 {% endblock %}

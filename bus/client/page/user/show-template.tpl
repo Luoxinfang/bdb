@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="template">
-        <div class="tpl-item">
+        <div class="tpl-item clearfix">
             <div class="left-tpl"><div class="item-left"></div></div>
             <div class="item-right">
                 <p class="fs-2 lf-1">静静的静</p>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="template">
-        <div class="tpl-item">
+        <div class="tpl-item clearfix">
             <div class="left-tpl"><div class="item-left"></div></div>
             <div class="item-right">
                 <p class="fs-2 lf-1">静静的静</p>

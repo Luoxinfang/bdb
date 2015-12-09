@@ -202,6 +202,7 @@ module.exports = function (router) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '拍卖列表';
 		obj.header.sort = "时间排序";
+		obj.data = yog.require('cus/test/auction.js');
 		res.render('cus/page/auction/list.tpl', obj);
 	});
 	//拍品

@@ -145,6 +145,15 @@ module.exports = function (router) {
         //obj.header.leftUrl = '/bus/wallet';
         res.render('bus/page/order/index.tpl', obj);
     });
+    //订单管理 ——订单详情
+    router.get('/order-detail', function (req, res, next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '订单详情';
+        //假数据
+        obj.data = yog.require('bus/test/order-detail.js');
+        obj.header.leftUrl = '/bus/order';
+        res.render('bus/page/order/order-detail.tpl', obj);
+    });
     //订单管理 ——已完成
     router.get('/completed', function (req, res, next) {
         resObj.app.title = resObj.header.title = '订单管理';

@@ -1,0 +1,1 @@
+{% extends '_common:page/order/_detail.tpl' %}

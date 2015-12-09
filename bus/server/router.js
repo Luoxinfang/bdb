@@ -4,7 +4,7 @@ module.exports = function (router) {
         header: {
             title: '百多宝',       //header标题
             leftIcon: 'back',     //头部左侧默认返回按钮
-            leftUrl: '/cus',      //头部左侧图标默认链接
+            leftUrl: '/',      //头部左侧图标默认链接
             rightIcon: false,     //右侧单个图标
             rightUrl: false,      //右侧图标链接
             rightIcons: false,    //右侧图标组
@@ -38,28 +38,28 @@ module.exports = function (router) {
     router.get('/reg-tel', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '注册';
-        obj.header.leftUrl = '/bus/login';
+        obj.header.leftUrl = '/login';
         res.render('bus/page/user/reg-tel.tpl', obj);
     });
     //注册 —— 设置密码
     router.get('/reg-pwd', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '注册';
-        obj.header.leftUrl = '/bus/reg-tel';
+        obj.header.leftUrl = '/reg-tel';
         res.render('bus/page/user/reg-pwd.tpl', obj);
     });
     //找回密码 —— 输入信息
     router.get('/find-pwd-info', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '找回密码';
-        obj.header.leftUrl = '/bus/login';
+        obj.header.leftUrl = '/login';
         res.render('bus/page/user/find-pwd-info.tpl', obj);
     });
     //找回密码 —— 设置新密码
     router.get('/find-pwd-new', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '找回密码';
-        obj.header.leftUrl = '/bus/find-pwd-info';
+        obj.header.leftUrl = '/find-pwd-info';
         res.render('bus/page/user/find-pwd-new.tpl', obj);
     });
     //找回密码 —— 找回密码结果页
@@ -80,7 +80,7 @@ module.exports = function (router) {
     router.get('/bind-account-pwd', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '绑定第三方账号';
-        obj.header.leftUrl = '/bus/bind-account-info';
+        obj.header.leftUrl = '/bind-account-info';
         res.render('bus/page/user/bind-account-pwd.tpl', obj);
     });
     //修改密码
@@ -99,7 +99,7 @@ module.exports = function (router) {
     router.get('/change-tel-new', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '更换手机号';
-        obj.header.leftUrl = '/bus/change-tel-info';
+        obj.header.leftUrl = '/change-tel-info';
         res.render('bus/page/user/change-tel-new.tpl', obj);
     });
     //收货地址
@@ -118,21 +118,21 @@ module.exports = function (router) {
     router.get('/withdrawals', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '提现';
-        obj.header.leftUrl = '/bus/wallet';
+        obj.header.leftUrl = '/wallet';
         res.render('bus/page/wallet/withdrawals.tpl', obj);
     });
     //我的钱包 —— 提现结果页
     router.get('/withdrawals-result', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '提现';
-        obj.header.leftUrl = '/bus/wallet';
+        obj.header.leftUrl = '/wallet';
         res.render('bus/page/wallet/withdrawals-result.tpl', obj);
     });
     //我的钱包 ——添加银行卡
     router.get('/add-bank-card', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '添加银行卡';
-        obj.header.leftUrl = '/bus/wallet';
+        obj.header.leftUrl = '/wallet';
         res.render('bus/page/wallet/add-bank-card.tpl', obj);
     });
     //订单管理 ——首页
@@ -142,7 +142,7 @@ module.exports = function (router) {
         obj.header.tab = ['待发货','待付款','已发货','退款中'];
         //假数据
         obj.data = yog.require('bus/test/order.js');
-        //obj.header.leftUrl = '/bus/wallet';
+        //obj.header.leftUrl = '/wallet';
         res.render('bus/page/order/index.tpl', obj);
     });
     //订单管理 ——订单详情
@@ -161,7 +161,7 @@ module.exports = function (router) {
         //假数据
         resObj.data = yog.require('bus/test/order.js');
         resObj.data.status = 'ywc';
-        //resObj.header.backUrl = '/bus/wallet';
+        //resObj.header.backUrl = '/wallet';
         res.render('bus/page/order/completed.tpl', resObj);
     });
     //订单管理 ——已关闭
@@ -171,7 +171,7 @@ module.exports = function (router) {
         //假数据
         resObj.data = yog.require('bus/test/order.js');
         resObj.data.status = 'ygb';
-        //resObj.header.backUrl = '/bus/wallet';
+        //resObj.header.backUrl = '/wallet';
         res.render('bus/page/order/closed.tpl', resObj);
     });
     //评论
@@ -179,7 +179,7 @@ module.exports = function (router) {
         resObj.header.title = '评论';
         //假数据
         resObj.data = yog.require('bus/test/order.js');
-        //resObj.header.backUrl = '/bus/wallet';
+        //resObj.header.backUrl = '/wallet';
         res.render('bus/page/order/evaluation.tpl', resObj);
     });
     //商家端我的百多宝
@@ -303,5 +303,11 @@ module.exports = function (router) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '申请平台介入';
         res.render('bus/page/user/application-bdb.tpl', obj);
+    });
+    //店铺
+    router.get('/store/apply', function (req, res, next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '申请开店';
+        res.render('bus/page/store/apply.tpl', obj);
     });
 };

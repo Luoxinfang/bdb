@@ -33,7 +33,11 @@
 			</div>
 		</div>
 		<div class="comment">
-			<div class="dt"></div>
+			<div class="dt">
+				<div class="item"><label for="radio-1-1"><input type="radio" name="comment-1" id="radio-1-1" checked><span class="good">好评</span></label></div>
+				<div class="item tc"><label for="radio-1-2"><input type="radio" name="comment-1" id="radio-1-2"><span class="mid">中评</span></label></div>
+				<div class="item tr"><label for="radio-1-3"><input type="radio" name="comment-1" id="radio-1-3"><span class="bad">差评</span></label></div>
+			</div>
 			<div class="ml20 mr20"><textarea name="" id="" placeholder="说点什么"></textarea></div>
 		</div>
 		<div class="order-item">
@@ -49,16 +53,178 @@
 			</div>
 		</div>
 		<div class="comment">
-			<div class="dt"></div>
+			<div class="dt">
+				<div class="item"><label for="radio-2-1"><input type="radio" name="comment-2" id="radio-2-1" checked><span class="good">好评</span></label></div>
+				<div class="item tc"><label for="radio-2-2"><input type="radio" name="comment-2" id="radio-2-2"><span class="mid">中评</span></label></div>
+				<div class="item tr"><label for="radio-2-3"><input type="radio" name="comment-2" id="radio-2-3"><span class="bad">差评</span></label></div>
+			</div>
 			<div class="ml20 mr20"><textarea name="" id="" placeholder="说点什么"></textarea></div>
 		</div>
 	</div>
 
+	<div class="order-rate mb20">
+		<div class="item">
+			<span class="sl">描述相符：</span>
+			<div class="dr">
+				<div class="stars stars-0">
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-1" class="radio" checked>
+				<div class="stars stars-1">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-1" class="radio">
+				<div class="stars stars-2">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-1" class="radio">
+				<div class="stars stars-3">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-1" class="radio">
+				<div class="stars stars-4">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-1" class="radio">
+				<div class="stars stars-5">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<span class="sl">服务态度：</span>
+			<div class="dr">
+				<div class="stars stars-0">
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-2" class="radio" checked>
+				<div class="stars stars-1">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-2" class="radio">
+				<div class="stars stars-2">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-2" class="radio">
+				<div class="stars stars-3">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-2" class="radio">
+				<div class="stars stars-4">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-2" class="radio">
+				<div class="stars stars-5">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<span class="sl">物流服务：</span>
+			<div class="dr">
+				<div class="stars stars-0">
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-3" class="radio" checked>
+				<div class="stars stars-1">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-3" class="radio">
+				<div class="stars stars-2">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-3" class="radio">
+				<div class="stars stars-3">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-3" class="radio">
+				<div class="stars stars-4">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star"></i>
+				</div>
+				<input type="radio" name="rate-3" class="radio">
+				<div class="stars stars-5">
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+					<i class="icon-40 icon-star-full"></i>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 
 {% block footer %}
 {% require '_common:widget/footer/footer.less' %}
 <div class="footer">
-	<a class="btn btn-red">提交评论</a>
+	<a class="btn btn-red">确定</a>
 </div>
 {% endblock %}

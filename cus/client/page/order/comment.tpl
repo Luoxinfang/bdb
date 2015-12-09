@@ -220,6 +220,10 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="ml20 mb20">
+		<a class="icon-add btn-file"><input type="file" class="file" accept="image/*"></a>
+	</div>
 {% endblock %}
 
 {% block footer %}

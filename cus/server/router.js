@@ -266,7 +266,7 @@ module.exports = function (router) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '系统设置';
 		obj.header.set = ['安全', '推送设置', '更新版本', '关于百多宝', '投诉建议']
-		res.render('cus/page/user/sys-settings.tpl', obj);
+		res.render('cus/page/settings/sys-settings.tpl', obj);
 	});
 	//安全设置
 	router.get('/safety-settings', function (req, res, next) {

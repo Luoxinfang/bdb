@@ -200,6 +200,9 @@ module.exports = function (router) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '平台活动';
         obj.header.tab = ['已开始','已介绍'];
+        //假数据
+        obj.data = yog.require('bus/test/auction.js');
+        console.log(obj.data.dataList);
         res.render('bus/page/activity/bdb-activity.tpl',obj);
     });
     //添加活动

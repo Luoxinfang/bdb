@@ -15,7 +15,7 @@
                     <input type="text" id="name" placeholder="活动名称" minlength="2" maxlength="4" /><span></span>
                 </li>
             </ul>
-            <a class="icon-add"></a>
+            <a class="icon-add btn-file"><input type="file" class="file" accept="image/*"></a>
             <ul class="form-ul">
                 <li class='form-li-input form-li-textarea'>
                     <textarea id="info" placeholder="请输入介绍信息..."></textarea>

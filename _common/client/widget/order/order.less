@@ -4,7 +4,7 @@
 	&-list {
 	}
 	//订单列表item
-	&-item {
+	&-item,.order-detail {
 		padding-left:20/64rem;
 		margin-top: 10/64rem;
 		background: #fff;
@@ -353,5 +353,90 @@
 				}
 			}
 		}
+	}
+}
+
+//detail
+.order {
+	.order-detail{
+		background: transparent;
+		padding-left:0;
+		.line1,.line2,.line3,.line-info{
+			background: #fff;
+			padding-left: 20/64rem;
+		}
+		.btn{
+			padding: 0 20/64rem;
+			font-size:  0.40625rem;
+			height: 70/64rem;
+			line-height: 70/64rem;
+		}
+		.line1{
+			span{
+				color: #000!important;
+				&:nth-child(2){
+					margin-left: 0;
+				}
+			}
+		}
+		.line2{
+			.order-btn{
+				float: right!important;
+				.btn{
+					margin-top: 38/64rem;
+				}
+			}
+		}
+		.line3{
+			height: auto;
+			padding-top:20/64rem;
+			.line3-info{
+				float: left;
+				padding-top:10/64rem;
+				p{
+					margin-bottom:20/64rem ;
+				}
+			}
+			.line3-btn{
+				float: right;
+			}
+		}
+		.line-info{
+			margin-top:20/64rem;
+			.line-info-div{
+				margin-bottom: 20/64rem;
+				p{
+					height: 50/64rem;
+					line-height: 50/64rem;
+					padding-right:20/64rem;
+					&.title{
+						height: 70/64rem;
+						line-height: 70/64rem;
+						border-bottom: 1px solid #e7e7e8;
+						color: #000;
+					}
+					.order_no{
+						float: right;
+					}
+				}
+			}
+		}
+	}
+}
+
+.order-detail-footer{
+	height: 80/64rem;
+	padding-right: 20/64rem;
+	background: #fff;
+	border-top: 1px solid #e7e7e8;
+	.btn{
+		width: auto;
+		padding: 0 20/64rem;
+		margin-top: 5/64rem;
+		margin-left: 20/64rem;
+		height: 70/64rem;
+		line-height: 70/64rem;
+		float: right;
+		font-size: 0.40625rem;
 	}
 }

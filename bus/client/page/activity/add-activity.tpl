@@ -22,8 +22,10 @@
                 </li>
             </ul>
             <div class="form-li-text">
-                <div class="date-1"><span class="card-name">开始时间</span><span class="card-type">2015-10-08 18:00</span></div>
-                <div class="date-1"><span class="card-name">结束时间</span><span class="card-type">2015-10-09 18:00</span></div>
+                <div class="date-1 clearfix"><span class="card-name">开始时间</span>
+                    <span class="card-type">2015-10-08 18:00</span><input type="datetime" value="2015-10-08 18:00"></div>
+                <div class="date-1"><span class="card-name">结束时间</span>
+                    <span class="card-type">2015-10-09 18:00</span><input type="datetime" value="2015-10-09 18:00"></div>
             </div>
             <a class="btn btn-red">完成</a>
         </div>

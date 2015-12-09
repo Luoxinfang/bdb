@@ -52,7 +52,6 @@
     height: 180/@rem-pre;
     border: 1px solid #e7e7e8;
     position: relative;
-    padding-left: 0.3125rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top-left-radius: 5px;
@@ -60,21 +59,33 @@
     margin-top: 20/@rem-pre;
     margin-bottom: 60/@rem-pre;
     .date-1 {
-      margin-top:13/@rem-pre;
+      height: 50%;
+      position: relative;
+      border-bottom: 2px solid #e7e7e8;
       .card-name {
+        display: block;
+        float: left;
         font-size: 0.46875rem;
         line-height: 0.46875rem;
-        width: 5.625rem;
         padding: 0.234375rem 0rem;
         margin-top: 0.234375rem;
+        margin-left: 20/@rem-pre;
       }
       .card-type {
         font-size: 0.46875rem;
         line-height: 0.46875rem;
         padding: 0.234375rem 0rem;
         margin-top: 0.234375rem;
+        float: right;
+        margin-right: 20/@rem-pre;
+      }
+      input[type='datetime'] {
+        height: 100%;
         position: absolute;
-        right: 20px;
+        opacity: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
       }
     }
   }

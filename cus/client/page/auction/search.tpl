@@ -4,15 +4,15 @@
 	{% widget '_common:widget/header/header-search.tpl' %}
 	{% require '_common:widget/auction/auction.less' %}
 	<div class="category-list mt10 mb10 clearfix">
-		<a class="category-item">缅甸玉</a>
-		<a class="category-item">和田玉</a>
-		<a class="category-item">XXXX</a>
-		<a class="category-item">XXXX</a>
-		<a class="category-item">XXXX</a>
-		<a class="category-item choosed">XXXX</a>
-		<a class="category-item">XXXX</a>
-		<a class="category-item">XXXX</a>
-		<a class="category-item">XXXX</a>
+		<div class="category-item"><input type="checkbox"><a>缅甸玉</a></div>
+		<div class="category-item"><input type="checkbox"><a>和田玉</a></div>
+		<div class="category-item"><input type="checkbox"><a>XXXX</a></div>
+		<div class="category-item"><input type="checkbox"><a>XXXX</a></div>
+		<div class="category-item"><input type="checkbox"><a>XXXX</a></div>
+		<div class="category-item"><input type="checkbox" checked><a>XXXX</a></div>
+		<div class="category-item"><input type="checkbox"><a>XXXX</a></div>
+		<div class="category-item"><input type="checkbox"><a>XXXX</a></div>
+		<div class="category-item"><input type="checkbox"><a>XXXX</a></div>
 	</div>
 {% endblock %}
 

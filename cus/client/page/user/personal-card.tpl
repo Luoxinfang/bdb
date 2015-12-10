@@ -2,8 +2,8 @@
 
 {% block header %}
 	{% widget '_common:widget/header/header-top.tpl' %}
-	{% widget '_common:widget/banner/banner.tpl' %}
 	{% require '_common:widget/user/user.less' %}
+	<div class="personal-bg"></div>
 	<div class="personal-head">
 		<div class="showActionsheet" actionsheet="actionsheet-01">{% widget '_common:widget/user/user-photo.tpl' %}</div>
 		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>

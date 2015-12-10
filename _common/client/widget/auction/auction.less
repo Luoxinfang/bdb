@@ -110,16 +110,46 @@
 			}
 		}
 		.price {
-			margin-left: 20/@rem-pre;
+			margin: 0 20/@rem-pre;
 			height: 60/@rem-pre;
 			line-height: 60/@rem-pre;
-			a {
-				display: block;
-				width: 33.33%;
+			.item {
+				width: 180/@rem-pre;
 				float: left;
-				padding-left: 50/@rem-pre;
-				color: #36b3a4;
-				font-size: @fontSize4;
+				margin-left: 30/@rem-pre;
+				&:first-child {
+					margin-left: 0;
+				}
+				span {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					padding-left: 40/@rem-pre;
+					color: #36b3a4;
+					font-size: @fontSize4;
+					&:after {
+						content: '';
+						display: inline-block;
+						width: 40/@rem-pre;
+						height: 40/@rem-pre;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						margin: auto 0;
+						left: 0;
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+					&.qi:after {
+						background-image: url('../../icon/icon-qi.png');
+					}
+					&.jia:after {
+						background-image: url('../../icon/icon-jia.png');
+					}
+					&.bao:after {
+						background-image: url('../../icon/icon-bao.png');
+					}
+				}
 			}
 		}
 		.collect-cnt {
@@ -307,17 +337,44 @@
 	}
 	&-item {
 		position: relative;
-		width: 190/@rem-pre;
+		display: block;
+		width: 33.33%;
+		text-align: center;
 		height: 80/@rem-pre;
 		float: left;
-		margin: 10/@rem-pre 15/@rem-pre 10/@rem-pre 0;
+		margin: 10/@rem-pre 0;
 		line-height: 80/@rem-pre;
 		color: @mainColor3;
 		font-size: @fontSize2;
-		background: @white;
-		border: 1px solid @lineColor;
-		border-radius: 5px;
-		&.choosed {
+		&:nth-child(3n) {
+			padding-left: 10/@rem-pre;
+		}
+		&:nth-child(3n-1) {
+			padding: 0 5/@rem-pre;
+		}
+		&:nth-child(3n-2) {
+			padding-right: 10/@rem-pre;
+		}
+		a {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			float: left;
+			background: @white;
+			border: 1px solid @lineColor;
+			border-radius: 5px;
+		}
+		input[type="checkbox"] {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			z-index: 2;
+		}
+		input[type="checkbox"]:checked+a {
 			color: @mainColor2;
 			border-color: @mainColor2;
 			&:after {

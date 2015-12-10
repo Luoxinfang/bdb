@@ -3,7 +3,19 @@
 {% block header %}
 	{% widget '_common:widget/header/header.tpl' %}
 	{% require '_common:widget/order/order.less' %}
-	<div class="order-status">订单状态：待支付</div>
+	{% if order.status == 'dzf' %}
+		<div class="order-status">订单状态：待支付</div>
+	{% elseif order.status == 'dfh' %}
+		<div class="order-status">订单状态：待发货</div>
+	{% elseif order.status == 'dsh' %}
+		<div class="order-status">订单状态：待收货</div>
+	{% elseif order.status == 'ywc' %}
+		<div class="order-status">订单状态：交易完成</div>
+	{% elseif order.status == 'dpj' %}
+		<div class="order-status">订单状态：待评价</div>
+	{% elseif order.status == 'tkz' %}
+		<div class="order-status">订单状态：申请退货</div>
+	{% endif %}
 {% endblock %}
 
 {% block body %}
@@ -11,7 +23,7 @@
 		{% widget '_common:widget/user/user-photo.tpl' %}
 		<div class="tlt">翡翠世家</div>
 		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
-		<a href="/store" class="url btn btn-white btn-w135 btn-h70">进入店铺</a>
+		<a href="/store" class="url btn btn-white btn-w135 btn-h70 fs-4">进入店铺</a>
 	</div>
 	<div class="order-auction mt20">
 		<div class="order-item">
@@ -70,7 +82,20 @@
 {% block footer %}
 {% require '_common:widget/footer/footer.less' %}
 <div class="footer">
-	<a class="btn btn-red btn-w135 btn-h70 fr showDialog" dialog="payWay">付款</a>
+	{% if order.status == 'dfk' %}
+		<a class="btn btn-red btn-w135 btn-h70 fs-4 fr showDialog" dialog="payWay">付款</a>
+	{% elseif order.status == 'dfh' %}
+		<a href="/order/result?status=applyRefundSuccess" class="btn btn-white btn-w135 btn-h70 fs-4 fr">整单退款</a>
+		<a class="btn btn-white btn-w135 btn-h70 fs-4 fr mr20">提醒发货</a>
+	{% elseif order.status == 'dsh' %}
+		<a href="/order/result?status=confirmReceipt" class="btn btn-red btn-w135 btn-h70 fs-4 fr">确认收货</a>
+		<a class="btn btn-white btn-w135 btn-h70 fs-4 fr mr20">延迟收货</a>
+		<a href="/order/result?status=applyRefundSuccess" class="btn btn-white btn-w135 btn-h70 fs-4 fr mr20">整单退款</a>
+	{% elseif order.status == 'dpj' %}
+		<a href="/order/comment" class="btn btn-red btn-w135 btn-h70 fs-4 fr">去评论</a>
+	{% elseif order.status == 'ywc' %}
+		<a href="/order/comment" class="btn btn-white btn-w135 btn-h70 fs-4 fr">申请售后</a>
+	{% endif %}
 </div>
 {% widget '_common:widget/dialog/dialog.tpl' %}
 <div class="dialog-wrap order-pay" id="payWay">
@@ -114,7 +139,7 @@
 				<div class="word"></div>
 				<input type="number" class="password" >
 			</div>
-			<div class="tip">请输入支付密码</div>
+			<div class="tip"><a href="/order/result?status=paySuccess" class="fc-i">请输入支付密码</a></div>
 		</div>
 	</div>
 </div>

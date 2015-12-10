@@ -1,103 +1,62 @@
 {% extends '_common:page/_layout.tpl' %}
 {% block head %}
-    {% require '_common:widget/auction/auction.less' %}
+    {% require '_common:widget/activity/activity-index.less' %}
 {% endblock %}
 
 {% block header %}
     {% widget '_common:widget/header/header.tpl' %}
     {% widget '_common:widget/header/header-tab.tpl' %}
 {% endblock %}
+
 {% block body %}
-<div class="auction-list clearfix">
-        <div class="auction-item">
-            <a href="/auction/detail">
+    <div class="activity-list ">
+        <div class="activity-item">
+            <a href="/cus/auction/detail">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/store" class="store mt10">
-                <span>小唐的店铺</span>
-                <i class="fr icon-22 icon-pei"></i>
-                <i class="fr icon-22 icon-7day"></i>
-                <i class="fr icon-22 icon-gold"></i>
-            </a>
-            <a href="" class="tlt">满绿翡翠吊坠</a>
-            <p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
-            <p class="time mt10">01/01-01/05</p>
-            <a class="collect-cnt icon-collect-cnt">431</a>
+            <div class="z-1">
+                <p class="s-1">宝石专场</p>
+            </div>
         </div>
-        <div class="auction-item">
-            <a href="/auction/detail?status=1">
+        <div class="activity-item">
+            <a href="/cus/auction/detail">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/store" class="store mt10">
-                <span>小唐的店铺</span>
-                <i class="fr icon-22 icon-pei"></i>
-                <i class="fr icon-22 icon-7day"></i>
-                <i class="fr icon-22 icon-gold"></i>
-            </a>
-            <a href="" class="tlt">满绿翡翠吊坠</a>
-            <p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
-            <p class="time mt10">01/01-01/05</p>
-            <a class="collect-cnt icon-collect-cnt">431</a>
+            <div class="z-1">
+                <p class="s-1">翡翠专场</p>
+            </div>
         </div>
-        <div class="auction-item">
-            <a href="/auction/detail?status=2">
+        <div class="activity-item">
+            <a href="/cus/auction/detail">
                 <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
             </a>
-            <a href="/store" class="store mt10">
-                <span>小唐的店铺</span>
-                <i class="fr icon-22 icon-pei"></i>
-                <i class="fr icon-22 icon-7day"></i>
-                <i class="fr icon-22 icon-gold"></i>
-            </a>
-            <a href="" class="tlt">满绿翡翠吊坠</a>
-            <p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
-            <p class="time mt10">01/01-01/05</p>
-            <a class="collect-cnt icon-collect-cnt">431</a>
+            <div class="z-1">
+                <p class="s-1">国庆专场</p>
+            </div>
         </div>
-        <div class="auction-item">
-            <a href="/auction/detail?status=3">
-                <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
+        <div class="activity-item">
+            <a href="/cus/auction/detail">
+                <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&amp;fm=21" alt="">
             </a>
-            <a href="/store" class="store mt10">
-                <span>小唐的店铺</span>
-                <i class="fr icon-22 icon-pei"></i>
-                <i class="fr icon-22 icon-7day"></i>
-                <i class="fr icon-22 icon-gold"></i>
-            </a>
-            <a href="" class="tlt">满绿翡翠吊坠</a>
-            <p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
-            <p class="time mt10">01/01-01/05</p>
-            <a class="collect-cnt icon-collect-cnt">431</a>
+            <div class="z-1">
+                <p class="s-1">小唐专场</p>
+            </div>
         </div>
-        <div class="auction-item">
-            <a href="/auction/detail">
-                <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
+        <div class="activity-item">
+            <a href="/cus/auction/detail">
+                <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&amp;fm=21" alt="">
             </a>
-            <a href="/store" class="store mt10">
-                <span>小唐的店铺</span>
-                <i class="fr icon-22 icon-pei"></i>
-                <i class="fr icon-22 icon-7day"></i>
-                <i class="fr icon-22 icon-gold"></i>
-            </a>
-            <a href="" class="tlt">满绿翡翠吊坠</a>
-            <p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
-            <p class="time mt10">01/01-01/05</p>
-            <a class="collect-cnt icon-collect-cnt">431</a>
+            <div class="z-1">
+                <p class="s-1">珠宝专场</p>
+            </div>
         </div>
-        <div class="auction-item">
-            <a href="/auction/detail">
-                <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
+        <div class="activity-item">
+            <a href="/cus/auction/detail">
+                <img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&amp;fm=21" alt="">
             </a>
-            <a href="/store" class="store mt10">
-                <span>小唐的店铺</span>
-                <i class="fr icon-22 icon-pei"></i>
-                <i class="fr icon-22 icon-7day"></i>
-                <i class="fr icon-22 icon-gold"></i>
-            </a>
-            <a href="" class="tlt">满绿翡翠吊坠</a>
-            <p class="desc">翡翠吊坠铂金镶嵌 钻石0.43克拉</p>
-            <p class="time mt10">01/01-01/05</p>
-            <a class="collect-cnt icon-collect-cnt">431</a>
+            <div class="z-1">
+                <p class="s-1">玉石专场</p>
+            </div>
         </div>
     </div>
 {% endblock %}

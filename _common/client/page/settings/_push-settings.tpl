@@ -29,9 +29,11 @@
                     <input type="checkbox" id="checkbox_c4" class="chk_3"><label for="checkbox_c4"></label>
                 </div>
             </div>
-            <div class="mt">
-                <div href="" class="push-item"><span >开始时间</span><label class="detailed-time">晚上10:00</label></div>
-                <div href="" class="push-item"><span >结束时间</span><label class="detailed-time">早上09:00</label></div>
+            <div class="mt clearfix">
+                <div href="" class="push-item"><span >开始时间</span>
+                    <span class="detailed-time">晚上10:00</span><input type="time" value="10:00"></div>
+                <div href="" class="push-item"><span >结束时间</span>
+                    <span class="detailed-time">早上09:00</span><input type="time" value="10:00"></div>
             </div>
     </div>
 

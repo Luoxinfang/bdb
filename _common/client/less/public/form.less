@@ -158,10 +158,23 @@
         border: none;
         border-radius: 5px;
     }
+    input[type='checkbox'] {
+        width: 24/@rem-pre;
+        height: 24/@rem-pre;
+        background: #ffffff;
+        border: 1px solid #cecece;
+        &:checked {
+            background-size: contain;
+            background-image: url('../../icon/checked.png?__sprite');
+        }
+    }
     p.tip {
         line-height: 40/@rem-pre;
         color: @mainColor4;
         font-size: @fontSize4;
+    }
+    .error {
+        color: @mainColor2;
     }
 }
 

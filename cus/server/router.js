@@ -211,7 +211,6 @@ module.exports = function (router) {
 		obj.header.title = '千年古玉';
 		obj.header.leftUrl = '/auction/list';
 		obj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
-		obj.userPhotoSize = 100;
 		obj.auctionStatus = req.query.status == null ? 0 : req.query.status;
 		res.render('cus/page/auction/detail.tpl', obj);
 	});

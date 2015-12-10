@@ -7,13 +7,14 @@ module.exports = {
 		unpack: 'json',
 		protocol: 'http',
 		pack: 'querystring',
-		method: 'GET',
+		method: 'POST',
 		encoding: 'utf-8',
 		balance: 'random',
 		retry: 2,
 		timeout: 500,
 		server: [
-			{host: '127.0.0.1', port: 8080}
+			{host: '192.168.0.105', port: 8080}/*,
+			 {host: '192.168.0.132', port: 8080}*/
 		]
 	}
 };

@@ -34,7 +34,7 @@ module.exports = {
 			dataType: 'json',
 			url: '/_common/session',
 			data: {
-				uname: userName,
+				uName: userName,
 				pwd: password
 			},
 			success: function (data) {

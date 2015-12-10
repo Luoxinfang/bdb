@@ -8,6 +8,7 @@
 var _ = require('lodash');
 var model = require('../model/session.js');
 module.exports = function (req, res, next) {
+
 	next();
 };
 //

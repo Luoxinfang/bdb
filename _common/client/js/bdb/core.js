@@ -8,10 +8,10 @@ module.exports = {
 	 *
 	 */
 	topTips: function (opt) {
-		var $dom = $('#top-tip'),iconName = 'warn';
+		var $dom = $('#top-tip'), iconName = 'warn';
 		if ($dom.length) {
 			$dom.show();
-		}else{
+		} else {
 			var html = [];
 			html.push('<div id="top-tip" class="top-tip">');
 			html.push('<div class="top-tip-wrapper">')
@@ -21,14 +21,17 @@ module.exports = {
 			$('.wrapper').append(html.join(''));
 			$dom = $('#top-tip');
 		}
-		$dom.find('.top-tip-icon')[0].className = 'top-tip-icon '+ iconName;
+		$dom.find('.top-tip-icon')[0].className = 'top-tip-icon ' + iconName;
 		$dom.find('.top-tip-content').html(opt.content);
 	},
-	topWarn: function (content) {
+	topWarn: function (content, lasting) {
 		this.topTips({
 			type: 'warn',
 			content: content
 		});
+		if (!lasting) {
+			setTimeout(this.hideTopTips.bind(this), 3000);
+		}
 	},
 	hideTopTips: function () {
 		$('#top-tip').hide();

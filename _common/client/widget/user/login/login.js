@@ -38,7 +38,7 @@ module.exports = {
 				pwd: password
 			},
 			success: function (data) {
-				if ('00000' === data.status) {
+				if (0 == data.status) {
 					if (rememberMe) {
 						$.cookie.set('user_id_remembered', userName);
 					} else {
@@ -46,7 +46,7 @@ module.exports = {
 					}
 					window.location.href = '/';
 				} else {
-					var msg = data.exception || '服务器异常，请稍后再试';
+					var msg = data.msg || '服务器异常，请稍后再试';
 					B.topWarn(msg);
 				}
 			},

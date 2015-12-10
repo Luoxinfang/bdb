@@ -21,8 +21,7 @@ module.exports.get = function (req, res, next) {
 //提交登录信息
 module.exports.post = function (req, res, next) {
 	var user = _.extend(req.body, {
-		service: 'cash',
-		requestid: req.ip
+		requestIP: req.ip
 	});
 	model.login(user).then(function (rs) {
 		if (rs.status === '0') {

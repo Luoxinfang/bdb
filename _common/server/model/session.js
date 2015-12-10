@@ -6,7 +6,6 @@ var serviceName = 'login'
 module.exports = {
 	login: function (user) {
 		user = server.parserData(user, serviceName);
-		console.log(user);
 		return yog.ral(serverId, {
 			path: '/interface/login/login2?' + user
 		});

@@ -17,24 +17,25 @@ module.exports.http = {
 	 * 配置中也可以通过function(req, res, next){}的形式加载中间件而无需使用插件管理
 	 *
 	 ***************************************************************************/
-	// middleware: [
-	//     'favicon',
-	//     'compression',
-	//     'static',
-	//     'responseTime',
-	//     'cookieParser',
-	//     'bodyParser',
-	//     'log',
-	//     'ral',
-	//     'views',
-	//     'methodOverride',
-	//     'dispatcher',
-	//     'notFound',
-	//     'error',
-	//     function(req, res, next){
-	//         next();
-	//     }
-	// ]
+	middleware: [
+		'favicon',
+		'compression',
+		'static',
+		'responseTime',
+		'cookieParser',
+		'bodyParser',
+		'log',
+		'ral',
+		'views',
+		'methodOverride',
+		'session',//session 中间件
+		'dispatcher',
+		'notFound',
+		'error',
+		function (req, res, next) {
+			next();
+		}
+	]
 };
 
 

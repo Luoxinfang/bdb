@@ -2,21 +2,28 @@
  * @author radish.
  */
 var B = require('_common:js/bdb/core.js');
+
+var keyRemember = 'remember_pwd';//是否记住密码
+
 module.exports = {
 	init: function () {
-		var userIdRemembered = $.cookie.get('user_id_remembered');
-		if (userIdRemembered) {
-			$('#username').val(userIdRemembered);
+		if (localStorage[keyRemember] == 'true') {
+			var user = $.cookie.get('user_info');
+			if (user) {
+				user = JSON.parse(decodeURIComponent(user));
+				$('#username').val(user['username']);
+				$('#user-pwd').val(user['pwd']);
+				$('#btn-remember').prop('checked', true);
+			}
 		}
 		this.event();
 	},
 	//用户登录
 	login: function (e) {
 		e && e.preventDefault();
-		var that = this,
-				userName = $('#username').val(),
+		var userName = $('#username').val(),
 				password = $('#user-pwd').val(),
-				rememberMe = $('#rem-me').prop('checked'),
+				remember = $('#btn-remember').prop('checked'),
 				captcha = $('#captcha').val(),
 				$tip = $('.login-layer .tip');
 		if (!userName) {
@@ -35,15 +42,11 @@ module.exports = {
 			url: '/_common/session',
 			data: {
 				uName: userName,
-				pwd: password
+				pwd: password,
+				remember: remember
 			},
 			success: function (data) {
 				if (0 == data.status) {
-					if (rememberMe) {
-						$.cookie.set('user_id_remembered', userName);
-					} else {
-						$.cookie.set('user_id_remembered', null);
-					}
 					window.location.href = '/';
 				} else {
 					var msg = data.msg || '服务器异常，请稍后再试';
@@ -55,7 +58,12 @@ module.exports = {
 			}
 		});
 	},
+	//记住密码
+	remember: function () {
+		localStorage[keyRemember] = $(this).prop('checked');
+	},
 	event: function () {
-		$('#btn-login').on('click', $.proxy(this.login, this));
+		$('#btn-login').on('click', this.login.bind(this));
+		$('#btn-remember').on('click', this.remember);
 	}
 };

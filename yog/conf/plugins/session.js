@@ -1,9 +1,12 @@
 module.exports.session = {
-    secret: 'yog',
+    key: 'sid',
+    secret: 'SecretWWW.bdb.vip.cOm',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {domain: 'bdbvip.com'}
 };
 
-module.exports.cookieParser = {
-    secret: 'yog'
-};
+/*
+ module.exports.cookieParser = {
+ secret: 'yog'
+ };*/

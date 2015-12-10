@@ -4,6 +4,7 @@
  */
 ;
 (function($) {
+	var _domain = 'bdbvip.com';
 	$.cookie = {
 		/**
 		 * 设置一个cookie
@@ -26,7 +27,10 @@
 				var expire = new Date();
 				expire.setTime(today.getTime() + 3600000 * hour);
 			}
-			document.cookie = name + "=" + value + "; " + (hour ? ("expires=" + expire.toGMTString() + "; ") : "") + (path ? ("path=" + path + "; ") : "path=/; ") + (domain ? ("domain=" + domain + ";") : ("domain=" + window.location.host + ";"));
+			document.cookie = name + "=" + value + "; "
+					+ (hour ? ("expires=" + expire.toGMTString() + "; ") : "")
+					+ (path ? ("path=" + path + "; ") : "path=/; ")
+					+ (domain ? ("domain=" + domain + ";") : ("domain=" + _domain+ ";"));
 			return true;
 		},
 

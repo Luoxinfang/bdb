@@ -1,0 +1,1 @@
+{% extends 'bus:widget/auction/auction-detail.tpl' %}

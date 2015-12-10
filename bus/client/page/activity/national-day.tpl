@@ -1,4 +1,4 @@
-{% extends '_common:page/auction/_index.tpl' %}
+{% extends '_common:page/auction/_list.tpl' %}
 
 {% block footer %}
     {% require '_common:widget/footer/footer.less' %}

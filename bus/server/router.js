@@ -4,7 +4,7 @@ module.exports = function (router) {
         header: {
             title: '百多宝',       //header标题
             leftIcon: 'back',     //头部左侧默认返回按钮
-            leftUrl: '/',      //头部左侧图标默认链接
+            leftUrl: '/mybdb',      //头部左侧图标默认链接
             rightIcon: false,     //右侧单个图标
             rightUrl: false,      //右侧图标链接
             rightIcons: false,    //右侧图标组
@@ -309,5 +309,31 @@ module.exports = function (router) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '申请开店';
         res.render('bus/page/store/apply.tpl', obj);
+    });
+    //拍卖行
+    router.get('/auction/list', function (req, res, next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '拍卖行';
+        obj.header.tab = ['拍卖中','未开始','已结束'];
+        obj.data = yog.require('bus/test/auction.js');
+        res.render('bus/page/auction/list.tpl', obj);
+    });
+    //拍品详情
+    router.get('/auction/detail', function (req, res, next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '千年古玉';
+        obj.header.rightIcon = 'share';
+        obj.header.leftUrl = '/auction/list';
+        obj.auctionStatus = req.query.status == null ? 0 : req.query.status;
+        res.render('bus/page/auction/detail.tpl', obj);
+    });
+    //货架
+    router.get('/shelves/list', function (req, res, next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '货架';
+        obj.header.sort = '上传商品';
+        obj.header.tab = ['拍品','一口价','审核中'];
+        obj.data = yog.require('bus/test/auction.js');
+        res.render('bus/page/shelves/list.tpl', obj);
     });
 };

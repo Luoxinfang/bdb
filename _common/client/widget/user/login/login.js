@@ -20,6 +20,7 @@ module.exports = {
 	},
 	//用户登录
 	login: function (e) {
+		debugger;
 		e && e.preventDefault();
 		var userName = $('#username').val(),
 				password = $('#user-pwd').val(),

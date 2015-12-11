@@ -1,0 +1,11 @@
+/*
+@import "@{_common}/public/variable.less";
+*/
+#head-pic {
+  height: 5.625rem;
+}
+#head-pic p {
+  text-align: center;
+  color: #55d12c;
+  padding-top: 4.15625rem;
+}

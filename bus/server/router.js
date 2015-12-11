@@ -31,7 +31,7 @@ module.exports = function (router) {
         obj.header.title = '我的百多宝';
         obj.header.leftIcon = false;
         obj.header.rightIcon = 'msg';
-        res.render('bus/page/user/mybdb.tpl',obj);
+        res.render('bus/page/mybdb.tpl',obj);
     });
     //登录
     router.get('/login', function (req, res, next) {

@@ -1,7 +1,7 @@
 <div class="header-wrap">
 	<div class="header">
 		{% if header.leftIcon %}
-		<a {% if header.leftUrl %}href="{{ header.leftUrl }}" {% endif %}class="left icon-60 icon-back"></a>
+		<a href="javascript:history.back();" class="left icon-60 icon-back"></a>
 		{% endif %}
 		<div class="center fs-1 fc-3">
 			{{ header.title }} {#标题，默认：百多宝#}

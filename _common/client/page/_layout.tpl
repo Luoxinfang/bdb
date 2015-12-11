@@ -3,6 +3,7 @@
   {% head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="百多宝--珠宝电商平台">
     <meta name="author" content="百多宝前海科技有限公司">
     <meta name="keyword" content="百多宝,珠宝,电商平台">

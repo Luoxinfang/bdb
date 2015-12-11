@@ -24,10 +24,13 @@ module.exports = function (router) {
         next();
     });
 
-    //首页
-    router.get('/', function (req, res, next) {
+    //商家端首页--我的百多宝
+    router.get('/',function(req,res,next){
         var obj = _.cloneDeep(resObj);
-        res.render('bus/page/user/login.tpl', obj);
+        obj.header.title = '我的百多宝';
+        obj.header.leftIcon = false;
+        obj.header.rightIcon = 'msg';
+        res.render('bus/page/user/mybdb.tpl',obj);
     });
     //登录
     router.get('/login', function (req, res, next) {
@@ -181,14 +184,6 @@ module.exports = function (router) {
         resObj.data = yog.require('bus/test/order.js');
         //resObj.header.backUrl = '/wallet';
         res.render('bus/page/order/evaluation.tpl', resObj);
-    });
-    //商家端我的百多宝
-    router.get('/mybdb',function(req,res,next){
-       var obj = _.cloneDeep(resObj);
-        obj.header.title = '我的百多宝';
-        obj.header.leftIcon = false;
-        obj.header.rightIcon = 'msg';
-       res.render('bus/page/user/mybdb.tpl',obj);
     });
     //活动
     router.get('/activity-index',function(req,res,next) {

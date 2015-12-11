@@ -1,7 +1,7 @@
 {% extends '_common:page/_layout.tpl' %}
 
 {% block header %}
-	{% widget '_common:widget/header/header.tpl' %}
+	{% widget '_common:widget/common/header/header.tpl' %}
 	{% require '_common:widget/order/order.less' %}
 	{% if order.status == 'dzf' %}
 		<div class="order-status">订单状态：待支付</div>

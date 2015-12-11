@@ -11,7 +11,6 @@
     <div id="content">
         <!--注册表单-->
         <div class="form">
-
             <ul class="form-ul">
                 <li class='form-li-input'>
                     <input type="tel" id="tel" placeholder="请输入你的手机号码" maxlength="11" autoconmplete='on' />

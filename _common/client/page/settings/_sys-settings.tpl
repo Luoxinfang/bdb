@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="../../css/user/sys-set.css"/>
 {% endblock %}
 {%  block body %}
-    {% widget '_common:widget/header/header.tpl' %}
+    {% widget '_common:widget/common/header/header.tpl' %}
 
     <div class="set-list">
                 {% for item in header.set -%}

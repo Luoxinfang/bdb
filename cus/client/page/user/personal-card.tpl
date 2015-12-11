@@ -1,7 +1,7 @@
 {% extends '_common:page/_layout.tpl' %}
 
 {% block header %}
-	{% widget '_common:widget/header/header-top.tpl' %}
+	{% widget '_common:widget/common/header/header-top.tpl' %}
 	{% require '_common:widget/user/user.less' %}
 	<div class="personal-bg"></div>
 	<div class="personal-head">
@@ -68,7 +68,7 @@
 		</a>
 	</div>
 
-	{% widget '_common:widget/actionsheet/actionsheet.tpl' %}
+	{% widget '_common:widget/common/actionsheet/actionsheet.tpl' %}
 	<div class="actionsheet-wrap" id="actionsheet-01">
 		<div class="mask mask-transition" style="display: none;"></div>
 		<div class="actionsheet">

@@ -4,7 +4,7 @@
     {% require 'bus:widget/user/login/index.less' %}
 {% endblock %}
 {% block header %}
-    {% widget '_common:widget/header/header-top.tpl' %}
+    {% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 {% block body %}
     <div class="bdb-list clearfix">

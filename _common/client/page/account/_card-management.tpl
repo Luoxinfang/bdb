@@ -3,7 +3,7 @@
     {% require '_common:less/public/form.less' %}
 {% endblock %}
 {% block header %}
-    {% widget '_common:widget/header/header.tpl' %}
+    {% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 {%  block body %}
     <div id="content">

@@ -9,7 +9,6 @@
     <meta name="keyword" content="百多宝,珠宝,电商平台">
     <title>百多宝--珠宝电商平台</title>
     <link rel="apple-touch-icon" sizes="114x114" href="../icon/logo.png" />
-    {% require "_common:css/weui.css" %}
     {% require "_common:less/normalize.less" %}
     {% require "_common:less/global.less" %}
     {% require "_common:js/lib/zepto.js" %}

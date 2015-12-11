@@ -1,4 +1,4 @@
-{% require '_common:widget/header/header.less' %}
+{% require '_common:widget/common/header/header.less' %}
 
 <div class="header-wrap">
 	<div class="header">

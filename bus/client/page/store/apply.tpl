@@ -1,7 +1,7 @@
 {% extends '_common:page/_layout.tpl' %}
 
 {% block header %}
-	{% widget '_common:widget/header/header.tpl' %}
+	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
 {% block body %}
@@ -32,7 +32,7 @@
 			</div>
 		</div>
 
-		{% widget '_common:widget/actionsheet/actionsheet.tpl' %}
+		{% widget '_common:widget/common/actionsheet/actionsheet.tpl' %}
 		<div class="actionsheet-wrap" id="actionsheet-01">
 			<div class="mask mask-transition" style="display: none;"></div>
 			<div class="actionsheet">

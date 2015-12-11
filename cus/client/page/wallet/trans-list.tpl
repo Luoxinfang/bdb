@@ -1,7 +1,7 @@
 {% extends '_common:page/_layout.tpl' %}
 
 {% block header %}
-	{% widget '_common:widget/header/header.tpl' %}
+	{% widget '_common:widget/common/header/header.tpl' %}
 	{% require '_common:widget/wallet/trans.less' %}
 	<div class="trans-time pb10">
 		<div class="time start"><span>起</span><span>2015-10-07</span><input type="date" value="2015-10-07"></div>

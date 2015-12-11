@@ -3,7 +3,7 @@
     {% require '_common:widget/auction/auction.less' %}
 {% endblock %}
 {% block header %}
-    {% widget '_common:widget/header/header-nav.tpl' %}
+    {% widget '_common:widget/common/header/header-nav.tpl' %}
 {% endblock %}
 {% block body %}
     <div class="auction-dialog">

@@ -4,8 +4,8 @@
 {% endblock %}
 
 {% block header %}
-    {% widget '_common:widget/header/header.tpl' %}
-    {% widget '_common:widget/header/header-tab.tpl' %}
+    {% widget '_common:widget/common/header/header.tpl' %}
+    {% widget '_common:widget/common/header/header-tab.tpl' %}
 {% endblock %}
 
 {% block body %}

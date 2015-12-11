@@ -5,7 +5,7 @@
 
 module.exports = {
 	/**
-	 *
+	 *  页面顶部提示组件
 	 */
 	topTips: function (opt) {
 		var $dom = $('#top-tip'), iconName = 'warn';
@@ -35,5 +35,20 @@ module.exports = {
 	},
 	hideTopTips: function () {
 		$('#top-tip').hide();
+	},
+
+	/**
+	 * 是不是ios设备
+	 */
+	isIOS: function () {
+		return navigator.userAgent.indexOf('iPhone') > -1
+				|| navigator.userAgent.indexOf('iPad') > -1;
+	},
+	/**
+	 * 是不是android设备
+	 */
+	isAndroid: function () {
+		return navigator.userAgent.indexOf('Android') > -1
+				|| navigator.userAgent.indexOf('Linux') > -1;
 	}
 };

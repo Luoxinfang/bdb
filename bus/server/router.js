@@ -4,11 +4,12 @@ module.exports = function (router) {
         header: {
             title: '百多宝',       //header标题
             leftIcon: 'back',     //头部左侧默认返回按钮
-            leftUrl: '/mybdb',      //头部左侧图标默认链接
+            leftUrl: '/mybdb',    //头部左侧图标默认链接
             rightIcon: false,     //右侧单个图标
-            rightUrl: false,      //右侧图标链接
+            rightUrl: false,      //右侧图标或文字链接
             rightIcons: false,    //右侧图标组
-            sort: false,          //右侧排序或文字
+            rightText: false,     //右侧文字
+            rightSort: false,     //右侧排序数组
             nav: ['系统消息', '用户消息'],     //头部nav数组
             tab: ['全部', '进行中', '未开始'],  //头部tab数组
             set: false
@@ -142,7 +143,7 @@ module.exports = function (router) {
     router.get('/order', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '订单管理';
-        obj.header.tab = ['待发货','待付款','已发货','退款中'];
+        obj.header.tab = ['待发货', '待付款', '已发货', '退款中'];
         //假数据
         obj.data = yog.require('bus/test/order.js');
         //obj.header.leftUrl = '/wallet';
@@ -159,78 +160,89 @@ module.exports = function (router) {
     });
     //订单管理 ——已完成
     router.get('/completed', function (req, res, next) {
-        resObj.app.title = resObj.header.title = '订单管理';
-        resObj.header.sort = '已完成';
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '订单管理';
+        obj.header.rightText = '已完成';
         //假数据
-        resObj.data = yog.require('bus/test/order.js');
-        resObj.data.status = 'ywc';
-        //resObj.header.backUrl = '/wallet';
-        res.render('bus/page/order/completed.tpl', resObj);
+        obj.data = yog.require('bus/test/order.js');
+        obj.data.status = 'ywc';
+        //obj.header.backUrl = '/wallet';
+        res.render('bus/page/order/completed.tpl', obj);
     });
     //订单管理 ——已关闭
     router.get('/closed', function (req, res, next) {
-        resObj.app.title = resObj.header.title = '订单管理';
-        resObj.header.sort = '已关闭';
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '订单管理';
+        obj.header.rightText = '已关闭';
         //假数据
-        resObj.data = yog.require('bus/test/order.js');
-        resObj.data.status = 'ygb';
+        obj.data = yog.require('bus/test/order.js');
+        obj.data.status = 'ygb';
         //resObj.header.backUrl = '/wallet';
-        res.render('bus/page/order/closed.tpl', resObj);
+        res.render('bus/page/order/closed.tpl', obj);
     });
     //评论
     router.get('/evaluation', function (req, res, next) {
-        resObj.header.title = '评论';
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '评论';
         //假数据
-        resObj.data = yog.require('bus/test/order.js');
+        obj.data = yog.require('bus/test/order.js');
         //resObj.header.backUrl = '/wallet';
-        res.render('bus/page/order/evaluation.tpl', resObj);
+        res.render('bus/page/order/evaluation.tpl', obj);
+    });
+    //商家端我的百多宝
+    router.get('/mybdb', function (req, res, next) {
+        var obj = _.cloneDeep(resObj);
+        obj.header.title = '我的百多宝';
+        obj.header.leftIcon = false;
+        obj.header.rightIcon = 'msg';
+        res.render('bus/page/user/mybdb.tpl', obj);
     });
     //活动
-    router.get('/activity-index',function(req,res,next) {
+    router.get('/activity-index', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '活动';
-        obj.header.tab = ['已开始','未开始','已介绍'];
-        res.render('bus/page/activity/activity-index.tpl',obj);
+        obj.header.tab = ['已开始', '未开始', '已介绍'];
+        res.render('bus/page/activity/activity-index.tpl', obj);
     });
     //国庆专场
-    router.get('/national-day',function(req,res,next) {
+    router.get('/national-day', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '国庆专场';
-        obj.header.tab = ['拍卖中','未开始','已结束'];
-        res.render('bus/page/activity/national-day.tpl',obj);
+        obj.header.tab = ['拍卖中', '未开始', '已结束'];
+        res.render('bus/page/activity/national-day.tpl', obj);
     });
     //平台活动
-    router.get('/bdb-activity',function(req,res,next) {
+    router.get('/bdb-activity', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '平台活动';
-        obj.header.tab = ['已开始','已介绍'];
+        obj.header.tab = ['已开始', '已介绍'];
         //假数据
         obj.data = yog.require('bus/test/auction.js');
-        res.render('bus/page/activity/bdb-activity.tpl',obj);
+        res.render('bus/page/activity/bdb-activity.tpl', obj);
     });
     //添加活动
-    router.get('/add-activity',function(req,res,next) {
+    router.get('/add-activity', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '发起活动';
-        res.render('bus/page/activity/add-activity.tpl',obj);
+        res.render('bus/page/activity/add-activity.tpl', obj);
     });
     //地区选择
-    router.get('/select-address',function(req,res,next) {
+    router.get('/select-address', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '地区选择';
-        res.render('bus/page/address/select-address.tpl',obj);
+        res.render('bus/page/address/select-address.tpl', obj);
     });
     //输入邮箱
-    router.get('/input-email',function(req,res,next) {
+    router.get('/input-email', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '地区选择';
-        res.render('bus/page/address/input-email.tpl',obj);
+        res.render('bus/page/address/input-email.tpl', obj);
     });
     //展示模板
-    router.get('/show-template',function(req,res,next) {
+    router.get('/show-template', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '展示模板';
-        res.render('bus/page/user/show-template.tpl',obj);
+        res.render('bus/page/user/show-template.tpl', obj);
     });
     //系统消息
     router.get('/sys-message', function (req, res, next) {
@@ -246,21 +258,21 @@ module.exports = function (router) {
     router.get('/card-management', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '银行卡管理';
-        obj.header.sort = '删除';
+        obj.header.rightText = '删除';
         res.render('bus/page/account/card-management.tpl', obj);
     });
     //系统设置
     router.get('/sys-settings', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '系统设置';
-        obj.header.set=['安全','推送设置','更新版本','关于百多宝','投诉建议']
+        obj.header.set = ['安全', '推送设置', '更新版本', '关于百多宝', '投诉建议']
         res.render('bus/page/settings/sys-settings.tpl', obj);
     });
     //安全设置
     router.get('/safety-settings', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '系统设置';
-        obj.header.set=['修改密码','更换手机号']
+        obj.header.set = ['修改密码', '更换手机号']
         res.render('bus/page/settings/sys-settings.tpl', obj);
     });
     //推送设置
@@ -309,7 +321,7 @@ module.exports = function (router) {
     router.get('/auction/list', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '拍卖行';
-        obj.header.tab = ['拍卖中','未开始','已结束'];
+        obj.header.tab = ['拍卖中', '未开始', '已结束'];
         obj.data = yog.require('bus/test/auction.js');
         res.render('bus/page/auction/list.tpl', obj);
     });
@@ -326,8 +338,8 @@ module.exports = function (router) {
     router.get('/shelves/list', function (req, res, next) {
         var obj = _.cloneDeep(resObj);
         obj.header.title = '货架';
-        obj.header.sort = '上传商品';
-        obj.header.tab = ['拍品','一口价','审核中'];
+        obj.header.rightText = '上传商品';
+        obj.header.tab = ['拍品', '一口价', '审核中'];
         obj.data = yog.require('bus/test/auction.js');
         res.render('bus/page/shelves/list.tpl', obj);
     });

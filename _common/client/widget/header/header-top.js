@@ -9,8 +9,7 @@ module.exports = {
 	events: function () {
 		if ($('.body-container').offset().top <= 0) {
 			$('.body-container').scroll(function () {
-				//console.log($('.body-container').scrollTop());
-				var height = $('.banner').height();
+				var height = 200;
 				var scrollTop = $('.body-container')[0].scrollTop;
 				var alpha = scrollTop > height ? 0.8 : scrollTop / height * 0.8;
 				$('.header-top').css({

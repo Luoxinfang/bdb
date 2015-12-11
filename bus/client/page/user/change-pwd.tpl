@@ -1,1 +1,1 @@
-{% extends '_common:page/user/_change-pwd.tpl' %}
+{% extends '_common:page/user/change-pwd.tpl' %}

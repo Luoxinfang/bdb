@@ -1,1 +1,1 @@
-{% extends '_common:page/user/_find-pwd-info.tpl' %}
+{% extends '_common:page/user/find-pwd-info.tpl' %}

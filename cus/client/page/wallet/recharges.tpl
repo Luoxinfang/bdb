@@ -1,1 +1,1 @@
-{% extends '_common:page/account/_recharges.tpl' %}
+{% extends '_common:page/account/recharges.tpl' %}

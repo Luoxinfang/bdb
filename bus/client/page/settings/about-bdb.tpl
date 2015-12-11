@@ -1,1 +1,1 @@
-{% extends '_common:page/settings/_about-bdb.tpl' %}
+{% extends '_common:page/settings/about-bdb.tpl' %}

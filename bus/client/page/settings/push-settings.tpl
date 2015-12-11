@@ -1,1 +1,1 @@
-{% extends '_common:page/settings/_push-settings.tpl' %}
+{% extends '_common:page/settings/push-settings.tpl' %}

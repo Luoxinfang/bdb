@@ -1,1 +1,1 @@
-{% extends  '_common:page/user/_sys-message.tpl' %}
+{% extends  '_common:page/user/sys-message.tpl' %}

@@ -1,1 +1,1 @@
-{% extends '_common:page/order/_detail.tpl' %}
+{% extends '_common:page/order/detail.tpl' %}

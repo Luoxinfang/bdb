@@ -1,1 +1,1 @@
-{% extends '_common:page/settings/_sys-settings.tpl' %}
+{% extends '_common:page/settings/sys-settings.tpl' %}

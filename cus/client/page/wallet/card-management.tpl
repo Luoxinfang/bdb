@@ -1,1 +1,1 @@
-{% extends '_common:page/account/_card-management.tpl' %}
+{% extends '_common:page/account/card-management.tpl' %}

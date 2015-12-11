@@ -1,1 +1,1 @@
-{% extends '_common:page/account/_add-bank-card.tpl' %}
+{% extends '_common:page/account/add-bank-card.tpl' %}

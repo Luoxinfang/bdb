@@ -1,1 +1,1 @@
-{% extends '_common:page/account/_withdrawals-result.tpl' %}
+{% extends '_common:page/account/withdrawals-result.tpl' %}

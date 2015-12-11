@@ -1,1 +1,1 @@
-{% extends '_common:page/user/_receipt-address.tpl' %}
+{% extends '_common:page/user/receipt-address.tpl' %}

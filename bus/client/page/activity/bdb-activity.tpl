@@ -1,2 +1,2 @@
-{% extends '_common:page/activity/_activity-list.tpl' %}
+{% extends '_common:page/activity/activity-list.tpl' %}
 

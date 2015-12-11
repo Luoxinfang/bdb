@@ -1,1 +1,1 @@
-{% extends '_common:page/auction/_list.tpl' %}
+{% extends '_common:page/auction/list.tpl' %}

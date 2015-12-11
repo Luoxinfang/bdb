@@ -1,1 +1,1 @@
-{% extends '_common:page/user/_change-tel-info.tpl' %}
+{% extends '_common:page/user/change-tel-info.tpl' %}

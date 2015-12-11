@@ -1,1 +1,1 @@
-{% extends '_common:page/settings/_version-update.tpl' %}
+{% extends '_common:page/settings/version-update.tpl' %}

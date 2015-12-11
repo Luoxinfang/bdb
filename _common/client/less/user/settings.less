@@ -1,14 +1,15 @@
 @import "@{_common}/public/mixin";
-
-.message-list {
-  margin-top: 10/@rem-pre;
-  height: 118/@rem-pre;
-}
-.message-list .message_text {
-  font-size: 30/@rem-pre;
-  background-color: #fff;
-  border-bottom: 2px solid #edeef1;
-  padding: 10/@rem-pre 20/@rem-pre;
+.message {
+  &-list {
+    margin-top: 10/@rem-pre;
+    height: 118/@rem-pre;
+    .message_text {
+      font-size: 30/@rem-pre;
+      background-color: #fff;
+      border-bottom: 2px solid #edeef1;
+      padding: 10/@rem-pre 20/@rem-pre;
+    }
+  }
 }
 .nick-image {
   width: 200/@rem-pre;
@@ -18,7 +19,6 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 .set-list{
   margin-top: 10/@rem-pre;
   background-color: #fff;

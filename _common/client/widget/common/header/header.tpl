@@ -1,13 +1,29 @@
 <div class="header-wrap">
 	<div class="header">
 		{% if header.leftIcon %}
-		<a href="javascript:history.back();" class="left icon-60 icon-back"></a>
+			<a {% if header.leftUrl %}href="{{ header.leftUrl }}" {% endif %}class="left icon-60 icon-back"></a>
 		{% endif %}
 		<div class="center fs-1 fc-3">
 			{{ header.title }} {#标题，默认：百多宝#}
 		</div>
-		{% if header.sort %} {#排序，默认：无，需要的话直接配置header.sort值#}
-		<div class="right sort fs-2 fc-2">{{ header.sort }}</div>
+		{% if header.rightText %}{#右侧文字或连接，默认：无#}
+			<a {% if header.rightUrl %}href="{{ header.rightUrl }}"{% endif %}class="right fs-2 fc-2">{{ header.rightText }}</a>
+		{% endif %}
+		{% if header.rightSort %} {#排序，默认：无，需要的话直接配置header.rightSort值#}
+			{% script %}
+				require('header-sort.js').init();
+			{% endscript %}
+			<a class="right sort fs-2 fc-2">
+				<span>{{ header.rightSort.default }}</span>
+			</a>
+			<div class="header-sort">
+				<div class="sort-mask"></div>
+				<div class="sort-list">
+					{% for item in header.rightSort.sorts %}
+						<a>{{ item }}</a>
+					{% endfor %}
+				</div>
+			</div>
 		{% endif %}
 		{% if header.rightIcon %}
 			<div class="right">

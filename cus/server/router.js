@@ -4,11 +4,12 @@ module.exports = function (router) {
 		header: {
 			title: '百多宝',       //header标题
 			leftIcon: 'back',     //左侧默认返回按钮
-			leftUrl: '/',      //左侧图标默认链接
+			leftUrl: '/',         //左侧图标默认链接
 			rightIcon: false,     //右侧单个图标
-			rightUrl: false,      //右侧图标链接
+			rightUrl: false,      //右侧图标或文字链接
 			rightIcons: false,    //右侧图标组
-			sort: false,          //右侧排序或文字
+			rightText: false,     //右侧文字
+			rightSort: false,     //右侧排序数组
 			nav: ['系统消息', '用户消息'],     //头部nav数组
 			tab: ['全部', '进行中', '未开始'],  //头部tab数组
 			set: false
@@ -129,7 +130,7 @@ module.exports = function (router) {
 	router.get('/wallet/trans-list', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '交易明细';
-		obj.header.sort = '筛选';
+		obj.header.rightText = '筛选';
 		res.render('cus/page/wallet/trans-list.tpl', obj);
 	});
 	//我的钱包 —— 提现
@@ -186,7 +187,7 @@ module.exports = function (router) {
 		obj.result = {status: '' + req.query.status};
 		if (obj.result.status == 'confirmReceipt') {
 			obj.header.title = '确认收货';
-			obj.header.sort = '完成';
+			obj.header.rightText = '完成';
 		}
 		res.render('cus/page/order/result.tpl', obj);
 	});
@@ -201,7 +202,7 @@ module.exports = function (router) {
 	router.get('/auction/list', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '拍卖列表';
-		obj.header.sort = "时间排序";
+		obj.header.rightSort = {default:'时间排序',sorts:['时间排序','价格排序','信誉排序','保证金排序']};
 		obj.data = yog.require('cus/test/auction.js');
 		res.render('cus/page/auction/list.tpl', obj);
 	});
@@ -257,7 +258,7 @@ module.exports = function (router) {
 	router.get('/card-management', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '银行卡管理';
-		obj.header.sort = '删除';
+		obj.header.rightText = '删除';
 		res.render('cus/page/user/card-management.tpl', obj);
 	});
 	//系统设置

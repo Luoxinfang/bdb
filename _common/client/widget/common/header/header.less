@@ -4,6 +4,7 @@
 .header {
 	/* 头部 */
 	position: relative;
+	z-index: 2;
 	width: @rem-full-aliquots;
 	text-align: center;
 	height: 90/@rem-pre;
@@ -13,7 +14,7 @@
 		//头部容器
 		height: 90/@rem-pre;
 		.header {
-			background-color: #f5f5f5;
+			background-color: @titleColor;
 			border-bottom: 2px solid #e7e7e8;
 		}
 	}
@@ -57,6 +58,44 @@
 		right: 20/@rem-pre;
 		margin: auto 0;
 		height: 60/@rem-pre;
+	}
+	&-sort {
+		display: none;
+	}
+	.sort {
+		&-mask {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 2;
+		}
+		&-list {
+			position: absolute;
+			z-index: 3;
+			top: 100/@rem-pre;
+			right: 10/@rem-pre;
+			width: 200/@rem-pre;
+			line-height: 80/@rem-pre;
+			color: @mainColor3;
+			font-size: @fontSize2;
+			background: @white;
+			border-top: 1px solid @mainColor2;
+			a {
+				color: inherit;
+				display: block;
+			}
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: -20/@rem-pre;
+				right: 20/@rem-pre;
+				border: 10/@rem-pre solid transparent;
+				border-bottom: 10/@rem-pre dashed @mainColor2;
+			}
+		}
 	}
 	.s-gup {
 		//130图标组
@@ -210,7 +249,7 @@
 	height: 90/@rem-pre;
 	line-height: 90/@rem-pre;
 	text-align: center;
-	background: @listColor;
+	background: @titleColor;
 	a {
 		display: inline-block;
 		height: 90/@rem-pre;

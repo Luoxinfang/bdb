@@ -1,4 +1,4 @@
-{% extends '_common/page/_layout.tpl' %}
+{% extends '_common/page/layout.tpl' %}
 
 {% block head %}
     {% require "_common:less/public/form.less" %}

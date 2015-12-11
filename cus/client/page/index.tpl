@@ -1,4 +1,4 @@
-{% extends '_common/page/_layout.tpl' %}
+{% extends '_common/page/layout.tpl' %}
 
 {% block head %}
 	{% require 'cus:widget/index/index.css' %}

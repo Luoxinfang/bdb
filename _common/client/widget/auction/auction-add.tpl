@@ -1,7 +1,7 @@
-{% extends '_common:page/_layout.tpl' %}
+{% extends '_common:page/layout.tpl' %}
 
 {% block header %}
-	{% widget '_common:widget/header/header.tpl' %}
+	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
 {% block body %}
@@ -11,37 +11,48 @@
 		<a class="icon-add btn-file mt20"><input type="file" class="file" accept="image/*"></a>
 		<textarea class="mt20" placeholder="请输入介绍信息"></textarea>
 		<div class="form-group mt20">
-			<div class="item icon-right">
+			<div class="item icon-right input-wrap">
 				<span class="fl">类别</span>
-				<span class="fr">翡翠</span>
+				<span class="fr"><i data-role="input">翡翠</i></span>
+				<select name="category">
+					<option value="翡翠">翡翠</option>
+					<option value="黄金">黄金</option>
+					<option value="宝石">宝石</option>
+				</select>
 			</div>
 		</div>
 		<div class="form-group mt20">
-			<div class="item icon-right">
+			<div class="item icon-right input-wrap">
 				<span class="fl">市场价</span>
 				<span class="fr">￥<i data-role="input">5000</i></span>
+				<input type="number">
 			</div>
-			<div class="item icon-right">
+			<div class="item icon-right input-wrap">
 				<span class="fl">保证金</span>
 				<span class="fr">￥<i data-role="input">100</i></span>
+				<input type="number">
 			</div>
-			<div class="item icon-right">
+			<div class="item icon-right input-wrap">
 				<span class="fl">起拍价</span>
 				<span class="fr">￥<i data-role="input">500</i></span>
+				<input type="number">
 			</div>
-			<div class="item icon-right">
+			<div class="item icon-right input-wrap">
 				<span class="fl">加价幅度</span>
 				<span class="fr">￥<i data-role="input">200</i></span>
+				<input type="number">
 			</div>
 		</div>
 		<div class="form-group mt20">
-			<div class="item">
+			<div class="item input-wrap">
 				<span class="fl">开始时间</span>
 				<span class="fr"><i data-role="input">2015-10-08 18:00</i></span>
+				<input type="time">
 			</div>
-			<div class="item">
+			<div class="item input-wrap">
 				<span class="fl">结束时间</span>
 				<span class="fr"><i data-role="input">2015-10-09 18:00</i></span>
+				<input type="time">
 			</div>
 		</div>
 		<div class="form-group mt20">
@@ -62,4 +73,8 @@
 		</div>
 		<a href="/shelves/list" class="btn btn-red mt20">确定</a>
 	</div>
+	{% script %}
+		var B = require('_common:js/bdb/core.js');
+		B.bindInput();
+	{% endscript %}
 {% endblock %}

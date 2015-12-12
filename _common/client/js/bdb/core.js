@@ -41,7 +41,14 @@ module.exports = {
 	 */
 	bindInput: function () {
 		$(document).on('change','.input-wrap select',function(){
-			console.log($(this).val()+"|"+$(this).parent().find('[data-role="input"]').html());
+			$(this).parent().find('[data-role="input"]').html($(this).val());
+		});
+		$(document).on('input propertychange','.input-wrap input',function(){
+			if($(this).attr('type')=='datetime-local'){
+				$(this).parent().find('[data-role="input"]').html($(this).val().replace('T',' '));
+			} else {
+				$(this).parent().find('[data-role="input"]').html($(this).val());
+			}
 		});
 	},
 	/**

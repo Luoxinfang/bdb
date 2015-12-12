@@ -1,13 +1,13 @@
 @import "@{_common}/public/mixin";
 /*文本输入类型表单*/
 .form {
-	padding: 0.3125rem 0.28125rem;
+	padding: 20/@rem-pre 20/@rem-pre;
 	.form-ul {
 		position: relative;
-		margin-bottom: 0.15625rem;
+		margin-bottom: 10/@rem-pre;
 	}
 	.form-ul:last-of-type {
-		margin-bottom: 0.9375rem;
+		margin-bottom: 60/@rem-pre;
 	}
 	&.delet {
 		.form-ul {
@@ -23,53 +23,52 @@
 				top: 0;
 				bottom: 0;
 				margin: auto 0;
-				left: -80px;
+				left: -80/@rem-pre;
 				cursor: pointer;
 			}
 		}
 	}
 	.form-li-input {
-		background: #fff;
-		height: 1.40625rem;
-		line-height: 1.40625rem;
+		background: @white;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
 		border: 1px solid #e7e7e8;
 		border-top: 0px;
 		position: relative;
-		padding:0 0.3125rem;
+		padding:0 20/@rem-pre;
 	}
 	.form-li-text {
-		background: #fff;
-		height: 2.34375rem;
+		background: @white;
+		height: 150/@rem-pre;
 		border: 1px solid #e7e7e8;
 		border-top: 0px;
 		position: relative;
-		padding-left: 0.3125rem;
+		padding-left: 20/@rem-pre;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
 		border-top-left-radius: 5px;
 		border-top-right-radius:5px;
 		.card-name {
 			color: #2297F6;
-			font-size: 0.46875rem;
-			line-height: 0.46875rem;
-			width: 5.625rem;
-			padding: 0.234375rem 0rem;
-			margin-top: 0.234375rem;
+			font-size: @fontSize2;
+			line-height: 30/@rem-pre;
+			width: 360/@rem-pre;
+			padding: 15/@rem-pre 0rem;
+			margin-top: 15/@rem-pre;
 		}
 		.card-type {
-			font-size: 0.46875rem;
-			line-height: 0.46875rem;
-			padding: 0.234375rem 0rem;
-			margin-top: 0.234375rem;
+			font-size: @fontSize2;
+			line-height: 30/@rem-pre;
+			padding: 15/@rem-pre 0rem;
+			margin-top: 15/@rem-pre;
 			position: absolute;
-			right: 20px;
+			right: 20/@rem-pre;
 		}
 		p {
-			font-size: 0.46875rem;
-			margin-right: 0.3125rem;
-			line-height: 0.46875rem;
-			font-size: 0.46875rem;
-			padding: 0.234375rem 0rem;
+			font-size: @fontSize2;
+			margin-right: 20/@rem-pre;
+			line-height: 30/@rem-pre;
+			padding: 15/@rem-pre 0rem;
 		}
 	}
 	.form-li-input input,textarea {
@@ -78,22 +77,21 @@
 		width: 100%;
 		height: 100%;
 		line-height: 100%;
-		font-size: 0.4375rem;
+		font-size: @fontSize2;
 	}
 	.form-li-input p {
 		display: block;
 		border-style: none;
 		width: 100%;
 		height: 100%;
-		/*line-height: 100%;*/
-		font-size: 0.4375rem;
+		font-size: @fontSize2;
 	}
 	.form-li-textarea{
-		padding-top: 10px;
-		padding-bottom: 10px;
-		height: 3.125rem;
+		padding-top: 10/@rem-pre;
+		padding-bottom: 10/@rem-pre;
+		height: 200/@rem-pre;
 	}
-	textarea {
+	.textarea {
 		width: 100%;
 		height: 200/@rem-pre;
 		padding: 20/@rem-pre;
@@ -129,12 +127,12 @@
 	}
 	li .right-btn {
 		float: right;
-		height: 1.40625rem;
-		line-height: 1.40625rem;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
 		width: 25%;
 		background: #2297f6;
-		color: #fff;
-		font-size: 0.375rem;
+		color: @white;
+		font-size: @fontSize3;
 	}
 	li .right-btn:active {
 		background: #0983e6;
@@ -144,15 +142,15 @@
 		label{
 			color: #000;
 			display: inline-block;
-			width: 144/64rem;
+			width: 144/@rem-pre;
 			position: absolute;
-			font-size: 0.40625rem;
+			font-size: @fontSize3;
 		}
 		input{
-			padding-left: 144/64rem;
+			padding-left: 144/@rem-pre;
 		}
 	}
-	input[type='text'] {
+	.text {
 		width: 100%;
 		padding: 0 20/@rem-pre;
 		height: 90/@rem-pre;
@@ -263,20 +261,20 @@
 
 /*列表类型表单*/
 .form-list {
-	padding: 0.3125rem 0;
-	font-size: 0.4375rem;
+	padding: 20/@rem-pre 0;
+	font-size: @fontSize2;
 	.form-ul {
-		padding-left: 0.46875rem;
-		padding-right: 0.46875rem;
-		margin-bottom: 0.3125rem;
-		background: #fff;
+		padding-left: 30/@rem-pre;
+		padding-right: 30/@rem-pre;
+		margin-bottom: 20/@rem-pre;
+		background: @white;
 		border-top: 1px solid #e7e7e8;
 		border-bottom: 1px solid #e7e7e8;
 	}
 	li {
 		text-align: left;
-		height: 1.40625rem;
-		line-height: 1.40625rem;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
 		border-bottom: 1px solid #e7e7e8;
 		position: relative;
 		a {

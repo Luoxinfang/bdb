@@ -10,9 +10,6 @@
 			<a {% if header.rightUrl %}href="{{ header.rightUrl }}"{% endif %}class="right fs-2 fc-2">{{ header.rightText }}</a>
 		{% endif %}
 		{% if header.rightSort %} {#排序，默认：无，需要的话直接配置header.rightSort值#}
-			{% script %}
-				require('header-sort.js').init();
-			{% endscript %}
 			<a class="right sort fs-2 fc-2">
 				<span>{{ header.rightSort.default }}</span>
 			</a>

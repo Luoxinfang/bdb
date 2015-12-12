@@ -1,8 +1,10 @@
 {% require '_common:widget/common/header/header.less' %}
 <div class="header-top">
 	<div class="header">
-		{% if header.leftIcon %}
+		{% if header.leftIcon == 'back' %}
 			<a href="javascript:history.back();" data-role="btn-back" class="left icon-60 icon-{{ header.leftIcon }}"></a>
+		{% elseif header.leftIcon %}
+			<a {% if header.leftUrl %}href="{{ header.leftUrl }}"{% endif %}class="left icon-60 icon-{{ header.leftIcon }}"></a>
 		{% endif %}
 		<div class="center fs-1">
 			{{ header.title }}

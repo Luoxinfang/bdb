@@ -10,7 +10,7 @@
 	<form action="" id="form" onsubmit="checkForm();">
 		<div class="form store-apply">
 			<p class="tip">店铺名称（必填）<span class="error ml5" for="storeName"></span></p>
-			<input type="text" name="storeName" placeholder="请输入您的店铺名称">
+			<input type="text" class="text" name="storeName" placeholder="请输入您的店铺名称">
 			<p class="tip tr">店铺名称不能修改</p>
 			<p class="tip mt20">上传身份证（必填）<span class="error ml5" for="storeName"></span></p>
 			<a class="icon-add btn-file showActionsheet" actionsheet="actionsheet-01"></a>

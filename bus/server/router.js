@@ -226,6 +226,12 @@ module.exports = function (router) {
 		obj.header.title = '发起活动';
 		res.render('bus/page/activity/add-activity.tpl', obj);
 	});
+	//活动详情
+	router.get('/activity/detail', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '翡翠专场';
+		res.render('bus/page/activity/detail.tpl', obj);
+	});
 	//地区选择
 	router.get('/select-address', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
@@ -316,6 +322,18 @@ module.exports = function (router) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '申请开店';
 		res.render('bus/page/store/apply.tpl', obj);
+	});
+	//店铺管理
+	router.get('/store/manage', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '店铺管理';
+		res.render('bus/page/store/manage.tpl', obj);
+	});
+	//店铺主营分类
+	router.get('/store/category', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '主营分类';
+		res.render('bus/page/store/category.tpl', obj);
 	});
 	//拍卖行
 	router.get('/auction/list', function (req, res, next) {

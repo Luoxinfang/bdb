@@ -5,5 +5,5 @@
 {% endblock %}
 
 {% block body %}
-	{% widget 'cus:widget/user/personal-card.tpl' %}
+	{% widget 'bus:widget/store/manage.tpl' %}
 {% endblock %}

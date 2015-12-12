@@ -72,7 +72,6 @@
 {% endblock %}
 
 {% block footer %}
-	{% require '_common:widget/footer/footer.less' %}
 	{% if auctionStatus == 0 || auctionStatus == 2 %}
 		<div class="footer">
 			<button class="btn btn-red">交保证金参加拍卖</button>

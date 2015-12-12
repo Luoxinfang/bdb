@@ -53,7 +53,6 @@
 {% endblock %}
 
 {% block footer %}
-	{% require '_common:widget/footer/footer.less' %}
 	<div class="footer">
 		<a class="btn btn-red" onclick="$('#form').submit()">提交申请</a>
 	</div>

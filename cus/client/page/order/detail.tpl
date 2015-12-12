@@ -80,7 +80,6 @@
 {% endblock %}
 
 {% block footer %}
-{% require '_common:widget/footer/footer.less' %}
 <div class="footer">
 	{% if order.status == 'dfk' %}
 		<a class="btn btn-red btn-w135 btn-h70 fs-4 fr showDialog" dialog="payWay">付款</a>

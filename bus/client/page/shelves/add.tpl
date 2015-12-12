@@ -1,0 +1,1 @@
+{% extends '_common:widget/auction/auction-add.tpl' %}

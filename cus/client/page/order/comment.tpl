@@ -227,7 +227,6 @@
 {% endblock %}
 
 {% block footer %}
-{% require '_common:widget/footer/footer.less' %}
 <div class="footer">
 	<a class="btn btn-red">确定</a>
 </div>

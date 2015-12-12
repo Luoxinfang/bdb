@@ -28,7 +28,7 @@ fis.config.set('settings.spriter.csssprites', {
 	//使用矩阵排列方式，默认为线性`linear`
 	layout: 'matrix'
 });
-//将hz下面我们自己的js模块化
+//将bdb下面我们自己的js模块化
 fis.match('/client/js/bdb/**.js', {
 	isMod: true
 });

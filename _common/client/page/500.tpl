@@ -1,9 +1,18 @@
 {% extends '_common:page/layout.tpl' %}
-
+{%block head%}
+  <link rel="stylesheet" href="../less/sys/sys.less?__inline"/>
+  <style type="text/css">
+    .container{
+      background-image: url("../icon/sys/500.png");
+    }
+  </style>
+{%endblock%}
 {% block body %}
-  <div class="wrapper">
-    <div class="container" id="container">
-      服务器刚刚经历过一场核战争,现在正在维护中~
+  <div class="container" id="container">
+    <a href="/" class="go-index" style="visibility: hidden;"></a>
+    <div class="copyright page500">
+      深圳前海百多宝网络科技有限公司
     </div>
   </div>
+
 {% endblock %}

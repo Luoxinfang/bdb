@@ -3,5 +3,10 @@ module.exports = function (router) {
 
 		next();
 	});
-
+	router.get('/404', function (req, res, next) {
+		res.render('_common/page/404.tpl');
+	});
+	router.get('/500', function (req, res, next) {
+		res.render('_common/page/500.tpl');
+	});
 };

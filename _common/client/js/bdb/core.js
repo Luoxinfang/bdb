@@ -36,7 +36,14 @@ module.exports = {
 	hideTopTips: function () {
 		$('#top-tip').hide();
 	},
-
+	/**
+	 *  表单输入值绑定
+	 */
+	bindInput: function () {
+		$(document).on('change','.input-wrap select',function(){
+			console.log($(this).val()+"|"+$(this).parent().find('[data-role="input"]').html());
+		});
+	},
 	/**
 	 * 是不是ios设备
 	 */

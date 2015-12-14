@@ -2,6 +2,7 @@
 
 <div class="auction-item">
 	<div class="bg-f pr">
+		{% block beforeItem %}{% endblock %}
 		<a href="/auction/detail?status={{ item.status }}">
 			<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
 		</a>
@@ -13,7 +14,6 @@
 		</a>
 		<a href="/auction/detail?status={{ item.status }}" class="tlt">{{ item.shop }}</a>
 		<p class="desc">{{ item.details }}</p>
-		<p class="time mt10">{{ item.date }}</p>
-		<a class="collect-cnt icon-collect-cnt">{{ item.num }}</a>
+		{% block auctionTime %}{% endblock %}
 	</div>
 </div>

@@ -2,7 +2,6 @@
 
 {% block header %}
 	{% widget '_common:widget/common/header/header.tpl' %}
-	{% widget '_common:widget/common/header/header-tab.tpl' %}
 {% endblock %}
 
 {% block body %}
@@ -11,6 +10,6 @@
 
 {% block footer %}
 	<div class="footer">
-		<a href="/shelves/shelve" class="btn btn-red">上架</a>
+		<a class="btn btn-red">完成</a>
 	</div>
 {% endblock %}

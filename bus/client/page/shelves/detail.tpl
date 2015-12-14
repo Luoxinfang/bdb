@@ -5,5 +5,5 @@
 {% endblock %}
 
 {% block body %}
-	{% widget 'bus:widget/shelves/add.tpl' %}
+	{% widget 'bus:widget/shelves/detail.tpl' %}
 {% endblock %}

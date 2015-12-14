@@ -368,4 +368,18 @@ module.exports = function (router) {
 		obj.header.title = '上传商品';
 		res.render('bus/page/shelves/add.tpl', obj);
 	});
+	//单品上架页面
+	router.get('/shelves/detail', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '满绿翡翠吊坠';
+		res.render('bus/page/shelves/detail.tpl', obj);
+	});
+	//上架选择页面
+	router.get('/shelves/shelve', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '拍品上架';
+		obj.data = yog.require('bus/test/auction.js');
+		obj.shelvesEditable = true;
+		res.render('bus/page/shelves/shelve.tpl', obj);
+	});
 };

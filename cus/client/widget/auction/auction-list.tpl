@@ -1,3 +1,7 @@
 {% require 'cus:widget/auction/auction.less' %}
 
-{% extends '_common:widget/auction/auction-list.tpl' %}
+<div class="auction-list clearfix">
+	{% for item in data.dataList %}
+		{% widget 'cus:widget/auction/auction-item.tpl' %}
+	{% endfor %}
+</div>

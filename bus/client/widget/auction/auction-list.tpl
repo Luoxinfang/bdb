@@ -1,4 +1,4 @@
-{% require '_common:widget/auction/auction.less' %}
+{% require 'bus:widget/auction/auction.less' %}
 
 <div class="auction-list clearfix">
     {% for item in data.dataList %}

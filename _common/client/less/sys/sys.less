@@ -1,0 +1,36 @@
+@import "../public/variable";
+
+.container {
+  height: 100%;
+  overflow: hidden;
+  background-size: 100% 100%;
+  a {
+    color: @white;
+    font-size: @fontSize3;
+    display: block;
+    width: 220/@rem-pre;
+    height: 80/@rem-pre;
+    line-height: 80/@rem-pre;
+    margin: 800/@rem-pre auto 0 auto;
+    border-radius: 5px;
+
+  }
+  .go-index {
+    background-color: #4f7c93;
+  }
+  .go-index:active {
+    background-color: #476f84;
+  }
+  .copyright {
+    text-align: center;
+    font-size: 22/@rem-pre;
+    margin-top: 100/@rem-pre;
+    &.page404 {
+      color: rgba(255, 255, 255, .7);
+    }
+    &.page500 {
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+}
+

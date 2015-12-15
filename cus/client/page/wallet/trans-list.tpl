@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<div class="dialog-wrap trans-dialog" id="trans-01">
-		<div class="dialog-mask"></div>
+		<div class="dialog-mask closeDialog"></div>
 		<div class="dialog">
 			<div class="dialog-hd">账单</div>
 			<div class="dialog-bd">
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	<div class="dialog-wrap trans-dialog" id="trans-02">
-		<div class="dialog-mask"></div>
+		<div class="dialog-mask closeDialog"></div>
 		<div class="dialog">
 			<div class="dialog-hd">账单</div>
 			<div class="dialog-bd">
@@ -100,7 +100,7 @@
 		</div>
 	</div>
 	<div class="dialog-wrap trans-dialog" id="trans-03">
-		<div class="dialog-mask"></div>
+		<div class="dialog-mask closeDialog"></div>
 		<div class="dialog">
 			<div class="dialog-hd">账单</div>
 			<div class="dialog-bd">
@@ -128,7 +128,7 @@
 		</div>
 	</div>
 	<div class="dialog-wrap trans-dialog" id="trans-04">
-		<div class="dialog-mask"></div>
+		<div class="dialog-mask closeDialog"></div>
 		<div class="dialog">
 			<div class="dialog-hd">账单</div>
 			<div class="dialog-bd">
@@ -156,7 +156,7 @@
 		</div>
 	</div>
 	<div class="dialog-wrap trans-dialog" id="trans-05">
-		<div class="dialog-mask"></div>
+		<div class="dialog-mask closeDialog"></div>
 		<div class="dialog">
 			<div class="dialog-hd">账单</div>
 			<div class="dialog-bd">

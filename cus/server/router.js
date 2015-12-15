@@ -107,17 +107,17 @@ module.exports = function (router) {
 		res.render('cus/page/user/change-tel-new.tpl', obj);
 	});
 	//个人主页
-	router.get('/user/personal-card', function (req, res, next) {
+	router.get('/user/personal', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '个人主页';
 		obj.banner = [{imgUrl: 'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];
-		res.render('cus/page/user/personal-card.tpl', obj);
+		res.render('cus/page/user/personal.tpl', obj);
 	});
 	//收货地址
 	router.get('/user/receipt-address', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '收货地址';
-		obj.header.leftUrl = '/user/personal-card';
+		obj.header.leftUrl = '/user/personal';
 		res.render('cus/page/user/receipt-address.tpl', obj);
 	});
 	//我的钱包 —— 首页

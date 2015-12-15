@@ -23,7 +23,7 @@ module.exports = function (router) {
 
 	router.get('*', function (req, res, next) {
 		//需要验证登录的接口
-		var userPath = /^\/[user|order|]\/*\w*/;
+		var userPath = /^\/[user|order|wallet|]\/*\w*/;
 		if (userPath.test(req.path) && !req.session.user) {
 			res.redirect('/login');
 		} else {
@@ -120,12 +120,6 @@ module.exports = function (router) {
 		obj.header.title = '收货地址';
 		obj.header.leftUrl = '/user/personal';
 		res.render('cus/page/user/receipt-address.tpl', obj);
-	});
-	//我的钱包 —— 首页
-	router.get('/wallet', function (req, res, next) {
-		var obj = _.cloneDeep(resObj);
-		obj.header.title = '我的钱包';
-		res.render('cus/page/wallet/index.tpl', obj);
 	});
 	//我的钱包 —— 交易明细
 	router.get('/wallet/trans-list', function (req, res, next) {

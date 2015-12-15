@@ -22,7 +22,13 @@ module.exports = function (router) {
 	};
 
 	router.get('*', function (req, res, next) {
-		next();
+		//需要验证登录的接口
+		var userPath = /^\/[user|order|]\/*\w*/;
+		if (userPath.test(req.path) && !req.session.user) {
+			res.redirect('/login');
+		} else {
+			next();
+		}
 	});
 
 	//首页
@@ -107,13 +113,7 @@ module.exports = function (router) {
 		obj.header.leftUrl = '/change-tel-info';
 		res.render('cus/page/user/change-tel-new.tpl', obj);
 	});
-	//个人主页
-	router.get('/user/personal', function (req, res, next) {
-		var obj = _.cloneDeep(resObj);
-		obj.header.title = '个人主页';
-		obj.banner = [{imgUrl: 'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];
-		res.render('cus/page/user/personal.tpl', obj);
-	});
+
 	//收货地址
 	router.get('/user/receipt-address', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
@@ -203,7 +203,7 @@ module.exports = function (router) {
 	router.get('/auction/list', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
 		obj.header.title = '拍卖列表';
-		obj.header.rightSort = {default:'时间排序',sorts:['时间排序','价格排序','信誉排序','保证金排序']};
+		obj.header.rightSort = {default: '时间排序', sorts: ['时间排序', '价格排序', '信誉排序', '保证金排序']};
 		obj.data = yog.require('cus/test/auction.js');
 		res.render('cus/page/auction/list.tpl', obj);
 	});

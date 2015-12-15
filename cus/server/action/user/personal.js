@@ -7,10 +7,9 @@ var model = require('../../model/user.js');
 
 module.exports = function (req, res, next) {
 	var params = {
-		token: '100101'
+		token: req.session.user.token
 	};
 	model.getData(params).then(function (data) {
-
 		var resObj = {
 			header: {
 				title: '百多宝',       //header标题

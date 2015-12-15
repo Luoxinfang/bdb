@@ -13,8 +13,8 @@ module.exports = {
 		retry: 2,
 		timeout: 500,
 		server: [
-			{host: '192.168.0.105', port: 8080}/*,
-			 {host: '192.168.0.132', port: 8080}*/
+/*			{host: '192.168.0.105', port: 8080},*/
+			{host: '192.168.0.133', port: 8080}
 		]
 	}
 };

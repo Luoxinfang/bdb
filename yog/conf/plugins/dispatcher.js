@@ -49,7 +49,7 @@ module.exports.dispatcher = {
 		router.use('/', function (req, res, next) {
 			if (req.path.split('/')[1] == '_common') {
 				next();
-			} else{
+			} else {
 				var secondHostname = '';
 				if (req.hostname == 'localhost' || -1 !== req.ip.indexOf(req.hostname)) {
 					secondHostname = 'cus';
@@ -58,7 +58,7 @@ module.exports.dispatcher = {
 				}
 				return yog.dispatcher.router(secondHostname)(req, res, next);
 			}
-		})
+		});
 	},
 	/***************************************************************************
 	 *

@@ -33,6 +33,7 @@ module.exports = function (router) {
 		obj.header.rightIcons = [{icon: 'search', url: '/auction/search'}, {icon: 'msg', url: false}];
 		res.render('cus/page/index.tpl', obj);
 	});
+
 	//登录
 	router.get('/login', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);

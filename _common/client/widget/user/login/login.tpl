@@ -1,6 +1,6 @@
 <div class="wd-login">
   <div class="group-ipt">
-    <input type="text" class="username ipt" id="username"
+    <input type="text" class="username ipt" id="username" value="15989387109"
            placeholder="请输入用户名">
     <input type="password" class="pwd ipt" id="user-pwd"
            placeholder="请输入密码">

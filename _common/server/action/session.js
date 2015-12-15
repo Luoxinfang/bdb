@@ -27,8 +27,10 @@ module.exports.post = function (req, res, next) {
 	}, req.body);
 	user.pwd = md5(req.body.pwd);
 	model.login(user).then(function (rs) {
+		console.log(rs);
 		if (rs.status == 0) {
 			req.session.user = rs.data;
+			console.log(rs.data);
 			if (req.body.remember == 'true') {
 				rs.data.pwd = req.body.pwd;
 			}

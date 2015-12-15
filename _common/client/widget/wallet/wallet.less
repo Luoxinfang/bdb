@@ -1,0 +1,28 @@
+@import "@{_common}/public/mixin";
+
+.wallet {
+	&-head {
+		position: relative;
+		height:360/@rem-pre;
+		&:after {
+			content: '';
+			display: block;
+			width: 180/@rem-pre;
+			height: 180/@rem-pre;
+			background-image: url('../../icon/icon-wallet.png');
+			background-size: 100%;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50/@rem-pre;
+			margin: 0 auto;
+		}
+		p {
+			text-align: center;
+			font-size: @fontSize1;
+			color: @helpColor3;
+			line-height: 50/@rem-pre;
+			padding-top: 266/@rem-pre;
+		}
+	}
+}

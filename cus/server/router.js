@@ -23,7 +23,7 @@ module.exports = function (router) {
 
 	router.get('*', function (req, res, next) {
 		//需要验证登录的接口
-		var userPath = /^\/[user|order|wallet|]\/*\w*/;
+		var userPath = /^\/(user|order|wallet)\/*\w*/;
 		if (userPath.test(req.path) && !req.session.user) {
 			res.redirect('/login');
 		} else {

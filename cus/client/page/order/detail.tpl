@@ -98,7 +98,7 @@
 </div>
 {% widget '_common:widget/dialog/dialog.tpl' %}
 <div class="dialog-wrap order-pay" id="payWay">
-	<div class="dialog-mask"></div>
+	<div class="dialog-mask closeDialog"></div>
 	<div class="dialog pb0">
 		<div class="dialog-hd">选择支付方式</div>
 		<div class="dialog-bd">
@@ -122,7 +122,7 @@
 	</div>
 </div>
 <div class="dialog-wrap order-pay" id="pay">
-	<div class="dialog-mask"></div>
+	<div class="dialog-mask closeDialog"></div>
 	<div class="dialog pb10">
 		<div class="dialog-close closeDialog"></div>
 		<div class="dialog-hd">确认付款</div>

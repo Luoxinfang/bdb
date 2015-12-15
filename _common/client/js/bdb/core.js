@@ -40,29 +40,58 @@ module.exports = {
 	 *  表单输入值绑定
 	 */
 	bindInput: function () {
-		$(document).on('change','.input-wrap select',function(){
+		$(document).on('change', '.input-wrap select', function () {
 			$(this).parent().find('[data-role="input"]').html($(this).val());
 		});
-		$(document).on('input propertychange','.input-wrap input',function(){
-			if($(this).attr('type')=='datetime-local'){
-				$(this).parent().find('[data-role="input"]').html($(this).val().replace('T',' '));
+		$(document).on('input propertychange', '.input-wrap input', function () {
+			if ($(this).attr('type') == 'datetime-local') {
+				$(this).parent().find('[data-role="input"]').html($(this).val().replace('T', ' '));
 			} else {
 				$(this).parent().find('[data-role="input"]').html($(this).val());
 			}
 		});
 	},
 	/**
+	 * 弹出提示
+	 * conf { icon:'图标', title:'标题', content:'内容' }
+	 */
+	alert: function (conf) {
+		var html = [];
+		html.push('<div class="alert-wrap">');
+		html.push('  <div class="alert-mask"></div>')
+		html.push('  <div class="alert">');
+		if (conf.icon && conf.icon == 'success') {
+			html.push('  <span class="icon-200 icon-suc"></span>');
+		} else if (conf.icon && conf.icon == 'warn') {
+			html.push('  <span class="icon-200 icon-warn"></span>');
+		} else if (conf.icon && conf.icon == 'error') {
+			html.push('  <span class="icon-200 icon-fail"></span>');
+		}
+		if (conf.title) {
+			html.push('  <p class="alert-title">' + conf.title + '</p>');
+		}
+		if (conf.content) {
+			html.push('  <p class="alert-content">' + conf.content + '</p>');
+		}
+		html.push('  </div>');
+		html.push('</div>')
+		$('.wrapper').append(html.join(''));
+	},
+	clearAlert: function () {
+		$('.alert-wrap').remove();
+	},
+	/**
 	 * 是不是ios设备
 	 */
 	isIOS: function () {
 		return navigator.userAgent.indexOf('iPhone') > -1
-				|| navigator.userAgent.indexOf('iPad') > -1;
+			|| navigator.userAgent.indexOf('iPad') > -1;
 	},
 	/**
 	 * 是不是android设备
 	 */
 	isAndroid: function () {
 		return navigator.userAgent.indexOf('Android') > -1
-				|| navigator.userAgent.indexOf('Linux') > -1;
+			|| navigator.userAgent.indexOf('Linux') > -1;
 	}
 };

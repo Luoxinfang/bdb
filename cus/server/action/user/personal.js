@@ -9,8 +9,10 @@ module.exports = function (req, res, next) {
 	var params = {
 		token: req.session.user.token
 	};
+	//console.log('token:',req.session.user.token);
 	model.getData(params).then(function (data) {
-		var resObj = {
+		console.log(data);
+/*		var resObj = {
 			header: {
 				title: '百多宝',       //header标题
 				leftIcon: 'back',     //左侧默认返回按钮
@@ -31,8 +33,8 @@ module.exports = function (req, res, next) {
 			]
 		};
 		resObj.header.title = '个人主页';
-		resObj.banner = [{imgUrl: 'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];
-		res.render('cus/page/user/personal-card.tpl', resObj);
+		resObj.banner = [{imgUrl: 'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];*/
+		res.render('cus/page/user/personal.tpl', resObj);
 	}).catch(function (error) {
 		yog.log.fatal(error);
 	});

@@ -44,7 +44,7 @@ module.exports = function (router) {
 	//登录
 	router.get('/login', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
-		res.render('cus/page/user/login.tpl', obj);
+		res.render('cus/page/session/login.tpl', obj);
 	});
 	//注册 —— 输入电话号码
 	router.get('/user/reg-tel', function (req, res, next) {

@@ -1,5 +1,5 @@
-{% extends '_common:page/user/login.tpl' %}
-
+{#继承common的登录组件#}
+{% extends '_common:page/session/login.tpl' %}
 {% block content %}
   {%require "cus:widget/session/login/login.less"%}
 {% endblock %}

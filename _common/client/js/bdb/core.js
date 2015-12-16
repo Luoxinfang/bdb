@@ -18,7 +18,11 @@ module.exports = {
 			html.push('<span class="top-tip-icon"></span>');
 			html.push('<span class="top-tip-content"></span>');
 			html.push('</div></div>')
-			$('.wrapper').append(html.join(''));
+			if($('.header').size()){
+				$('.body-container').append(html.join(''));
+			} else {
+				$('.wrapper').append(html.join(''));
+			}
 			$dom = $('#top-tip');
 		}
 		$dom.find('.top-tip-icon')[0].className = 'top-tip-icon ' + iconName;

@@ -150,13 +150,6 @@ module.exports = function (router) {
 		obj.header.leftUrl = '/wallet';
 		res.render('cus/page/wallet/withdrawals-result.tpl', obj);
 	});
-	//我的钱包 ——添加银行卡
-	router.get('/wallet/add-bank-card', function (req, res, next) {
-		var obj = _.cloneDeep(resObj);
-		obj.header.title = '添加银行卡';
-		obj.header.leftUrl = '/wallet';
-		res.render('cus/page/wallet/add-bank-card.tpl', obj);
-	});
 	//订单管理 ——所有订单
 	router.get('/order', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
@@ -250,13 +243,6 @@ module.exports = function (router) {
 		var obj = _.cloneDeep(resObj);
 		res.render('cus/page/user/user-message.tpl', obj);
 	});
-	//卡片管理
-	router.get('/user/card-management', function (req, res, next) {
-		var obj = _.cloneDeep(resObj);
-		obj.header.title = '银行卡管理';
-		obj.header.rightText = '删除';
-		res.render('cus/page/user/card-management.tpl', obj);
-	});
 	//系统设置
 	router.get('/settings/sys-settings', function (req, res, next) {
 		var obj = _.cloneDeep(resObj);
@@ -307,4 +293,18 @@ module.exports = function (router) {
 		obj.header.title = '申请平台介入';
 		res.render('cus/page/user/application-bdb.tpl', obj);
 	});
+	//>>>>>>>>>>wallet(我的钱包)----------
+	//wallet:cus/action/wallet/index.js
+	router.get('/wallet/bank', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '银行卡管理';
+		obj.header.rightText = '删除';
+		res.render('cus/page/wallet/bank/index.tpl', obj);
+	});
+	router.get('/wallet/bank/add', function (req, res, next) {
+		var obj = _.cloneDeep(resObj);
+		obj.header.title = '添加银行卡';
+		res.render('cus/page/wallet/bank/add.tpl', obj);
+	});
+	//----------wallet(我的钱包)<<<<<<<<<<
 };

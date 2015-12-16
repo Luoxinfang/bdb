@@ -18,6 +18,9 @@ module.exports = {
 		}
 		$(document).on('input propertychange', '.password-wrap .password', function () {
 			var num = $(this).val().length;
+			if (num > 6) {
+				$(this).val($(this).val().substr(0,6));
+			}
 			showPassword($(this).parent(), num);
 		});
 	},

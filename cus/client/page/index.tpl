@@ -255,7 +255,9 @@
 {% block afterWrapper %}
 	<div class="me">
 		<div class="user">
-			<a class="photo" href="/user/personal-card">{% widget '_common:widget/user/user-photo.tpl' %}</a>
+			<a class="photo" href="/user/personal">
+				{% widget '_common:widget/user/user-photo.tpl' %}
+			</a>
 			<p class="name">大魔王</p>
 			<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 		</div>

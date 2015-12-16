@@ -25,10 +25,11 @@ module.exports.post = function (req, res, next) {
 	var user = _.extend({
 		requestIP: req.ip
 	}, req.body);
-	user.pwd = md5(req.body.pwd);
+	user.pwd = md5(req.body.pwd);//传输给后台的密码需要加密
 	model.login(user).then(function (rs) {
-		console.log(rs);
 		if (rs.status == 0) {
+			//返回登录前的url
+			rs.referrer = req.session.login_referrer;
 			req.session.user = rs.data;
 			res.cookie('user_info', JSON.stringify(rs.data));
 		}

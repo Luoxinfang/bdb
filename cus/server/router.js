@@ -26,6 +26,7 @@ module.exports = function (router) {
 		var userPath = /^\/(user|order|wallet)\/*\w*/;
 		//console.log(userPath.test(req.path) && !req.session.user);
 		if (userPath.test(req.path) && !req.session.user) {
+			req.session.login_referrer = req.originalUrl;
 			res.redirect('/login');
 		} else {
 			next();

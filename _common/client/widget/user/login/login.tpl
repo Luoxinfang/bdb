@@ -7,7 +7,7 @@
   </div>
   <div class="remember">
     <input type="checkbox" class="btn-remember" id="btn-remember">
-    <label for="btn-remember">记住密码</label>
+    <label for="btn-remember">记住账号</label>
     <a class="forgot-pwd" href="/find-pwd-info">忘记密码?</a>
   </div>
   <div class="group-btn">

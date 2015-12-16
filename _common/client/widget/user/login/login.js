@@ -1,10 +1,9 @@
 /**
- * @author radish.
+ * @author xf.radish
+ * @description 登录组件
  */
 var B = require('_common:js/bdb/core.js');
-
 var keyRemember = 'remember_username';//是否记住用户名
-
 module.exports = {
 	init: function () {
 		if (localStorage[keyRemember] == 'true') {
@@ -46,7 +45,7 @@ module.exports = {
 			},
 			success: function (data) {
 				if (0 == data.status) {
-					window.location.href = '/';
+					window.location.href = data.referrer;
 				} else {
 					var msg = data.msg || '服务器异常，请稍后再试';
 					B.topWarn(msg);

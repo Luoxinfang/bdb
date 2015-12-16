@@ -1,110 +1,107 @@
 /*
   normalize.css
 */
-html, body, input {
-	padding: 0;
-	margin: 0;
-	font-family: "Droid Sans Fallback", "Microsoft YaHei", "Heiti SC";
-}
-
-html,body {
-	height: 100%;
-	min-height: 100%;
-}
-
-input {
-	border: none;
-	outline: none;
-	border-radius: 0;
-}
-
-/*
-    add lilian
-*/
 html, body {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-webkit-overflow-scrolling: touch;
+  height: 100%;
+  min-height: 100%;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, p, th, td, a, span, i, b, em, textarea {
-	padding: 0;
-	margin: 0;
-	-webkit-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-body {
-	-webkit-text-size-adjust: none;
-	-webkit-user-select: none;
-	line-height: 1;
-}
-
-button, input, textarea, select {
-	font-family: inherit;
-	color: inherit;
-	-webkit-appearance: none;
-}
-
-select::-ms-expand {
-	display: none;
-}
-
-select:focus, select:active {
-	background-color: transparent;
-}
-
-input[type=text]::-ms-clear, input[type=tel]::-ms-clear, input[type=number]::-ms-clear {
-	display: none;
+html, body, input {
+  padding: 0;
+  margin: 0;
+  font-family: "Droid Sans Fallback", "Microsoft YaHei", "Heiti SC";
 }
 
 body, a, img, label, button, input, textarea, select {
-	outline: none;
-	-webkit-tap-highlight-color: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-	-webkit-appearance: none;
+input {
+  border: none;
+  outline: none;
+  border-radius: 0;
 }
 
-input::-webkit-input-placeholder {
-	color: #9a9a9a;
-	line-height: 130%;
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+  line-height: 1;
+}
+
+/* add lilian */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form,
+input, select, option, p, th, td, a, span, i, b, em, textarea {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus, select:active {
+  background-color: transparent;
+}
+
+input[type=text]::-ms-clear, input[type=tel]::-ms-clear, input[type=number]::-ms-clear {
+  display: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-a, img {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
-i, b, em {
-	font-style: normal;
-	font-weight: normal;
-}
-
-img {
-	border: 0;
-}
-
-a{
-	text-align: center;
-	text-decoration: none;
-}
-
-li, ol, ul {
-	list-style-type: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	font-weight: normal;
+input::-webkit-input-placeholder {
+  color: #9a9a9a;
+  line-height: 130%;
 }
 
 input:focus {
-	outline: none;
+  outline: none;
+}
+
+a, img {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+
+i, b, em {
+  font-style: normal;
+  font-weight: normal;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-align: center;
+  text-decoration: none;
+}
+
+li, ol, ul {
+  list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
 }

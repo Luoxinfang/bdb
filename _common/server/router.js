@@ -9,4 +9,5 @@ module.exports = function (router) {
 	router.get('/500', function (req, res, next) {
 		res.render('_common/page/500.tpl');
 	});
+
 };

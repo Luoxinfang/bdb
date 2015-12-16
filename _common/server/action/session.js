@@ -30,10 +30,6 @@ module.exports.post = function (req, res, next) {
 		console.log(rs);
 		if (rs.status == 0) {
 			req.session.user = rs.data;
-			console.log(rs.data);
-			if (req.body.remember == 'true') {
-				rs.data.pwd = req.body.pwd;
-			}
 			res.cookie('user_info', JSON.stringify(rs.data));
 		}
 		res.json(rs);

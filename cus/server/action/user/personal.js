@@ -3,7 +3,7 @@
  */
 
 var _ = require('lodash');
-var model = require('../../model/user.js');
+var model = yog.require('cus/model/user.js');
 
 module.exports = function (req, res, next) {
 	var params = {
@@ -11,7 +11,8 @@ module.exports = function (req, res, next) {
 	};
 	//console.log('token:',req.session.user.token);
 	model.getData(params).then(function (data) {
-		console.log(data);
+		console.log('back-data',data);
+		res.json(data);
 /*		var resObj = {
 			header: {
 				title: '百多宝',       //header标题
@@ -34,8 +35,9 @@ module.exports = function (req, res, next) {
 		};
 		resObj.header.title = '个人主页';
 		resObj.banner = [{imgUrl: 'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];*/
-		res.render('cus/page/user/personal.tpl', resObj);
+	/*	res.render('cus/page/user/personal.tpl',{});*/
 	}).catch(function (error) {
+		console.log(error);
 		yog.log.fatal(error);
 	});
 

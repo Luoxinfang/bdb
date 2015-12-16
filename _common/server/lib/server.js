@@ -6,7 +6,7 @@ var _ = require('lodash');
 module.exports = {
 	//把数据转换成后台需要的数据格式
 	parserData: function (data, service) {
-		console.log('server->parserData,params:',data, service);
+		//console.log('server->parserData,params:',data, service);
 		var sign = '1234567890!@#$%^&*';
 		data = _.mapKeys(data, function (v, k) {
 			return k.toLowerCase();
@@ -30,7 +30,7 @@ module.exports = {
 		_.map(temp, function (v, k) {
 			string += '&' + k + '=' + v;
 		});
-		console.log('query->'+service+':',string);
+		//console.log('query->'+service+':',string);
 		return string;
 	},
 	//获取serverId

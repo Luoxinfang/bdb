@@ -3,7 +3,7 @@
  */
 var B = require('_common:js/bdb/core.js');
 
-var keyRemember = 'remember_pwd';//是否记住密码
+var keyRemember = 'remember_username';//是否记住用户名
 
 module.exports = {
 	init: function () {
@@ -12,7 +12,6 @@ module.exports = {
 			if (user) {
 				user = JSON.parse(decodeURIComponent(user));
 				$('#username').val(user['username']);
-				$('#user-pwd').val(user['pwd']);
 				$('#btn-remember').prop('checked', true);
 			}
 		}

@@ -11,7 +11,6 @@ module.exports = function (req, res, next) {
 	};
 	//console.log('token:',req.session.user.token);
 	model.getData(params).then(function (data) {
-		console.log('back-data',data);
 		res.json(data);
 /*		var resObj = {
 			header: {

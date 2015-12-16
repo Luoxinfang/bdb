@@ -11,9 +11,6 @@ module.exports = {
 			var dialog = $('#'+$(this).attr('dialog'));
 			dialog.show();
 		});
-		$(document).on('click','.dialog-mask',function(){
-			$(this).parent().hide();
-		});
 		$(document).on('click','.closeDialog',function(){
 			$($(this).parents('.dialog-wrap')[0]).hide();
 		});

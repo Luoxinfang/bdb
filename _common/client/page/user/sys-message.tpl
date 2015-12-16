@@ -16,6 +16,3 @@
     </div>
 {% endblock %}
 
-{% script %}
-    require("_common:widget/js/sys-message.js").init();
-{% endscript %}

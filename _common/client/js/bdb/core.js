@@ -4,6 +4,9 @@
  */
 
 module.exports = {
+  tips: {
+    networkError: '网络错误，请稍后再试'
+  },
   /**
    *  页面顶部提示组件
    */
@@ -106,10 +109,29 @@ module.exports = {
    */
   isMobilePhone: function (number) {
     var rs = {status: 0};
-    if (number.length === 13) {
+    if (number.length === 11) {
       rs.status = 1;
     } else {
       rs.msg = '手机号码长度不对';
     }
+    return rs;
+  },
+  /**
+   *  是不是一个手机号码
+   */
+  isPwd: function (pwd) {
+    var rs = {status: 0, msg: ''};
+    if (pwd.length >= 6 && pwd.length <= 15) {
+      var reg = /[0-9a-z]/i;
+      if(reg.test(pwd)){
+        rs.status = 1;
+      }else{
+        rs.status = 0;
+        rs.msg = '密码只能是数字或者字母';
+      }
+    } else {
+      rs.msg = '密码长度为6-15位';
+    }
+    return rs;
   }
 };

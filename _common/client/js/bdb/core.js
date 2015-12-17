@@ -4,6 +4,9 @@
  */
 
 module.exports = {
+  tips: {
+    networkError: '网络错误，请稍后再试'
+  },
   /**
    *  页面顶部提示组件
    */

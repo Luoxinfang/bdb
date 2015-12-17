@@ -51,49 +51,48 @@ module.exports = function (router) {
   });
   //找回密码 —— 设置新密码
   router.get('/user/find-pwd-new', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
     req.appData.header.title = '找回密码';
     res.render('cus/page/user/find-pwd-new.tpl', req.appData);
   });
   //找回密码 —— 找回密码结果页
   router.get('/user/find-pwd-result', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '找回密码';
-    obj.header.leftIcon = false;
-    res.render('cus/page/user/find-pwd-result.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '找回密码';
+    resObj.header.leftIcon = false;
+    res.render('cus/page/user/find-pwd-result.tpl', resObj);
   });
   //绑定第三方账号 —— 输入信息
   router.get('/user/bind-account-info', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '绑定第三方账号';
-    obj.header.leftIcon = false;
-    res.render('cus/page/user/bind-account-info.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '绑定第三方账号';
+    resObj.header.leftIcon = false;
+    res.render('cus/page/user/bind-account-info.tpl', resObj);
   });
   //绑定第三方账号 —— 设置新密码
   router.get('/user/bind-account-pwd', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '绑定第三方账号';
-    obj.header.leftUrl = '/bind-account-info';
-    res.render('cus/page/user/bind-account-pwd.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '绑定第三方账号';
+    resObj.header.leftUrl = '/bind-account-info';
+    res.render('cus/page/user/bind-account-pwd.tpl', resObj);
   });
   //修改密码
   router.get('/user/change-pwd', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '修改密码';
-    res.render('cus/page/user/change-pwd.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '修改密码';
+    res.render('cus/page/user/change-pwd.tpl', resObj);
   });
   //更换手机号 —— 验证
   router.get('/user/change-tel-info', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '更换手机号';
-    res.render('cus/page/user/change-tel-info.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '更换手机号';
+    res.render('cus/page/user/change-tel-info.tpl', resObj);
   });
   //更换手机号 —— 输入新号码
   router.get('/user/change-tel-new', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '更换手机号';
-    obj.header.leftUrl = '/change-tel-info';
-    res.render('cus/page/user/change-tel-new.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '更换手机号';
+    resObj.header.leftUrl = '/change-tel-info';
+    res.render('cus/page/user/change-tel-new.tpl', resObj);
   });
   //收货地址
   router.get('/user/receipt-address', function (req, res, next) {
@@ -133,187 +132,187 @@ module.exports = function (router) {
   });
   //我的钱包 —— 交易明细
   router.get('/wallet/trans-list', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '交易明细';
-    obj.header.rightText = '筛选';
-    res.render('cus/page/wallet/trans-list.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '交易明细';
+    resObj.header.rightText = '筛选';
+    res.render('cus/page/wallet/trans-list.tpl', resObj);
   });
   //我的钱包 —— 提现
   router.get('/wallet/withdrawals', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '提现';
-    obj.header.leftUrl = '/wallet';
-    res.render('cus/page/wallet/withdrawals.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '提现';
+    resObj.header.leftUrl = '/wallet';
+    res.render('cus/page/wallet/withdrawals.tpl', resObj);
   });
   //我的钱包 —— 充值
   router.get('/wallet/recharges', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '充值';
-    obj.header.leftUrl = '/wallet';
-    res.render('cus/page/wallet/recharges.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '充值';
+    resObj.header.leftUrl = '/wallet';
+    res.render('cus/page/wallet/recharges.tpl', resObj);
   });
   //我的钱包 —— 提现结果页
   router.get('/wallet/withdrawals-result', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '提现';
-    obj.header.leftUrl = '/wallet';
-    res.render('cus/page/wallet/withdrawals-result.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '提现';
+    resObj.header.leftUrl = '/wallet';
+    res.render('cus/page/wallet/withdrawals-result.tpl', resObj);
   });
   //订单管理 ——所有订单
   router.get('/order', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '我的订单';
-    obj.header.tab = ['全部', '待付款', '待发货', '待收货', '退款中'];
-    obj.data = yog.require('cus/test/order.js');
-    res.render('cus/page/order/index.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '我的订单';
+    resObj.header.tab = ['全部', '待付款', '待发货', '待收货', '退款中'];
+    resObj.data = yog.require('cus/test/order.js');
+    res.render('cus/page/order/index.tpl', resObj);
   });
   //订单详情
   router.get('/order/detail', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '订单详情';
-    obj.header.leftUrl = '/order';
-    obj.header.rightIcon = 'chat';
-    obj.order = {status: '' + req.query.status};
-    obj.data = yog.require('cus/test/order.js');
-    res.render('cus/page/order/detail.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '订单详情';
+    resObj.header.leftUrl = '/order';
+    resObj.header.rightIcon = 'chat';
+    resObj.order = {status: '' + req.query.status};
+    resObj.data = yog.require('cus/test/order.js');
+    res.render('cus/page/order/detail.tpl', resObj);
   });
   //订单结果
   router.get('/order/result', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '我的订单';
-    obj.header.leftIcon = false;
-    obj.result = {status: '' + req.query.status};
-    if (obj.result.status == 'confirmReceipt') {
-      obj.header.title = '确认收货';
-      obj.header.rightText = '完成';
+    var resObj = req.appData;
+    resObj.header.title = '我的订单';
+    resObj.header.leftIcon = false;
+    resObj.result = {status: '' + req.query.status};
+    if (resObj.result.status == 'confirmReceipt') {
+      resObj.header.title = '确认收货';
+      resObj.header.rightText = '完成';
     }
-    res.render('cus/page/order/result.tpl', obj);
+    res.render('cus/page/order/result.tpl', resObj);
   });
   //订单评论
   router.get('/order/comment', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '评论';
-    obj.header.leftUrl = '/order';
-    res.render('cus/page/order/comment.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '评论';
+    resObj.header.leftUrl = '/order';
+    res.render('cus/page/order/comment.tpl', resObj);
   });
   //拍卖列表
   router.get('/auction/list', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '拍卖列表';
-    obj.header.rightSort = {default: '时间排序', sorts: ['时间排序', '价格排序', '信誉排序', '保证金排序']};
-    obj.data = yog.require('cus/test/auction.js');
-    res.render('cus/page/auction/list.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '拍卖列表';
+    resObj.header.rightSort = {default: '时间排序', sorts: ['时间排序', '价格排序', '信誉排序', '保证金排序']};
+    resObj.data = yog.require('cus/test/auction.js');
+    res.render('cus/page/auction/list.tpl', resObj);
   });
   //拍品
   router.get('/auction/detail', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '千年古玉';
-    obj.header.leftUrl = '/auction/list';
-    obj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
-    obj.auctionStatus = req.query.status == null ? 0 : req.query.status;
-    res.render('cus/page/auction/detail.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '千年古玉';
+    resObj.header.leftUrl = '/auction/list';
+    resObj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
+    resObj.auctionStatus = req.query.status == null ? 0 : req.query.status;
+    res.render('cus/page/auction/detail.tpl', resObj);
   });
   //店铺首页
   router.get('/store', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '小唐的店铺';
-    obj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
-    obj.banner = [{imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'}];
-    res.render('cus/page/store.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '小唐的店铺';
+    resObj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
+    resObj.banner = [{imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'}];
+    res.render('cus/page/store.tpl', resObj);
   });
   //搜索页面
   router.get('/auction/search', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    res.render('cus/page/auction/search.tpl', obj);
+    var resObj = req.appData;
+    res.render('cus/page/auction/search.tpl', resObj);
   });
   //拍品分类
   router.get('/auction/category', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '分类';
-    res.render('cus/page/auction/category.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '分类';
+    res.render('cus/page/auction/category.tpl', resObj);
   });
   //关于我们
   router.get('/about', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    res.render('cus/page/about.tpl', obj);
+    var resObj = req.appData;
+    res.render('cus/page/about.tpl', resObj);
   });
   //WEUI
   router.get('/weui', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    res.render('cus/page/weui.tpl', obj);
+    var resObj = req.appData;
+    res.render('cus/page/weui.tpl', resObj);
   });
   //系统消息
   router.get('/user/sys-message', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    res.render('cus/page/user/sys-message.tpl', obj);
+    var resObj = req.appData;
+    res.render('cus/page/user/sys-message.tpl', resObj);
   });
   //用户消息
   router.get('/user/user-message', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    res.render('cus/page/user/user-message.tpl', obj);
+    var resObj = req.appData;
+    res.render('cus/page/user/user-message.tpl', resObj);
   });
   //系统设置
   router.get('/settings/sys-settings', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '系统设置';
-    obj.header.settings = ['安全', '推送设置', '更新版本', '关于百多宝', '投诉建议']
-    res.render('cus/page/settings/sys-settings.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '系统设置';
+    resObj.header.settings = ['安全', '推送设置', '更新版本', '关于百多宝', '投诉建议']
+    res.render('cus/page/settings/sys-settings.tpl', resObj);
   });
   //安全设置
   router.get('/user/safety-settings', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '系统设置';
-    obj.header.settings = ['修改密码', '更换手机号']
-    res.render('cus/page/user/sys-settings.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '系统设置';
+    resObj.header.settings = ['修改密码', '更换手机号']
+    res.render('cus/page/user/sys-settings.tpl', resObj);
   });
   //推送设置
   router.get('/settings/push-settings', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '推送设置';
-    res.render('cus/page/settings/push-settings.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '推送设置';
+    res.render('cus/page/settings/push-settings.tpl', resObj);
   });
   //版本更新
   router.get('/settings/version-update', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '版本更新';
-    res.render('cus/page/settings/version-update.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '版本更新';
+    res.render('cus/page/settings/version-update.tpl', resObj);
   });
   //关于百多宝
   router.get('/settings/about-bdb', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '关于百多宝';
-    res.render('cus/page/settings/about-bdb.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '关于百多宝';
+    res.render('cus/page/settings/about-bdb.tpl', resObj);
   });
   //投诉建议
   router.get('/settings/suggestions', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '投诉建议';
-    res.render('cus/page/settings/suggestions.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '投诉建议';
+    res.render('cus/page/settings/suggestions.tpl', resObj);
   });
   //退款
   router.get('/user/to-return', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '退款';
-    res.render('cus/page/user/to-return.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '退款';
+    res.render('cus/page/user/to-return.tpl', resObj);
   });
   //申请平台介入
   router.get('/user/application-bdb', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '申请平台介入';
-    res.render('cus/page/user/application-bdb.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '申请平台介入';
+    res.render('cus/page/user/application-bdb.tpl', resObj);
   });
   //>>>>>>>>>>wallet(我的钱包)----------
   //wallet:cus/action/wallet/index.js
   router.get('/wallet/bank', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '银行卡管理';
-    obj.header.rightText = '删除';
-    res.render('cus/page/wallet/bank/index.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '银行卡管理';
+    resObj.header.rightText = '删除';
+    res.render('cus/page/wallet/bank/index.tpl', resObj);
   });
   router.get('/wallet/bank/add', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '添加银行卡';
-    res.render('cus/page/wallet/bank/add.tpl', obj);
+    var resObj = req.appData;
+    resObj.header.title = '添加银行卡';
+    res.render('cus/page/wallet/bank/add.tpl', resObj);
   });
   //----------wallet(我的钱包)<<<<<<<<<<
 };

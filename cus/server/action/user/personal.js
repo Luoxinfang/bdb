@@ -1,43 +1,39 @@
 /**
- * @description
+ * @description pulang 2015/12/16
  */
 
 var _ = require('lodash');
 var model = yog.require('cus/model/user.js');
 
 module.exports = function (req, res, next) {
-	var params = {
+	var resObj = req.appData;
+	var page = {
+		Page:1,
+		Pagesize:2
+	};
+	var params1 = {
 		token: req.session.user.token
 	};
-	//console.log('token:',req.session.user.token);
-	model.getData(params).then(function (data) {
-		res.json(data);
-/*		var resObj = {
-			header: {
-				title: '百多宝',       //header标题
-				leftIcon: 'back',     //左侧默认返回按钮
-				leftUrl: '/',         //左侧图标默认链接
-				rightIcon: false,     //右侧单个图标
-				rightUrl: false,      //右侧图标或文字链接
-				rightIcons: false,    //右侧图标组
-				rightText: false,     //右侧文字
-				rightSort: false,     //右侧排序数组
-				nav: ['系统消息', '用户消息'],     //头部nav数组
-				tab: ['全部', '进行中', '未开始'],  //头部tab数组
-				set: false
-			},
-			banner: [
-				{imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'},
-				{imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'},
-				{imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'}
-			]
-		};
-		resObj.header.title = '个人主页';
-		resObj.banner = [{imgUrl: 'http://img0.imgtn.bdimg.com/it/u=1924553508,467785207&fm=21&gp=0.jpg'}];*/
-	/*	res.render('cus/page/user/personal.tpl',{});*/
+	var params2 = _.extend({
+		token: req.session.user.token
+	},page);
+	//获取用户基本信息
+	model.getData(params1).then(function (rs) {
+		resObj.userInfo = rs.data;
+		if(null != rs.data.othercount){
+			resObj.userInfo.counttype = rs.data.othercount.substring(0,2);
+		}
+		//查询收货地址列表信息
+		model.queryList(params2).then(function (rs) {
+			console.log(rs);
+			resObj.addressInfo = rs.list;
+			res.render('cus/page/user/personal.tpl',resObj);
+		}).catch(function (error) {
+			console.log(error);
+			yog.log.fatal(error);
+		});
 	}).catch(function (error) {
 		console.log(error);
 		yog.log.fatal(error);
 	});
-
 };

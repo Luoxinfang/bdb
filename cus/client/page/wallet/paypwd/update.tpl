@@ -1,0 +1,1 @@
+{% extends '_common:page/wallet/paypwd/update.tpl' %}

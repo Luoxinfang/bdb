@@ -5,7 +5,7 @@
 var server = require('../lib/server.js');
 var serverId = server.getServerId();
 var cash = 'cash';
-var bank = 'bank'
+var bank = 'bank';
 module.exports = {
 	/**
 	 * 查询是否设置支付密码
@@ -38,6 +38,28 @@ module.exports = {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
 			path: '/interface/cash/setpwd.shtml?' + data
+		});
+	},
+	/**
+	 * 校验支付密码
+	 * @param params
+	 * @returns {*}
+	 */
+	validPwd: function (params) {
+		data = server.parserData(params, cash);
+		return yog.ral(serverId, {
+			path: '/interface/cash/validpwd.shtml?' + data
+		});
+	},
+	/**
+	 * 修改支付密码
+	 * @param params
+	 * @returns {*}
+	 */
+	updatePwd: function (params) {
+		data = server.parserData(params, cash);
+		return yog.ral(serverId, {
+			path: '/interface/cash/updatepwd.shtml?' + data
 		});
 	},
 	/**

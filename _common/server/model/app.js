@@ -24,7 +24,7 @@ module.exports = {
       rightSort: false,     //右侧排序数组
       nav: ['系统消息', '用户消息'],     //头部nav数组
       tab: ['全部', '进行中', '未开始'],  //头部tab数组
-      set: false
+      settings: false
     };
   },
   //返回开发者信息

@@ -11,13 +11,15 @@
 	</div>
 	<div class="info-group mt20 mb40">
 		<a href="/wallet/bank" class="li">银行卡管理</a>
-		<a href="/wallet/safety" class="li">安全</a>
+		{% if payPwdRecomplete == 1 %}
+			<a href="/wallet/paypwd/update" class="li">修改支付密码</a>
+		{% endif %}
 	</div>
 </div>
 
 {% if payPwdRecomplete == 0 %}
 	{% widget '_common:widget/dialog/dialog.tpl' %}
-	{% widget '_common:widget/password/password.tpl' %}
+	{% widget '_common:widget/common/password/password.tpl' %}
 	<div class="dialog-wrap" id="payPwdStep1" dialog="payPwdStep2" style="display: block">
 		<div class="dialog pb0">
 			<div class="dialog-hd">请设置支付密码</div>

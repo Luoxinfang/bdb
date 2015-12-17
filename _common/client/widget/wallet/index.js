@@ -35,7 +35,10 @@ module.exports = {
 							B.alert({
 								icon: 'success',
 								title: '支付密码设置成功',
-								content: '页面2秒后自动刷新...'
+								content: '页面2秒后自动刷新...',
+								callback: function () {
+									location.href = '/wallet';
+								}
 							});
 						} else {
 							var msg = data.msg || '服务器异常，请稍后再试';

@@ -148,6 +148,10 @@ body {
   color: inherit !important;
 }
 
+.ht100 {
+	height: 100% !important;
+}
+
 //背景颜色
 .bg-f {
   background: #ffffff;
@@ -274,6 +278,24 @@ body {
   &-fail {
     background-image: url('../icon/fail.png');
   }
+	&-loading {
+		position: relative;
+		border-radius: 5px;
+		&:after {
+			content: '';
+			display: inline-block;
+			width: 124/@rem-pre;
+			height: 124/@rem-pre;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			background-image: url('../icon/icon-loading.gif');
+			background-size: 100%;
+		}
+	}
   //星星
   &-star {
     background-image: url('../icon/icon-star.png');
@@ -352,6 +374,18 @@ body {
   margin-top: 40/@rem-pre !important;
 }
 
+.mt70 {
+	margin-top: 70/@rem-pre !important;
+}
+
+.mt80 {
+	margin-top: 80/@rem-pre !important;
+}
+
+.mt100 {
+	margin-top: 100/@rem-pre !important;
+}
+
 .mt-40 {
   margin-top: -40/@rem-pre !important;
 }
@@ -405,6 +439,10 @@ body {
 }
 
 //内边距
+.p20 {
+	padding: 20/@rem-pre !important;
+}
+
 .pt10 {
   padding-top: 10/@rem-pre !important;
 }
@@ -452,6 +490,14 @@ body {
 
 .lk-red:hover {
   text-decoration: underline;
+}
+
+.inherit {
+	display: inherit !important;
+}
+
+.underline {
+	text-decoration: underline !important;
 }
 
 //块级元素

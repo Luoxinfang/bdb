@@ -5,7 +5,7 @@
 var server = require('../lib/server.js');
 var serverId = server.getServerId();
 var cash = 'cash';
-var bank = 'bank'
+var bank = 'bank';
 module.exports = {
 	/**
 	 * 查询是否设置支付密码

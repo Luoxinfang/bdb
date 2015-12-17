@@ -303,16 +303,7 @@ module.exports = function (router) {
   });
   //>>>>>>>>>>wallet(我的钱包)----------
   //wallet:cus/action/wallet/index.js
-  router.get('/wallet/bank', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '银行卡管理';
-    resObj.header.rightText = '删除';
-    res.render('cus/page/wallet/bank/index.tpl', resObj);
-  });
-  router.get('/wallet/bank/add', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '添加银行卡';
-    res.render('cus/page/wallet/bank/add.tpl', resObj);
-  });
+	//wallet/bank:cus/action/wallet/bank/index.js
+	//wallet/bank/add:cus/action/wallet/bank/add.js
   //----------wallet(我的钱包)<<<<<<<<<<
 };

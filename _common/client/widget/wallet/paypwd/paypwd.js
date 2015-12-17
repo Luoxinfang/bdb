@@ -63,6 +63,7 @@ module.exports = {
 						icon: 'loading',
 						time: false
 					});
+					var before = +new Date();
 					$.ajax({
 						type: 'post',
 						dataType: 'json',
@@ -71,23 +72,21 @@ module.exports = {
 							payPwd: newPayPwd1
 						},
 						success: function (data) {
-							if (0 == data.status) {
-								B.clearAlert();
-								B.alert({
-									title: '支付密码修改成功',
-									content: '2秒后返回我的钱包页面...',
-									icon: 'success',
-									callback: function () {
-										location.href = '/wallet';
-									}
-								});
-							} else {
-								var msg = data.msg || '服务器异常，请稍后再试';
-								B.clearAlert();
-								$('#newPayPwd2').val('');
-								$('#payPwdStep2 .password-wrap .word').removeClass('filled');
-								B.topWarn(msg);
-							}
+							var after = +new Date();
+							setTimeout(function () {
+								if (0 == data.status) {
+									B.clearAlert();
+									$('#payPwdStep2').hide();
+									$('.header .icon-back').hide();
+									$('#result').show();
+								} else {
+									var msg = data.msg || '服务器异常，请稍后再试';
+									B.clearAlert();
+									$('#newPayPwd2').val('');
+									$('#payPwdStep2 .password-wrap .word').removeClass('filled');
+									B.topWarn(msg);
+								}
+							}, before + 1000 - after);
 						},
 						error: function (jqXHR, textStatus, errorThrown) {
 							B.clearAlert();

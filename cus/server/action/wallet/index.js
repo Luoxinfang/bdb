@@ -17,14 +17,12 @@ module.exports = function (req, res, next) {
 	resObj.payPwdRecomplete = 1;
 	resObj.cashMoney = 0;
 	cashModel.queryCash(params).then(function (rs) {
-		console.log('>>>>>>>>>>查询账户余额----------\n', rs, '\n----------查询账户余额<<<<<<<<<<');
 		if (0 == rs.status) {
 			resObj.cashMoney = rs.cashmoney;
 			if (resObj.cashMoney > 0) {
 				res.render('cus/page/wallet/index.tpl', resObj);
 			} else {
 				cashModel.queryPwd(params).then(function (rs) {
-					console.log('>>>>>>>>>>查询是否设置交易密码----------\n', rs, '\n----------查询是否设置交易密码<<<<<<<<<<');
 					resObj.payPwdRecomplete = rs.recomplete;
 					res.render('cus/page/wallet/index.tpl', resObj);
 				}).catch(function (error) {

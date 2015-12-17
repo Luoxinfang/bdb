@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block body %}
-	<div class="info-group mt">
+	<div class="info-group mt20">
 		<div class="li mt">
 			<span>大魔王</span>
 		</div>

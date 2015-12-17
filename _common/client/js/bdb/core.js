@@ -20,6 +20,9 @@ module.exports = {
       html.push('</div></div>')
       if ($('.header').size()) {
         $('.body-container').append(html.join(''));
+        $('.top-tip').css({
+          top: $('.header').height() + 'px'
+        });
       } else {
         $('.wrapper').append(html.join(''));
       }
@@ -34,7 +37,7 @@ module.exports = {
       content: content
     });
     if (!lasting) {
-      setTimeout(this.hideTopTips.bind(this), 3000);
+      setTimeout(this.hideTopTips.bind(this), 5000);
     }
   },
   hideTopTips: function () {
@@ -101,11 +104,11 @@ module.exports = {
   /**
    *  是不是一个手机号码
    */
-  isMobilePhone:function(){
+  isMobilePhone: function (number) {
     var rs = {status: 0};
     if (number.length === 13) {
       rs.status = 1;
-    }else{
+    } else {
       rs.msg = '手机号码长度不对';
     }
   }

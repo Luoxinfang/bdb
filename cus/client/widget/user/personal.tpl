@@ -9,7 +9,7 @@
 		<span class="fl">实名认证</span>
 	</div>
 </div>
-<div class="info-group mt">
+<div class="info-group mt20">
 	<div class="li">
 		<span class="fl">昵称</span>
 		<span class="fr">{{ userInfo.nickname }}</span>

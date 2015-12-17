@@ -41,6 +41,28 @@ module.exports = {
 		});
 	},
 	/**
+	 * 校验支付密码
+	 * @param params
+	 * @returns {*}
+	 */
+	validPwd: function (params) {
+		data = server.parserData(params, cash);
+		return yog.ral(serverId, {
+			path: '/interface/cash/validpwd.shtml?' + data
+		});
+	},
+	/**
+	 * 修改支付密码
+	 * @param params
+	 * @returns {*}
+	 */
+	updatePwd: function (params) {
+		data = server.parserData(params, cash);
+		return yog.ral(serverId, {
+			path: '/interface/cash/updatepwd.shtml?' + data
+		});
+	},
+	/**
 	 * 银行卡列表查询
 	 * @param params
 	 * @returns

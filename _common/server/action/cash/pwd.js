@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
 module.exports.get = function (req, res, next) {
 
 };
-// put
+// 设置支付密码
 module.exports.put = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
@@ -30,9 +30,21 @@ module.exports.put = function (req, res, next) {
 		yog.log.fatal(error);
 	});
 };
-// post
+// 修改支付密码
 module.exports.post = function (req, res, next) {
-
+	var params = {
+		token: req.session.user.token,
+		oldPayPwd: md5(req.session.oldPayPwd),
+		payPwd: md5(req.body.payPwd),
+		oldDrawPwd: '',
+		drawPwd: ''
+	};
+	cashModel.updatePwd(params).then(function (rs) {
+		console.log('>>>>>>>>>>设置支付密码----------\n', rs, '\n----------设置支付密码<<<<<<<<<<');
+		res.json(rs);
+	}).catch(function (error) {
+		yog.log.fatal(error);
+	});
 };
 // delet
 module.exports.delete = function (req, res, next) {

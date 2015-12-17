@@ -18,17 +18,24 @@ module.exports = function (req, res, next) {
 	resObj.cashMoney = 0;
 	cashModel.queryCash(params).then(function (rs) {
 		console.log('>>>>>>>>>>查询账户余额----------\n', rs, '\n----------查询账户余额<<<<<<<<<<');
-		resObj.cashMoney = rs.cashmoney;
-		if (resObj.cashMoney > 0) {
-			res.render('cus/page/wallet/index.tpl', resObj);
-		} else {
-			cashModel.queryPwd(params).then(function (rs) {
-				console.log('>>>>>>>>>>查询是否设置交易密码----------\n', rs, '\n----------查询是否设置交易密码<<<<<<<<<<');
-				resObj.payPwdRecomplete = rs.recomplete;
+		if (0 == rs.status) {
+			resObj.cashMoney = rs.cashmoney;
+			if (resObj.cashMoney > 0) {
 				res.render('cus/page/wallet/index.tpl', resObj);
-			}).catch(function (error) {
-				yog.log.fatal(error);
-			});
+			} else {
+				cashModel.queryPwd(params).then(function (rs) {
+					console.log('>>>>>>>>>>查询是否设置交易密码----------\n', rs, '\n----------查询是否设置交易密码<<<<<<<<<<');
+					resObj.payPwdRecomplete = rs.recomplete;
+					res.render('cus/page/wallet/index.tpl', resObj);
+				}).catch(function (error) {
+					yog.log.fatal(error);
+				});
+			}
+		} else {
+			resObj.rs = {};
+			resObj.rs.status = rs.status;
+			resObj.rs.msg = rs.msg || '服务器异常，请稍后再试';
+			res.render('cus/page/wallet/result.tpl', resObj);
 		}
 	}).catch(function (error) {
 		yog.log.fatal(error);

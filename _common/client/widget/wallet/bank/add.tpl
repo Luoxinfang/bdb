@@ -14,6 +14,9 @@
 				<input type="text" id="card_name" placeholder="请输入持卡人姓名" minlength="2" maxlength="4"/>
 			</li>
 		</ul>
-		<a class="btn btn-red btn-disabled">保存</a>
+		<a class="btn btn-red btn-disabled" id="addBank">保存</a>
 	</div>
 </div>
+{% script %}
+	require('_common:widget/wallet/bank/bank.js').init();
+{% endscript %}

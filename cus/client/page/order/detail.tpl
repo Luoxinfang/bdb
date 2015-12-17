@@ -128,7 +128,7 @@
 		<div class="dialog-hd">确认付款</div>
 		<div class="dialog-bd">
 			<div class="price">￥1500.00</div>
-			{% widget '_common:widget/password/password.tpl' %}
+			{% widget '_common:widget/common/password/password.tpl' %}
 			<div class="password-wrap">
 				<div class="word"></div>
 				<div class="word"></div>

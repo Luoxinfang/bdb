@@ -95,13 +95,41 @@ module.exports = function (router) {
     obj.header.leftUrl = '/change-tel-info';
     res.render('cus/page/user/change-tel-new.tpl', obj);
   });
-
   //收货地址
   router.get('/user/receipt-address', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '收货地址';
-    obj.header.leftUrl = '/user/personal';
-    res.render('cus/page/user/receipt-address.tpl', obj);
+    var resObj = req.appData;
+    _.extend(resObj.header, {
+      title :'收货地址',
+      leftUrl: '/user/personal',
+      rightText:'',
+    })
+    /*console.log(req.query.type);*/
+    if(req.query.type == 'delete'){
+      resObj.header.rightText = '删除';
+    }else {
+      resObj.header.rightText = false;
+    }
+    res.render('cus/page/user/receipt-address.tpl', resObj);
+  });
+  //个人主页基本信息修改
+  router.get('/user/update-info',function(req,res,next){
+    var resObj = req.appData;
+    _.extend(resObj.header, {
+      title :'修改昵称',
+      rightText: '确定',
+      leftUrl: '/user/personal',
+    })
+    res.render('cus/page/user/update-info.tpl', resObj);
+  });
+  //实名认证
+  router.get('/user/update-info',function(req,res,next){
+    var resObj = req.appData;
+    _.extend(resObj.header, {
+      title :'修改昵称',
+      rightText: '确定',
+      leftUrl: '/user/personal',
+    })
+    res.render('cus/page/user/update-info.tpl', resObj);
   });
   //我的钱包 —— 交易明细
   router.get('/wallet/trans-list', function (req, res, next) {

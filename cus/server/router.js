@@ -95,13 +95,41 @@ module.exports = function (router) {
     obj.header.leftUrl = '/change-tel-info';
     res.render('cus/page/user/change-tel-new.tpl', obj);
   });
-
   //收货地址
   router.get('/user/receipt-address', function (req, res, next) {
-    var obj = _.cloneDeep(resObj);
-    obj.header.title = '收货地址';
-    obj.header.leftUrl = '/user/personal';
-    res.render('cus/page/user/receipt-address.tpl', obj);
+    var resObj = req.appData;
+    _.extend(resObj.header, {
+      title :'收货地址',
+      leftUrl: '/user/personal',
+      rightText:'',
+    })
+    /*console.log(req.query.type);*/
+    if(req.query.type == 'delete'){
+      resObj.header.rightText = '删除';
+    }else {
+      resObj.header.rightText = false;
+    }
+    res.render('cus/page/user/receipt-address.tpl', resObj);
+  });
+  //个人主页基本信息修改
+  router.get('/user/update-info',function(req,res,next){
+    var resObj = req.appData;
+    _.extend(resObj.header, {
+      title :'修改昵称',
+      rightText: '确定',
+      leftUrl: '/user/personal',
+    })
+    res.render('cus/page/user/update-info.tpl', resObj);
+  });
+  //实名认证
+  router.get('/user/check-name',function(req,res,next){
+    var resObj = req.appData;
+    _.extend(resObj.header, {
+      title :'实名认证',
+      rightText: '确定',
+      leftUrl: '/user/personal',
+    })
+    res.render('cus/page/user/check-name.tpl', resObj);
   });
   //我的钱包 —— 交易明细
   router.get('/wallet/trans-list', function (req, res, next) {
@@ -228,14 +256,14 @@ module.exports = function (router) {
   router.get('/settings/sys-settings', function (req, res, next) {
     var obj = _.cloneDeep(resObj);
     obj.header.title = '系统设置';
-    obj.header.set = ['安全', '推送设置', '更新版本', '关于百多宝', '投诉建议']
+    obj.header.settings = ['安全', '推送设置', '更新版本', '关于百多宝', '投诉建议']
     res.render('cus/page/settings/sys-settings.tpl', obj);
   });
   //安全设置
   router.get('/user/safety-settings', function (req, res, next) {
     var obj = _.cloneDeep(resObj);
     obj.header.title = '系统设置';
-    obj.header.set = ['修改密码', '更换手机号']
+    obj.header.settings = ['修改密码', '更换手机号']
     res.render('cus/page/user/sys-settings.tpl', obj);
   });
   //推送设置

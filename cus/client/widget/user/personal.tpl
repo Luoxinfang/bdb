@@ -5,43 +5,56 @@
 	<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 </div>
 <div class="info-group">
+	<div class="li icon-right">
+		<span class="fl">实名认证</span>
+	</div>
+</div>
+<div class="info-group mt20">
 	<div class="li">
 		<span class="fl">昵称</span>
-		<span class="fr">大魔王</span>
+		<span class="fr">{{ userInfo.nickname }}</span>
 	</div>
 	<div class="li">
 		<span class="fl">帐号</span>
-		<span class="fr">18655545554</span>
+		<span class="fr">{{ userInfo.username }}</span>
 	</div>
 	<div class="li">
 		<span class="fl">生日</span>
-		<span class="fr">1995/09/09</span>
+		<span class="fr">{{ userInfo.birthday }}</span>
 	</div>
 	<div class="li">
 		<span class="fl">性别</span>
-		<span class="fr">男</span>
+		<span class="fr">
+			{% if userInfo.sex == 'F' %}
+					男
+			{% else  %}
+					女
+			{% endif %}
+		</span>
 	</div>
 	<div class="li">
-		<span class="fl">QQ帐号</span>
-		<span class="fr">544889699</span>
+		<span class="fl">QQ账号</span>
+		<span class="fr">{{ userInfo.othercount }}</span>
 	</div>
 </div>
 <div class="address-list clearfix">
-	<div class="address-item">
+	{#{% for item in addressInfo %}#}
+	<a href="/user/receipt-address?type=delete&addressId={{ addressInfo.addressid }}" class="address-item">
 		<div class="tlt">
 			<span class="sl">家</span>
 			<span class="sr">收货地址1</span>
 		</div>
 		<div class="content">
-			收件人：大魔王<br>
-			电话：13423141235<br>
-			邮编：51800
+			收件人：{{ addressInfo.username }}<br>
+			电话：{{ addressInfo.mobile }}<br>
+			邮编：{{ addressInfo.post }}
 		</div>
 		<div class="desc">
-			广东省 深圳市 龙岗区 布吉科技园路慢城7-4号16F.
+			{{ addressInfo.address }}
 		</div>
-	</div>
-	<div class="address-item">
+	</a>
+{#	{% endfor %}#}
+	{#<div class="address-item">
 		<div class="tlt">
 			<span class="sl">公司</span>
 			<span class="sr">收货地址1</span>
@@ -54,8 +67,8 @@
 		<div class="desc">
 			广东省 深圳市 龙岗区 布吉科技园路慢城7-4号16F.
 		</div>
-	</div>
-	<a href="/receipt-address" class="address-item address-add">
+	</div>#}
+	<a href="/user/receipt-address?type=update" class="address-item address-add">
 		<div class="add">+</div>
 		<div class="tip">添加收货地址</div>
 	</a>

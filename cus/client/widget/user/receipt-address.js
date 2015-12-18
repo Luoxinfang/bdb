@@ -58,39 +58,15 @@ module.exports = {
 	},
 	//删除收货地址信息
 	deleteData: function (e) {
-		var name = $('#name').val(),
-				tel = $('#tel').val(),
-				code = $('#code').val(),
-				address = $('#address').val();
-		if (!name) {
-			B.topWarn('收货人不能为空!');
-			return false;
-		}
-		if (!tel) {
-			B.topWarn('联系方式不能为空!');
-			return false;
-		}
-		if (!code) {
-			B.topWarn('邮编不能为空!');
-			return false;
-		}
-		if (!address) {
-			B.topWarn('详细地址不能为空!');
-			return false;
-		}
+		var addressid = $("#addressid").val();
 		B.topWarn.hide();
-		//向后台提交数据
+		//删除当前数据
 		$.ajax({
-			type: 'post',
+			type: 'delete',
 			dataType: 'json',
 			url: 'receipt-address',
 			data: {
-				username: name,
-				mobile: tel,
-				post: code,
-				address: address,
-				province: 'GD',
-				city:'SZ'
+				addressid: addressid
 			},
 			success: function (data) {
 				if (0 == data.status) {
@@ -107,6 +83,7 @@ module.exports = {
 	},
 	event: function () {
 		$('#btn-save').on('click', this.addData.bind(this));
-		$(".header-wrap .header .right").on('click',this.deleteData.bind(this));
+		$(".header-wrap .header .rightText").on('click',this.deleteData.bind(this));
+
 	}
 };

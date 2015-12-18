@@ -38,36 +38,22 @@
 	</div>
 </div>
 <div class="address-list clearfix">
-	{#{% for item in addressInfo %}#}
-	<a href="/user/receipt-address?type=delete&addressId={{ addressInfo.addressid }}" class="address-item">
+	{% for item in addressInfo %}
+	<a href="/user/receipt-address?type=delete&addressId={{ item.addressid }}" class="address-item">
 		<div class="tlt">
 			<span class="sl">家</span>
 			<span class="sr">收货地址1</span>
 		</div>
-		<div class="content">
-			收件人：{{ addressInfo.username }}<br>
-			电话：{{ addressInfo.mobile }}<br>
-			邮编：{{ addressInfo.post }}
+		<div class="content tl">
+			收件人：{{ item.username }}<br>
+			电话：{{ item.mobile }}<br>
+			邮编：{{ item.post }}
 		</div>
-		<div class="desc">
-			{{ addressInfo.address }}
+		<div class="desc tl">
+			{{ item.address }}
 		</div>
 	</a>
-{#	{% endfor %}#}
-	{#<div class="address-item">
-		<div class="tlt">
-			<span class="sl">公司</span>
-			<span class="sr">收货地址1</span>
-		</div>
-		<div class="content">
-			收件人：大魔王<br>
-			电话：13423141235<br>
-			邮编：51800
-		</div>
-		<div class="desc">
-			广东省 深圳市 龙岗区 布吉科技园路慢城7-4号16F.
-		</div>
-	</div>#}
+	{% endfor %}
 	<a href="/user/receipt-address?type=update" class="address-item address-add">
 		<div class="add">+</div>
 		<div class="tip">添加收货地址</div>

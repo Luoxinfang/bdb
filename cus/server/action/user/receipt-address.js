@@ -1,7 +1,7 @@
 /**
- * @author chenzhenhua
- * @createTime 2015-12-15
- * @description 这个路由处理我的钱包首页
+ * @author pulang
+ * @createTime 2015-12-16
+ * @description 这个路由处理收货地址信息
  */
 
 var md5 = require('md5');
@@ -9,14 +9,26 @@ var _ = require('lodash');
 var model = require('../../model/user.js');
 
 // all
-module.exports.post = function (req, res, next) {
+module.exports = function (req, res, next) {
+	var resObj = req.appData;
+	resObj.header.title = '收货地址';
+	resObj.header.leftUrl = '/user/personal';
+	resObj.header.rightText = '';
+	if(req.query.type == 'update'){
+		res.render('cus/page/user/receipt-address.tpl',resObj);
+		return;
+	}
+	resObj.header.rightText='删除';
 	var params = _.extend({
 		token: req.session.user.token
-	}, req.body);
-	model.addAddress(params).then(function (rs) {
-		console.log(rs);
-		res.json(rs);
+	},{addressid:req.query.addressId});
+	//根据addressid获取收货地址信息
+	model.listdetail(params).then(function (rs) {
+			resObj.address =rs.address;
+			res.render('cus/page/user/receipt-address.tpl',resObj);
 	}).catch(function (error) {
+		console.log(error);
 		yog.log.fatal(error);
 	});
 };
+

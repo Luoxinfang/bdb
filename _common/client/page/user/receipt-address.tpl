@@ -15,7 +15,7 @@
 					<input type="text" id="name" placeholder="备注名称/如:家,公司等" value="{{ address.address }}"/>
 				</li>
 				<li class='form-li-input bs' style="display: none">
-					<input type="text" id="addressid"  value=113 />
+					<input type="text" id="addressid"  value="{{ address.addressid }}" />
 				</li>
 				<li class='form-li-input mt'>
 					<input type="text" id="name" placeholder="姓名" value="{{ address.username }}" />

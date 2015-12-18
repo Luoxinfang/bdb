@@ -35,15 +35,11 @@ module.exports = function (router) {
     res.render('cus/page/session/login.tpl', req.appData);
   });
   //注册 —— 输入电话号码
-  router.get('/reg-tel', function (req, res, next) {
+  router.get('/reg', function (req, res, next) {
     req.appData.header.title = '注册';
-    res.render('cus/page/user/reg-tel.tpl', req.appData);
+    res.render('_common/page/user/reg.tpl', req.appData);
   });
-  //注册 —— 设置密码
-  router.get('/reg-pwd', function (req, res, next) {
-    req.appData.header.title = '注册';
-    res.render('cus/page/user/reg-pwd.tpl', req.appData);
-  });
+
   //找回密码 —— 输入信息
   router.get('/find-pwd-info', function (req, res, next) {
     req.appData.header.title = '找回密码';
@@ -303,16 +299,7 @@ module.exports = function (router) {
   });
   //>>>>>>>>>>wallet(我的钱包)----------
   //wallet:cus/action/wallet/index.js
-  router.get('/wallet/bank', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '银行卡管理';
-    resObj.header.rightText = '删除';
-    res.render('cus/page/wallet/bank/index.tpl', resObj);
-  });
-  router.get('/wallet/bank/add', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '添加银行卡';
-    res.render('cus/page/wallet/bank/add.tpl', resObj);
-  });
+	//wallet/bank:cus/action/wallet/bank/index.js
+	//wallet/bank/add:cus/action/wallet/bank/add.js
   //----------wallet(我的钱包)<<<<<<<<<<
 };

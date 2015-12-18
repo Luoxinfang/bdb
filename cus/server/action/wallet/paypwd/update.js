@@ -15,15 +15,8 @@ module.exports = function (req, res, next) {
 	};
 	var resObj = req.appData;
 	resObj.header.title = '修改支付密码';
-	resObj.validPayPwd = (+new Date() - req.session.validPayPwdTime) <= 60000;
-	console.log(resObj.validPayPwd);
+	resObj.validPayPwd = (+new Date() - req.session.validPayPwdTime) <= 10000;
 	res.render('cus/page/wallet/paypwd/update.tpl', resObj);
-	//cashModel.queryCash(params).then(function (rs) {
-	//	console.log('>>>>>>>>>>查询账户余额----------\n', rs, '\n----------查询账户余额<<<<<<<<<<');
-	//	res.render('cus/page/wallet/index.tpl', obj);
-	//}).catch(function (error) {
-	//	yog.log.fatal(error);
-	//});
 };
 // get
 module.exports.get = function (req, res, next) {

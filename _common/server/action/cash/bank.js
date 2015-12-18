@@ -1,12 +1,11 @@
 /**
- * @author chenzhenhua
- * @createTime 2015-12-15
- * @description 这个路由处理我的钱包首页
+ * Created by chenzhenhua on 2015/12/17.
+ * 银行卡路由
  */
 
 var md5 = require('md5');
 var _ = require('lodash');
-var cashModel = require('../../model/cash.js');
+var bankModel = require('../../model/cash.js');
 
 // all
 module.exports = function (req, res, next) {
@@ -16,14 +15,14 @@ module.exports = function (req, res, next) {
 module.exports.get = function (req, res, next) {
 
 };
-// 设置支付密码
+// 新增银行卡
 module.exports.put = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
 		payPwd: md5(req.body.payPwd),
 		drawPwd: ''
 	}
-	cashModel.setPwd(params).then(function (rs) {
+	bankModel.setPwd(params).then(function (rs) {
 		res.json(rs);
 	}).catch(function (error) {
 		yog.log.fatal(error);
@@ -38,7 +37,7 @@ module.exports.post = function (req, res, next) {
 		oldDrawPwd: '',
 		drawPwd: ''
 	};
-	cashModel.updatePwd(params).then(function (rs) {
+	bankModel.updatePwd(params).then(function (rs) {
 		res.json(rs);
 	}).catch(function (error) {
 		yog.log.fatal(error);

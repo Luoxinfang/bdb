@@ -12,7 +12,7 @@
   </div>
   <div class="group-btn">
     <a class="btn btn-white" id="btn-login">登录</a>
-    <a class="btn-reg" href="/reg-tel">注册</a>
+    <a class="btn-reg" href="/reg">注册</a>
   </div>
 </div>
 {%require "_common:js/plugin/zepto-cookie.js"%}

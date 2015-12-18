@@ -7,7 +7,14 @@ module.exports = {
 	init: function () {
 		this.events();
 	},
-	events: function () {
+	addBank: function (){
 
+	},
+	validPayPwd: function (){
+
+	},
+	events: function () {
+		this.addBank();
+		this.validPayPwd();
 	}
 };

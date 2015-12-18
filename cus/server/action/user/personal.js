@@ -1,5 +1,7 @@
 /**
- * @description pulang 2015/12/16
+ * @author pulang
+ * @createTime 2015-12-16
+ * @description 这个路由处理个人主页信息的加载
  */
 
 var _ = require('lodash');

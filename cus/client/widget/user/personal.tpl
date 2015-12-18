@@ -10,10 +10,10 @@
 	</div>
 </div>
 <div class="info-group mt20">
-	<div class="li">
+	<a href="/user/update-info?type=nick&updateVal={{ userInfo.nickname }}" class="li">
 		<span class="fl">昵称</span>
 		<span class="fr">{{ userInfo.nickname }}</span>
-	</div>
+	</a>
 	<div class="li">
 		<span class="fl">帐号</span>
 		<span class="fr">{{ userInfo.username }}</span>
@@ -22,20 +22,18 @@
 		<span class="fl">生日</span>
 		<span class="fr">{{ userInfo.birthday }}</span>
 	</div>
-	<div class="li">
+	<div class="li input-wrap">
 		<span class="fl">性别</span>
-		<span class="fr">
-			{% if userInfo.sex == 'F' %}
-					男
-			{% else  %}
-					女
-			{% endif %}
-		</span>
+		<span class="fr"><i data-role="input">{% if userInfo.sex == 'F' %}女{% else  %}男{% endif %}</i></span>
+		<select  id="sex">
+			<option value="M">男</option>
+			<option value="F">女</option>
+		</select>
 	</div>
-	<div class="li">
+	<a href="/user/update-info?type=qq&updateVal={{ userInfo.othercount }}" class="li">
 		<span class="fl">QQ账号</span>
 		<span class="fr">{{ userInfo.othercount }}</span>
-	</div>
+	</a>
 </div>
 <div class="address-list clearfix">
 	{% for item in addressInfo %}
@@ -68,3 +66,8 @@
 		<button class="btn btn-red actionsheet-cancel mt40">取消</button>
 	</div>
 </div>
+
+{% script %}
+	require('_common:js/bdb/core.js').bindInput();
+	require('personal.js').init();
+{% endscript %}

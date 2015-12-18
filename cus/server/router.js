@@ -94,10 +94,15 @@ module.exports = function (router) {
   router.get('/user/update-info',function(req,res,next){
     var resObj = req.appData;
     _.extend(resObj.header, {
-      title :'修改昵称',
       rightText: '确定',
       leftUrl: '/user/personal',
     })
+    if(req.query.type == 'nick'){
+      resObj.header.title = '修改呢称';
+    }else if(req.query.type == 'qq'){
+      resObj.header.title = '修改QQ号';
+    }
+    resObj.updateVal = req.query.updateVal;
     res.render('cus/page/user/update-info.tpl', resObj);
   });
   //实名认证

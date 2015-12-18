@@ -4,6 +4,7 @@ var server = yog.require('_common/lib/server.js');
 var serverId = server.getServerId();
 
 module.exports = {
+  //获取用户个人信息
   getData: function (data) {
     var query = server.parserData(data, 'user');
     return yog.ral(serverId, {
@@ -11,6 +12,7 @@ module.exports = {
 	    query: query
     });
   },
+  //查询用户地址信息
   queryList: function (data) {
     var query = server.parserData(data, 'address');
     return yog.ral(serverId, {
@@ -18,6 +20,7 @@ module.exports = {
 	    query: query
     });
   },
+  //用户添加地址信息
   addAddress: function (data) {
     var query = server.parserData(data, 'address');
     return yog.ral(serverId, {
@@ -25,6 +28,7 @@ module.exports = {
 	    query: query
     });
   },
+  //用户关注店铺
   attention: function (data) {
     var query = server.parserData(data, 'user');
     return yog.ral(serverId, {
@@ -55,5 +59,14 @@ module.exports = {
       path: '/interface/user/address/setdefault',
 	    query: query
     });
+  },
+  //修改用户个人信息
+  updateData: function (data) {
+    var query = server.parserData(data, 'user');
+    return yog.ral(serverId, {
+      path: '/interface/user/update.shtml',
+      query: query
+    });
   }
+
 };

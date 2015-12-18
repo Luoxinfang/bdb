@@ -19,31 +19,43 @@ module.exports.get = function (req, res, next) {
 module.exports.put = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
-		payPwd: md5(req.body.payPwd),
-		drawPwd: ''
+		sign: req.session.sign,
+		bankCode: req.body.bankCode || '',
+		bankName: req.body.bankName || '',
+		bankNo: req.body.bankNo,
+		realName: req.body.realName,
+		provider: req.body.provider || '',
+		city: req.body.city || '',
+		openAddress: req.body.openAddress,
+		flag: req.body.flag || 0
 	}
-	bankModel.setPwd(params).then(function (rs) {
+	bankModel.addBank(params).then(function (rs) {
 		res.json(rs);
 	}).catch(function (error) {
 		yog.log.fatal(error);
 	});
 };
-// 修改支付密码
+// 修改银行卡
 module.exports.post = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
-		oldPayPwd: md5(req.session.oldPayPwd),
-		payPwd: md5(req.body.payPwd),
-		oldDrawPwd: '',
-		drawPwd: ''
-	};
-	bankModel.updatePwd(params).then(function (rs) {
+		sign: req.session.sign,
+		bankCode: req.body.bankCode || '',
+		bankName: req.body.bankName || '',
+		bankNo: req.body.bankNo,
+		realName: req.body.realName,
+		provider: req.body.provider || '',
+		city: req.body.city || '',
+		openAddress: req.body.openAddress,
+		flag: req.body.flag || 0
+	}
+	bankModel.addBank(params).then(function (rs) {
 		res.json(rs);
 	}).catch(function (error) {
 		yog.log.fatal(error);
 	});
 };
-// delet
+// 删除银行卡
 module.exports.delete = function (req, res, next) {
 
 };

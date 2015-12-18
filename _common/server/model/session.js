@@ -7,7 +7,8 @@ module.exports = {
 	login: function (user) {
 		user = server.parserData(user, serviceName);
 		return yog.ral(serverId, {
-			path: '/interface/login/login2?' + user
+			path: '/interface/login/login2',
+			query: user
 		});
 	},
 	logout: function () {

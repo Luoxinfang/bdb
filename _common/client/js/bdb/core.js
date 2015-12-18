@@ -51,7 +51,7 @@ module.exports = {
    */
   bindInput: function () {
     $(document).on('change', '.input-wrap select', function () {
-      $(this).parent().find('[data-role="input"]').html($(this).val());
+      $(this).parent().find('[data-role="input"]').html($(this).find('option:checked').text());
     });
     $(document).on('input propertychange', '.input-wrap input', function () {
       if ($(this).attr('type') == 'datetime-local') {

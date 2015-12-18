@@ -6,9 +6,7 @@
 		{% elseif header.leftIcon %}
 			<a {% if header.leftUrl %}href="{{ header.leftUrl }}"{% endif %}class="left icon-60 icon-{{ header.leftIcon }}"></a>
 		{% endif %}
-		<div class="center fs-1">
-			{{ header.title }}
-		</div>
+		<div class="center fs-1">{{ header.title }}</div>
 		{% if header.rightIcons.length == 2 %} {#搜索图标和消息图标#}
 		<div class="right s-gup">
 			{% for item in header.rightIcons %}

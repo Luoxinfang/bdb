@@ -41,6 +41,12 @@ module.exports = {
     return yog.ral(serverId, {
       path: '/interface/user/address/delete.shtml?' + query
     });
+  },
+  //设置默认的收货地址
+  setdefault: function (data) {
+    var query = server.parserData(data, 'address');
+    return yog.ral(serverId, {
+      path: '/interface/user/address/setdefault.shtml?' + query
+    });
   }
-
 };

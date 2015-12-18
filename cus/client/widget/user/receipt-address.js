@@ -8,7 +8,7 @@ module.exports = {
 		this.event();
 	},
 	//添加收货地址信息
-	addData: function (e) {
+	addData: function () {
 		var name = $('#name').val(),
 				tel = $('#tel').val(),
 				code = $('#code').val(),
@@ -29,12 +29,14 @@ module.exports = {
 			B.topWarn('详细地址不能为空!');
 			return false;
 		}
-
+		if($("#btn-default").prop('checked')){
+			this.setdefault();
+		}
 		//向后台提交数据
 		$.ajax({
 			type: 'post',
 			dataType: 'json',
-			url: 'receipt-address',
+			url: '/_common/user/address',
 			data: {
 				username: name,
 				mobile: tel,
@@ -57,14 +59,13 @@ module.exports = {
 		});
 	},
 	//删除收货地址信息
-	deleteData: function (e) {
+	deleteData: function () {
 		var addressid = $("#addressid").val();
-		B.topWarn.hide();
 		//删除当前数据
 		$.ajax({
 			type: 'delete',
 			dataType: 'json',
-			url: 'receipt-address',
+			url: '/_common/user/address',
 			data: {
 				addressid: addressid
 			},
@@ -77,7 +78,31 @@ module.exports = {
 				}
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
-				B.topWarn.html('服务器异常，请稍后再试').show();
+				B.topWarn('服务器异常，请稍后再试');
+			}
+		});
+	},
+	//设置默认地址
+	setdefault: function () {
+		var addressid = $("#addressid").val();
+		//删除当前数据
+		$.ajax({
+			type: 'put',
+			dataType: 'json',
+			url: '/_common/user/address',
+			data: {
+				addressid: addressid
+			},
+			success: function (data) {
+				if (0 == data.status) {
+					console.log(data);
+				} else {
+					var msg = data.msg || '服务器异常，请稍后再试';
+					B.topWarn(msg);
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				B.topWarn('服务器异常，请稍后再试');
 			}
 		});
 	},

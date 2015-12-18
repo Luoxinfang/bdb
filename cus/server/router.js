@@ -90,22 +90,6 @@ module.exports = function (router) {
     resObj.header.leftUrl = '/change-tel-info';
     res.render('cus/page/user/change-tel-new.tpl', resObj);
   });
-  //收货地址
-  router.get('/user/receipt-address', function (req, res, next) {
-    var resObj = req.appData;
-    _.extend(resObj.header, {
-      title :'收货地址',
-      leftUrl: '/user/personal',
-      rightText:'',
-    })
-    /*console.log(req.query.type);*/
-    if(req.query.type == 'delete'){
-      resObj.header.rightText = '删除';
-    }else {
-      resObj.header.rightText = false;
-    }
-    res.render('cus/page/user/receipt-address.tpl', resObj);
-  });
   //个人主页基本信息修改
   router.get('/user/update-info',function(req,res,next){
     var resObj = req.appData;

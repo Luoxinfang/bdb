@@ -15,7 +15,8 @@ module.exports = {
 	queryPwd: function (params) {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
-			path: '/interface/cash/querypwd?' + data
+			path: '/interface/cash/querypwd',
+			query: data
 		});
 	},
 	/**
@@ -26,7 +27,8 @@ module.exports = {
 	queryCash: function (params) {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
-			path: '/interface/cash/query?' + data
+			path: '/interface/cash/query',
+			query: data
 		});
 	},
 	/**
@@ -37,7 +39,8 @@ module.exports = {
 	setPwd: function (params) {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
-			path: '/interface/cash/setpwd?' + data
+			path: '/interface/cash/setpwd',
+			query: data
 		});
 	},
 	/**
@@ -48,7 +51,8 @@ module.exports = {
 	validPwd: function (params) {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
-			path: '/interface/cash/validpwd?' + data
+			path: '/interface/cash/validpwd',
+			query: data
 		});
 	},
 	/**
@@ -59,7 +63,8 @@ module.exports = {
 	updatePwd: function (params) {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
-			path: '/interface/cash/updatepwd?' + data
+			path: '/interface/cash/updatepwd',
+			query: data
 		});
 	},
 	/**
@@ -70,7 +75,8 @@ module.exports = {
 	queryBankList: function (params) {
 		data = server.parserData(params, bank);
 		return yog.ral(serverId, {
-			path: '/interface/cash/bank/list?' + data
+			path: '/interface/cash/bank/list',
+			query: data
 		});
 	},
 	/**
@@ -81,7 +87,8 @@ module.exports = {
 	setDefaultBank: function (params) {
 		data = server.parserData(params, bank);
 		return yog.ral(serverId, {
-			path: '/interface/cash/bank/setdefault?' + data
+			path: '/interface/cash/bank/setdefault',
+			query: data
 		});
 	},
 	/**
@@ -92,7 +99,8 @@ module.exports = {
 	addBank: function (params) {
 		data = server.parserData(params, bank);
 		return yog.ral(serverId, {
-			path: '/interface/cash/bank/add?' + data
+			path: '/interface/cash/bank/add',
+			query: data
 		});
 	},
 	/**
@@ -103,7 +111,8 @@ module.exports = {
 	opsAccount: function (params) {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
-			path: '/interface/cash/opsaccount?' + data
+			path: '/interface/cash/opsaccount',
+			query: data
 		});
 	}
 };

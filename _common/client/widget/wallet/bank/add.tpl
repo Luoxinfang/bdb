@@ -59,5 +59,5 @@
 	</div>
 {% endif %}
 {% script %}
-	require('_common:widget/wallet/bank/bank.js').init();
+	require('_common:widget/wallet/bank/add.js').init();
 {% endscript %}

@@ -18,7 +18,7 @@ module.exports = {
 		$('.body-container').on('click', '#addBank:not(.btn-disabled)', function () {
 			$(this).addClass('btn-disabled');
 			$.ajax({
-				type: 'post',
+				type: 'put',
 				dataType: 'json',
 				url: '/_common/cash/bank',
 				data: $('#form').serialize(),
@@ -109,10 +109,31 @@ module.exports = {
 			}
 		});
 	},
+	deleteBank: function () {
+		var bankNo = '';
+		var deleteByBankNo = function (bankNo){
+			$('#payPwdDialog').show();
+		}
+		$('.header').on('click', '.right', function () {
+			if (!$('.form').hasClass('delete')) {
+				$('.form').addClass('delete');
+				$('#addBank').hide();
+				$(this).html('完成');
+			} else {
+				$('.form').removeClass('delete');
+				$('#addBank').show();
+				$(this).html('删除');
+			}
+		})
+		$('.body-container').on('click','.deleteBank',function(){
+			deleteByBankNo();
+		});
+	},
 	events: function () {
 		if ($('#validPayPwd').size()) {
 			this.validPayPwd();
 		}
 		this.addBank();
+		this.deleteBank();
 	}
 };

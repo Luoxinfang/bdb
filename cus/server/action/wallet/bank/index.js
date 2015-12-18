@@ -11,15 +11,24 @@ var cashModel = yog.require('_common/model/cash.js');
 //银行卡首页
 module.exports = function (req, res, next) {
 	var params = {
-		token: req.session.user.token
+		token: req.session.user.token,
+		pageSize: req.body.pageSize || 10,
+		page: req.body.page || 1
 	};
 	var resObj = req.appData;
 	resObj.header.title = '银行卡管理';
 	resObj.header.rightText = '删除';
-	res.render('cus/page/wallet/bank/index.tpl', resObj);
-	//cashModel.queryCash(params).then(function (rs) {
-	//	res.render('cus/page/wallet/index.tpl', obj);
-	//}).catch(function (error) {
-	//	yog.log.fatal(error);
-	//});
+	cashModel.queryBankList(params).then(function (rs) {
+		if (0 == rs.status) {
+			resObj.bankList = rs.list;
+			res.render('cus/page/wallet/bank/index.tpl', resObj);
+		} else {
+			resObj.rs = {};
+			resObj.rs.status = rs.status;
+			resObj.rs.msg = rs.msg || '服务器异常，请稍后再试';
+			res.render('_common/page/error.tpl', resObj);
+		}
+	}).catch(function (error) {
+		yog.log.fatal(error);
+	});
 };

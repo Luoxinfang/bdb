@@ -61,32 +61,54 @@ module.exports = {
       }
     });
   },
-  /**
-   * 弹出提示
-   * conf { icon:'图标', title:'标题', content:'内容' }
-   */
-  alert: function (conf) {
-    var html = [];
-    html.push('<div class="alert-wrap">');
-    html.push('  <div class="alert-mask"></div>')
-    html.push('  <div class="alert">');
-    if (conf.icon && conf.icon == 'success') {
-      html.push('  <span class="icon-200 icon-suc"></span>');
-    } else if (conf.icon && conf.icon == 'warn') {
-      html.push('  <span class="icon-200 icon-warn"></span>');
-    } else if (conf.icon && conf.icon == 'error') {
-      html.push('  <span class="icon-200 icon-fail"></span>');
-    }
-    if (conf.title) {
-      html.push('  <p class="alert-title">' + conf.title + '</p>');
-    }
-    if (conf.content) {
-      html.push('  <p class="alert-content">' + conf.content + '</p>');
-    }
-    html.push('  </div>');
-    html.push('</div>')
-    $('.wrapper').append(html.join(''));
-  },
+	/**
+	 * 弹出提示
+	 * opts { icon:'图标', title:'标题', content:'内容', time:'停留时间' }
+	 */
+	alert: function (opts) {
+		var model = this;
+		var conf = {};
+		var html = [];
+		if ('object' == typeof(opts)) {
+			conf = opts;
+			conf.time = opts.time || 2000;
+		} else {
+			conf.title = arguments[0];
+			conf.content = arguments[1];
+			conf.icon = arguments[2];
+			conf.time = arguments[3] || 2000;
+			conf.callback = arguments[4];
+		}
+		html.push('<div class="alert-wrap">');
+		html.push('  <div class="alert-mask"></div>')
+		html.push('  <div class="alert">');
+		if (conf.icon && conf.icon == 'success') {
+			html.push('  <span class="icon-200 icon-suc"></span>');
+		} else if (conf.icon && conf.icon == 'warn') {
+			html.push('  <span class="icon-200 icon-warn"></span>');
+		} else if (conf.icon && conf.icon == 'error') {
+			html.push('  <span class="icon-200 icon-fail"></span>');
+		} else if (conf.icon && conf.icon == 'loading') {
+			html.push('  <span class="icon-200 icon-loading"></span>');
+		}
+		if (conf.title) {
+			html.push('  <p class="alert-title">' + conf.title + '</p>');
+		}
+		if (conf.content) {
+			html.push('  <p class="alert-content">' + conf.content + '</p>');
+		}
+		html.push('  </div>');
+		html.push('</div>')
+		$('.wrapper').append(html.join(''));
+		if ('number' == typeof(conf.time)) {
+			setTimeout(function () {
+				model.clearAlert();
+				if ('function' == typeof(conf.callback)) {
+					conf.callback();
+				}
+			}, conf.time);
+		}
+	},
   clearAlert: function () {
     $('.alert-wrap').remove();
   },

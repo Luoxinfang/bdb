@@ -2,22 +2,26 @@
 {% require "_common:widget/wallet/bank/bank.less" %}
 {% widget '_common:widget/common/password/password.tpl' %}
 {% if validPayPwd %}
-	<div class="bank">
-		<div class="form">
-			<ul class="form-ul">
-				<li class='form-li-input'>
-					<input type="text" id="card_no" placeholder="请输入你的银行卡号" minlength="8" maxlength="26"/>
-					<span id="bankName" class="bank-name">中国民生银行</span>
-				</li>
-				<li class='form-li-input'>
-					<input type="text" id="card_bank" placeholder="请输入开户支行" minlength="4" maxlength="18"/>
-				</li>
-				<li class='form-li-input'>
-					<input type="text" id="card_name" placeholder="请输入持卡人姓名" minlength="2" maxlength="4"/>
-				</li>
-			</ul>
-			<a class="btn btn-red btn-disabled" id="addBank">保存</a>
-		</div>
+	<div class="bank" id="addBankDiv">
+		<form id="form">
+			<div class="form">
+				<ul class="form-ul">
+					<li class='form-li-input'>
+						<input type="hidden" name="realName" value="陈振华"/>
+						<span class="fl">陈振华</span>
+						<span class="fl fc-4">（实名认证姓名，不能更改）</span>
+					</li>
+					<li class='form-li-input'>
+						<input type="number" name="bankNo" placeholder="请输入您的银行卡卡号" />
+						<span id="bankName" class="bank-name"></span>
+					</li>
+					<li class='form-li-input'>
+						<input type="text" name="openAddress" placeholder="请输入开户支行" />
+					</li>
+				</ul>
+				<a class="btn btn-red btn-disabled" id="addBank">保存</a>
+			</div>
+		</form>
 	</div>
 {% else %}
 	<div class="bg-f ht100 p20" id="validPayPwd">
@@ -32,22 +36,26 @@
 			<input type="number" class="password" id="payPwd" >
 		</div>
 	</div>
-	<div class="bank" style="display: none">
-		<div class="form">
-			<ul class="form-ul">
-				<li class='form-li-input'>
-					<input type="text" id="card_no" placeholder="请输入你的银行卡号" minlength="8" maxlength="26"/>
-					<span id="bankName" class="bank-name">中国民生银行</span>
-				</li>
-				<li class='form-li-input'>
-					<input type="text" id="card_bank" placeholder="请输入开户支行" minlength="4" maxlength="18"/>
-				</li>
-				<li class='form-li-input'>
-					<input type="text" id="card_name" placeholder="请输入持卡人姓名" minlength="2" maxlength="4"/>
-				</li>
-			</ul>
-			<a class="btn btn-red btn-disabled" id="addBank">保存</a>
-		</div>
+	<div class="bank" id="addBankDiv" style="display: none;">
+		<form id="form">
+			<div class="form">
+				<ul class="form-ul">
+					<li class='form-li-input'>
+						<input type="hidden" name="realName" value="陈振华"/>
+						<span class="fl">陈振华</span>
+						<span class="fl fc-4">(实名认证姓名，不能更改)</span>
+					</li>
+					<li class='form-li-input'>
+						<input type="text" name="bankNo" placeholder="请输入您的银行卡卡号" />
+						<span id="bankName" class="bank-name"></span>
+					</li>
+					<li class='form-li-input'>
+						<input type="text" name="openAddress" placeholder="请输入开户支行" />
+					</li>
+				</ul>
+				<a class="btn btn-red btn-disabled" id="addBank">保存</a>
+			</div>
+		</form>
 	</div>
 {% endif %}
 {% script %}

@@ -15,7 +15,7 @@ module.exports = function (req, res, next) {
 	};
 	var resObj = req.appData;
 	resObj.header.title = '添加银行卡';
-	resObj.validPayPwd = (+new Date() - req.session.validPayPwdTime) <= 10000;
+	resObj.validPayPwd = (+new Date() - req.session.validPayPwdTime) <= 60000;
 	res.render('cus/page/wallet/bank/add.tpl', resObj);
 	//cashModel.queryCash(params).then(function (rs) {
 	//	res.render('cus/page/wallet/index.tpl', obj);

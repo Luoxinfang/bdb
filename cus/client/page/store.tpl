@@ -116,4 +116,7 @@
 			<a class="collect-cnt icon-collect-cnt">431</a>
 		</div>
 	</div>
+	{% script %}
+	require('../widget/store/store.js').init();
+	{% endscript %}
 {% endblock %}

@@ -1,5 +1,3 @@
-//var model = yog.require('_common/lib/loader-model.js')();
-
 /**
  * @author radish
  * @description 这个路由处理session 如登陆 退出等
@@ -8,10 +6,7 @@
 var md5 = require('md5');
 var _ = require('lodash');
 var model = require('../model/session.js');
-module.exports = function (req, res, next) {
 
-	next();
-};
 //
 module.exports.get = function (req, res, next) {
 	//console.log(req.param('userName'));

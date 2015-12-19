@@ -37,13 +37,13 @@ module.exports = function (router) {
   //注册 —— 输入电话号码
   router.get('/reg', function (req, res, next) {
     req.appData.header.title = '注册';
-    res.render('_common/page/user/reg.tpl', req.appData);
+    res.render('_common/page/acc/reg.tpl', req.appData);
   });
 
-  //找回密码 —— 输入信息
-  router.get('/find-pwd-info', function (req, res, next) {
+  //找回密码
+  router.get('/acc/recovery', function (req, res, next) {
     req.appData.header.title = '找回密码';
-    res.render('cus/page/user/find-pwd-info.tpl', req.appData);
+    res.render('cus/page/user/recovery', req.appData);
   });
   //找回密码 —— 设置新密码
   router.get('/user/find-pwd-new', function (req, res, next) {

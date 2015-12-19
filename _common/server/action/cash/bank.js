@@ -23,7 +23,7 @@ module.exports.put = function (req, res, next) {
 		bankCode: req.body.bankCode || '',
 		bankName: req.body.bankName || '',
 		bankNo: req.body.bankNo,
-		realName: req.body.realName,
+		realName: encodeURIComponent(req.body.realName),
 		provider: req.body.provider || '',
 		city: req.body.city || '',
 		openAddress: req.body.openAddress,

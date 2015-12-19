@@ -6,12 +6,18 @@ var B = require('_common:js/bdb/core.js');
 var keyRemember = 'remember_username';//是否记住用户名
 module.exports = {
   init: function () {
-    if (localStorage[keyRemember] == 'true') {
+    if (localStorage[keyRemember] == 1) {
       var user = $.cookie.get('user_info');
       if (user) {
         user = JSON.parse(decodeURIComponent(user));
         $('#username').val(user['username']);
         $('#btn-remember').prop('checked', true);
+      }
+    } else {
+      if (document.referrer.indexOf('/reg') !== -1) {
+        $('#username').val(B.getUrlParam('number'));
+      } else {
+        $('#username').val('');
       }
     }
     this.event();
@@ -58,7 +64,8 @@ module.exports = {
   },
   //记住密码
   remember: function () {
-    localStorage[keyRemember] = $(this).prop('checked');
+    localStorage[keyRemember] = ~~$(this).prop('checked');
+    console.log(localStorage[keyRemember]);
   },
   event: function () {
     $('#btn-login').on('click', this.login.bind(this));

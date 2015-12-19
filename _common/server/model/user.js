@@ -2,22 +2,21 @@
 
 var server = require('../lib/server.js');
 var serverId = server.getServerId();
-var serviceName = 'login'
 module.exports = {
-	//登录
-	login: function (user) {
-		user = server.parserData(user, serviceName);
-		return yog.ral(serverId, {
-			path: '/interface/login/login2',
-			query: user
-		});
-	},
+
 	//获取短信验证码
 	getSMS: function (data) {
 		data = server.parserData(data, 'sms');
 		return yog.ral(serverId, {
 			path: '/interface/sms/sendsms',
-			query: data
+			data: data
+		});
+	},
+	//注册
+	register: function (data) {
+		data = server.parserData(data, 'register');
+		return yog.ral(serverId, {
+			path: '/interface/reg/register?' + data
 		});
 	},
 	//退出

@@ -10,12 +10,11 @@ module.exports = {
 		method: 'POST',
 		encoding: 'utf-8',
 		balance: 'random',
-		retry: 2,
+		retry: 0,
 		timeout: 500,
 		server: [
-			{host: '192.168.0.105', port: 8080}/*,
-			{host: '192.168.0.133', port: 8080},
-			{host: '192.168.0.131', port: 8080}*/
+			{host: '192.168.0.131', port: 8080}/*,
+			{host: '192.168.0.105', port: 8080}*/
 		]
 	}
 };

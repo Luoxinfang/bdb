@@ -9,7 +9,6 @@
 
 {% block body %}
 	<div id="content">
-		<!--注册表单1-->
 		<div class="form">
 			<ul class="form-ul">
 				<li class='form-li-input'>
@@ -25,13 +24,13 @@
 						<input type="number" id="code" placeholder="请输入验证码" maxlength="6"/>
 					</div>
 					<!--获取验证码按钮不可点增加类btn-disabled即可-->
-					<a id="btn-get-code" class="right-btn btn-disabled">获取验证码</a>
+					<a id="btn-code" class="right-btn btn-disabled">获取验证码</a>
 				</li>
 			</ul>
 			<a class="btn btn-red btn-disabled" id="btn-submit">完成</a>
 		</div>
 	</div>
 	{% script %}
-		require('_common:widget/user/reg/reg.js').init();
+		require('_common:widget/acc/reg.js').init();
 	{% endscript %}
 {% endblock %}

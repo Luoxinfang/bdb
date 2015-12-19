@@ -25,7 +25,7 @@
                     <input type="tel" id="pwd" placeholder="请输入登录密码" maxlength="11" autoconmplete='on' />
                 </li>
             </ul>
-            <a class="btn btn-white">下一步</a>
+            <a class="btn btn-white" href="/user/change-tel-new">下一步</a>
         </div>
     </div>
 {% endblock %}

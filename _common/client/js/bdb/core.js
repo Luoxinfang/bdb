@@ -166,7 +166,7 @@ module.exports = {
    */
   isIdentityCode: function (val) {
     var rs = {status: 0, msg: ''},
-        value = value + "",
+        value = val + "",
         num = value.toUpperCase(), len, reg;
     if (!(/(^\d{17}([0-9]|X)$)/.test(num))) {
       rs.msg = '身份证号码格式错误';
@@ -174,7 +174,7 @@ module.exports = {
     }
     len = num.length;
     if (len == 18) {
-      reg = new RegExp('^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$');
+      reg = new RegExp(/^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/);
       var arrSplit = num.match(reg);
       var valNum;
       var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);

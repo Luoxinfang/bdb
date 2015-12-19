@@ -244,11 +244,11 @@ module.exports = function (router) {
     res.render('cus/page/settings/sys-settings.tpl', resObj);
   });
   //安全设置
-  router.get('/user/safety-settings', function (req, res, next) {
+  router.get('/settings/safety-settings', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '系统设置';
     resObj.header.settings = ['修改密码', '更换手机号']
-    res.render('cus/page/user/sys-settings.tpl', resObj);
+    res.render('cus/page/settings/safety-settings.tpl', resObj);
   });
   //推送设置
   router.get('/settings/push-settings', function (req, res, next) {

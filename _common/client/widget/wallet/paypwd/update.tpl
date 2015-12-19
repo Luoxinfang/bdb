@@ -66,5 +66,5 @@
 	</div>
 </div>
 {% script %}
-	require('_common:widget/wallet/paypwd/paypwd.js').init();
+	require('_common:widget/wallet/paypwd/update.js').init();
 {% endscript %}

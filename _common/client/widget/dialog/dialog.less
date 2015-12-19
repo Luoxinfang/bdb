@@ -62,4 +62,17 @@
 		color: @mainColor4;
 		font-size: @fontSize3;
 	}
+	.select-wrap {
+		.option {
+			position: relative;
+			margin-left: 20/@rem-pre;
+			height: 90/@rem-pre;
+			line-height: 90/@rem-pre;
+			font-size: @fontSize2;
+			border-top: 1px solid @lineColor;
+			&:first-child {
+				border-top: none;
+			}
+		}
+	}
 }

@@ -28,7 +28,7 @@
 				<div class="word"></div>
 				<div class="word"></div>
 				<div class="word"></div>
-				<input type="number" class="password" id="payPwd1" >
+				<input type="number" class="password" id="payPwd" >
 			</div>
 			<div class="tip mt20">请输入支付密码</div>
 			<a class="sure mt20">确定</a>
@@ -37,5 +37,5 @@
 	<div class="dialog-mask"></div>
 </div>
 {% script %}
-	require('_common:widget/wallet/bank/bank.js').init();
+	require('_common:widget/wallet/bank/index.js').init();
 {% endscript %}

@@ -27,16 +27,6 @@
 			}
 		}
 	}
-	.form-li-input {
-		background: @white;
-		height: 90/@rem-pre;
-		line-height: 90/@rem-pre;
-		border-top: 2px solid #e7e7e8;
-		position: relative;
-		padding: 0 20/@rem-pre;
-		font-size: @fontSize2;
-		color: @mainColor3;
-	}
 	.form-li-text {
 		background: @white;
 		height: 150/@rem-pre;
@@ -75,21 +65,6 @@
 			border-bottom-right-radius: 5px;
 		}
 	}
-	.form-li-input input, textarea {
-		display: block;
-		border-style: none;
-		width: 100%;
-		height: 100%;
-		line-height: 100%;
-		font-size: @fontSize2;
-	}
-	.form-li-input p {
-		display: block;
-		border-style: none;
-		width: 100%;
-		height: 100%;
-		font-size: @fontSize2;
-	}
 	.form-li-textarea {
 		padding-top: 10/@rem-pre;
 		padding-bottom: 10/@rem-pre;
@@ -102,16 +77,60 @@
 		border-radius: 5px;
 		line-height: 120%;
 	}
-	.form-li-input input:disabled {
-		background: transparent;
+	.form-li-input {
+		background: @white;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
+		border-top: 2px solid #e7e7e8;
+		position: relative;
+		padding: 0 20/@rem-pre;
+		font-size: @fontSize2;
+		color: @mainColor3;
+		input, textarea {
+			display: block;
+			border-style: none;
+			width: 100%;
+			height: 100%;
+			line-height: 100%;
+			font-size: @fontSize2;
+		}
+		p {
+			display: block;
+			border-style: none;
+			width: 100%;
+			height: 100%;
+			font-size: @fontSize2;
+		}
+		input:disabled {
+			background: transparent;
+		}
+		&:first-child {
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+		&:last-child {
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		&.has-multi-line {
+			height: 110/@rem-pre;
+			line-height: 110/@rem-pre;
+		}
 	}
-	.form-li-input:first-child {
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+	//提现页面两行样式
+	.has-label-div {
+		padding-left: 144/@rem-pre;
+		line-height: normal;
 	}
-	.form-li-input:last-child {
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+	.has-label-div p {
+		padding-top: 10/@rem-pre;
+		color: @helpColor4;
+		line-height: 50/@rem-pre;
+	}
+	.has-label-div span {
+		display: block;
+		line-height: 40/@rem-pre;
+		color: @mainColor4;
 	}
 	li.form-li-input:first-child .right-btn {
 		border-top-right-radius: 5px;

@@ -1,1 +1,0 @@
-{% extends '_common:page/account/withdrawals-result.tpl' %}

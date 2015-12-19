@@ -13,8 +13,9 @@ module.exports = {
 	 * @returns recomplete:1已设置,0未设置
 	 */
 	queryPwd: function (params) {
-		data = server.parserData(params, cash);
+		data = server.parserQuery(params, cash);
 		return yog.ral(serverId, {
+			method: 'GET',
 			path: '/interface/cash/querypwd',
 			query: data
 		});
@@ -25,8 +26,9 @@ module.exports = {
 	 * @returns cashmoney:现金余额,frozemoney:非现金余额
 	 */
 	queryCash: function (params) {
-		data = server.parserData(params, cash);
+		data = server.parserQuery(params, cash);
 		return yog.ral(serverId, {
+			method: 'GET',
 			path: '/interface/cash/query',
 			query: data
 		});
@@ -40,7 +42,7 @@ module.exports = {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
 			path: '/interface/cash/setpwd',
-			query: data
+			data: data
 		});
 	},
 	/**
@@ -49,8 +51,9 @@ module.exports = {
 	 * @returns {*}
 	 */
 	validPwd: function (params) {
-		data = server.parserData(params, cash);
+		data = server.parserQuery(params, cash);
 		return yog.ral(serverId, {
+			method: 'GET',
 			path: '/interface/cash/validpwd',
 			query: data
 		});
@@ -64,7 +67,7 @@ module.exports = {
 		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
 			path: '/interface/cash/updatepwd',
-			query: data
+			data: data
 		});
 	},
 	/**
@@ -73,8 +76,9 @@ module.exports = {
 	 * @returns
 	 */
 	queryBankList: function (params) {
-		data = server.parserData(params, bank);
+		data = server.parserQuery(params, bank);
 		return yog.ral(serverId, {
+			method: 'GET',
 			path: '/interface/cash/bank/list',
 			query: data
 		});
@@ -88,7 +92,7 @@ module.exports = {
 		data = server.parserData(params, bank);
 		return yog.ral(serverId, {
 			path: '/interface/cash/bank/setdefault',
-			query: data
+			data: data
 		});
 	},
 	/**
@@ -100,7 +104,19 @@ module.exports = {
 		data = server.parserData(params, bank);
 		return yog.ral(serverId, {
 			path: '/interface/cash/bank/add',
-			query: data
+			data: data
+		});
+	},
+	/**
+	 * 删除银行卡
+	 * @param params
+	 * @returns
+	 */
+	deleteBank: function (params) {
+		data = server.parserData(params, bank);
+		return yog.ral(serverId, {
+			path: '/interface/cash/bank/delete',
+			data: data
 		});
 	},
 	/**
@@ -109,8 +125,9 @@ module.exports = {
 	 * @returns {*}
 	 */
 	opsAccount: function (params) {
-		data = server.parserData(params, cash);
+		data = server.parserQuery(params, cash);
 		return yog.ral(serverId, {
+			method: 'GET',
 			path: '/interface/cash/opsaccount',
 			query: data
 		});

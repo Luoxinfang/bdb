@@ -41,5 +41,14 @@ module.exports.post = function (req, res, next) {
 };
 // 删除银行卡
 module.exports.delete = function (req, res, next) {
-
+	var params = {
+		token: req.session.user.token,
+		sign: req.session.sign,
+		bankNo: req.body.bankNo
+	}
+	bankModel.deleteBank(params).then(function (rs) {
+		res.json(rs);
+	}).catch(function (error) {
+		yog.log.fatal(error);
+	});
 };

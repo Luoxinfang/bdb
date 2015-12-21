@@ -208,6 +208,7 @@ module.exports = {
   },
   //推拉抽屉
   toggleDrawer: function () {
+    $('.drawer,.page').addClass('ts8');
     $('body').toggleClass('with-drawer');
     $('.drawer-holder').on('click', function () {
       $('body').removeClass('with-drawer');

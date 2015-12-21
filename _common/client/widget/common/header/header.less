@@ -3,7 +3,6 @@
 
 .header {
 	&-content {
-		position: relative;
 		z-index: 2;
 		width: @rem-max;
 		text-align: center;
@@ -42,11 +41,8 @@
 	}
 	.left {
 		//左侧内容
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 20/@rem-pre;
-		margin: auto 0;
+		float: left;
+		margin-left: 20/@rem-pre;
 	}
 	.center {
 		margin: 0 auto;

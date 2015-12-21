@@ -11,10 +11,5 @@ module.exports = {
 			path: '/interface/login/login2',
 			data: user
 		});
-	},
-	logout: function () {
-		return yog.ral(serverId, {
-			path: '/interface/login/logout'
-		});
 	}
 };

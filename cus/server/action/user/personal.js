@@ -30,11 +30,11 @@ module.exports = function (req, res, next) {
 			resObj.addressInfo = rs.list;
 			res.render('cus/page/user/personal.tpl',resObj);
 		}).catch(function (error) {
-			console.log(error);
+			//console.log(error);
 			yog.log.fatal(error);
 		});
 	}).catch(function (error) {
-		console.log(error);
+		//console.log(error);
 		yog.log.fatal(error);
 	});
 };

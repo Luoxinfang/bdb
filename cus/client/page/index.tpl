@@ -297,6 +297,6 @@
 		<a href="/order">我的订单</a>
 		<a href="/bus">穿越到卖家版</a>
 		<a href="/sys-settings">系统设置</a>
-		<a href="/logout">退出登陆</a>
+		<a href="javascript:void(0);" class="logout">退出登陆</a>
 	</div>
 {% endblock %}

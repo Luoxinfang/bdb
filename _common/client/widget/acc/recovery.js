@@ -154,7 +154,7 @@ module.exports = {
         cardNo: that.identity
       },
       success: function (data) {
-        console.log(data);
+        //console.log(data);
         if (data.status == 0) {
           location.hash = '#step2';
         }else{

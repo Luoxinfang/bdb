@@ -17,8 +17,7 @@
   {% endhead %}
 
   {% body %}
-
-    <div class="page t8">
+    <div class="page">
 			<!--页面的头部-->
 			<header class="header">
 				{% block header %}{% endblock %}
@@ -41,7 +40,7 @@
 			{% block overlay %}{% endblock %}
 		</div>
 		<!--抽屉,面板-->
-		<div class="drawer t8">
+		<div class="drawer">
       <div class="drawer-content">
         {% block drawer %}{% endblock %}
       </div>

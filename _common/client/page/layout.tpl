@@ -24,7 +24,9 @@
 				{% block header %}{% endblock %}
 			</header>
       <!--工具栏-->
-      <div class="toolbar"></div>
+      <div class="toolbar">
+        {% block toolbar %}{% endblock %}
+      </div>
 			<!--页面的内容区域-->
       <div class="content">
         {% block content %}{% endblock %}

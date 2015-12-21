@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block overlay %}
-	<div class="bg-mark"></div>
+
 {% endblock %}
 
 {% block header %}
@@ -43,6 +43,7 @@
 				<div class="fl">
 					<div class="col col-1">
 						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>
@@ -50,6 +51,7 @@
 					</div>
 					<div class="col col-1">
 						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝珍珠专场</p>
 						</div>
@@ -59,9 +61,12 @@
 				<div class="fr">
 					<div class="col col-2">
 						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">高端首饰拍卖专场</p>
+
 							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+
 							<p class="s-2 bdt pt10">01/01-01/05</p>
 						</div>
 						<span class="collect-cnt icon-collect-cnt">579</span>
@@ -78,6 +83,7 @@
 				<div class="fl">
 					<div class="col col-1">
 						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>
@@ -85,6 +91,7 @@
 					</div>
 					<div class="col col-1">
 						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝珍珠专场</p>
 						</div>
@@ -94,9 +101,12 @@
 				<div class="fr">
 					<div class="col col-2">
 						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">高端首饰拍卖专场</p>
+
 							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+
 							<p class="s-2 bdt pt10">01/01-01/05</p>
 						</div>
 						<span class="collect-cnt icon-collect-cnt">579</span>
@@ -113,6 +123,7 @@
 				<div class="fl">
 					<div class="col col-1">
 						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>
@@ -120,6 +131,7 @@
 					</div>
 					<div class="col col-1">
 						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝珍珠专场</p>
 						</div>
@@ -129,9 +141,12 @@
 				<div class="fr">
 					<div class="col col-2">
 						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">高端首饰拍卖专场</p>
+
 							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+
 							<p class="s-2 bdt pt10">01/01-01/05</p>
 						</div>
 						<span class="collect-cnt icon-collect-cnt">579</span>
@@ -148,6 +163,7 @@
 				<div class="fl">
 					<div class="col col-1">
 						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>
@@ -155,6 +171,7 @@
 					</div>
 					<div class="col col-1">
 						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝珍珠专场</p>
 						</div>
@@ -164,9 +181,12 @@
 				<div class="fr">
 					<div class="col col-2">
 						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">高端首饰拍卖专场</p>
+
 							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+
 							<p class="s-2 bdt pt10">01/01-01/05</p>
 						</div>
 						<span class="collect-cnt icon-collect-cnt">579</span>
@@ -183,6 +203,7 @@
 				<div class="fl">
 					<div class="col col-1">
 						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>
@@ -190,6 +211,7 @@
 					</div>
 					<div class="col col-1">
 						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝珍珠专场</p>
 						</div>
@@ -199,9 +221,12 @@
 				<div class="fr">
 					<div class="col col-2">
 						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">高端首饰拍卖专场</p>
+
 							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+
 							<p class="s-2 bdt pt10">01/01-01/05</p>
 						</div>
 						<span class="collect-cnt icon-collect-cnt">579</span>
@@ -218,6 +243,7 @@
 				<div class="fl">
 					<div class="col col-1">
 						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>
@@ -225,6 +251,7 @@
 					</div>
 					<div class="col col-1">
 						<img src="http://img0.imgtn.bdimg.com/it/u=1116480518,1199756188&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">百多宝珍珠专场</p>
 						</div>
@@ -234,9 +261,12 @@
 				<div class="fr">
 					<div class="col col-2">
 						<img src="http://img5.imgtn.bdimg.com/it/u=3841004861,3160684942&fm=21&gp=0.jpg" alt="">
+
 						<div class="d-1">
 							<p class="s-1">高端首饰拍卖专场</p>
+
 							<p class="s-2 mb5">来自各国奢侈品牌的拍卖盛宴</p>
+
 							<p class="s-2 bdt pt10">01/01-01/05</p>
 						</div>
 						<span class="collect-cnt icon-collect-cnt">579</span>
@@ -247,27 +277,26 @@
 	</div>
 	{% script %}
 	$(function(){
-		require('cus:widget/index/index.js').init();
+	require('cus:widget/index/index.js').init();
 	})
 	{% endscript %}
 {% endblock %}
 
 {% block drawer %}
-	<div class="me">
-		<div class="user">
-			<a class="photo" href="/user/personal">
-				{% widget '_common:widget/user/user-photo.tpl' %}
-			</a>
-			<p class="name">大魔王</p>
-			<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
-		</div>
-		<div class="menu">
-			<a href="/wallet">我的钱包</a>
-			<a href="/order">我的订单</a>
-			<a href="/bus">穿越到卖家版</a>
-			<a href="/sys-settings">系统设置</a>
-			<a href="/logout">退出登陆</a>
-		</div>
+	<div class="drawer-user">
+		<a class="photo" href="/user/personal">
+			{% widget '_common:widget/user/user-photo.tpl' %}
+		</a>
+
+		<p class="name">大魔王</p>
+
+		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 	</div>
-	<div class="r-mark"></div>
+	<div class="drawer-menu">
+		<a href="/wallet">我的钱包</a>
+		<a href="/order">我的订单</a>
+		<a href="/bus">穿越到卖家版</a>
+		<a href="/sys-settings">系统设置</a>
+		<a href="/logout">退出登陆</a>
+	</div>
 {% endblock %}

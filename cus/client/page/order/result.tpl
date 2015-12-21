@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% require '_common:widget/result/result.less' %}
 	<div class="result">
 		{% if result.status == 'paySuccess' %}

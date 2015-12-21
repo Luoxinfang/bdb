@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% require '_common:widget/auction/auction.less' %}
 	<p class="category-tlt">翡翠</p>
 	<div class="category-list clearfix">

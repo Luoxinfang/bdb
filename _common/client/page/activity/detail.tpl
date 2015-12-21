@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/banner/banner.tpl' %}
 	<div class="info-group">
 		<div class="li texts">活动描述：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。</div>
@@ -49,7 +49,7 @@
 			<span class="fr">2015-10-12 18：00</span>
 		</div>
 	</div>
-	<div class="footer">
+	<div class="bottom">
 		<a href="" class="btn btn-red">报名参加</a>
 	</div>
 {% endblock %}

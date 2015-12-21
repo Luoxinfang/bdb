@@ -12,7 +12,7 @@
 	{% endif %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	<div class="order-store">
 		{% widget '_common:widget/user/user-photo.tpl' %}
 		<div class="tlt">翡翠世家</div>
@@ -227,7 +227,7 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer">
+<div class="footer-content">
 	<a class="btn btn-red">确定</a>
 </div>
 {% endblock %}

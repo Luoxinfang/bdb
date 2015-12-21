@@ -4,6 +4,6 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/wallet/paypwd/update.tpl' %}
 {% endblock %}

@@ -18,7 +18,7 @@
 	{% endif %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	<div class="order-store">
 		{% widget '_common:widget/user/user-photo.tpl' %}
 		<div class="tlt">翡翠世家</div>
@@ -80,7 +80,7 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer">
+<div class="footer-content">
 	{% if order.status == 'dfk' %}
 		<a class="btn btn-red btn-w135 btn-h70 fs-4 fr showDialog" dialog="payWay">付款</a>
 	{% elseif order.status == 'dfh' %}

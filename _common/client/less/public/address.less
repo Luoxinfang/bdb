@@ -43,4 +43,21 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
+  .set-default {
+    margin-top: -40/@rem-pre;
+    height: 40/@rem-pre;
+    font-size: @fontSize3;
+    line-height: 40/@rem-pre;
+    margin-bottom: 60/@rem-pre;
+    input[type='checkbox'] {
+      width: 24/@rem-pre;
+      height: 24/@rem-pre;
+      background: #ffffff;
+      border: 1px solid red;
+      &:checked {
+        background-size: contain;
+        background-image: url('../../icon/checked.png?__sprite');
+      }
+    }
+  }
 }

@@ -5,7 +5,7 @@
 
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/banner/banner.tpl' %}
 	{% require '_common:widget/store/store.less' %}
 	<div class="store-head">

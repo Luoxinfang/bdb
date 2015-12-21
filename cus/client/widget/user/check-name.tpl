@@ -12,7 +12,7 @@
 					<input type="text" id="name" placeholder="请输入身份证号" minlength="2" maxlength="4"/>
 				</li>
 			</ul>
-			<a class="icon-add btn-file mt-40"><input type="file" class="file" accept="image/*"></a>
+			<a class="icon-add btn-file mt-40"></a>
 		</div>
 	</div>
 {% endblock %}

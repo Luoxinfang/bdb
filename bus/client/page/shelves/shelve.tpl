@@ -4,12 +4,12 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget 'bus:widget/shelves/list.tpl' %}
 {% endblock %}
 
 {% block footer %}
-	<div class="footer">
+	<div class="footer-content">
 		<a class="btn btn-red">完成</a>
 	</div>
 {% endblock %}

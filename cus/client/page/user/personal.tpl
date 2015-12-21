@@ -4,6 +4,6 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget 'cus:widget/user/personal.tpl' %}
 {% endblock %}

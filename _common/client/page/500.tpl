@@ -7,7 +7,7 @@
     }
   </style>
 {%endblock%}
-{% block body %}
+{% block content %}
   <div class="container" id="container">
     <a href="/" class="go-index" style="visibility: hidden;"></a>
     <div class="copyright page500">

@@ -5,9 +5,9 @@
 	<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
 </div>
 <div class="info-group">
-	<div class="li icon-right">
+	<a href="/user/check-name" class="li icon-right">
 		<span class="fl">实名认证</span>
-	</div>
+	</a>
 </div>
 <div class="info-group mt20">
 	<a href="/user/update-info?type=nick&updateVal={{ userInfo.nickname }}" class="li">

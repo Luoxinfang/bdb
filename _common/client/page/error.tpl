@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% require '_common:widget/result/result.less' %}
 	<div class="result">
 		{% if rs.status == '60040' %}
@@ -18,8 +18,14 @@
 			</div>
 		{% elseif rs.status == '' %}
 
-		{% elseif rs.status == '' %}
-
+		{% else %}
+			<div class="content">
+				<div class="tc mt70"><div class="icon-200 icon-fail"></div></div>
+				<div class="tip-error mt40">{{ rs.msg }}</div>
+			</div>
+			<div class="tc">
+				<a href="javascript:history.back();" class="btn btn-white btn-w240">返回</a>
+			</div>
 		{% endif %}
 	</div>
 {% endblock %}

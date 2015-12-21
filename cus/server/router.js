@@ -22,8 +22,10 @@ module.exports = function (router) {
     _.extend(resObj.header, {
       leftIcon: 'me',
       leftUrl: false,
-      rightIcons: [{icon: 'search', url: '/auction/search'},
-        {icon: 'msg', url: false}]
+      rightIcons: [
+        {icon: 'search', url: '/auction/search'},
+        {icon: 'msg', url: false}
+      ]
     })
     res.render('cus/page/index.tpl', resObj);
   });

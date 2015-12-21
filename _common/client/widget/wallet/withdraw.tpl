@@ -1,5 +1,5 @@
 {% require "_common:less/public/form.less" %}
-<div class="withdraw">
+<div class="withdraw" id="withdraw">
 	<div class="form">
 		<ul class="form-ul">
 			<li class='form-li-input has-label has-multi-line'>
@@ -7,7 +7,7 @@
 				<div class="has-label-div">
 					<p class="fs-1 pr showDialog" dialog="bankList">
 						{% if bankList[0] %}
-							<i data-role="input" id="bankNo">{{ bankList[0].bankname }}({{ bankList[0].bankno | replace("^.*(.{4})$", "$1") }})</i>
+							<i data-role="bankNo">{{ bankList[0].bankname }}({{ bankList[0].bankno | replace("^.*(.{4})$", "$1") }})</i>
 							<input type="hidden" name="bankNo" value="{{ bankList[0].bankno }}">
 						{% else %}
 							<a href="/wallet/bank/add" class="fc-h4">请先新增银行卡</a>
@@ -45,6 +45,47 @@
 		</div>
 	</div>
 	<div class="dialog-mask"></div>
+</div>
+{% widget '_common:widget/common/password/password.tpl' %}
+<div class="dialog-wrap" id="payPwdDialog">
+	<div class="dialog">
+		<div class="dialog-hd">确认提现</div>
+		<div class="dialog-bd">
+			<a class="dialog-close closeDialog"></a>
+			<div class="price">￥<i data-role="money"></i></div>
+			<div class="password-wrap">
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<div class="word"></div>
+				<input type="number" class="password" id="payPwd" >
+			</div>
+			<div class="tip mt20">请输入支付密码</div>
+		</div>
+	</div>
+	<div class="dialog-mask"></div>
+</div>
+<div class="result" id="result" style="display: none;">
+	<div class="content">
+		<div class="tc mt70"><div class="icon-200 icon-suc"></div></div>
+		<div class="form">
+			<ul class="form-ul">
+				<li class='form-li-input has-label'>
+					<label>银行卡</label>
+					<span class="fs-2 fr fc-h4">
+						<i data-role="bankNo">{% if bankList[0] %}{{ bankList[0].bankname }}({{ bankList[0].bankno | replace("^.*(.{4})$", "$1") }}){% endif %}</i>
+					</span>
+				</li>
+				<li class='form-li-input has-label'>
+					<label>提取现金</label>
+					<span class="fs-2 fr">¥<i data-role="money"></i></span>
+				</li>
+			</ul>
+			<a href="/wallet" class="btn btn-red">完成</a>
+		</div>
+	</div>
 </div>
 {% script %}
 	require('_common:widget/wallet/withdraw.js').init();

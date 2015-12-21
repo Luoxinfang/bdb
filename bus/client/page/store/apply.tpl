@@ -53,7 +53,7 @@
 {% endblock %}
 
 {% block footer %}
-	<div class="footer">
+	<div class="footer-content">
 		<a class="btn btn-red" onclick="$('#form').submit()">提交申请</a>
 	</div>
 {% endblock %}

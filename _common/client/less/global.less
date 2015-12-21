@@ -708,9 +708,17 @@ body {
 
 //footer
 .footer {
+	background: @titleColor;
+	&-content {
+		padding: 10/@rem-pre 20/@rem-pre;
+		border-top: 2px solid @lineColor;
+	}
+}
+
+.bottom {
+	background: @titleColor;
 	padding: 10/@rem-pre 20/@rem-pre;
 	border-top: 2px solid @lineColor;
-	background: @titleColor;
 }
 
 //alert

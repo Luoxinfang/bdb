@@ -227,7 +227,7 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer">
+<div class="footer-content">
 	<a class="btn btn-red">确定</a>
 </div>
 {% endblock %}

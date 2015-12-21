@@ -80,7 +80,7 @@
 {% endblock %}
 
 {% block footer %}
-<div class="footer">
+<div class="footer-content">
 	{% if order.status == 'dfk' %}
 		<a class="btn btn-red btn-w135 btn-h70 fs-4 fr showDialog" dialog="payWay">付款</a>
 	{% elseif order.status == 'dfh' %}

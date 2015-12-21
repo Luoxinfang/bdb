@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block footer %}
-	<div class="footer">
+	<div class="footer-content">
 		<a href="/shelves/shelve" class="btn btn-red">上架</a>
 	</div>
 {% endblock %}

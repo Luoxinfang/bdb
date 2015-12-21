@@ -11,6 +11,7 @@ module.exports = {
 	changeState: function (e) {
 		var $this = $(e.currentTarget);
 		if ($this.attr('name') == 'money') {
+			$('[data-role="money"]').html(parseFloat($this.val()).toFixed(2));
 			if (parseFloat($this.val()) >= 100) {
 				$('#nextStep').removeClass('btn-disabled');
 			} else {
@@ -21,15 +22,24 @@ module.exports = {
 	changeBank: function (e) {
 		var option = $(e.currentTarget).parent();
 		$('input[name="bankNo"]').val(option.find('.bankNo').val());
-		$('#bankNo').html(option.text());
+		$('[data-role="bankNo"]').html(option.text());
 		option.parents('.dialog-wrap').hide();
 	},
 	nextStep: function () {
-
+		$('#payPwdDialog').show();
+	},
+	withdraw: function (e) {
+		var payPwd = $(e.currentTarget).val().substr(0, 6);
+		if (payPwd.length >= 6) {
+			$('.dialog-wrap').hide();
+			$('#withdraw').hide();
+			$('#result').show();
+		}
 	},
 	event: function () {
 		$('.dialog').on('change', 'input[name="bank"]', this.changeBank.bind(this));
 		$('.page .content').on('input propertychange', 'input[name="money"]', this.changeState.bind(this));
 		$('.page .content').on('click', '#nextStep:not(.btn-disabled)', this.nextStep.bind(this));
+		$('.dialog').on('input propertychange', '#payPwd', this.withdraw.bind(this));
 	}
 }

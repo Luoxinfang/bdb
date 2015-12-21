@@ -16,3 +16,17 @@ module.exports.post = function (req, res, next) {
     res.json(data);
   });
 };
+
+//更新 密码
+module.exports.put = function (req, res, next) {
+  var param = req.body;
+  if(param.pwd){
+    model.recovery1(param).then(function (data) {
+      res.json(data);
+    });
+  }else{
+    model.recovery2(param).then(function (data) {
+      res.json(data);
+    });
+  }
+};

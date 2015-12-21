@@ -219,6 +219,12 @@ module.exports = function (router) {
     var resObj = req.appData;
     res.render('cus/page/weui.tpl', resObj);
   });
+  //消息详情
+  router.get('/user/msg-detail', function (req, res, next) {
+    var resObj = req.appData;
+    resObj.header.title = '消息详情';
+    res.render('cus/page/user/msg-detail.tpl', resObj);
+  });
   //系统设置
   router.get('/settings/sys-settings', function (req, res, next) {
     var resObj = req.appData;

@@ -7,10 +7,10 @@
         <div>
             <ul class="nav">
             {% for item in header.nav %}
-                {% if loop.index==1 %}
-                    <li class="li on">{{ item }}</li>
+                {% if item.default %}
+                    <a class="li on" href="{{ item.url }}">{{ item.val }}</a>
                 {% else %}
-                    <li class="li">{{ item }}</li>
+                    <a class="li" href="{{ item.url }}">{{ item.val }}</a>
                 {% endif %}
             {% endfor %}
              </ul>
@@ -20,7 +20,3 @@
     {% endif %}
     </div>
 </div>
-
-{% script %}
-    require('header-nav.js').init();
-{% endscript %}

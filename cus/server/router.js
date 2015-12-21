@@ -218,16 +218,16 @@ module.exports = function (router) {
     var resObj = req.appData;
     res.render('cus/page/weui.tpl', resObj);
   });
-  //系统消息
+  /*//系统消息
   router.get('/user/sys-message', function (req, res, next) {
     var resObj = req.appData;
     res.render('cus/page/user/sys-message.tpl', resObj);
-  });
-  //用户消息
+  });*/
+  /*//用户消息
   router.get('/user/user-message', function (req, res, next) {
     var resObj = req.appData;
     res.render('cus/page/user/user-message.tpl', resObj);
-  });
+  });*/
   //系统设置
   router.get('/settings/sys-settings', function (req, res, next) {
     var resObj = req.appData;

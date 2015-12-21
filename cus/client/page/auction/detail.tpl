@@ -1,1 +1,6 @@
-{% extends 'cus:widget/auction/auction-detail.tpl' %}
+{% block body %}
+	{% widget 'cus:widget/auction/auction-detail.tpl' %}
+	{% script %}
+	require("cus:widget/auction/auction-detail.js").init();
+	{% endscript %}
+{% endblock %}

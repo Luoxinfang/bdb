@@ -22,7 +22,8 @@ module.exports = {
       rightIcons: false,    //右侧图标组
       rightText: false,     //右侧文字
       rightSort: false,     //右侧排序数组
-      nav: ['系统消息', '用户消息'],     //头部nav数组
+      nav:[{val:'系统消息',url:'/user/sys-message',default:true},
+        {val:'用户消息',url:'/user/user-message',default:false}],    //头部nav导航组件
       tab: ['全部', '进行中', '未开始'],  //头部tab数组
       settings: false
     };

@@ -18,11 +18,15 @@
 
   {% body %}
 
-    <div class="page">
+    <div class="page t8">
 			<!--页面的头部-->
 			<header class="header">
 				{% block header %}{% endblock %}
 			</header>
+      <!--工具栏-->
+      <div class="toolbar">
+        {% block toolbar %}{% endblock %}
+      </div>
 			<!--页面的内容区域-->
       <div class="content">
         {% block content %}{% endblock %}
@@ -37,8 +41,11 @@
 			{% block overlay %}{% endblock %}
 		</div>
 		<!--抽屉,面板-->
-		<div class="drawer">
-			{% block drawer %}{% endblock %}
+		<div class="drawer t8">
+      <div class="drawer-content">
+        {% block drawer %}{% endblock %}
+      </div>
+      <div class="drawer-holder"></div>
 		</div>
   {% endbody %}
 {% endhtml %}

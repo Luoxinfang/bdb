@@ -186,11 +186,11 @@ module.exports = {
       valNum = arrCh[nTemp % 11];
       if (valNum != num.substr(17, 1)) {
         rs.msg = '身份证号码格式错误';
-      }else{
+      } else {
         //验证通过则返回生日和性别
         rs.status = 1;
         rs.birthDay = arrSplit[2] + '-' + arrSplit[3] + '-' + arrSplit[4];
-        rs.gender =(+arrSplit[5] % 2) === 1 ? 1 : 0
+        rs.gender = (+arrSplit[5] % 2) === 1 ? 1 : 0
       }
     }
     return rs;
@@ -205,5 +205,12 @@ module.exports = {
         r = window.location.search.substr(1).match(reg);
     if (null != r) return r[2];
     return null;
-  }
+  },
+  //推拉抽屉
+  toggleDrawer: function () {
+    $('body').toggleClass('with-drawer');
+    $('.drawer-holder').on('click', function () {
+      $('body').removeClass('with-drawer');
+    });
+  },
 };

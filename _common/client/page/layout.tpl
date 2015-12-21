@@ -17,14 +17,28 @@
   {% endhead %}
 
   {% body %}
-    {% block beforeWrapper %}{% endblock %}
-    <div class="wrapper">
-      {% block header %}{% endblock %}
-      <div class="body-container">
-        {% block body %}{% endblock %}
+
+    <div class="page">
+			<!--页面的头部-->
+			<header class="header">
+				{% block header %}{% endblock %}
+			</header>
+			<!--页面的内容区域-->
+      <div class="content">
+        {% block content %}{% endblock %}
       </div>
-      {% block footer %}{% endblock %}
+			<!--页面的页脚-->
+			<footer class="footer">
+				{% block footer %}{% endblock %}
+			</footer>
     </div>
-    {% block afterWrapper %}{% endblock %}
+		<!--弹出框,遮罩层-->
+		<div class="overlay">
+			{% block overlay %}{% endblock %}
+		</div>
+		<!--抽屉,面板-->
+		<div class="drawer">
+			{% block drawer %}{% endblock %}
+		</div>
   {% endbody %}
 {% endhtml %}

@@ -7,7 +7,7 @@
     }
   </style>
 {%endblock%}
-{% block body %}
+{% block content %}
   <div class="container" id="container">
     <a href="/" class="go-index">返回首页</a>
     <div class="copyright page404">

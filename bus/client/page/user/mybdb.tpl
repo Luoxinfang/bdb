@@ -6,7 +6,7 @@
 {% block header %}
     {% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
-{% block body %}
+{% block content %}
     <div class="bdb-list clearfix">
         <a href=""><i class="icon icon-01"></i><div class="w-1">拍卖行</div></a>
         <a href=""><i class="icon icon-02"></i><div class="w-1">店铺活动</div></a>

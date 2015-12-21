@@ -22,7 +22,7 @@ module.exports = {
       html.push('<span class="top-tip-content"></span>');
       html.push('</div></div>')
       if ($('.header').size()) {
-        $('.body-container').append(html.join(''));
+        $('.page .content').append(html.join(''));
         $('.top-tip').css({
           top: $('.header').height() + 'px'
         });

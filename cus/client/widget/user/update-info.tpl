@@ -1,6 +1,6 @@
 {% require "_common:less/public/form.less" %}
 
-{% block body %}
+{% block content %}
 <div id="content">
 	<div class="form">
 		<ul class="form-ul">

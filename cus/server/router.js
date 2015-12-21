@@ -43,10 +43,10 @@ module.exports = function (router) {
   //找回密码
   router.get('/acc/recovery', function (req, res, next) {
     req.appData.header.title = '找回密码';
-    res.render('cus/page/user/recovery', req.appData);
+    res.render('_common/page/acc/recovery.tpl', req.appData);
   });
   //找回密码 —— 设置新密码
-  router.get('/user/find-pwd-new', function (req, res, next) {
+  router.get('/acc/find-pwd-new', function (req, res, next) {
     req.appData.header.title = '找回密码';
     res.render('cus/page/user/find-pwd-new.tpl', req.appData);
   });

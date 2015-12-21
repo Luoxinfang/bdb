@@ -1,6 +1,6 @@
 {% require '_common:widget/common/header/header.less' %}
 <div class="header-wrap">
-    <div class="header">
+    <div class="header-content">
         {% if header.leftIcon %}
             <a href="javascript:history.back();" class="left icon-60 icon-back"></a>
         {% endif %}

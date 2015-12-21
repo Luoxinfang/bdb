@@ -105,10 +105,10 @@ module.exports = {
 	},
 	events: function () {
 		if ($('#validPayPwd').size()) {
-			$('.body-container').on('input propertychange', '#payPwd', this.validPayPwd.bind(this));
+			$('.page .content').on('input propertychange', '#payPwd', this.validPayPwd.bind(this));
 		}
-		$('.body-container').on('click', '#addBank:not(.btn-disabled)', this.addBank.bind(this));
-		$('.body-container').on('input propertychange', 'input[name="bankNo"]', this.checkForm.bind(this));
-		$('.body-container').on('input propertychange', 'input[name="openAddress"]', this.checkForm.bind(this));
+		$('.page .content').on('click', '#addBank:not(.btn-disabled)', this.addBank.bind(this));
+		$('.page .content').on('input propertychange', 'input[name="bankNo"]', this.checkForm.bind(this));
+		$('.page .content').on('input propertychange', 'input[name="openAddress"]', this.checkForm.bind(this));
 	}
 }

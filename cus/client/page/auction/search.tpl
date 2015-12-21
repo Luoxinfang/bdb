@@ -16,7 +16,7 @@
 	</div>
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	<div class="search-list">
 		<a>翡翠菩萨</a>
 		<a>满绿翡翠菩萨</a>

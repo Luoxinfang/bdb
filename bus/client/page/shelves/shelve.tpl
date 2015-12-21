@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget 'bus:widget/shelves/list.tpl' %}
 {% endblock %}
 

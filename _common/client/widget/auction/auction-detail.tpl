@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/banner/banner.tpl' %}
 	{% require '_common:widget/auction/auction.less' %}
 	<div class="auction-detail">

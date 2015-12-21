@@ -8,7 +8,7 @@
 	{% widget '_common:widget/common/header/header-tab.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/auction/auction-list.tpl' %}
 	{% script %}
 		require('_common:widget/common/header/header-sort.js').init();

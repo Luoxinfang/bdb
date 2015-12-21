@@ -1,11 +1,11 @@
 {% extends '_common/page/layout.tpl' %}
 
 {% block head %}
-	{% require 'cus:widget/index/index.css' %}
+	{% require 'cus:widget/index/index.less' %}
 	{% require 'cus:widget/index/order.js' %}
 {% endblock %}
 
-{% block beforeWrapper %}
+{% block overlay %}
 	<div class="bg-mark"></div>
 {% endblock %}
 
@@ -13,7 +13,7 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	<div class="index">
 		{% widget '_common:widget/banner/banner.tpl' %}
 		<div class="category clearfix">
@@ -252,7 +252,7 @@
 	{% endscript %}
 {% endblock %}
 
-{% block afterWrapper %}
+{% block drawer %}
 	<div class="me">
 		<div class="user">
 			<a class="photo" href="/user/personal">

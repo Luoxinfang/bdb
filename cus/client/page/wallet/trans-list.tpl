@@ -14,7 +14,7 @@
 	{% endscript %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/dialog/dialog.tpl' %}
 	<div class="trans-list">
 		<div class="trans-item showDialog" dialog="trans-01">

@@ -7,18 +7,21 @@
 {% endblock %}
 {% block content %}
   <div class="message-list">
-    <ul class="item">
-      <li class="message_text">亲爱的用户，你关注的xxx拍品现在已始拍卖，不要错过哦!</li>
-    </ul>
-    <ul class="item">
-      <li><li class="message_text">亲爱的用户，你关注的xxx拍品现在已始拍卖，不要错过哦!</li></li>
-    </ul>
-    <ul class="item">
-      <li><li class="message_text">亲爱的用户，你关注的xxx拍品现在已始拍卖，不要错过哦!</li></li>
-    </ul>
-    <ul class="item">
-      <li><li class="message_text" style="color: #9a9a9a"> 亲爱的用户，欢迎加入百多宝平台。</li></li>
-    </ul>
-    </div>
+    {% for items in sysInfo %}
+      {% if items.msgcontent.length >40 %}
+        <ul class="item">
+          <li class="message_text">{{ items.msgcontent | replace("^(.{37}).*$", "$1") }}</li>
+        </ul>
+      {% elseif items.msgcontent.length >20 && items.msgcontent.length <40 %}
+      <ul class="item">
+        <li class="message_text">{{ items.msgcontent }}</li>
+      </ul>
+      {% else %}
+        <ul class="item" style="text-align:center">
+          <li class="message_text" >{{ items.msgcontent }}</li>
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </div>
 {% endblock %}
 

@@ -7,7 +7,7 @@
     {% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <div id="content">
         {% require 'bus:widget/order/evaluation/index.less' %}
         <div class="buyer-info clearfix">

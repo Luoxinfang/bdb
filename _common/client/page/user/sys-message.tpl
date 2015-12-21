@@ -5,7 +5,7 @@
 {% block header %}
   {% widget '_common:widget/common/header/header-nav.tpl' %}
 {% endblock %}
-{% block body %}
+{% block content %}
   <div class="message-list">
     <ul class="item">
       <li class="message_text">亲爱的用户，你关注的xxx拍品现在已始拍卖，不要错过哦!</li>

@@ -20,7 +20,7 @@ module.exports = {
 			});
 			$('.wrapper').removeClass('small');
 			$('body').removeClass('body-me');
-			$('.body-container').css({
+			$('.page .content').css({
 				height: 'auto',
 				overflow: 'auto'
 			});

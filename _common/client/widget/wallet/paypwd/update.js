@@ -10,7 +10,7 @@ module.exports = {
 	},
 	setOldPayPwd: function () {
 		var oldPayPwd = '';
-		$('.body-container').on('input propertychange', '#oldPayPwd', function () {
+		$('.page .content').on('input propertychange', '#oldPayPwd', function () {
 			var num = $(this).val().length;
 			if (num >= 6) {
 				oldPayPwd = $(this).val().substr(0, 6);
@@ -44,7 +44,7 @@ module.exports = {
 	setNewPayPwd: function () {
 		var newPayPwd1 = '';
 		var newPayPwd2 = '';
-		$('.body-container').on('input propertychange', '#newPayPwd1', function () {
+		$('.page .content').on('input propertychange', '#newPayPwd1', function () {
 			var num = $(this).val().length;
 			if (num >= 6) {
 				newPayPwd1 = $(this).val().substr(0, 6);
@@ -52,7 +52,7 @@ module.exports = {
 				$('#payPwdStep2').show();
 			}
 		});
-		$('.body-container').on('input propertychange', '#newPayPwd2', function () {
+		$('.page .content').on('input propertychange', '#newPayPwd2', function () {
 			var num = $(this).val().length;
 			if (num >= 6) {
 				newPayPwd2 = $(this).val().substr(0, 6);

@@ -1,5 +1,5 @@
 {% extends '_common:page/layout.tpl' %}
-{% block body %}
+{% block content %}
   {% widget '_common:widget/common/header/header.tpl' %}
   <style>
     .result-icon{

@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% require '_common:less/public/form.less' %}
 	{% require '_common:widget/store/store.less' %}
 	<form action="" id="form" onsubmit="checkForm();">

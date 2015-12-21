@@ -8,7 +8,7 @@
 	{% widget '_common:widget/common/header/header-tab.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	<div class="activity-list ">
 		<div class="activity-item">
 			<a href="/cus/auction/detail">

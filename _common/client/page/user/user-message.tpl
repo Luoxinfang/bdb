@@ -5,7 +5,7 @@
 {% block header %}
     {% widget '_common:widget/common/header/header-nav.tpl' %}
 {% endblock %}
-{% block body %}
+{% block content %}
     <div class="auction-dialog">
         <div class="li">
             <img src="http://img2.imgtn.bdimg.com/it/u=1341923083,1900907467&fm=23&gp=0.jpg" alt="" class="user-img">

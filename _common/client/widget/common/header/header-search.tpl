@@ -1,7 +1,7 @@
 {% require '_common:widget/common/header/header.less' %}
 
 <div class="header-wrap">
-	<div class="header">
+	<div class="header-content">
 		{% if header.leftIcon %}
 			<a {% if header.leftUrl %}href="{{ header.leftUrl }}" {% endif %}class="left icon-60 icon-back"></a>
 		{% endif %}

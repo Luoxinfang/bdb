@@ -8,7 +8,7 @@
     {% widget '_common:widget/common/header/header-tab.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <div id="content">
         {% widget '_common:widget/order/order-list.tpl' %}
     </div>

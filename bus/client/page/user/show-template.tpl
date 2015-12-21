@@ -7,7 +7,7 @@
     {% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
     <div class="template">
         <div class="tpl-item clearfix">
             <div class="left-tpl"><div class="item-left"></div></div>

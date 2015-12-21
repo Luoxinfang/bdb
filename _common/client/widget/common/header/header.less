@@ -2,18 +2,19 @@
 @import "@{_common}/public/mixin";
 
 .header {
-	/* 头部 */
-	position: relative;
-	z-index: 2;
-	width: @rem-max;
-	text-align: center;
-	height: 90/@rem-pre;
-	line-height: 60/@rem-pre;
-	padding: 15/@rem-pre;
+	&-content {
+		position: relative;
+		z-index: 2;
+		width: @rem-max;
+		text-align: center;
+		height: 90/@rem-pre;
+		line-height: 60/@rem-pre;
+		padding: 15/@rem-pre;
+	}
 	&-wrap {
 		//头部容器
 		height: 90/@rem-pre;
-		.header {
+		.header-content {
 			background-color: @titleColor;
 			border-bottom: 2px solid #e7e7e8;
 		}
@@ -27,7 +28,7 @@
 		left: 50%;
 		margin-left: -@rem-max/2;
 		z-index: 2;
-		.header {
+		.header-content {
 			background: transparent;
 			border-bottom-color: transparent;
 			color: #fff;

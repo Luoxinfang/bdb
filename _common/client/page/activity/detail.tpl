@@ -4,7 +4,7 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	{% widget '_common:widget/banner/banner.tpl' %}
 	<div class="info-group">
 		<div class="li texts">活动描述：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。</div>

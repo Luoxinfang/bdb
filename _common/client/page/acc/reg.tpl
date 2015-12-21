@@ -7,7 +7,7 @@
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
-{% block body %}
+{% block content %}
 	<div id="content">
 		<div class="form">
 			<ul class="form-ul">

@@ -72,7 +72,7 @@ module.exports = {
 	},
 	events: function () {
 		$('.header').on('click', '.right', this.changeState.bind(this));
-		$('.body-container').on('click', '.deleteBank', this.showDelete.bind(this));
-		$('.body-container').on('click', '#payPwdDialog .sure', this.deleteBank.bind(this));
+		$('.page .content').on('click', '.deleteBank', this.showDelete.bind(this));
+		$('.page .content').on('click', '#payPwdDialog .sure', this.deleteBank.bind(this));
 	}
 };

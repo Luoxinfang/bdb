@@ -23,6 +23,8 @@
 			<header class="header">
 				{% block header %}{% endblock %}
 			</header>
+      <!--工具栏-->
+      <div class="toolbar"></div>
 			<!--页面的内容区域-->
       <div class="content">
         {% block content %}{% endblock %}
@@ -38,7 +40,10 @@
 		</div>
 		<!--抽屉,面板-->
 		<div class="drawer">
-			{% block drawer %}{% endblock %}
+      <div class="drawer-content">
+        {% block drawer %}{% endblock %}
+      </div>
+      <div class="drawer-holder"></div>
 		</div>
   {% endbody %}
 {% endhtml %}

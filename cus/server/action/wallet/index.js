@@ -33,7 +33,7 @@ module.exports = function (req, res, next) {
 			resObj.rs = {};
 			resObj.rs.status = rs.status;
 			resObj.rs.msg = rs.msg || '服务器异常，请稍后再试';
-			res.render('cus/page/wallet/result.tpl', resObj);
+			res.render('_common/page/error.tpl', resObj);
 		}
 	}).catch(function (error) {
 		yog.log.fatal(error);

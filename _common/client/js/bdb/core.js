@@ -61,54 +61,54 @@ module.exports = {
       }
     });
   },
-	/**
-	 * 弹出提示
-	 * opts { icon:'图标', title:'标题', content:'内容', time:'停留时间' }
-	 */
-	alert: function (opts) {
-		var model = this;
-		var conf = {};
-		var html = [];
-		if ('object' == typeof(opts)) {
-			conf = opts;
-			conf.time = opts.time || 2000;
-		} else {
-			conf.title = arguments[0];
-			conf.content = arguments[1];
-			conf.icon = arguments[2];
-			conf.time = arguments[3] || 2000;
-			conf.callback = arguments[4];
-		}
-		html.push('<div class="alert-wrap">');
-		html.push('  <div class="alert-mask"></div>')
-		html.push('  <div class="alert">');
-		if (conf.icon && conf.icon == 'success') {
-			html.push('  <span class="icon-200 icon-suc"></span>');
-		} else if (conf.icon && conf.icon == 'warn') {
-			html.push('  <span class="icon-200 icon-warn"></span>');
-		} else if (conf.icon && conf.icon == 'error') {
-			html.push('  <span class="icon-200 icon-fail"></span>');
-		} else if (conf.icon && conf.icon == 'loading') {
-			html.push('  <span class="icon-200 icon-loading"></span>');
-		}
-		if (conf.title) {
-			html.push('  <p class="alert-title">' + conf.title + '</p>');
-		}
-		if (conf.content) {
-			html.push('  <p class="alert-content">' + conf.content + '</p>');
-		}
-		html.push('  </div>');
-		html.push('</div>')
-		$('.wrapper').append(html.join(''));
-		if ('number' == typeof(conf.time)) {
-			setTimeout(function () {
-				model.clearAlert();
-				if ('function' == typeof(conf.callback)) {
-					conf.callback();
-				}
-			}, conf.time);
-		}
-	},
+  /**
+   * 弹出提示
+   * opts { icon:'图标', title:'标题', content:'内容', time:'停留时间' }
+   */
+  alert: function (opts) {
+    var model = this;
+    var conf = {};
+    var html = [];
+    if ('object' == typeof(opts)) {
+      conf = opts;
+      conf.time = opts.time || 2000;
+    } else {
+      conf.title = arguments[0];
+      conf.content = arguments[1];
+      conf.icon = arguments[2];
+      conf.time = arguments[3] || 2000;
+      conf.callback = arguments[4];
+    }
+    html.push('<div class="alert-wrap">');
+    html.push('  <div class="alert-mask"></div>')
+    html.push('  <div class="alert">');
+    if (conf.icon && conf.icon == 'success') {
+      html.push('  <span class="icon-200 icon-suc"></span>');
+    } else if (conf.icon && conf.icon == 'warn') {
+      html.push('  <span class="icon-200 icon-warn"></span>');
+    } else if (conf.icon && conf.icon == 'error') {
+      html.push('  <span class="icon-200 icon-fail"></span>');
+    } else if (conf.icon && conf.icon == 'loading') {
+      html.push('  <span class="icon-200 icon-loading"></span>');
+    }
+    if (conf.title) {
+      html.push('  <p class="alert-title">' + conf.title + '</p>');
+    }
+    if (conf.content) {
+      html.push('  <p class="alert-content">' + conf.content + '</p>');
+    }
+    html.push('  </div>');
+    html.push('</div>')
+    $('.wrapper').append(html.join(''));
+    if ('number' == typeof(conf.time)) {
+      setTimeout(function () {
+        model.clearAlert();
+        if ('function' == typeof(conf.callback)) {
+          conf.callback();
+        }
+      }, conf.time);
+    }
+  },
   clearAlert: function () {
     $('.alert-wrap').remove();
   },
@@ -117,14 +117,14 @@ module.exports = {
    */
   isIOS: function () {
     return navigator.userAgent.indexOf('iPhone') > -1
-      || navigator.userAgent.indexOf('iPad') > -1;
+        || navigator.userAgent.indexOf('iPad') > -1;
   },
   /**
    * 是不是android设备
    */
   isAndroid: function () {
     return navigator.userAgent.indexOf('Android') > -1
-      || navigator.userAgent.indexOf('Linux') > -1;
+        || navigator.userAgent.indexOf('Linux') > -1;
   },
   /**
    *  是不是一个手机号码
@@ -132,7 +132,12 @@ module.exports = {
   isMobilePhone: function (number) {
     var rs = {status: 0};
     if (number.length === 11) {
-      rs.status = 1;
+      var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+      if (reg.test(number)) {
+        rs.status = 1;
+      } else {
+        rs.msg = '手机号码格式不对';
+      }
     } else {
       rs.msg = '手机号码长度不对';
     }
@@ -145,9 +150,9 @@ module.exports = {
     var rs = {status: 0, msg: ''};
     if (pwd.length >= 6 && pwd.length <= 15) {
       var reg = /[0-9a-z]/i;
-      if(reg.test(pwd)){
+      if (reg.test(pwd)) {
         rs.status = 1;
-      }else{
+      } else {
         rs.status = 0;
         rs.msg = '密码只能是数字或者字母';
       }
@@ -157,13 +162,48 @@ module.exports = {
     return rs;
   },
   /**
+   * @description 验证身份证
+   */
+  isIdentityCode: function (val) {
+    var rs = {status: 0, msg: ''},
+        value = val + "",
+        num = value.toUpperCase(), len, reg;
+    if (!(/(^\d{17}([0-9]|X)$)/.test(num))) {
+      rs.msg = '身份证号码格式错误';
+      return rs;
+    }
+    len = num.length;
+    if (len == 18) {
+      reg = new RegExp(/^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/);
+      var arrSplit = num.match(reg);
+      var valNum;
+      var arrInt = new Array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+      var arrCh = new Array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+      var nTemp = 0, i;
+      for(i = 0; i < 17; i++) {
+        nTemp += num.substr(i, 1) * arrInt[i];
+      }
+      valNum = arrCh[nTemp % 11];
+      if (valNum != num.substr(17, 1)) {
+        rs.msg = '身份证号码格式错误';
+      }else{
+        //验证通过则返回生日和性别
+        rs.status = 1;
+        rs.birthDay = arrSplit[2] + '-' + arrSplit[3] + '-' + arrSplit[4];
+        rs.gender =(+arrSplit[5] % 2) === 1 ? 1 : 0
+      }
+    }
+    return rs;
+  },
+  /**
    * @description get the param form browser
    * @param {String} key the param your want to get
    * @return {String}
    */
-  getUrlParam:function(key){
-    var reg = new RegExp("(^|&)" + key+ "=([^&]*)(&|$)", "i"),
-      r = window.location.search.substr(1).match(reg);
-    if (null != r) return r[2]; return null;
-  },
+  getUrlParam: function (key) {
+    var reg = new RegExp("(^|&)" + key + "=([^&]*)(&|$)", "i"),
+        r = window.location.search.substr(1).match(reg);
+    if (null != r) return r[2];
+    return null;
+  }
 };

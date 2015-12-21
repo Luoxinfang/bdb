@@ -9,16 +9,15 @@
 	.form-ul:last-of-type {
 		margin-bottom: 60/@rem-pre;
 	}
-	&.delet {
+	&.delete {
 		.form-ul {
 			margin-left: 80/@rem-pre;
-			a{
+			.icon-delete {
 				width: 60/@rem-pre;
-				height:60/@rem-pre;
+				height: 60/@rem-pre;
 				display: block;
-				background-image:url("../../icon/icon_delete.png") ;
-				background-repeat: no-repeat;
-				background-size: contain;
+				background-image: url("../../icon/icon_delete.png");
+				background-size: 100%;
 				position: absolute;
 				top: 0;
 				bottom: 0;
@@ -28,26 +27,12 @@
 			}
 		}
 	}
-	.form-li-input {
-		background: @white;
-		height: 90/@rem-pre;
-		line-height: 90/@rem-pre;
-		border-top: 2px solid #e7e7e8;
-		position: relative;
-		padding:0 20/@rem-pre;
-		font-size: @fontSize2;
-		color: @mainColor3;
-	}
 	.form-li-text {
 		background: @white;
 		height: 150/@rem-pre;
 		border-top: 2px solid #e7e7e8;
 		position: relative;
 		padding-left: 20/@rem-pre;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
-		border-top-left-radius: 5px;
-		border-top-right-radius:5px;
 		.card-name {
 			color: #2297F6;
 			font-size: @fontSize2;
@@ -70,23 +55,17 @@
 			line-height: 30/@rem-pre;
 			padding: 15/@rem-pre 0rem;
 		}
+		&:first-child {
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-top: none;
+		}
+		&:last-child {
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
 	}
-	.form-li-input input,textarea {
-		display: block;
-		border-style: none;
-		width: 100%;
-		height: 100%;
-		line-height: 100%;
-		font-size: @fontSize2;
-	}
-	.form-li-input p {
-		display: block;
-		border-style: none;
-		width: 100%;
-		height: 100%;
-		font-size: @fontSize2;
-	}
-	.form-li-textarea{
+	.form-li-textarea {
 		padding-top: 10/@rem-pre;
 		padding-bottom: 10/@rem-pre;
 		height: 200/@rem-pre;
@@ -98,16 +77,60 @@
 		border-radius: 5px;
 		line-height: 120%;
 	}
-	.form-li-input input:disabled {
-		background: transparent;
+	.form-li-input {
+		background: @white;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
+		border-top: 2px solid #e7e7e8;
+		position: relative;
+		padding: 0 20/@rem-pre;
+		font-size: @fontSize2;
+		color: @mainColor3;
+		input, textarea {
+			display: block;
+			border-style: none;
+			width: 100%;
+			height: 100%;
+			line-height: 100%;
+			font-size: @fontSize2;
+		}
+		p {
+			display: block;
+			border-style: none;
+			width: 100%;
+			height: 100%;
+			font-size: @fontSize2;
+		}
+		input:disabled {
+			background: transparent;
+		}
+		&:first-child {
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+		}
+		&:last-child {
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		&.has-multi-line {
+			height: 110/@rem-pre;
+			line-height: 110/@rem-pre;
+		}
 	}
-	.form-li-input:first-child {
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+	//提现页面两行样式
+	.has-label-div {
+		padding-left: 144/@rem-pre;
+		line-height: normal;
 	}
-	.form-li-input:last-child {
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
+	.has-label-div p {
+		padding-top: 10/@rem-pre;
+		color: @helpColor4;
+		line-height: 50/@rem-pre;
+	}
+	.has-label-div span {
+		display: block;
+		line-height: 40/@rem-pre;
+		color: @mainColor4;
 	}
 	li.form-li-input:first-child .right-btn {
 		border-top-right-radius: 5px;
@@ -115,7 +138,7 @@
 	li.form-li-input:last-child .right-btn {
 		border-bottom-right-radius: 5px;
 	}
-	li.has-right-bt{
+	li.has-right-bt {
 		padding-right: 0;
 	}
 	li.has-right-bt > div {
@@ -137,15 +160,15 @@
 		background: #0983e6;
 	}
 	/*左侧有label*/
-	.has-label{
-		label{
+	.has-label {
+		label {
 			color: #000;
 			display: inline-block;
 			width: 144/@rem-pre;
 			position: absolute;
 			font-size: @fontSize3;
 		}
-		input{
+		input {
 			padding-left: 144/@rem-pre;
 		}
 	}

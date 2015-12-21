@@ -1,151 +1,151 @@
 @import "public/mixin";
 
 body {
-  background-color: @bgColor;
+	background-color: @bgColor;
 }
 
 .wrapper {
-  width: @rem-max;
-  margin: 0 auto;
-  height: 100%;
-  display: flex; //采用弹性盒子模型布局
-  flex-direction: column;
+	width: @rem-max;
+	margin: 0 auto;
+	height: 100%;
+	display: flex; //采用弹性盒子模型布局
+	flex-direction: column;
 }
 
 .body-container {
-  position: relative;
-  flex: 1; //占满空白区
-  width: @rem-max;
-  height: inherit;
-  overflow: auto;
-  margin: 0 auto;
+	position: relative;
+	flex: 1; //占满空白区
+	width: @rem-max;
+	height: inherit;
+	overflow: auto;
+	margin: 0 auto;
 }
 
 @font-face {
-  font-family: "iconfont";
-  //IE
-  src: url("../fonts/iconfont.eot");
-  //iOS 4.1-
-  src: url("../fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg");
+	font-family: "iconfont";
+	//IE
+	src: url("../fonts/iconfont.eot");
+	//iOS 4.1-
+	src: url("../fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg");
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: "iconfont" !important;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .clearfix:after {
-  clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  overflow: hidden;
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	overflow: hidden;
 }
 
 .clearfix {
-  *zoom: 1;
+	*zoom: 1;
 }
 
 .row {
-  width: 1000px;
-  margin: 0 auto;
+	width: 1000px;
+	margin: 0 auto;
 }
 
 .show {
-  display: block;
+	display: block;
 }
 
 .hide {
-  display: none;
+	display: none;
 }
 
 //定位
 .pr {
-  position: relative;
+	position: relative;
 }
 
 .pa {
-  position: absolute;
+	position: absolute;
 }
 
 .fl {
-  float: left !important;
+	float: left !important;
 }
 
 .fr {
-  float: right !important;
+	float: right !important;
 }
 
 .fl,
 .fr {
-  _display: inline;
+	_display: inline;
 }
 
 //文本对齐方式
 .tc {
-  text-align: center !important;
+	text-align: center !important;
 }
 
 .tl {
-  text-align: left !important;
+	text-align: left !important;
 }
 
 .tr {
-  text-align: right !important;
+	text-align: right !important;
 }
 
 //字体大小
 .fs-1 {
-  //34px
-  font-size: 0.53125rem !important;
+	//34px
+	font-size: 0.53125rem !important;
 }
 
 .fs-2 {
-  //30px
-  font-size: 0.46875rem !important;
+	//30px
+	font-size: 0.46875rem !important;
 }
 
 .fs-3 {
-  //26px
-  font-size: 0.40625rem !important;
+	//26px
+	font-size: 0.40625rem !important;
 }
 
 .fs-4 {
-  //22px
-  font-size: 0.34375rem !important;
+	//22px
+	font-size: 0.34375rem !important;
 }
 
 .fs-5 {
-  //18px
-  font-size: 0.28125rem !important;
+	//18px
+	font-size: 0.28125rem !important;
 }
 
 //字体颜色
 .fc-f {
-  color: #ffffff !important;
+	color: #ffffff !important;
 }
 
 .fc-1 {
-  color: #d22f32 !important;
+	color: #d22f32 !important;
 }
 
 .fc-2 {
-  color: #f34433 !important;
+	color: #f34433 !important;
 }
 
 .fc-3 {
-  color: #393b42 !important;
+	color: #393b42 !important;
 }
 
 .fc-4 {
-  color: #7f7f7f !important;
+	color: #7f7f7f !important;
 }
 
 .fc-i {
-  color: inherit !important;
+	color: inherit !important;
 }
 
 .ht100 {
@@ -154,130 +154,130 @@ body {
 
 //背景颜色
 .bg-f {
-  background: #ffffff;
+	background: #ffffff;
 }
 
 .bg-1 {
-  background: #d22f32;
+	background: #d22f32;
 }
 
 .bg-2 {
-  background: #f34433;
+	background: #f34433;
 }
 
 .bg-3 {
-  background: #393b42;
+	background: #393b42;
 }
 
 .bg-4 {
-  background: #7f7f7f;
+	background: #7f7f7f;
 }
 
 //边框
 .bd-1-f {
-  border: 1px solid #ffffff;
+	border: 1px solid #ffffff;
 }
 
 .bd-1-1 {
-  border: 1px solid #d22f32;
+	border: 1px solid #d22f32;
 }
 
 .bd-1-2 {
-  border: 1px solid #f34433;
+	border: 1px solid #f34433;
 }
 
 .bd-1-3 {
-  border: 1px solid #393b42;
+	border: 1px solid #393b42;
 }
 
 .bd-1-4 {
-  border: 1px solid #7f7f7f;
+	border: 1px solid #7f7f7f;
 }
 
 .bd-1-5 {
-  border: 1px solid #cecece;
+	border: 1px solid #cecece;
 }
 
 //图标
 .icon {
-  &-20 {
-    display: inline-block;
-    width: 20/@rem-pre;
-    height: 20/@rem-pre;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &-22 {
-    display: inline-block;
-    width: 22/@rem-pre;
-    height: 22/@rem-pre;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &-40 {
-    display: inline-block;
-    width: 0.625rem;
-    height: 0.625rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &-60 {
-    display: inline-block;
-    width: 60/@rem-pre;
-    height: 60/@rem-pre;
-  }
-  &-60:after {
-    content: '';
-    display: block;
-    width: 60/@rem-pre;
-    height: 60/@rem-pre;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &-200 {
-    display: inline-block;
-    width: 200/@rem-pre;
-    height: 200/@rem-pre;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  &-collect-cnt {
-    //收藏次数
-    width: 60/@rem-pre;
-    text-align: center;
-    height: 24/@rem-pre;
-    line-height: 24/@rem-pre;
-    padding: 0 8/@rem-pre 0 23/@rem-pre;
-    background: url('../icon/collect-cnt.png') no-repeat;
-    background-size: contain;
-    white-space: nowrap;
-    color: #fff;
-    font-size: 14/@rem-pre;
-  }
-  //金牌卖家
-  &-gold {
-    background-image: url('../icon/icon22-gold.png');
-  }
-  //先行赔付
-  &-pei {
-    background-image: url('../icon/icon22-pei.png');
-  }
-  //7天退货
-  &-7day {
-    background-image: url('../icon/icon22-7.png');
-  }
-  &-radio {
-    background-image: url('../icon/radio.png');
-  }
-  &-suc {
-    background-image: url('../icon/success.png');
-  }
-  &-warn {
-    background-image: url('../icon/success-2.png');
-  }
-  &-fail {
-    background-image: url('../icon/fail.png');
-  }
+	&-20 {
+		display: inline-block;
+		width: 20/@rem-pre;
+		height: 20/@rem-pre;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&-22 {
+		display: inline-block;
+		width: 22/@rem-pre;
+		height: 22/@rem-pre;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&-40 {
+		display: inline-block;
+		width: 0.625rem;
+		height: 0.625rem;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&-60 {
+		display: inline-block;
+		width: 60/@rem-pre;
+		height: 60/@rem-pre;
+	}
+	&-60:after {
+		content: '';
+		display: block;
+		width: 60/@rem-pre;
+		height: 60/@rem-pre;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&-200 {
+		display: inline-block;
+		width: 200/@rem-pre;
+		height: 200/@rem-pre;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	&-collect-cnt {
+		//收藏次数
+		width: 60/@rem-pre;
+		text-align: center;
+		height: 24/@rem-pre;
+		line-height: 24/@rem-pre;
+		padding: 0 8/@rem-pre 0 23/@rem-pre;
+		background: url('../icon/collect-cnt.png') no-repeat;
+		background-size: contain;
+		white-space: nowrap;
+		color: #fff;
+		font-size: 14/@rem-pre;
+	}
+	//金牌卖家
+	&-gold {
+		background-image: url('../icon/icon22-gold.png');
+	}
+	//先行赔付
+	&-pei {
+		background-image: url('../icon/icon22-pei.png');
+	}
+	//7天退货
+	&-7day {
+		background-image: url('../icon/icon22-7.png');
+	}
+	&-radio {
+		background-image: url('../icon/radio.png');
+	}
+	&-suc {
+		background-image: url('../icon/success.png');
+	}
+	&-warn {
+		background-image: url('../icon/success-2.png');
+	}
+	&-fail {
+		background-image: url('../icon/fail.png');
+	}
 	&-loading {
 		position: relative;
 		border-radius: 5px;
@@ -296,13 +296,13 @@ body {
 			background-size: 100%;
 		}
 	}
-  //星星
-  &-star {
-    background-image: url('../icon/icon-star.png');
-  }
-  &-star-full {
-    background-image: url('../icon/icon-star-full.png');
-  }
+	//星星
+	&-star {
+		background-image: url('../icon/icon-star.png');
+	}
+	&-star-full {
+		background-image: url('../icon/icon-star-full.png');
+	}
 	&-ewm {
 		display: inline-block;
 		position: absolute;
@@ -315,63 +315,76 @@ body {
 		background-image: url('../icon/icon-ewm.png');
 		background-size: 100%;
 	}
+	//下拉
+	&-select-right {
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 10/@rem-pre;
+		margin: auto 0;
+		width: 40/@rem-pre;
+		height: 40/@rem-pre;
+		background-image: url('../icon/icon-select.png');
+		background-size: 100%;
+	}
 }
 
 //添加按钮
 .icon-add {
-  display: inline-block;
-  position: relative;
-  width: 100/@rem-pre;
-  height: 100/@rem-pre;
-  vertical-align: top;
-  background: @white;
-  border: 1px solid @lineColor;
-  border-radius: 5px;
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 60/@rem-pre;
-    height: 60/@rem-pre;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    background: url('../icon/add.png') no-repeat;
-    background-size: contain;
-  }
+	display: inline-block;
+	position: relative;
+	width: 100/@rem-pre;
+	height: 100/@rem-pre;
+	vertical-align: top;
+	background: @white;
+	border: 1px solid @lineColor;
+	border-radius: 5px;
+	&:after {
+		content: '';
+		display: inline-block;
+		width: 60/@rem-pre;
+		height: 60/@rem-pre;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		background: url('../icon/add.png') no-repeat;
+		background-size: contain;
+	}
 }
 
 //上传文件按钮
 .btn-file {
-  position: relative;
-  .file {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    z-index: 2;
-  }
+	position: relative;
+	.file {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 2;
+	}
 }
 
 //外边距
 .mb5 {
-  margin-bottom: 5/@rem-pre !important;
+	margin-bottom: 5/@rem-pre !important;
 }
 
 .mt10 {
-  margin-top: 10/@rem-pre !important;
+	margin-top: 10/@rem-pre !important;
 }
 
 .mt20 {
-  margin-top: 20/@rem-pre !important;
+	margin-top: 20/@rem-pre !important;
 }
 
 .mt40 {
-  margin-top: 40/@rem-pre !important;
+	margin-top: 40/@rem-pre !important;
 }
 
 .mt70 {
@@ -387,55 +400,55 @@ body {
 }
 
 .mt-40 {
-  margin-top: -40/@rem-pre !important;
+	margin-top: -40/@rem-pre !important;
 }
 
 .mr10 {
-  margin-right: 10/@rem-pre !important;
+	margin-right: 10/@rem-pre !important;
 }
 
 .mb10 {
-  margin-bottom: 10/@rem-pre !important;
+	margin-bottom: 10/@rem-pre !important;
 }
 
 .ml5 {
-  margin-left: 5/@rem-pre !important;
+	margin-left: 5/@rem-pre !important;
 }
 
 .ml10 {
-  margin-left: 10/@rem-pre !important;
+	margin-left: 10/@rem-pre !important;
 }
 
 .ml20 {
-  margin-left: 20/@rem-pre !important;
+	margin-left: 20/@rem-pre !important;
 }
 
 .mr-10 {
-  margin-right: -10/@rem-pre;
+	margin-right: -10/@rem-pre;
 }
 
 .mr-20 {
-  margin-right: -20/@rem-pre;
+	margin-right: -20/@rem-pre;
 }
 
 .mr20 {
-  margin-right: 20/@rem-pre !important;
+	margin-right: 20/@rem-pre !important;
 }
 
 .mb20 {
-  margin-bottom: 20/@rem-pre !important;
+	margin-bottom: 20/@rem-pre !important;
 }
 
 .mb30 {
-  margin-bottom: 30/@rem-pre !important;
+	margin-bottom: 30/@rem-pre !important;
 }
 
 .mb40 {
-  margin-bottom: 40/@rem-pre !important;
+	margin-bottom: 40/@rem-pre !important;
 }
 
 .mt70 {
-  margin-top: 70/@rem-pre !important;
+	margin-top: 70/@rem-pre !important;
 }
 
 //内边距
@@ -444,7 +457,7 @@ body {
 }
 
 .pt10 {
-  padding-top: 10/@rem-pre !important;
+	padding-top: 10/@rem-pre !important;
 }
 
 .pr0 {
@@ -452,44 +465,43 @@ body {
 }
 
 .pr10 {
-  padding-right: 10/@rem-pre !important;
+	padding-right: 10/@rem-pre !important;
 }
 
 .pb0 {
-  padding-bottom: 0 !important;
+	padding-bottom: 0 !important;
 }
 
 .pb10 {
-  padding-bottom: 10/@rem-pre !important;
+	padding-bottom: 10/@rem-pre !important;
 }
 
 .pb20 {
-  padding-bottom: 20/@rem-pre !important;
+	padding-bottom: 20/@rem-pre !important;
 }
 
 .pl0 {
-  padding-left: 0 !important;
+	padding-left: 0 !important;
 }
 
 .pl10 {
-  padding-left: 10/@rem-pre !important;
+	padding-left: 10/@rem-pre !important;
 }
 
 .pl20 {
-  padding-left: 20/@rem-pre !important;
+	padding-left: 20/@rem-pre !important;
 }
 
-
 .va-m {
-  vertical-align: middle;
+	vertical-align: middle;
 }
 
 .lk-red {
-  color: #e4393c;
+	color: #e4393c;
 }
 
 .lk-red:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 .inherit {
@@ -502,108 +514,108 @@ body {
 
 //块级元素
 .dib {
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
 }
 
 /*lilian btn*/
 .btn {
-  width: 100%;
-  height: 80/@rem-pre;
-  line-height: 80/@rem-pre;
-  font-size: @fontSize2;
-  border-radius: 5px;
-  display: block;
+	width: 100%;
+	height: 80/@rem-pre;
+	line-height: 80/@rem-pre;
+	font-size: @fontSize2;
+	border-radius: 5px;
+	display: block;
 }
 
 .btn.btn-red {
-  color: #fff;
-  background: #f34433;
-  border: 1px solid #f34433;
+	color: #fff;
+	background: #f34433;
+	border: 1px solid #f34433;
 }
 
 .btn.btn-white {
-  color: #f34433;
-  background: #fff;
-  border: 1px solid #e7e7e8;
+	color: #f34433;
+	background: #fff;
+	border: 1px solid #e7e7e8;
 }
 
 .btn.btn-sm {
-  width: auto;
-  display: inline-block;
-  padding: 0 15/@rem-pre;
+	width: auto;
+	display: inline-block;
+	padding: 0 15/@rem-pre;
 }
 
 .btn.btn-lg {
-  width: auto;
-  display: inline-block;
-  padding: 0 40/@rem-pre;
+	width: auto;
+	display: inline-block;
+	padding: 0 40/@rem-pre;
 }
 
 .btn.btn-w135 {
-  width: 135/@rem-pre;
-  display: inline-block;
-  padding: 0;
+	width: 135/@rem-pre;
+	display: inline-block;
+	padding: 0;
 }
 
 .btn.btn-w240 {
-  width: 240/@rem-pre;
-  display: inline-block;
-  padding: 0;
+	width: 240/@rem-pre;
+	display: inline-block;
+	padding: 0;
 }
 
 .btn.btn-h70 {
-  height: 70/@rem-pre;
-  line-height: 70/@rem-pre;
+	height: 70/@rem-pre;
+	line-height: 70/@rem-pre;
 }
 
 .btn.btn-white:active {
-  background: #e5e5e5;
+	background: #e5e5e5;
 }
 
 .btn.btn-red:active {
-  background: #f22e1b;
+	background: #f22e1b;
 }
 
 .btn-disabled, .btn-disabled:active {
-  border: none !important;
-  color: #fff !important;
-  background: #cecece !important;
+	border: none !important;
+	color: #fff !important;
+	background: #cecece !important;
 }
 
 /**top tip**/
 .top-tip {
-  z-index: 100;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 50/@rem-pre;
-  line-height: 50/@rem-pre;
-  text-align: center;
-  color: @mainColor2;
-  font-size: @fontSize2;
-  background-color: @bgColor1;
-  &-wrapper{
-    clear: both;
-    display: inline-block;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50/@rem-pre;
+	line-height: 50/@rem-pre;
+	text-align: center;
+	color: @mainColor2;
+	font-size: @fontSize2;
+	background-color: @bgColor1;
+	&-wrapper {
+		clear: both;
+		display: inline-block;
 
-  }
-  &-icon{
-    float: left;
-    display: inline-block;
-    width: 26/@rem-pre;
-    height: 26/@rem-pre;
-    background-size: contain;
-    margin: 12/@rem-pre 2/@rem-pre 0 0;
-    &.warn{
-      background-image: url("../icon/warn-exc.png");
-    }
-  }
-  &-content{
-    float: left;
-  }
+	}
+	&-icon {
+		float: left;
+		display: inline-block;
+		width: 26/@rem-pre;
+		height: 26/@rem-pre;
+		background-size: contain;
+		margin: 12/@rem-pre 2/@rem-pre 0 0;
+		&.warn {
+			background-image: url("../icon/warn-exc.png");
+		}
+	}
+	&-content {
+		float: left;
+	}
 }
 
 //输入容器
@@ -683,7 +695,7 @@ body {
 	left: 0;
 	right: 0;
 	margin: -100px auto 0 auto;
-	background: rgba(0,0,0,.6);
+	background: rgba(0, 0, 0, .6);
 	border-radius: 5px;
 	color: @white;
 	.transform(translateY(-50%));

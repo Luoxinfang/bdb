@@ -12,9 +12,22 @@ var cashModel = require('../../model/cash.js');
 module.exports = function (req, res, next) {
 	next();
 };
-// get
+// 验证支付密码
 module.exports.get = function (req, res, next) {
-
+	var params = {
+		token: req.session.user.token,
+		payPwd: md5(req.query.payPwd),
+		drawPwd: ''
+	}
+	cashModel.validPwd(params).then(function (rs) {
+		if (0 == rs.status) {
+			req.session.oldPayPwd = req.query.payPwd;
+			req.session.validPayPwdTime = +new Date();
+		}
+		res.json(rs);
+	}).catch(function (error) {
+		yog.log.fatal(error);
+	});
 };
 // 设置支付密码
 module.exports.put = function (req, res, next) {

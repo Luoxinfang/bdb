@@ -122,13 +122,6 @@ module.exports = function (router) {
     resObj.header.rightText = '筛选';
     res.render('cus/page/wallet/trans-list.tpl', resObj);
   });
-  //我的钱包 —— 提现
-  router.get('/wallet/withdrawals', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '提现';
-    resObj.header.leftUrl = '/wallet';
-    res.render('cus/page/wallet/withdrawals.tpl', resObj);
-  });
   //我的钱包 —— 充值
   router.get('/wallet/recharges', function (req, res, next) {
     var resObj = req.appData;
@@ -290,5 +283,6 @@ module.exports = function (router) {
   //wallet:cus/action/wallet/index.js
 	//wallet/bank:cus/action/wallet/bank/index.js
 	//wallet/bank/add:cus/action/wallet/bank/add.js
+	//wallet/withdraw:cus/action/wallet/withdraw.js
   //----------wallet(我的钱包)<<<<<<<<<<
 };

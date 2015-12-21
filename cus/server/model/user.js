@@ -67,6 +67,35 @@ module.exports = {
       path: '/interface/user/update.shtml',
       query: query
     });
+  },
+  //获取系统信息
+  queryMsg: function (data) {
+    var query = server.parserQuery(data, 'msg');
+    return yog.ral(serverId, {
+      method: 'GET',
+      path: '/interface/msg/query',
+      query: query
+    });
+    //var data = server.parserQuery(data, 'msg');
+    //return yog.ral(serverId, {
+    //  path: '/interface/msg/query',
+    //  data: data
+    //});
+  },
+  //获取系统信息
+  queryDetail: function (data) {
+    var query = server.parserData(data, 'msg');
+    return yog.ral(serverId, {
+      path: '/interface/msg/detail',
+      query: query
+    });
+  },
+  //设定托管竞价
+  setHostingBid: function (data) {
+    var query = server.parserData(data, 'user');
+    return yog.ral(serverId, {
+      path: '/interface/user/setHostingBid',
+      data: query
+    });
   }
-
 };

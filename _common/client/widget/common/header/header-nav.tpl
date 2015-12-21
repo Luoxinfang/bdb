@@ -2,7 +2,7 @@
 <div class="header-wrap">
     <div class="header">
         {% if header.leftIcon %}
-            <a {% if header.backUrl %}href="{{ header.backUrl }}" {% endif %}class="left icon-60 icon-back"></a>
+            <a href="javascript:history.back();" class="left icon-60 icon-back"></a>
         {% endif %}
         <div>
             <ul class="nav">

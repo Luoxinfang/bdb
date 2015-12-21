@@ -22,10 +22,8 @@ module.exports = function (router) {
     _.extend(resObj.header, {
       leftIcon: 'me',
       leftUrl: false,
-      rightIcons: [
-        {icon: 'search', url: '/auction/search'},
-        {icon: 'msg', url: false}
-      ]
+      rightIcons: [{icon: 'search', url: '/auction/search'},
+        {icon: 'msg', url: '/user/sys-message'}]
     })
     res.render('cus/page/index.tpl', resObj);
   });
@@ -41,6 +39,7 @@ module.exports = function (router) {
     req.appData.header.title = '注册';
     res.render('_common/page/acc/reg.tpl', req.appData);
   });
+
   //找回密码
   router.get('/acc/recovery', function (req, res, next) {
     req.appData.header.title = '找回密码';
@@ -220,16 +219,6 @@ module.exports = function (router) {
     var resObj = req.appData;
     res.render('cus/page/weui.tpl', resObj);
   });
-  /*//系统消息
-  router.get('/user/sys-message', function (req, res, next) {
-    var resObj = req.appData;
-    res.render('cus/page/user/sys-message.tpl', resObj);
-  });*/
-  /*//用户消息
-  router.get('/user/user-message', function (req, res, next) {
-    var resObj = req.appData;
-    res.render('cus/page/user/user-message.tpl', resObj);
-  });*/
   //系统设置
   router.get('/settings/sys-settings', function (req, res, next) {
     var resObj = req.appData;

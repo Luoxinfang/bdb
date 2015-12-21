@@ -70,7 +70,7 @@
 <div class="result" id="result" style="display: none;">
 	<div class="content">
 		<div class="tc mt70"><div class="icon-200 icon-suc"></div></div>
-		<div class="form">
+		<div class="form mt80">
 			<ul class="form-ul">
 				<li class='form-li-input has-label'>
 					<label>银行卡</label>

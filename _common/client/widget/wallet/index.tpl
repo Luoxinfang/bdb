@@ -6,7 +6,7 @@
 	</div>
 	<div class="info-group">
 		<a href="/wallet/trans-list" class="li">交易明细</a>
-		<a href="/wallet/recharges" class="li">充值</a>
+		<a href="/wallet/recharge" class="li">充值</a>
 		<a href="/wallet/withdraw" class="li">提现</a>
 	</div>
 	<div class="info-group mt20 mb40">

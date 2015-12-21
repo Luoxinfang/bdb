@@ -35,6 +35,6 @@ module.exports = {
 		});
 	},
 	event: function () {
-		$('.page .content').on('change','#sex',this.updateData.bind(this));
+		$('.page>.content').on('change','#sex',this.updateData.bind(this));
 	}
 };

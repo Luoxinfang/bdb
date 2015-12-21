@@ -11,7 +11,7 @@
 			</li>
 		</ul>
 		{% endfor %}
-		<a href="/wallet/bank/add" class="btn btn-red" id="addBank">添加银行卡</a>
+		<a href="{{ cus }}/wallet/bank/add" class="btn btn-red" id="addBank">添加银行卡</a>
 	</div>
 </div>
 {% widget '_common:widget/dialog/dialog.tpl' %}

@@ -6,6 +6,7 @@ var server = require('../lib/server.js');
 var serverId = server.getServerId();
 var cash = 'cash';
 var bank = 'bank';
+var draw = 'draw';
 module.exports = {
 	/**
 	 * 查询是否设置支付密码
@@ -130,6 +131,18 @@ module.exports = {
 			method: 'GET',
 			path: '/interface/cash/opsaccount',
 			query: data
+		});
+	},
+	/**
+	 * 提现
+	 * @param params
+	 * @returns {*}
+	 */
+	withdraw: function (params) {
+		data = server.parserData(params, draw);
+		return yog.ral(serverId, {
+			path: '/interface/cash/draw/add',
+			data: data
 		});
 	}
 };

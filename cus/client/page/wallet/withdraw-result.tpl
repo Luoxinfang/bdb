@@ -1,1 +1,0 @@
-{% extends '_common:page/wallet/withdraw-result.tpl' %}

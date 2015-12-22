@@ -144,5 +144,29 @@ module.exports = {
 			path: '/interface/cash/draw/add',
 			data: data
 		});
+	},
+	/**
+	 * 充值
+	 * @param params
+	 * @returns {*}
+	 */
+	recharge: function (params) {
+		data = server.parserData(params, draw);
+		return yog.ral(serverId, {
+			path: '/interface/cash/pay/recharge',
+			data: data
+		});
+	},
+	/**
+	 * 交易记录
+	 * @param params
+	 * @returns {*}
+	 */
+	transList: function (params) {
+		data = server.parserData(params, draw);
+		return yog.ral(serverId, {
+			path: '/interface/cash/tradrecords',
+			data: data
+		});
 	}
 };

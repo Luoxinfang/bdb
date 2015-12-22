@@ -115,13 +115,6 @@ module.exports = function (router) {
 		})
 		res.render('cus/page/user/check-name.tpl', resObj);
 	});
-	//我的钱包 —— 交易明细
-	router.get('/wallet/trans-list', function (req, res, next) {
-		var resObj = req.appData;
-		resObj.header.title = '交易明细';
-		resObj.header.rightText = '筛选';
-		res.render('cus/page/wallet/trans-list.tpl', resObj);
-	});
 	//订单管理 ——所有订单
 	router.get('/order', function (req, res, next) {
 		var resObj = req.appData;
@@ -264,5 +257,6 @@ module.exports = function (router) {
 		req.appData.header.title = '充值';
 		res.render('cus/page/wallet/recharge.tpl', req.appData);
 	});
+	//wallet/trans-list:ucs/action/wallet/trans-list
 	//----------wallet(我的钱包)<<<<<<<<<<
 };

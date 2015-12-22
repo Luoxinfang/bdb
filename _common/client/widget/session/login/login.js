@@ -51,7 +51,7 @@ module.exports = {
       },
       success: function (data) {
         if (0 == data.status) {
-          window.location.href = (data.referrer || '/');
+          window.location.replace(data.referrer || '/');
         } else {
           var msg = data.msg || '服务器异常，请稍后再试';
           B.topWarn(msg);
@@ -65,7 +65,7 @@ module.exports = {
   //记住密码
   remember: function () {
     localStorage[keyRemember] = ~~$(this).prop('checked');
-    console.log(localStorage[keyRemember]);
+    //console.log(localStorage[keyRemember]);
   },
   event: function () {
     $('#btn-login').on('click', this.login.bind(this));

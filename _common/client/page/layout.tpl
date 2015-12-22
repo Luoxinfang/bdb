@@ -37,6 +37,7 @@
     </div>
 		<!--弹出框,遮罩层-->
 		<div class="overlay">
+			<div class="overlay-mask"></div>
 			{% block overlay %}{% endblock %}
 		</div>
 		<!--抽屉,面板-->

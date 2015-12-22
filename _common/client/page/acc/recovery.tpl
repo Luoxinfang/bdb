@@ -39,10 +39,12 @@
 		<div class="form hide" id="form2">
 			<ul class="form-ul">
 				<li class='form-li-input'>
-					<input type="password" id="pwd" placeholder="请输入新密码" minlength="4" maxlength="12" autoconmplete='off'/>
+					<input type="password" id="pwd1" placeholder="请输入新密码"
+								 minlength="6" maxlength="12" autoconmplete='off'/>
 				</li>
 				<li class="form-li-input">
-					<input type="password" id="pwd_again" placeholder="请再次输入新密码" minlength="4" maxlength="12" autoconmplete='off'/>
+					<input type="password" id="pwd2" placeholder="请再次输入新密码"
+								 minlength="6" maxlength="12" autoconmplete='off'/>
 				</li>
 			</ul>
 			<a id="btn-submit" class="btn btn-red btn-disabled">确认</a>

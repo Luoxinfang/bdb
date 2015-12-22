@@ -5,7 +5,7 @@ module.exports = function (router) {
   router.get('*', function (req, res, next) {
     //需要验证登录的接口
     var userPath = /^\/(user|order|wallet)\/*\w*/;
-    //console.log(userPath.test(req.path) && !req.session.user);
+    console.log(userPath.test(req.path) , !req.session.user);
     if (userPath.test(req.path) && !req.session.user) {
       req.session.login_referrer = req.originalUrl;
       res.redirect('/login');
@@ -22,8 +22,10 @@ module.exports = function (router) {
     _.extend(resObj.header, {
       leftIcon: 'me',
       leftUrl: false,
-      rightIcons: [{icon: 'search', url: '/auction/search'},
-        {icon: 'msg', url: '/user/sys-message'}]
+      rightIcons: [
+        {icon: 'search', url: '/auction/search'},
+        {icon: 'msg', url: '/user/sys-message'}
+      ]
     })
     res.render('cus/page/index.tpl', resObj);
   });

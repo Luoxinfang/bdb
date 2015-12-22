@@ -20,12 +20,13 @@ module.exports.post = function (req, res, next) {
 //更新 密码
 module.exports.put = function (req, res, next) {
   var param = req.body;
-  if(param.pwd){
-    model.recovery1(param).then(function (data) {
+  if(param.newPwd){
+    param.newPwd = md5(param.newPwd);
+    model.recovery2(param).then(function (data) {
       res.json(data);
     });
   }else{
-    model.recovery2(param).then(function (data) {
+    model.recovery1(param).then(function (data) {
       res.json(data);
     });
   }

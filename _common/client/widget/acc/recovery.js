@@ -10,13 +10,16 @@ module.exports = {
     this.$getCode = $('#btn-code');
     this.$form1 = $('#form1');
     this.$form2 = $('#form2');
-    this.pwd = null;
+    this.pwd1 = null;
+    this.pwd2 = null;
     this.code = null;
     this.number = null;
     this.identity = null;
+    this.sign = null;
     this.updateNumber();
     this.updateCode();
     this.updateIdentityCode();
+    this.hashChange();
     this.event();
   },
   //获取验证码
@@ -63,7 +66,9 @@ module.exports = {
     var rs = B.isMobilePhone(val);
     if (rs.status) {
       this.number = val;
-      this.$getCode.removeClass('btn-disabled');
+      if (this.$getCode.text() == '获取验证码') {
+        this.$getCode.removeClass('btn-disabled');
+      }
     } else {
       this.number = null;
       this.$getCode.addClass('btn-disabled');
@@ -100,24 +105,48 @@ module.exports = {
     this.toggleSubmitBtn();
   },
   //更新密码
-  updatePwd: function () {
-    var $dom = $('#pwd');
+  updatePwd1: function () {
+    var $dom = $('#pwd1');
     var val = $dom.val();
     var rs = B.isPwd(val);
     if (rs.status) {
-      this.pwd = val;
+      this.pwd1 = val;
     } else {
-      this.pwd = null;
+      this.pwd1 = null;
     }
     this.toggleSubmitBtn();
   },
   //检查密码
-  checkPwd: function () {
-    var $dom = $('#pwd');
+  checkPwd1: function () {
+    var $dom = $('#pwd1');
     var val = $dom.val();
     var rs = B.isPwd(val);
     if (!rs.status) {
       B.topWarn(rs.msg);
+    }
+  },
+  //更新重复密码
+  updatePwd2: function () {
+    var $dom = $('#pwd2');
+    var val = $dom.val();
+    var rs = B.isPwd(val);
+    if (rs.status) {
+      this.pwd2 = val;
+    } else {
+      this.pwd2 = null;
+    }
+    this.toggleSubmitBtn();
+  },
+  //检查重复密码
+  checkPwd2: function () {
+    var $dom = $('#pwd2');
+    var val = $dom.val();
+    var rs = B.isPwd(val);
+    if (!rs.status) {
+      B.topWarn(rs.msg);
+    }
+    if (this.pwd1 !== this.pwd2) {
+      B.topWarn('2次输入的密码不一致');
     }
   },
   //更新身份证
@@ -157,7 +186,8 @@ module.exports = {
         //console.log(data);
         if (data.status == 0) {
           location.hash = '#step2';
-        }else{
+          that.sign = data.sign;
+        } else {
           B.topWarn(data.msg);
         }
       },
@@ -172,16 +202,24 @@ module.exports = {
     $.ajax({
       type: 'put',
       dataType: 'json',
-      url: '_common/acc/reg',
+      url: '/_common/acc/reg',
       data: {
         uName: that.number,
         code: that.code,
         pwd: that.pwd,
-        requestUrl: document.referrer
+        sign: that.sign,
+        newPwd: that.pwd2,
+        cardNo: that.identity
       },
       success: function (data) {
         if (0 == data.status) {
-          location.href = '/login?number=' + that.number;
+          B.alert({
+            title: data.msg,
+            icon: 'success',
+            callback: function () {
+              location.href = '/login?number=' + that.number;
+            }
+          });
         } else {
           B.topWarn(data.msg);
         }
@@ -198,11 +236,18 @@ module.exports = {
     } else {
       this.$next.addClass('btn-disabled');
     }
-
+    if (this.sign && this.pwd1 && this.pwd2) {
+      this.$submit.removeClass('btn-disabled');
+    } else {
+      this.$submit.addClass('btn-disabled');
+    }
   },
   //hash变化
   hashChange: function () {
-    if (location.hash == 'step2') {
+    if (!this.sign) {
+      location.hash = ''
+    }
+    if (location.hash == '#step2') {
       this.$form1.hide();
       this.$form2.show();
     } else {
@@ -218,8 +263,10 @@ module.exports = {
     $('#code').on('blur', this.checkCode.bind(this));
     $('#identity').on('keyup', this.updateIdentityCode.bind(this));
     $('#identity').on('blur', this.checkIdentityCode.bind(this));
-    $('#pwd').on('keyup', this.updatePwd.bind(this));
-    $('#pwd').on('blur', this.checkPwd.bind(this));
+    $('#pwd1').on('keyup', this.updatePwd1.bind(this));
+    $('#pwd1').on('blur', this.checkPwd1.bind(this));
+    $('#pwd2').on('keyup', this.updatePwd2.bind(this));
+    $('#pwd2').on('blur', this.checkPwd2.bind(this));
     this.$next.on('click', this.next.bind(this));
     this.$submit.on('click', this.submit.bind(this));
     window.onhashchange = this.hashChange.bind(this);

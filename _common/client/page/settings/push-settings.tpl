@@ -6,30 +6,30 @@
 {% endblock %}
 {% block content %}
 	<div class="push-list form pl0 pr0">
-		<div href="" class="push-item"><span>信息提醒</span>
+		<div class="push-item"><span>信息提醒</span>
 			<div class="checkbox-wrap">
-				<input type="checkbox" id="checkbox-1" class="checkbox" checked>
-				<label for="checkbox-1"></label>
+				<input type="checkbox" id="info" class="checkbox" checked>
+				<label for="info"></label>
 			</div>
 		</div>
 		<div class="mt">
-			<div href="" class="push-item"><span>声音</span>
+			<div class="push-item"><span>声音</span>
 				<div class="checkbox-wrap">
-					<input type="checkbox" id="checkbox-2" class="checkbox" checked>
-					<label for="checkbox-2"></label>
+					<input type="checkbox" id="sound" class="checkbox" checked>
+					<label for="sound"></label>
 				</div>
 			</div>
 			<div href="" class="push-item"><span>震动</span>
 				<div class="checkbox-wrap">
-					<input type="checkbox" id="checkbox-3" class="checkbox" checked>
-					<label for="checkbox-3"></label>
+					<input type="checkbox" id="shock" class="checkbox" checked>
+					<label for="shock"></label>
 				</div>
 			</div>
 		</div>
-		<div href="" class="push-item mt"><span>勿扰模式</span>
+		<div class="push-item mt"><span>勿扰模式</span>
 			<div class="checkbox-wrap">
-				<input type="checkbox" id="checkbox-4" class="checkbox" checked>
-				<label for="checkbox-4"></label>
+				<input type="checkbox" id="disturb" class="checkbox" checked>
+				<label for="disturb"></label>
 			</div>
 		</div>
 		<div class="mt clearfix">
@@ -39,4 +39,7 @@
 				<span class="detailed-time">早上09:00</span><input type="time" value="10:00"></div>
 		</div>
 	</div>
+	{% script %}
+	require('_common:widget/settings/push-settings.js').init();
+	{% endscript %}
 {% endblock %}

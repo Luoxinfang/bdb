@@ -33,10 +33,10 @@
 			</div>
 		</div>
 		<div class="mt clearfix">
-			<div href="" class="push-item"><span>开始时间</span>
-				<span class="detailed-time">晚上10:00</span><input type="time" value="10:00"></div>
-			<div href="" class="push-item"><span>结束时间</span>
-				<span class="detailed-time">早上09:00</span><input type="time" value="10:00"></div>
+			<div href="" class="push-item input-wrap"><span>开始时间</span>
+				<span class="detailed-time"><i data-role="input">21:00</i></span><input id="staTime" type="time" value="10:00"></div>
+			<div href="" class="push-item input-wrap"><span>结束时间</span>
+				<span class="detailed-time"><i data-role="input">09:00</i></span><input id="endTime" type="time" value="09:00"></div>
 		</div>
 	</div>
 	{% script %}

@@ -5,7 +5,14 @@ var B = require('_common:js/bdb/core.js');
 
 module.exports = {
 	init: function () {
+		this.updateTime();
 		this.event();
+	},
+	//修改开始时间和结束时间
+	updateTime: function () {
+		$('.page>.content').on('input propertychange', '.input-wrap input', function () {
+			$(this).parent().find('[data-role="input"]').html($(this).val());
+		});
 	},
 	//修改设置
 	updateSet: function () {
@@ -13,6 +20,8 @@ module.exports = {
 		var sound = 0;
 		var shock = 0;
 		var disturb = 0;
+		var staTime = $("#staTime").val();
+		var endTime = $("#endTime").val();
 		if(!$('#info').is(':checked')){
 			 msg=1;
 		}
@@ -30,10 +39,12 @@ module.exports = {
 			dataType: 'json',
 			url: '/_common/settings/sys-set',
 			data: {
-				Msgflag: msg,
-				Soundflag: sound,
-				Shockflag: shock,
-				Allflag: disturb
+				msgflag: msg,
+				soundflag: sound,
+				shockflag: shock,
+				allflag: disturb,
+				begtime:staTime,
+				endtime:endTime
 			},
 			success: function (data) {
 				if (0 == data.status) {

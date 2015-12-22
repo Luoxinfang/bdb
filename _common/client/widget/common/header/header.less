@@ -3,7 +3,8 @@
 
 .header {
 	&-content {
-		z-index: 2;
+		position: relative;
+		z-index: 3;
 		width: @rem-max;
 		text-align: center;
 		height: 90/@rem-pre;
@@ -26,7 +27,7 @@
 		top: 0;
 		left: 50%;
 		margin-left: -@rem-max/2;
-		z-index: 2;
+		z-index: 3;
 		.header-content {
 			background: transparent;
 			border-bottom-color: transparent;
@@ -41,8 +42,11 @@
 	}
 	.left {
 		//左侧内容
-		float: left;
-		margin-left: 20/@rem-pre;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 20/@rem-pre;
+		margin: auto 0;
 	}
 	.center {
 		margin: 0 auto;
@@ -66,11 +70,11 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			z-index: 2;
+			z-index: 3;
 		}
 		&-list {
 			position: absolute;
-			z-index: 3;
+			z-index: 4;
 			top: 100/@rem-pre;
 			right: 10/@rem-pre;
 			width: 200/@rem-pre;

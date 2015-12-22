@@ -26,23 +26,38 @@ module.exports = function (req, res, next) {
 		token: req.session.user.token,
 		page: req.query.page || 1,
 		pageSize: req.query.pageSize || 8,
-		bTime: req.query.bTime || moment({
-			hour: 0,
-			minute: 0,
-			seconds: 0
-		}).subtract(moment.duration(7, 'd')).format('YYYY-MM-DD HH:mm:ss'),
+		bTime: req.query.bTime || moment({hour: 0, minute: 0, seconds: 0}).subtract(moment.duration(7, 'd')).format('YYYY-MM-DD HH:mm:ss'),
 		eTime: req.query.eTime || moment({hour: 23, minute: 59, seconds: 59}).format('YYYY-MM-DD HH:mm:ss'),
 		userName: req.query.userName,
 		tradeType: req.query.tradeType
 	};
 	var resObj = req.appData;
 	resObj.header.title = '交易明细';
-	resObj.header.rightText = '筛选';
+	resObj.header.rightFilter = {
+		text: '筛选',
+		filters: [
+			{text: '打赏',val:'6002'},
+			{text: '充值',val:'6001'},
+			/*{text: '支付'},
+			{text: '货款'},
+			{text: '退款'},*/
+			{text: '提现',val:'7001'}
+		]
+	};
 	cashModel.transList(params).then(function (rs) {
 		if (0 == rs.status) {
 			resObj.transList = rs.data;
 			resObj.transType = transType;
-
+			if (req.query.bTime) {
+				resObj.bTime = req.query.bTime.substr(0, 10);
+			} else {
+				resObj.bTime = req.query.bTime || moment().subtract(moment.duration(7, 'd')).format('YYYY-MM-DD');
+			}
+			if (req.query.eTime) {
+				resObj.eTime = req.query.eTime.substr(0, 10);
+			} else {
+				resObj.eTime = req.query.eTime || moment().format('YYYY-MM-DD');
+			}
 			res.render('cus/page/wallet/trans-list.tpl', resObj);
 		} else {
 			resObj.rs = {};

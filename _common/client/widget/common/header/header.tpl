@@ -20,6 +20,19 @@
 				</div>
 			</div>
 		{% endif %}
+		{% if header.rightFilter %} {#筛选，默认：无，需要的话直接配置header.rightSort值#}
+			<a class="right sort fs-2 fc-2">
+				<span>{{ header.rightFilter.text }}</span>
+			</a>
+			<div class="header-sort">
+				<div class="sort-mask"></div>
+				<div class="sort-list">
+					{% for item in header.rightFilter.filters %}
+						<a>{{ item.text }}</a>
+					{% endfor %}
+				</div>
+			</div>
+		{% endif %}
 		{% if header.rightIcon %}
 			<div class="right">
 				<a {% if header.rightUrl %}href="{{ header.rightUrl }}"{% endif %}class="icon-60 icon-{{ header.rightIcon }}"></a>

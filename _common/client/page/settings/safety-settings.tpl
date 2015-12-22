@@ -1,10 +1,9 @@
 {% extends '_common:page/layout.tpl' %}
-{% block head %}
+{% block header %}
 	{% require "_common:less/user/settings.less" %}
-{% endblock %}
-{%  block body %}
 	{% widget '_common:widget/common/header/header.tpl' %}
-
+{% endblock %}
+{%  block content %}
 	<div class="set-list">
 		{% for item in header.settings %}
 			{% if item == '修改密码' %}

@@ -61,8 +61,8 @@
 <div class="actionsheet-wrap" id="actionsheet-01">
 	<div class="mask mask-transition" style="display: none;"></div>
 	<div class="actionsheet">
-		<button class="btn btn-white">通过相机拍照</button>
-		<button class="btn btn-white mt20">通过相册选取</button>
+		<button class="btn btn-white btn-file">通过相机拍照<input type="file" class="file" accept="image/*" capture="camera"></button>
+		<button class="btn btn-white mt20 btn-file">通过相册选取<input type="file" class="file" accept="image/*"></button>
 		<button class="btn btn-red actionsheet-cancel mt40">取消</button>
 	</div>
 </div>

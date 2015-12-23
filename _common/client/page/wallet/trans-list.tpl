@@ -1,5 +1,10 @@
 {% extends '_common:page/layout.tpl' %}
 
+{% block head %}
+	{% require "_common:js/plugin/dropload/dropload.less" %}
+	{% require "_common:js/plugin/dropload/dropload.js" %}
+{% endblock %}
+
 {% block header %}
 	{% widget '_common:widget/common/header/header.tpl' %}
 	{% require '_common:widget/wallet/trans.less' %}
@@ -18,18 +23,10 @@
 {% block content %}
 	{% require '_common:widget/wallet/trans.less' %}
 	{% widget '_common:widget/dialog/dialog.tpl' %}
-	<div class="trans-list mt10">
-		{% for trans in transList %}
-			<div class="trans-item" data-type-no="{{ trans.tradetype }}" data-type-name="{{ transType[trans.tradetype] }}" data-time="{{ trans.createtime | date('Y-m-d H:i:s') }}" data-money="{{ trans.tradecashmoney.toFixed(2) }}" data-trans-no="{{ trans.tradeno }}">
-				<div class="type">{{ transType[trans.tradetype] }}</div>
-				<div class="time">{{ trans.createtime | date('Y-m-d H:i:s') }}</div>
-				{% if trans.inorout == 0 %}
-					<div class="num green">+{{ trans.tradecashmoney.toFixed(2) }}元</div>
-				{% elseif trans.inorout == 1 %}
-					<div class="num red">-{{ trans.tradecashmoney.toFixed(2) }}元</div>
-				{% endif %}
-			</div>
-		{% endfor %}
+	<div id="trans-list" class="pb20">
+		<div class="trans-list mt10" data-page="1">
+			{% widget '_common:widget/wallet/trans-list.tpl' %}
+		</div>
 	</div>
 	{% script %}
 		require('_common:widget/wallet/trans-list.js').init();

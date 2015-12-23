@@ -23,29 +23,27 @@ var transType = {
 };
 // all
 module.exports = function (req, res, next) {
-	var bTime, eTime;
-	if ('undefined' == typeof req.query.bTime) {
-		bTime = moment({hour: 0, minute: 0, seconds: 0}).subtract(moment.duration(7, 'd')).format('YYYY-MM-DD HH:mm:ss');
-	} else {
-		bTime = req.query.bTime;
-	}
-	if ('undefined' == typeof req.query.eTime) {
-		eTime = moment({hour: 23, minute: 59, seconds: 59}).format('YYYY-MM-DD HH:mm:ss');
-	} else {
-		eTime = req.query.eTime;
-	}
 	var params = {
 		token: req.session.user.token,
 		page: req.query.page || 1,
 		pageSize: req.query.pageSize || 8,
-		bTime: bTime,
-		eTime: eTime,
+		bTime: 'undefined' == typeof req.query.bTime ? moment({
+			hour: 0,
+			minute: 0,
+			seconds: 0
+		}).subtract(moment.duration(7, 'd')).format('YYYY-MM-DD HH:mm:ss') : req.query.bTime,
+		eTime: 'undefined' == typeof req.query.eTime ? moment({
+			hour: 23,
+			minute: 59,
+			seconds: 59
+		}).format('YYYY-MM-DD HH:mm:ss') : req.query.eTime,
 		userName: req.query.userName,
 		tradeType: req.query.tradeType
 	};
 	var resObj = req.appData;
 	resObj.header.title = '交易明细';
 	resObj.header.leftUrl = '/wallet';
+	resObj.transType = transType;
 	resObj.header.rightFilter = {
 		cur: {text: '筛选'},
 		filters: [
@@ -60,13 +58,16 @@ module.exports = function (req, res, next) {
 		resObj.header.rightFilter.cur.val = params.tradeType;
 		resObj.header.rightFilter.cur.text = transType[params.tradeType];
 	}
+	resObj.bTime = params.bTime.substr(0, 10);
+	resObj.eTime = params.eTime.substr(0, 10);
 	cashModel.transList(params).then(function (rs) {
 		if (0 == rs.status) {
 			resObj.transList = rs.data;
-			resObj.transType = transType;
-			resObj.bTime = params.bTime.substr(0, 10);
-			resObj.eTime = params.eTime.substr(0, 10);
-			res.render('cus/page/wallet/trans-list.tpl', resObj);
+			if (req.query.type) {
+				res.render('_common/widget/wallet/trans-list.tpl', resObj);
+			} else {
+				res.render('cus/page/wallet/trans-list.tpl', resObj);
+			}
 		} else {
 			resObj.rs = {};
 			resObj.rs.status = rs.status;

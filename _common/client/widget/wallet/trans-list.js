@@ -10,6 +10,9 @@ module.exports = {
 		B.bindInput();
 		this.event();
 	},
+	/**
+	 * 点击显示详情
+	 */
 	showDetail: function (e) {
 		var item = $(e.currentTarget);
 		var html = [];
@@ -39,6 +42,9 @@ module.exports = {
 		html.push('</div>');
 		$('.page>.content').append(html.join(''));
 	},
+	/**
+	 * 带参数跳转
+	 */
 	jump: function (e) {
 		var url = '/wallet/trans-list?';
 		var bTime = $('.trans-time input[name="bTime"]').val();
@@ -62,38 +68,53 @@ module.exports = {
 		}
 		location.href = url;
 	},
+	/**
+	 * 点击筛选
+	 */
 	filter: function (e) {
 		var $this = $(e.currentTarget);
 		$('.header .filter span').text($this.text());
 		$('.header .filter span').data('filter', $this.data('filter'));
 		this.jump();
 	},
+	/**
+	 * 上拉加载
+	 */
 	dropLoad: function (){
 		var dropload = $('.page>.content').dropload({
-			domUp : {
-				domClass   : 'dropload-up',
-				domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
-				domUpdate  : '<div class="dropload-update">↑释放更新</div>',
-				domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
-			},
 			domDown : {
 				domClass   : 'dropload-down',
 				domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
 				domUpdate  : '<div class="dropload-update">↓释放加载</div>',
 				domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
 			},
-			loadUpFn: function (me) {
-				setTimeout(function () {
-					$('.trans-list').html('');
-					$('.trans-list').append('新内容');
-					me.resetload();
-				}, 1000);
-			},
 			loadDownFn: function (me) {
-				setTimeout(function () {
-					$('.trans-list').append('新加载');
-					me.resetload();
-				}, 1000);
+				$.ajax({
+					type: 'get',
+					dataType: 'html',
+					url: '/wallet/trans-list',
+					data: {
+						type: 'page',
+						page: $('.trans-list').data('page') + 1
+					},
+					success: function (data) {
+						if (data) {
+							setTimeout(function () {
+								$('.trans-list').data('page', $('.trans-list').data('page') + 1);
+								$('.trans-list').append(data);
+								me.resetload();
+							}, 200);
+						} else {
+							$('.dropload-load').html('没有更多记录了~');
+							setTimeout(function () {
+								me.resetload();
+							}, 800);
+						}
+					},
+					error: function (jqXHR, textStatus, errorThrown) {
+						B.topWarn(B.tips.networkError);
+					}
+				});
 			}
 		});
 	},

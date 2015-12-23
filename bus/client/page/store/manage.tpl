@@ -20,14 +20,14 @@
 			<span class="fl">店名</span>
 			<span class="fr">小唐的店铺</span>
 		</div>
-		<div class="li">
+		<a href="/address/select-address" class="li">
 			<span class="fl">地址</span>
 			<span class="fr">广东省 深圳市 福田区</span>
-		</div>
-		<div class="li">
+		</a>
+		<a href="/address/input-email" class="li">
 			<span class="fl">邮箱</span>
 			<span class="fr">124578963@qq.com</span>
-		</div>
+		</a>
 	</div>
 	<div class="info-group mt20">
 		<a class="li icon-right" href="/store/show-template">
@@ -35,12 +35,8 @@
 		</a>
 	</div>
 	<div class="info-group mt20">
-		<a class="li" href="/store/category">
-			<span class="fl">经验分类</span>
-			<span class="fr">翡翠、文玩</span>
-		</a>
-		<a class="li">
-			<span class="fl">审核资料</span>
+		<a href="/store/qualification" class="li">
+			<span class="fl">资质认证</span>
 		</a>
 	</div>
 	<div class="mt40"></div>

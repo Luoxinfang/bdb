@@ -13,7 +13,17 @@ module.exports.put = function (req, res, next) {
 		token: req.session.user.token
 	}, req.body);
 	model.updateData(params).then(function (rs) {
-
+		res.json(rs);
+	}).catch(function (error) {
+		yog.log.fatal(error);
+	});
+};
+//用户修改手机号
+module.exports.put = function (req, res, next) {
+	var params = _.extend({
+		token: req.session.user.token
+	}, req.body);
+	model.changePhone(params).then(function (rs) {
 		res.json(rs);
 	}).catch(function (error) {
 		yog.log.fatal(error);

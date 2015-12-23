@@ -81,7 +81,7 @@ module.exports = {
 			 this.message1 = null;
 			 this.message2 = null;
 		 }
-		this.toggleSubmitBtn();
+		this.toggleNextBtn();
 	},
 	//检查验证码
 	checkCode: function () {
@@ -94,7 +94,7 @@ module.exports = {
 		}else if(newval!='' && newval.length !== 6) {
 			B.topWarn('请输入6位的验证码');
 		}
-		this.toggleSubmitBtn();
+		this.toggleNextBtn();
 	},
 	//更新密码
 	updatePwd: function () {
@@ -106,7 +106,7 @@ module.exports = {
 		} else {
 			this.pwd = null;
 		}
-		this.toggleSubmitBtn();
+		this.toggleNextBtn();
 	},
 	//检查密码
 	checkPwd: function () {
@@ -116,14 +116,22 @@ module.exports = {
 		if (!rs.status) {
 			B.topWarn(rs.msg);
 		}
-		this.toggleSubmitBtn();
+		this.toggleNextBtn();
 	},
-	//切换提交按钮的状态
-	toggleSubmitBtn: function () {
+	//切换下一步按钮的状态
+	toggleNextBtn: function () {
 		if (this.oldtel && this.message1 && this.pwd) {
 			this.$next.removeClass('btn-disabled');
 		} else {
 			this.$next.addClass('btn-disabled');
+		}
+	},
+	//切换完成按钮的状态
+	toggleSubmitBtn: function () {
+		if (this.newtel && this.message2) {
+			this.$submit.removeClass('btn-disabled');
+		} else {
+			this.$submit.addClass('btn-disabled');
 		}
 	},
 	//输入新的手机号码
@@ -138,7 +146,7 @@ module.exports = {
 			this.newtel = null;
 			this.$getCode2.addClass('btn-disabled');
 		}
-		this.toggleSubmitBtn();
+		this.toggleNextBtn();
 	},
 	//检查手机号码
 	checkNumber: function () {
@@ -148,8 +156,11 @@ module.exports = {
 		if (!rs.status) {
 			B.topWarn(rs.msg);
 		}
+		if(this.oldtel==val){
+			B.topWarn('旧手机号和新手机号不能相同');
+		}
 	},
-	//提交
+	//请求更换手机号
 	submit: function () {
 		var that = this;
 		$.ajax({
@@ -183,7 +194,7 @@ module.exports = {
 	event: function () {
 		$('#getMessage1').on('click', this.getCode.bind(this));
 		$('#getMessage2').on('click', this.getCode.bind(this));
-    $("#btn-next").on('click',this.hashChange.bind(this));
+		$('#content').on('click', '#btn-next:not(.btn-disabled)', this.hashChange.bind(this));
 		$('#message').on('keyup', this.updateCode.bind(this));
 		$('#message').on('blur', this.checkCode.bind(this));
 		$('#pwd').on('keyup', this.updatePwd.bind(this));

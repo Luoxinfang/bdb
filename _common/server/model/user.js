@@ -27,11 +27,11 @@ module.exports = {
       data: data
     });
   },
-  //找回密码 第一步
+  //找回密码 第二步
   recovery2: function (data) {
     data = server.parserData(data, 'login');
     return yog.ral(serverId, {
-      path: '/interface/login/validforgetpwd',
+      path: '/interface/login/forgetpwd',
       data: data
     });
   }

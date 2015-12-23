@@ -5,7 +5,7 @@ module.exports = function (router) {
   router.get('*', function (req, res, next) {
     //需要验证登录的接口
     var userPath = /^\/(user|order|wallet)\/*\w*/;
-    //console.log(userPath.test(req.path) && !req.session.user);
+    console.log(userPath.test(req.path) , !req.session.user);
     if (userPath.test(req.path) && !req.session.user) {
       req.session.login_referrer = req.originalUrl;
       res.redirect('/login');
@@ -22,8 +22,10 @@ module.exports = function (router) {
     _.extend(resObj.header, {
       leftIcon: 'me',
       leftUrl: false,
-      rightIcons: [{icon: 'search', url: '/auction/search'},
-        {icon: 'msg', url: '/user/sys-message'}]
+      rightIcons: [
+        {icon: 'search', url: '/auction/search'},
+        {icon: 'msg', url: '/user/sys-message'}
+      ]
     })
     res.render('cus/page/index.tpl', resObj);
   });
@@ -114,13 +116,6 @@ module.exports = function (router) {
 			leftUrl: '/user/personal',
 		})
 		res.render('cus/page/user/check-name.tpl', resObj);
-	});
-	//我的钱包 —— 交易明细
-	router.get('/wallet/trans-list', function (req, res, next) {
-		var resObj = req.appData;
-		resObj.header.title = '交易明细';
-		resObj.header.rightText = '筛选';
-		res.render('cus/page/wallet/trans-list.tpl', resObj);
 	});
 	//订单管理 ——所有订单
 	router.get('/order', function (req, res, next) {
@@ -264,5 +259,6 @@ module.exports = function (router) {
 		req.appData.header.title = '充值';
 		res.render('cus/page/wallet/recharge.tpl', req.appData);
 	});
+	//wallet/trans-list:ucs/action/wallet/trans-list
 	//----------wallet(我的钱包)<<<<<<<<<<
 };

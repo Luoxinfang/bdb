@@ -17,7 +17,7 @@
 				</li>
 				<li class='form-li-input'>
 					<input type="password" id="pwd" placeholder="请输入你的密码"
-								 minlength="6" maxlength="15" autoconmplete='off'/>
+								 minlength="6" maxlength="12" autoconmplete='off'/>
 				</li>
 				<li class="form-li-input has-right-bt">
 					<div>

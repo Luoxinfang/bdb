@@ -105,5 +105,13 @@ module.exports = {
       path: '/interface/user/sethostingbid',
       data: query
     });
+  },
+  //用户更换手机号
+  changePhone: function (data) {
+    var query = server.parserData(data, 'user');
+    return yog.ral(serverId, {
+      path: '/interface/user/changephoneno',
+      data: query
+    });
   }
 };

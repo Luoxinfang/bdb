@@ -7,71 +7,70 @@ body {
 /*页面布局*/
 
 .page {
-  width: @rem-max;
-  margin: 0 auto;
-  height: 100%;
-  display: flex; //采用弹性盒子模型布局
-  flex-direction: column; //垂直布局
-  overflow: hidden;
+	width: @rem-max;
+	margin: 0 auto;
+	height: 100%;
+	display: flex; //采用弹性盒子模型布局
+	flex-direction: column; //垂直布局
+	overflow: hidden;
 }
+
 .header {
-  position: relative;
+	position: relative;
 }
 
 .content {
-  position: relative;
-  flex: 1; //占满空白区
-  height: inherit;
-  overflow-y: auto;
+	position: relative;
+	flex: 1; //占满空白区
+	height: inherit;
+	overflow-y: auto;
 }
 
 .drawer {
-  //首页侧边栏
-  position: absolute;
-  width: @rem-max;
-  top: 0;
-  left: -@rem-max;
-  height: 100%;
-  opacity: 0;
-  z-index: 1001;
-  .drawer-content, .drawer-holder {
-    float: left;
-    height: 100%;
-  }
-  .drawer-content {
-    width: 490/@rem-pre;
-  }
-  .drawer-holder {
-    width: (@max-width - 490)/@rem-pre;
-  }
+	//首页侧边栏
+	position: absolute;
+	width: @rem-max;
+	top: 0;
+	left: -@rem-max;
+	height: 100%;
+	opacity: 0;
+	z-index: 1001;
+	.drawer-content, .drawer-holder {
+		float: left;
+		height: 100%;
+	}
+	.drawer-content {
+		width: 490/@rem-pre;
+	}
+	.drawer-holder {
+		width: (@max-width - 490)/@rem-pre;
+	}
 }
 
 /*抽屉拉出*/
 body.with-drawer {
-  .overlay {
-    display: block;
-  }
-  .drawer {
-    left: 0;
-    opacity: 1;
-  }
-  .page {
-    .transform(translateX(426/@rem-pre) scale(0.8, 0.8));
-  }
+	.overlay {
+		display: block;
+	}
+	.drawer {
+		left: 0;
+		opacity: 1;
+	}
+	.page {
+		.transform(translateX(426/@rem-pre) scale(0.8, 0.8));
+	}
 }
 
 .overlay {
-  //首页侧边栏
-  position: absolute;
-  width: @rem-max;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: 1000;
-  display: none;
+	//首页侧边栏
+	position: absolute;
+	width: @rem-max;
+	top: 0;
+	left: 0;
+	height: 100%;
+	z-index: 1000;
+	display: none;
 }
-
-
 
 @font-face {
 	font-family: "iconfont";
@@ -96,15 +95,18 @@ body.with-drawer {
 	height: 0;
 	overflow: hidden;
 }
+
 /*动画*/
 .ts2 {
-  .transition(all 0.2s ease-in-out);
+	.transition(all 0.2s ease-in-out);
 }
+
 .ts5 {
-  .transition(all 0.5s ease-in-out);
+	.transition(all 0.5s ease-in-out);
 }
+
 .ts8 {
-  .transition(all 0.8s ease-in-out);
+	.transition(all 0.8s ease-in-out);
 }
 
 .clearfix {
@@ -691,7 +693,6 @@ body.with-drawer {
 	&-wrapper {
 		clear: both;
 		display: inline-block;
-
 	}
 	&-icon {
 		float: left;
@@ -699,6 +700,7 @@ body.with-drawer {
 		width: 26/@rem-pre;
 		height: 26/@rem-pre;
 		background-size: contain;
+		background-repeat: no-repeat;
 		margin: 12/@rem-pre 2/@rem-pre 0 0;
 		&.warn {
 			background-image: url("../icon/warn-exc.png");

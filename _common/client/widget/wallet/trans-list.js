@@ -37,10 +37,40 @@ module.exports = {
 		html.push('				<span class="fl">流水号</span>');
 		html.push('				<span class="fr">' + item.data('transNo') + '</span>');
 		html.push('			</div>');
-		html.push('		</div>');
-		html.push('	</div>');
-		html.push('</div>');
-		$('.page>.content').append(html.join(''));
+		$.ajax({
+			type: 'post',
+			dataType: 'json',
+			url: '/_common/cash/trans-detail',
+			data: {
+				tradeNo: item.data('transNo')
+			},
+			success: function (data) {
+				if (0 == data.status) {
+					if ('提现' == item.data('typeName')) {
+						var withdraw = data.data;
+						var drawflag = ['处理中', '审核', '处理完成', '银行处理失败', '取消'];
+						html.push('			<div class="clearfix">');
+						html.push('				<span class="fl">提现银行卡</span>');
+						html.push('				<span class="fr">' + withdraw.bankname + '(' + withdraw.bankno.substr(withdraw.bankno.length - 4, 4) + ')' + '</span>');
+						html.push('			</div>');
+						html.push('			<div class="clearfix">');
+						html.push('				<span class="fl">提现状态</span>');
+						html.push('				<span class="fr">' + drawflag[withdraw.drawflag] + '</span>');
+						html.push('			</div>');
+					}
+					html.push('		</div>');
+					html.push('	</div>');
+					html.push('</div>');
+					$('.page>.content').append(html.join(''));
+				} else {
+					var msg = data.msg || '服务器异常，请稍后再试';
+					B.topWarn(msg);
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				B.topWarn(B.tips.networkError);
+			}
+		});
 	},
 	/**
 	 * 带参数跳转
@@ -80,13 +110,16 @@ module.exports = {
 	/**
 	 * 上拉加载
 	 */
-	dropLoad: function (){
+	dropLoad: function () {
+		var bTime = $('.trans-time input[name="bTime"]').val() == '' ? '' : $('.trans-time input[name="bTime"]').val() + ' 00:00:00';
+		var eTime = $('.trans-time input[name="eTime"]').val() == '' ? '' : $('.trans-time input[name="eTime"]').val() + ' 23:59:59';
+		var tradeType = $('.header .filter span').data('filter');
 		var dropload = $('.page>.content').dropload({
-			domDown : {
-				domClass   : 'dropload-down',
-				domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
-				domUpdate  : '<div class="dropload-update">↓释放加载</div>',
-				domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+			domDown: {
+				domClass: 'dropload-down',
+				domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+				domUpdate: '<div class="dropload-update">↓释放加载</div>',
+				domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
 			},
 			loadDownFn: function (me) {
 				$.ajax({
@@ -95,15 +128,19 @@ module.exports = {
 					url: '/wallet/trans-list',
 					data: {
 						type: 'page',
-						page: $('.trans-list').data('page') + 1
+						page: $('.trans-list').data('page') + 1,
+						bTime: bTime,
+						eTime: eTime,
+						tradeType: tradeType
 					},
 					success: function (data) {
 						if (data) {
+							$('.trans-list').data('page', $('.trans-list').data('page') + 1);
+							$('.trans-list').append(data);
+							$('.dropload-load').html('加载完毕~');
 							setTimeout(function () {
-								$('.trans-list').data('page', $('.trans-list').data('page') + 1);
-								$('.trans-list').append(data);
 								me.resetload();
-							}, 200);
+							}, 800);
 						} else {
 							$('.dropload-load').html('没有更多记录了~');
 							setTimeout(function () {

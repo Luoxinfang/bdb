@@ -50,10 +50,13 @@
 			</div>
 		</div>
 	</form>
+	{% script %}
+		require('../../widget/store/apply.js').init();
+	{% endscript %}
 {% endblock %}
 
 {% block footer %}
 	<div class="footer-content">
-		<a class="btn btn-red" onclick="$('#form').submit()">提交申请</a>
+		<a class="btn btn-red" id="form-submit">提交申请</a>
 	</div>
 {% endblock %}

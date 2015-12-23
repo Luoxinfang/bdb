@@ -14,7 +14,6 @@ module.exports.put = function (req, res, next) {
 		token: req.session.user.token
 	}, req.body);
 	model.attention(params).then(function (rs) {
-		console.log(rs);
 		res.json(rs);
 	}).catch(function (error) {
 		yog.log.fatal(error);

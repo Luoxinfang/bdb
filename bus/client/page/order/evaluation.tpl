@@ -11,7 +11,7 @@
     <div id="content">
         {% require 'bus:widget/order/evaluation/index.less' %}
         <div class="buyer-info clearfix">
-            <div class="img">{% widget '_common:widget/user/user-photo.tpl' %}</div>
+            <div class="img">{% widget '_common:widget/common/photo/photo.tpl' %}</div>
             <p class="info fs-2">买家姓名：老刘</p>
         </div>
         <div class="order-list">

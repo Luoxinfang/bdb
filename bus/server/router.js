@@ -248,14 +248,18 @@ module.exports = function (router) {
   //地址选择
   router.get('/address/select-address', function (req, res, next) {
     var resObj = req.appData;
-    resObj.header.title = '地址';
-    res.render('bus/page/address/select-address.tpl', resObj);
+      resObj.header.title = '地址';
+      resObj.province = req.query.province;
+      resObj.city = req.query.city;
+      resObj.street = req.query.street;
+    res.render('bus/page/store/select-address.tpl', resObj);
   });
   //输入邮箱
   router.get('/address/input-email', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '邮箱';
-    res.render('bus/page/address/input-email.tpl', resObj);
+    resObj.email = req.query.email;
+    res.render('bus/page/store/input-email.tpl', resObj);
   });
   //展示模板
   router.get('/store/show-template', function (req, res, next) {
@@ -364,20 +368,11 @@ module.exports = function (router) {
     });
     res.render('bus/page/store/apply.tpl', resObj);
   });
-  //店铺管理
-  router.get('/store/manage', function (req, res, next) {
-    var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '店铺管理',
-    });
-    res.render('bus/page/store/manage.tpl', resObj);
-  });
   //资质认证
   router.get('/store/qualification', function (req, res, next) {
     var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '资质认证',
-    });
+    resObj.header.title = '资质认证';
+    resObj.storeName = req.query.storeName;
     res.render('bus/page/store/qualification.tpl', resObj);
   });
   //拍卖行

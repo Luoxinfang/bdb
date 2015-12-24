@@ -10,10 +10,10 @@
 
 	<div class="personal-head">
 		<div class="user-photo-wrap">
-			{% widget '_common:widget/user/user-photo.tpl' %}
+			{% widget '_common:widget/common/photo/photo.tpl' %}
 		</div>
 		<div class="rank-wrap">
-			{% widget '_common:widget/common/rank.tpl' %}
+			{% widget '_common:widget/common/level/level.tpl' %}
 		</div>
 	</div>
 	<div class="info-group">

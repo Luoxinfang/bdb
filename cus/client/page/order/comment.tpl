@@ -14,9 +14,9 @@
 
 {% block content %}
 	<div class="order-store">
-		{% widget '_common:widget/user/user-photo.tpl' %}
+		{% widget '_common:widget/common/photo/photo.tpl' %}
 		<div class="tlt">翡翠世家</div>
-		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
+		<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
 		<a href="/store" class="url btn btn-white btn-w135 btn-h70 fs-4">进入店铺</a>
 	</div>
 	<div class="order-auction order-comment mt20">

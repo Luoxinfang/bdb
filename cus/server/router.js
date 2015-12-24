@@ -258,6 +258,8 @@ module.exports = function (router) {
 		req.appData.header.title = '充值';
 		res.render('cus/page/wallet/recharge.tpl', req.appData);
 	});
+	//wallet/paypwd/update:cus/action/wallet/paypwd/update.js
+	//wallet/paypwd/forget:cus/action/wallet/paypwd/forget.js
 	//wallet/trans-list:ucs/action/wallet/trans-list
 	//----------wallet(我的钱包)<<<<<<<<<<
 };

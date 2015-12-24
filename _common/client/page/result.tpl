@@ -25,7 +25,7 @@
 	<script>
 		{% if autoJump %}
 		setTimeout(function () {
-			location.href ="{{ btn.href||'/' }}" ;
+			location.replace("{{ btn.href||'/' }}") ;
 		}, 3000);
 		{%  endif %}
 	</script>

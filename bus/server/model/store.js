@@ -1,7 +1,7 @@
 /**
  * @author pulang
- * @createTime 2015-12-16
- * @description 这个路由处理后端请求
+ * @createTime 2015-12-24
+ * @description 这个处理后端请求
  */
 
 var server = yog.require('_common/lib/server.js');

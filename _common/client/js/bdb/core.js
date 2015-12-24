@@ -7,6 +7,11 @@ module.exports = {
   tips: {
     networkError: '网络错误，请稍后再试'
   },
+  //服务器配置
+  server:{
+    file:'http://file.bdbvip.com:8080'
+
+  },
   /**
    *  页面顶部提示组件
    */

@@ -1,0 +1,32 @@
+@import "@{_common}/public/mixin";
+
+.user {
+  &-photo {
+    display: block;
+    position: relative;
+    width: 140/@rem-pre;
+    height: 140/@rem-pre;
+    border: 5px solid fadeout(@mainColor5, 80%);
+    border-radius: 50%;
+    background: url("./default.png") no-repeat;
+    background-size: contain;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    img[src='']{
+      display: none;
+    }
+    .input-file {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: transparent;
+      opacity: 0;
+    }
+  }
+}

@@ -9,7 +9,7 @@
 	{% require '_common:widget/auction/auction.less' %}
 	<div class="auction-detail">
 		<div class="store">
-			<div class="photo">{% widget '_common:widget/user/user-photo.tpl' %}</div>
+			<div class="photo">{% widget '_common:widget/common/photo/photo.tpl' %}</div>
 			<a href="/store" class="name">小唐的店铺</a>
 			<span class="time">开始时间 04:36</span>
 		</div>

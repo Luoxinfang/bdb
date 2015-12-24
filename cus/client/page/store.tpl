@@ -10,9 +10,9 @@
 	{% require '_common:widget/store/store.less' %}
 	<div class="store-head">
 		<a href="/user/personal">
-			{% widget '_common:widget/user/user-photo.tpl' %}
+			{% widget '_common:widget/common/photo/photo.tpl' %}
 		</a>
-		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
+		<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
 		<i class="icon-22 icon-gold"></i>
 		<i class="icon-22 icon-7day"></i>
 		<i class="icon-22 icon-pei"></i>

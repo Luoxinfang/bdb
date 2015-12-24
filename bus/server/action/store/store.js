@@ -12,7 +12,7 @@ module.exports.post = function (req, res, next) {
 	var params = _.extend({
 		token: req.session.user.token
 	}, req.body);
-	model.apply(params).then(function (rs) {
+	model.updateInfo(params).then(function (rs) {
 		console.log(rs);
 		res.json(rs);
 	}).catch(function (error) {

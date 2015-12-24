@@ -8,8 +8,8 @@
 {% block content %}
 	<div class="personal-bg"></div>
 	<div class="personal-head">
-		<div class="showActionsheet" actionsheet="actionsheet-01">{% widget '_common:widget/user/user-photo.tpl' %}</div>
-		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
+		<div class="showActionsheet" actionsheet="actionsheet-01">{% widget '_common:widget/common/photo/photo.tpl' %}</div>
+		<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
 	</div>
 	<div class="info-group">
 		<a class="li">
@@ -18,15 +18,15 @@
 		</a>
 		<div class="li">
 			<span class="fl">店名</span>
-			<span class="fr">小唐的店铺</span>
+			<span class="fr">{{ storeInfo.shopname }}</span>
 		</div>
-		<a href="/address/select-address" class="li">
+		<a href="/address/select-address?province={{ storeInfo.province }}&&city={{ storeInfo.city }}&&street={{ storeInfo.street }}" class="li">
 			<span class="fl">地址</span>
-			<span class="fr">广东省 深圳市 福田区</span>
+			<span class="fr">{{ storeInfo.address }}</span>
 		</a>
-		<a href="/address/input-email" class="li">
+		<a href="/address/input-email?email={{ storeInfo.email }}" class="li">
 			<span class="fl">邮箱</span>
-			<span class="fr">124578963@qq.com</span>
+			<span class="fr">{{ storeInfo.email }}</span>
 		</a>
 	</div>
 	<div class="info-group mt20">
@@ -35,7 +35,7 @@
 		</a>
 	</div>
 	<div class="info-group mt20">
-		<a href="/store/qualification" class="li">
+		<a href="/store/qualification?storeName={{ storeInfo.shopname }}" class="li">
 			<span class="fl">资质认证</span>
 		</a>
 	</div>

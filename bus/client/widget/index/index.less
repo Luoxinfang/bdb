@@ -55,25 +55,31 @@
     &-06 {
       background-image: url('./icon/icon-b06.png');
     }
-  }
-}
-.switch-btn {
-  width: 200/@rem-pre;
-  height: 20/@rem-pre;
-  margin-left: 220/@rem-pre;
-  margin-bottom: 40/@rem-pre;
-  text-align: center;
-  .r-1 {
-    display: inline-block;
-    width: 0.3125rem;
-    height: 0.3125rem;
-    border: 2px solid #fff;
-    border-radius: 40%;
-    vertical-align: top;
-    margin:0 10/@rem-pre;
-    &.on {
-      background-color: #fff;
+    &-07 {
+      background-image: url('./icon/icon-b07.png');
+    }
+    &-08 {
+      background-image: url('./icon/icon-b08.png');
+    }
+    &-09 {
+      background-image: url('./icon/icon-b09.png');
     }
   }
+}
+.swiper {
+	.swiper-pagination {
+		.swiper-pagination-bullet {
+			width: 0.3125rem;
+			height: 0.3125rem;
+			border: 2px solid #fff;
+			border-radius: 40%;
+			margin:0 10/@rem-pre;
+			opacity: 1;
+			background-color: transparent;
+			&-active{
+				background-color: @white;
+			}
+		}
+	}
 }
 

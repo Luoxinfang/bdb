@@ -6,7 +6,12 @@
 	}
 -->
 <div class="user-photo">
-	<img id="photo" src="{{ photo.url }}" alt="">
+	{% if photo.url %}
+		<img id="photo" src="{{ photo.url }}" alt="">
+	{% else %}
+		<img id="photo" src="./default.png" alt="">
+	{% endif %}
+
 	{% if !photo.notEditable %}
 	<input type="file" class="input-file" accept="image/*">
 	{% endif %}

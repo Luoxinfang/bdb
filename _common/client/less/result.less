@@ -1,0 +1,47 @@
+@import "./public/variable";
+
+.result {
+  min-height: 100%;
+  overflow: hidden;
+  .icon {
+    margin: 0 auto;
+    width: 200/@rem-pre;
+    height: 200/@rem-pre;
+    background-size: contain;
+  }
+  .txt {
+    text-align: center;
+    min-height: 400/@rem-pre;
+  }
+  .tit {
+    font-size: @fontSize1;
+    padding-bottom: 20/@rem-pre;
+  }
+  .msg {
+    font-size: @fontSize3;
+  }
+  &.success {
+    .icon {
+      background-image: url("../icon/success.png");
+    }
+    .tit {
+      color: @helpColor3;
+    }
+  }
+  &.error {
+    .icon {
+      background-image: url("../icon/error.png");
+    }
+    .tit {
+      color: @mainColor2;
+    }
+  }
+  &.warn {
+    .icon {
+      background-image: url("../icon/warn-exc.png");
+    }
+    .tit {
+      color: @helpColor2;
+    }
+  }
+}

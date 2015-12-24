@@ -12,10 +12,15 @@ module.exports = {
     var that = this;
     var file = e.target.files[0];
     var reader = new FileReader();
+    if (file.size > 1024 * 100 * 2) {
+      B.topWarn('上传的头像不能超过2M');
+      return false;
+    }
     reader.readAsDataURL(file);
     reader.onload = function () {
       that.$photo.prop('src', this.result);
       that.doUpload({
+        type: 'photo',
         name: file.name,
         data: this.result
       });
@@ -26,7 +31,8 @@ module.exports = {
     $.ajax({
       type: 'post',
       dataType: 'json',
-      url: B.server.file + '/interface/file/baseupload',
+      //url: B.server.file + '/interface/file/baseupload',
+      url: '/_common/upload/',
       data: data,
       success: function (data) {
         if (0 == data.status) {

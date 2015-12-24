@@ -17,35 +17,37 @@
   {% endhead %}
 
   {% body %}
-    <div class="page">
-			<!--页面的头部-->
-			<header class="header">
-				{% block header %}{% endblock %}
-			</header>
-      <!--工具栏-->
-      <div class="toolbar">
-        {% block toolbar %}{% endblock %}
+    <div class="wrapper">
+      <div class="page">
+        <!--页面的头部-->
+        <header class="header">
+          {% block header %}{% endblock %}
+        </header>
+        <!--工具栏-->
+        <div class="toolbar">
+          {% block toolbar %}{% endblock %}
+        </div>
+        <!--页面的内容区域-->
+        <div class="content">
+          {% block content %}{% endblock %}
+        </div>
+        <!--页面的页脚-->
+        <footer class="footer">
+          {% block footer %}{% endblock %}
+        </footer>
       </div>
-			<!--页面的内容区域-->
-      <div class="content">
-        {% block content %}{% endblock %}
+      <!--弹出框,遮罩层-->
+      <div class="overlay">
+        <div class="overlay-mask"></div>
+        {% block overlay %}{% endblock %}
       </div>
-			<!--页面的页脚-->
-			<footer class="footer">
-				{% block footer %}{% endblock %}
-			</footer>
+      <!--抽屉,面板-->
+      <div class="drawer">
+        <div class="drawer-content">
+          {% block drawer %}{% endblock %}
+        </div>
+        <div class="drawer-holder"></div>
+      </div>
     </div>
-		<!--弹出框,遮罩层-->
-		<div class="overlay">
-			<div class="overlay-mask"></div>
-			{% block overlay %}{% endblock %}
-		</div>
-		<!--抽屉,面板-->
-		<div class="drawer">
-      <div class="drawer-content">
-        {% block drawer %}{% endblock %}
-      </div>
-      <div class="drawer-holder"></div>
-		</div>
   {% endbody %}
 {% endhtml %}

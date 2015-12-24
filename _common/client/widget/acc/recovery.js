@@ -213,13 +213,18 @@ module.exports = {
       },
       success: function (data) {
         if (0 == data.status) {
-          B.alert({
-            title: data.msg,
-            icon: 'success',
-            callback: function () {
-              location.href = '/login?number=' + that.number;
-            }
-          });
+          var data = {
+            type: 'success',
+            header: {
+              title: '找回密码'
+            },
+            content: {
+              tit: '修改密码成功！',
+              msg: '3秒后自动跳转到主页...'
+            },
+            autoJump: true
+          };
+          location.replace('/_common/result?data=' + JSON.stringify(data));
         } else {
           B.topWarn(data.msg);
         }

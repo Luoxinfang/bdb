@@ -16,7 +16,7 @@ module.exports = {
 		return {
 			title: '百多宝',       //header标题
 			leftIcon: 'back',     //左侧默认返回按钮
-			leftUrl: '/',         //左侧图标默认链接
+			leftUrl: false,         //左侧图标默认链接
 			rightIcon: false,     //右侧单个图标
 			rightUrl: false,      //右侧图标或文字链接
 			rightIcons: false,    //右侧图标组

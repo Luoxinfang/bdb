@@ -9,12 +9,12 @@
 	{% require '_common:widget/store/store.less' %}
 	<form action="" id="form" onsubmit="checkForm();">
 		<div class="form store-apply">
-			<p class="tip">店铺名称（必填）<span class="error ml5" for="storeName"></span></p>
+			<p class="tip">店铺名称（已完成）<span class="error ml5" for="storeName"></span></p>
 			<input type="text" class="text" name="storeName" placeholder="请输入您的店铺名称">
 			<p class="tip tr">店铺名称不能修改</p>
-			<p class="tip mt20">上传身份证（必填）<span class="error ml5" for="storeName"></span></p>
+			<p class="tip mt20">上传身份证（已上传）<span class="error ml5" for="storeName"></span></p>
 			<a class="icon-add btn-file showActionsheet" actionsheet="actionsheet-01"></a>
-			<p class="tip mt20">上传营业执照（选填）</p>
+			<p class="tip mt20">上传营业执照（未上传）</p>
 			<a class="icon-add btn-file showActionsheet" actionsheet="actionsheet-02"></a>
 			<p class="tip mt20">主营分类（必填，最多可选3种）</p>
 			{% require '_common:widget/auction/auction.less' %}
@@ -51,12 +51,12 @@
 		</div>
 	</form>
 	{% script %}
-		require('../../widget/store/apply.js').init();
+	require('../../widget/store/apply.js').init();
 	{% endscript %}
 {% endblock %}
 
 {% block footer %}
 	<div class="footer-content">
-		<a class="btn btn-red" id="form-submit">提交申请</a>
+		<a class="btn btn-red" id="form-submit">完成</a>
 	</div>
 {% endblock %}

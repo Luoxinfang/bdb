@@ -163,9 +163,21 @@ module.exports = {
 	 * @returns {*}
 	 */
 	transList: function (params) {
-		data = server.parserData(params, draw);
+		data = server.parserData(params, cash);
 		return yog.ral(serverId, {
 			path: '/interface/cash/tradrecords',
+			data: data
+		});
+	},
+	/**
+	 * 交易详情
+	 * @param params
+	 * @returns {*}
+	 */
+	transDetail: function (params) {
+		data = server.parserData(params, cash);
+		return yog.ral(serverId, {
+			path: '/interface/cash/flowdetails',
 			data: data
 		});
 	}

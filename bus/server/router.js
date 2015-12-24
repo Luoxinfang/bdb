@@ -24,7 +24,7 @@ module.exports = function (router) {
       leftUrl: false,
       rightIcon: 'msg'
     });
-    res.render('bus/page/user/mybdb.tpl', resObj);
+    res.render('bus/page/index.tpl', resObj);
   });
   //登录
   router.get('/login', function (req, res, next) {
@@ -202,20 +202,12 @@ module.exports = function (router) {
     //resObj.header.backUrl = '/wallet';
     res.render('bus/page/order/evaluation.tpl', resObj);
   });
-  //商家端我的百多宝
-  router.get('/user', function (req, res, next) {
+  //店铺活动
+  router.get('/activity/store-activity', function (req, res, next) {
     var resObj = req.appData;
-    resObj.header.title = '我的百多宝';
-    resObj.header.leftIcon = false;
-    resObj.header.rightIcon = 'msg';
-    res.render('bus/page/user/mybdb.tpl', resObj);
-  });
-  //活动
-  router.get('/activity/activity-index', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '活动';
+    resObj.header.title = '店铺活动';
     resObj.header.tab = ['已开始', '未开始', '已介绍'];
-    res.render('bus/page/activity/activity-index.tpl', resObj);
+    res.render('bus/page/activity/store-activity.tpl', resObj);
   });
   //国庆专场
   router.get('/activity/national-day', function (req, res, next) {
@@ -228,7 +220,7 @@ module.exports = function (router) {
   router.get('/activity/bdb-activity', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '平台活动';
-    resObj.header.tab = ['已开始', '已介绍'];
+    resObj.header.tab = ['报名中', '已开始'];
     //假数据
     resObj.data = yog.require('bus/test/auction.js');
     res.render('bus/page/activity/bdb-activity.tpl', resObj);

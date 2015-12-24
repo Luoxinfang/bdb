@@ -57,6 +57,21 @@ module.exports = {
 						html.push('				<span class="fl">提现状态</span>');
 						html.push('				<span class="fr">' + drawflag[withdraw.drawflag] + '</span>');
 						html.push('			</div>');
+					} else if ('充值' == item.data('typeName')) {
+						html.push('			<div class="clearfix">');
+						html.push('				<span class="fl">充值方式</span>');
+						html.push('				<span class="fr">' + '京东支付' + '</span>');
+						html.push('			</div>');
+					} else if ('订单' == item.data('typeName')) {
+						html.push('			<div class="clearfix">');
+						html.push('				<span class="fl">订单详情</span>');
+						html.push('				<span class="fr">' + '<a href="/order/list">订单</a>' + '</span>');
+						html.push('			</div>');
+					} else if ('打赏' == item.data('typeName')) {
+						html.push('			<div class="clearfix">');
+						html.push('				<span class="fl">打赏拍品</span>');
+						html.push('				<span class="fr">' + '拍品' + '</span>');
+						html.push('			</div>');
 					}
 					html.push('		</div>');
 					html.push('	</div>');

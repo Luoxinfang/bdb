@@ -285,12 +285,12 @@
 {% block drawer %}
 	<div class="drawer-user">
 		<a class="photo" href="/user/personal">
-			{% widget '_common:widget/user/user-photo.tpl' %}
+			{% widget '_common:widget/common/photo/photo.tpl' %}
 		</a>
 
 		<p class="name">大魔王</p>
 
-		<div class="rank-wrap">{% widget '_common:widget/common/rank.tpl' %}</div>
+		<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
 	</div>
 	<div class="drawer-menu">
 		<a href="/wallet">我的钱包</a>

@@ -27,12 +27,12 @@ module.exports = {
       html.push('<span class="top-tip-content"></span>');
       html.push('</div></div>')
       if ($('.header').size()) {
-        $('.page .content').append(html.join(''));
+        $('.toolbar').append(html.join(''));
         $('.top-tip').css({
           top: $('.header').height() + 'px'
         });
       } else {
-        $('.wrapper').append(html.join(''));
+        $('.toolbar').append(html.join(''));
       }
       $dom = $('#top-tip');
     }

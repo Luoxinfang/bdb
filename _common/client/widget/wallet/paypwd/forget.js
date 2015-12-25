@@ -151,7 +151,22 @@ module.exports = {
 					},
 					success: function (data) {
 						if (data.status == 0) {
-							location.hash = '#result';
+							var data = {
+								type: 'success',
+								header: {
+									title: '修改支付密码'
+								},
+								content: {
+									tit: '支付密码修改成功！',
+									msg: '3秒后自动跳转到我的钱包...'
+								},
+								btn: {
+									href: '/wallet',
+									txt: '返回我的钱包'
+								},
+								autoJump: true
+							};
+							location.replace('/_common/result?data=' + JSON.stringify(data));
 						} else {
 							B.topWarn(data.msg);
 						}
@@ -187,7 +202,6 @@ module.exports = {
 			this.$form2.find('.password-wrap .word').removeClass('filled');
 			this.$form2.find('.password-wrap .password').val('');
 			this.$form3.hide();
-			this.$result.hide();
 		} else if (location.hash == '#step3') {
 			this.$form1.hide();
 			this.$form2.find('.password-wrap .word').removeClass('filled');
@@ -196,16 +210,6 @@ module.exports = {
 			this.$form3.find('.password-wrap .word').removeClass('filled');
 			this.$form3.find('.password-wrap .password').val('');
 			this.$form3.show();
-			this.$result.hide()
-		} else if (location.hash == '#result') {
-			this.$form1.hide();
-			this.$form2.find('.password-wrap .word').removeClass('filled');
-			this.$form2.find('.password-wrap .password').val('');
-			this.$form2.hide();
-			this.$form3.find('.password-wrap .word').removeClass('filled');
-			this.$form3.find('.password-wrap .password').val('');
-			this.$form3.hide();
-			this.$result.show();
 		} else {
 			this.$form1.show();
 			this.$form2.find('.password-wrap .word').removeClass('filled');
@@ -214,7 +218,6 @@ module.exports = {
 			this.$form3.find('.password-wrap .word').removeClass('filled');
 			this.$form3.find('.password-wrap .password').val('');
 			this.$form3.hide();
-			this.$result.hide()
 		}
 	},
 	event: function () {

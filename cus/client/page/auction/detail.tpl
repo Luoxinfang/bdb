@@ -7,6 +7,7 @@
 			<ul>
 				<li class="item">
 					<div class="banner-wrap">
+						{% set banner={showNav:false,images:data.images}; %}
 						{% widget '_common:widget/common/banner/banner.tpl' %}
 					</div>
 				</li>
@@ -103,6 +104,6 @@
 		</div>
 	{% endif %}
 	{% script %}
-		require("cus:widget/auction/auction-detail.js").init();
+	require("cus:widget/auction/auction-detail.js").init();
 	{% endscript %}
 {% endblock %}

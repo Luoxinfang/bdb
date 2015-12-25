@@ -13,7 +13,7 @@ module.exports.get = function (req, res) {
   model.getDetail(param).then(function (rs) {
     var resObj = req.appData;
     resObj.data = rs.data;
-    resObj.header.title = rs.data.activename;
+    resObj.header.title = rs.data.proname;
     resObj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
     resObj.auctionStatus = req.query.status == null ? 0 : req.query.status;
     res.render('cus/page/auction/detail.tpl', resObj);

@@ -30,7 +30,7 @@
 
 {% block content %}
 	<div class="index">
-		{% widget '_common:widget/banner/banner.tpl' %}
+		{% widget '_common:widget/common/banner/banner.tpl' %}
 		<div class="category clearfix">
 			<a href="/auction/list">
 				<i class="icon icon-01"></i><br/>

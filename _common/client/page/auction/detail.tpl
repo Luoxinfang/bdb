@@ -5,15 +5,19 @@
 {% endblock %}
 
 {% block content %}
-	{% widget '_common:widget/common/banner/banner.tpl' %}
-	{% require '_common:widget/auction/auction.less' %}
+	{% require '_common:widget/auction/detail.less' %}
+
 	<div class="auction-detail">
+		<div class="banner-wrapper">
+			{% set banner={showNav:true,images:data.images}; %}
+			{% widget '_common:widget/common/banner/banner.tpl' %}
+		</div>
 		<div class="store">
 			<div class="photo">
 				{% widget '_common:widget/common/photo/photo.tpl' %}
 			</div>
 			<a href="/store" class="name">{{ data.shopname }}</a>
-			<span class="time" data-time="{{  }}">开始时间 04:36</span>
+			<span class="time" data-time="{{ }}">开始时间 04:36</span>
 		</div>
 		<div class="desc">
 			<p>{{ data.descs }}</p>

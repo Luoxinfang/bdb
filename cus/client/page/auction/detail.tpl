@@ -6,8 +6,8 @@
 		{% if auctionStatus == 2 || auctionStatus == 3 %}
 			<ul>
 				<li class="item">
+					{{ data }}
 					<div class="banner-wrap">
-						{% set banner={showNav:false,images:data.images}; %}
 						{% widget '_common:widget/common/banner/banner.tpl' %}
 					</div>
 				</li>

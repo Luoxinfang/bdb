@@ -1,9 +1,25 @@
 {% extends '_common:page/layout.tpl' %}
 
 {% block header %}
+	{% require "_common:less/public/form.less" %}
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
 {% block content %}
-	{% widget 'cus:widget/user/check-name.tpl' %}
+	<div id="content">
+		<div class="form">
+			<ul class="form-ul">
+				<li class='form-li-input'>
+					<input type="text" id="realname" placeholder="请输入真实姓名" minlength="2" maxlength="4"/>
+				</li>
+				<li class='form-li-input'>
+					<input type="text" id="cardno" placeholder="请输入身份证号" />
+				</li>
+			</ul>
+			<a class="icon-add btn-file mt-40"></a>
+		</div>
+	</div>
+	{% script %}
+	require("cus:widget/user/check-name.js").init();
+	{% endscript %}
 {% endblock %}

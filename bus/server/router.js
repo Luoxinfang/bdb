@@ -202,13 +202,13 @@ module.exports = function (router) {
     //resObj.header.backUrl = '/wallet';
     res.render('bus/page/order/evaluation.tpl', resObj);
   });
-  //店铺活动
+  /*//店铺活动
   router.get('/activity/store-activity', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '店铺活动';
     resObj.header.tab = ['已开始', '未开始', '已介绍'];
     res.render('bus/page/activity/store-activity.tpl', resObj);
-  });
+  });*/
   //国庆专场
   router.get('/activity/national-day', function (req, res, next) {
     var resObj = req.appData;
@@ -216,26 +216,11 @@ module.exports = function (router) {
     resObj.header.tab = ['拍卖中', '未开始', '已结束'];
     res.render('bus/page/activity/national-day.tpl', resObj);
   });
-  //平台活动
-  router.get('/activity/bdb-activity', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '平台活动';
-    resObj.header.tab = ['报名中', '已开始'];
-    //假数据
-    resObj.data = yog.require('bus/test/auction.js');
-    res.render('bus/page/activity/bdb-activity.tpl', resObj);
-  });
   //添加活动
   router.get('/activity/add-activity', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '发起活动';
     res.render('bus/page/activity/add-activity.tpl',resObj);
-  });
-  //活动详情
-  router.get('/activity/detail', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '翡翠专场';
-    res.render('bus/page/activity/detail.tpl', resObj);
   });
   //地址选择
   router.get('/address/select-address', function (req, res, next) {

@@ -1,0 +1,99 @@
+//拍品详情
+@import "@{_common}/public/mixin";
+.auction-detail {
+  background: @white;
+  border-bottom: 2px solid @lineColor;
+  .banner-wrapper{
+    width: 10rem;
+    height: 370/@rem-pre;
+  }
+  .store {
+    position: relative;
+    height: 70/@rem-pre;
+    margin-top: -70/@rem-pre;
+    line-height: 70/@rem-pre;
+    padding: 0 20/@rem-pre;
+    color: @white;
+    font-size: @fontSize3;
+    background: fadeout(#000,40%);
+    z-index: 2;
+    .photo {
+      position: absolute;
+      left: 20/@rem-pre;
+      bottom: 10/@rem-pre;
+    }
+    .user-photo {
+      width: 100/@rem-pre;
+      height: 100/@rem-pre;
+    }
+    .name {
+      float: left;
+      color: @white;
+      margin-left: 110/@rem-pre;
+    }
+    .time {
+      float: right;
+    }
+  }
+  .desc {
+    padding: 22/@rem-pre 20/@rem-pre 22/@rem-pre 0;
+    margin-left: 20/@rem-pre;
+    line-height: 42/@rem-pre;
+    color: @mainColor4;
+    font-size: @fontSize3;
+    border-bottom: 1px solid @lineColor;
+    text-indent: 40/@rem-pre;
+    p {
+      max-height: 126/@rem-pre;
+      overflow: hidden;
+    }
+  }
+  .price {
+    margin: 0 20/@rem-pre;
+    height: 60/@rem-pre;
+    line-height: 60/@rem-pre;
+    .item {
+      width: 180/@rem-pre;
+      float: left;
+      margin-left: 30/@rem-pre;
+      &:first-child {
+        margin-left: 0;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 40/@rem-pre;
+        color: #36b3a4;
+        font-size: @fontSize4;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 40/@rem-pre;
+          height: 40/@rem-pre;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          left: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        &.qi:after {
+          background-image: url('../../icon/icon-qi.png');
+        }
+        &.jia:after {
+          background-image: url('../../icon/icon-jia.png');
+        }
+        &.bao:after {
+          background-image: url('../../icon/icon-bao.png');
+        }
+      }
+    }
+  }
+  .collect-cnt {
+    position: absolute;
+    top: 100/@rem-pre;
+    right: 20/@rem-pre;
+  }
+}

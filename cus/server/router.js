@@ -141,8 +141,10 @@ module.exports = function (router) {
   });
 
   //拍品-------------------
-  //详情
-  router.route('/auction/detail/:id').get(router.action('auction/detail').get)
+  //拍卖列表
+  router.route('/auction/activity/:id').get(router.action('auction/activity').get);
+  //拍品详情
+  router.route('/auction/detail/:id').get(router.action('auction/detail').get);
   //
 
 

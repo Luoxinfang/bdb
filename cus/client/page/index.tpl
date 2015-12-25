@@ -5,12 +5,27 @@
 	{% require 'cus:widget/index/order.js' %}
 {% endblock %}
 
-{% block overlay %}
-
-{% endblock %}
-
 {% block header %}
 	{% widget '_common:widget/common/header/header-top.tpl' %}
+{% endblock %}
+{% block drawer %}
+	<div class="drawer-user">
+		<a class="photo" href="/user/personal">
+			{% set photo = {notEditable : true, url:user.imgurl} %}
+			{% widget '_common:widget/common/photo/photo.tpl' %}
+		</a>
+		{% if user %}
+			<p class="name">{{ user.username }}</p>
+			<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
+		{% endif %}
+	</div>
+	<div class="drawer-menu">
+		<a href="/wallet">我的钱包</a>
+		<a href="/order">我的订单</a>
+		<a href="javascript:void(0);" class="">穿越到卖家版</a>
+		<a href="/sys-settings">系统设置</a>
+		<a href="javascript:void(0);" class="logout">退出登陆</a>
+	</div>
 {% endblock %}
 
 {% block content %}
@@ -42,7 +57,9 @@
 			<div class="content clearfix">
 				<div class="fl">
 					<div class="col col-1">
-						<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						<a href="/auction/detail/10012">
+							<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
+						</a>
 
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>

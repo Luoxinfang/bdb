@@ -60,7 +60,6 @@
 						<a href="/auction/detail/10012">
 							<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
 						</a>
-
 						<div class="d-1">
 							<p class="s-1">百多宝蓝宝石专场</p>
 						</div>

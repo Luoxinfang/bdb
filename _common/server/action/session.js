@@ -26,7 +26,7 @@ module.exports.post = function (req, res, next) {
     yog.log.fatal(error);
   });
 };
-
+//切换账号
 module.exports.put = function (req, res, next) {
 
 };

@@ -21,5 +21,7 @@
 		</div>
 		<a class="collect-cnt icon-collect-cnt">423</a>
 	</div>
-	{% block auctionDialog %}{% endblock %}
+	{% block auctionDialog %}
+
+	{% endblock %}
 {% endblock %}

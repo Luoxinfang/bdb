@@ -12,8 +12,8 @@ module.exports.get = function (req, res) {
   };
   model.getDetail(param).then(function (rs) {
     var resObj = req.appData;
-    resObj.header.title = '千年古玉';
-    resObj.header.leftUrl = '/auction/list';
+    resObj.data = rs.data;
+    resObj.header.title = rs.data.activename;
     resObj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
     resObj.auctionStatus = req.query.status == null ? 0 : req.query.status;
     res.render('cus/page/auction/detail.tpl', resObj);

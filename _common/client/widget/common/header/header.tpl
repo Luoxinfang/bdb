@@ -1,4 +1,4 @@
-<div class="header-wrap">
+<div class="header header-wrap">
 	<div class="header-content">
 		{% if header.leftIcon %}
 			{% if header.leftUrl %}

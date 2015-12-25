@@ -50,5 +50,14 @@ module.exports = {
 			path: '/interface/user/forgetpwd',
 			data: data
 		});
+	},
+	//资料是否已经完善(是否实名认证)
+	complete: function (data){
+		data = server.parserQuery(data, 'user');
+		return yog.ral(serverId, {
+			method: 'GET',
+			path: '/interface/user/complete',
+			query: data
+		});
 	}
 };

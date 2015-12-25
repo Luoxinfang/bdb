@@ -1,5 +1,5 @@
 {% require '_common:widget/common/header/header.less' %}
-<div class="header-top">
+<div class="header header-top">
 	<div class="header-content">
 		{% if header.leftIcon == 'back' %}
 			<a href="javascript:history.back();" data-role="btn-back"

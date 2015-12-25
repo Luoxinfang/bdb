@@ -18,6 +18,7 @@
     "express-session": "^1.9.3",
     "lodash": "3.10.1",
     "md5": "^2.0.0",
+    "moment": "^2.10.6",
     "yog2-kernel": "0.3.6"
   },
   "devDependencies": {

@@ -7,16 +7,15 @@ module.exports = {
 	init: function () {
 		this.event();
 	},
-	//修改用户个人信息
+	//报名参加平台活动
 	updateData: function () {
-
-		//修改个人信息
+		var id =	$('#activityid').val();
 		$.ajax({
 			type: 'post',
 			dataType: 'json',
 			url: '/_common/activity/join',
 			data: {
-
+				id:id
 			},
 			success: function (data) {
 				if (0 == data.status) {

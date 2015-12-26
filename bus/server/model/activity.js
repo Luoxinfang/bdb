@@ -44,22 +44,13 @@ module.exports = {
 			query: query
 		});
 	},
-	//获取店铺活动详情
-	getShopDetail: function (data) {
-		var query = server.parserQuery(data, service);
-		return yog.ral(serverId, {
-			method:'GET',
-			path: '/interface/activity/detail',
-			query: query
-		});
-	},
-	//参加店铺活动
-	joinBdb: function (data) {
+	//发起店铺活动
+	addStoreActivity: function (data) {
 		var query = server.parserData(data, service);
 		return yog.ral(serverId, {
-			path: '/interface/activity/join',
+			path: '/interface/shop/activity/create',
 			data: query
 		});
-	},
+	}
 
 };

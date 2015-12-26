@@ -11,7 +11,7 @@
 	{% require '_common:widget/activity/detail.less' %}
 	{% require '_common:less/public/form.less' %}
 	<div class="info-group">
-		<div class="li texts">活动描述：XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX。</div>
+		<div class="li texts">活动描述：{{ detailInfo.descs }}</div>
 		<div class="li">
 			<span class="fl">送拍保证金</span>
 			<span class="fr color2">￥{{ detailInfo.joinmoney }}</span>
@@ -24,7 +24,7 @@
 	<div class="info-group mt20">
 		<div class="li">
 			<span class="fl">拍品类型</span>
-			<span class="fr">翡翠</span>
+			<span class="fr">{{ detailInfo.auctiontype }}</span>
 		</div>
 		<div class="li">
 			<span class="fl">起拍价</span>
@@ -36,13 +36,13 @@
 		</div>
 		<div class="li">
 			<span class="fl">打赏方式</span>
-			<span class="fr">竞拍保证金等额打赏</span>
+			<span class="fr">{{ detailInfo.rewardtype }}</span>
 		</div>
 	</div>
 	<div class="info-group mt20">
 		<div class="li">
 			<span class="fl">报名截止日期</span>
-			<span class="fr">2015-10-07 18：00</span>
+			<span class="fr">{{ detailInfo.enrollovertime }}</span>
 		</div>
 		<div class="li">
 			<span class="fl">开始时间</span>
@@ -53,9 +53,12 @@
 			<span class="fr">{{ detailInfo.endtime }}</span>
 		</div>
 	</div>
-	<div class="bottom">
-		<a class="btn btn-red" id="btn-join">报名参加</a>
-	</div>
+	<input id="activityid" style="display: none" value="{{ detailInfo.id }}">
+	{% if detailInfo.type == '0' && detailInfo.status == '0' %}
+		<div class="bottom">
+			<a class="btn btn-red" id="btn-join">报名参加</a>
+		</div>
+	{% endif %}
 	{% block bus %}
 	{% endblock %}
 {% endblock %}

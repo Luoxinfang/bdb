@@ -1,10 +1,10 @@
 
 <div class="header-tab tab-{{ header.tab.length }}">
 	{% for item in header.tab %}
-		{% if loop.index==1 %}
-			<a class="on">{{ item }}</a>
+		{% if item.default %}
+			<a class="on" id="{{ item.id }}">{{ item.val }}</a>
 		{% else %}
-			<a>{{ item }}</a>
+			<a id="{{ item.id }}">{{ item.val }}</a>
 		{% endif %}
 	{% endfor %}
 </div>

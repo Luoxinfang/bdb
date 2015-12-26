@@ -14,7 +14,7 @@
 		</a>
 		<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
 		<i class="icon-22 icon-gold"></i>
-		<i class="icon-22 icon-7day"></i>
+		<i class="icon-22 icon-7days"></i>
 		<i class="icon-22 icon-pei"></i>
 	</div>
 	{% require '_common:widget/auction/auction.less' %}
@@ -31,8 +31,8 @@
 			</a>
 			<a href="/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr icon-22 icon-pei"></i>
-				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-free-post"></i>
+				<i class="fr icon-22 icon-7days"></i>
 				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
@@ -46,8 +46,8 @@
 			</a>
 			<a href="/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr icon-22 icon-pei"></i>
-				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-free-post"></i>
+				<i class="fr icon-22 icon-7days"></i>
 				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
@@ -61,8 +61,8 @@
 			</a>
 			<a href="/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr icon-22 icon-pei"></i>
-				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-free-post"></i>
+				<i class="fr icon-22 icon-7days"></i>
 				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
@@ -76,8 +76,8 @@
 			</a>
 			<a href="/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr icon-22 icon-pei"></i>
-				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-free-post"></i>
+				<i class="fr icon-22 icon-7days"></i>
 				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
@@ -91,8 +91,8 @@
 			</a>
 			<a href="/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr icon-22 icon-pei"></i>
-				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-free-post"></i>
+				<i class="fr icon-22 icon-7days"></i>
 				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>
@@ -106,8 +106,8 @@
 			</a>
 			<a href="/store" class="store mt10">
 				<span>小唐的店铺</span>
-				<i class="fr icon-22 icon-pei"></i>
-				<i class="fr icon-22 icon-7day"></i>
+				<i class="fr icon-22 icon-free-post"></i>
+				<i class="fr icon-22 icon-7days"></i>
 				<i class="fr icon-22 icon-gold"></i>
 			</a>
 			<a href="" class="tlt">满绿翡翠吊坠</a>

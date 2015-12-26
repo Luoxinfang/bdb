@@ -8,7 +8,17 @@ var md5 = require('md5');
 var _ = require('lodash');
 var orderModel = yog.require('_common/model/order.js');
 var tip = yog.require('_common/lib/tip.js');
-
+/**
+ * 订单状态,'orderstatus+paystatus+sendflag+receiveflag+pointflag'
+ * '订单状态+支付状态+发货状态+收货状态+评论状态'
+ */
+var orderStatus = {
+	'00000': '待付款',
+	'01000': '待发货',
+	'01100': '待收货',
+	'11110': '待评价',
+	'11111': '交易完成'
+};
 module.exports = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
@@ -17,9 +27,16 @@ module.exports = function (req, res, next) {
 	};
 	var resObj = req.appData;
 	resObj.header.title = '我的订单';
-	resObj.header.tab = ['全部', '待付款', '待发货', '待收货', '退款中'];
+	resObj.header.tab = [
+		{val: '待付款', id: "", default: true},
+		{val: '待发货', id: ""},
+		{val: '待收货', id: ""},
+		{val: '已收货', id: ""},
+		{val: '退货中', id: ""},
+		{val: '已关闭', id: ""}];
 	orderModel.query(params).then(function (rs) {
 		if (0 == rs.status) {
+			resObj.orderStatus = orderStatus;
 			resObj.orderList = rs.list;
 			res.render('cus/page/order/list.tpl', resObj);
 		} else {

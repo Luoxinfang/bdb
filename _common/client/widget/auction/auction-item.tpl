@@ -8,8 +8,8 @@
 		</a>
 		<a href="/store" class="store mt10">
 			<span>{{ item.name }}</span>
-			<i class="fr icon-22 icon-pei"></i>
-			<i class="fr icon-22 icon-7day"></i>
+			<i class="fr icon-22 icon-free-post"></i>
+			<i class="fr icon-22 icon-7days"></i>
 			<i class="fr icon-22 icon-gold"></i>
 		</a>
 		<a href="/auction/detail?status={{ item.status }}" class="tlt">{{ item.shop }}</a>

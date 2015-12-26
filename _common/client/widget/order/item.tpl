@@ -1,9 +1,10 @@
 {% require '_common:widget/order/order.less' %}
 <div class="order-item">
 	<div class="line1">
-		<span>成交日期{{ item.date }}</span>
+		<span>成交日期{{ order.createtime }}</span>
     <span>
-      {% if item.status == 'dfh' %}
+	    {{ order.orderstatus }}
+      {#{% if item.status == 'dfh' %}
         待发货
       {% elseif item.status == 'dsh' %}
         待收货
@@ -19,19 +20,23 @@
         已完成
       {% elseif item.status == 'tkz' %}
         退款中
-      {% endif %}
+      {% endif %}#}
     </span>
-		<a href="/order/detail?status={{ item.status }}">订单详情</a>
+		<a href="/order/detail/{{ order.orderno }}">订单详情</a>
 	</div>
 	<div class="line2">
 		<div class="order-img">
 			<img src="icon/demo.png"/>
 		</div>
 		<div class="order-content">
-			<p>{{ item.name }}</p>
+			<p>order.name</p>
+			<p>order.money</p>
+			<p>order.num</p>
+			<p>实付款:<span class="fc-1">￥{{ order.ordermoney }}</span></p>
+			{#<p>{{ item.name }}</p>
 			<p>￥{{ item.money }}</p>
 			<p>×{{ item.num }}</p>
-			<p>实付款:<span class="fc-1">￥{{ item.pay }}</span></p>
+			<p>实付款:<span class="fc-1">￥{{ item.pay }}</span></p>#}
 		</div>
 		<div class="order-small-icon">
 			<span class="icon-jpmj"></span>
@@ -40,7 +45,8 @@
 		</div>
 	</div>
 	<div class="line3">
-		{% if item.status == 'dfh' && data.form == 'bus' %}
+		<a href="/order/detail/{{ order.orderno }}" class="btn btn-red btn-w135 btn-h70 fs-3">{{ order.orderstatus }}</a>
+		{#{% if item.status == 'dfh' && data.form == 'bus' %}
 			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">确定发货</a>
 		{% endif %}
 		{% if item.status == 'dfh' && data.form == 'cus' %}
@@ -66,6 +72,6 @@
 		{% endif %}
 		{% if item.status == 'ywc' %}
 			<a href="/order/detail?status={{ item.status }}" class="btn btn-white btn-w135 btn-h70 fs-3">申请售后</a>
-		{% endif %}
+		{% endif %}#}
 	</div>
 </div>

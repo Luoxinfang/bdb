@@ -26,9 +26,9 @@ module.exports.post = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
 		money: req.body.money,
-		type: req.body.type || 1,
-		code: req.body.code || '网银',
-		couponNo: req.body.couponNo || ''
+		type: req.body.type || 4,
+		code: req.body.code || 2,
+		couponNo: req.body.couponNo
 	};
 	cashModel.recharge(params).then(function (rs) {
 		res.json(rs);

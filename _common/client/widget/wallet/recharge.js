@@ -1,5 +1,7 @@
 /**
- * Created by chenzhenhua on 2015/12/21.
+ * @author chenzhenhua
+ * @createTime 2015/12/21
+ * @description 处理充值页面的路由
  */
 
 var B = require('_common:js/bdb/core.js');
@@ -21,11 +23,13 @@ module.exports = {
 			dataType: 'json',
 			url: '/_common/cash/recharge',
 			data: {
-				money: 100.00
+				money: 100.00,
+				type: 4,
+				code: 2
 			},
 			success: function (data) {
 				if (0 == data.status) {
-					location.href = data.url;
+					console.log('>>>>>>>>>>----------',data,'----------<<<<<<<<<<');
 				} else {
 					var msg = data.msg || '服务器异常，请稍后再试';
 					$('#pay').removeClass('btn-disabled');

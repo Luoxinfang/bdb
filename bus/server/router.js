@@ -169,7 +169,7 @@ module.exports = function (router) {
     //假数据
     resObj.data = yog.require('bus/test/order-detail.js');
     resObj.header.leftUrl = '/bus/order';
-    res.render('bus/page/order/order-detail.tpl', resObj);
+    res.render('bus/page/order/detail.tpl', resObj);
   });
   //订单管理 ——已完成
   router.get('/completed', function (req, res, next) {

@@ -94,14 +94,6 @@ module.exports = function (router) {
     })
     res.render('cus/page/user/check-name.tpl', resObj);
   });
-  //订单管理 ——所有订单
-  router.get('/order', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '我的订单';
-    resObj.header.tab = ['全部', '待付款', '待发货', '待收货', '退款中'];
-    resObj.data = yog.require('cus/test/order.js');
-    res.render('cus/page/order/index.tpl', resObj);
-  });
   //订单详情
   router.get('/order/detail', function (req, res, next) {
     var resObj = req.appData;
@@ -227,6 +219,7 @@ module.exports = function (router) {
     resObj.header.title = '申请平台介入';
     res.render('cus/page/user/application-bdb.tpl', resObj);
   });
+
   //>>>>>>>>>>wallet(我的钱包)----------
   //wallet:cus/action/wallet/index.js
   //wallet/bank:cus/action/wallet/bank/index.js
@@ -238,4 +231,8 @@ module.exports = function (router) {
   });
   //wallet/trans-list:ucs/action/wallet/trans-list
   //----------wallet(我的钱包)<<<<<<<<<<
+
+	//>>>>>>>>>>order(订单)----------
+	//order:cus/action/order/index.js
+	//----------order(订单)<<<<<<<<<<
 };

@@ -9,6 +9,6 @@
 
 {% block content %}
     <div id="content">
-        {% widget '_common:widget/order/order-list.tpl' %}
+        {% widget '_common:widget/order/list.tpl' %}
     </div>
 {% endblock %}

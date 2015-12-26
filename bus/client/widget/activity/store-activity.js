@@ -9,12 +9,19 @@ module.exports = {
 	},
 
 	event: function () {
-		$("#registration").click(function(){
+		$("#notStart").click(function(){
 			$("#start").removeClass('on');
+			$("#introduced").removeClass('on');
+			$(this).addClass('on');
+		});
+		$("#introduced").click(function(){
+			$("#start").removeClass('on');
+			$("#notStart").removeClass('on');
 			$(this).addClass('on');
 		});
 		$("#start").click(function(){
-			$("#registration").removeClass('on');
+			$("#notStart").removeClass('on');
+			$("#introduced").removeClass('on');
 			$(this).addClass('on');
 		});
 	}

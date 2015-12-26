@@ -5,15 +5,15 @@
 {% endblock %}
 
 {% block content %}
-	{% require '_common:widget/auction/detail.less' %}
-
-	<div class="auction-detail">
+	{% require '_common:widget/auction/detail/detail.less' %}
+	<div class="auction-detail" data-auction-id="{{ data.id }}">
 		<div class="banner-wrapper">
 			{% set banner={showNav:true,images:data.images}; %}
 			{% widget '_common:widget/common/banner/banner.tpl' %}
 		</div>
 		<div class="store">
 			<div class="photo">
+				{% set photo = {notEditable : true, url:data.shopphoto} %}
 				{% widget '_common:widget/common/photo/photo.tpl' %}
 			</div>
 			<a href="/store" class="name">{{ data.shopname }}</a>
@@ -32,4 +32,8 @@
 	{% block auctionDialog %}
 
 	{% endblock %}
+	{% script %}
+		require('_common:widget/auction/detail/detail.js').init();
+	{% endscript %}
 {% endblock %}
+

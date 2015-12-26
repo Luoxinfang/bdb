@@ -25,7 +25,7 @@ module.exports = {
 			rightFilter: false,   //右侧筛选数组
 			nav: [{val: '系统消息', url: '/user/sys-message', default: true},
 				{val: '用户消息', url: '/user/user-message', default: false}],    //头部nav导航组件
-			tab: ['全部', '进行中', '未开始'],  //头部tab数组
+			tab: [{val: '全部',default:true,id:'all'},{val: '进行中',default:false,id:'underway'},{val: '未开始',default:false,id:'notStart'}],  //头部tab数组
 			settings: false
 		};
 	},

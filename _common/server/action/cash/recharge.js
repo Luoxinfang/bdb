@@ -28,7 +28,9 @@ module.exports.post = function (req, res, next) {
 		money: req.body.money,
 		type: req.body.type || 4,
 		code: req.body.code || 2,
-		couponNo: req.body.couponNo
+		couponNo: req.body.couponNo,
+		successUrl: req.body.successUrl,
+		failUrl: req.body.failUrl
 	};
 	cashModel.recharge(params).then(function (rs) {
 		res.json(rs);

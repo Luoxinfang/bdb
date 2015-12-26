@@ -23,13 +23,19 @@ module.exports = {
 			dataType: 'json',
 			url: '/_common/cash/recharge',
 			data: {
-				money: 100.00,
+				money: parseFloat($('input[name="money"]').val()),
 				type: 4,
-				code: 2
+				code: 2,
+				successUrl: location.host+'/_common/result?data={"type":"success","header":{"title":"充值"},"content":{"tit":"支付成功","msg":"充值,3秒后自动跳转到充值记录..."},"btn":{"href":"/wallet/trans-list?tradeType=6001","txt":"充值记录"},"autoJump":true}',
+				failUrl: location.host+'/_common/result?data={"type":"error","header":{"title":"充值"},"content":{"tit":"支付失败","msg":"抱歉，支付失败，3秒后自动返回到充值页面..."},"btn":{"href":"/wallet/recharge","txt":"继续充值"},"autoJump":true}'
 			},
 			success: function (data) {
 				if (0 == data.status) {
-					console.log('>>>>>>>>>>----------',data,'----------<<<<<<<<<<');
+					for(var key in data.data){
+						$('#payForm').append('<input type="hidden" name="'+key+'" value="'+data.data[key]+'">');
+					}
+					$('#payForm').attr('action',data.url);
+					$('#payForm').submit();
 				} else {
 					var msg = data.msg || '服务器异常，请稍后再试';
 					$('#pay').removeClass('btn-disabled');

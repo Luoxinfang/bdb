@@ -1,5 +1,5 @@
 {% require '_common:widget/common/header/header.less' %}
-<div class="header header-top">
+<div class="header-top">
 	<div class="header-content">
 		{% if header.leftIcon == 'back' %}
 			<a href="javascript:history.back();" data-role="btn-back"
@@ -13,9 +13,11 @@
 			<div class="right s-gup">
 				{% for item in header.rightIcons %}
 					{% if item.icon=='collect' %}
-						<a {% if item.url %}href="{{ item.url }}" {% endif %}class="icon-60 icon-{{ item.icon }} " id="collect"></a>
+						<a {% if item.url %}href="{{ item.url }}" {% endif %}
+							 class="icon-60 icon-{{ item.icon }} " id="collect"></a>
 					{% else %}
-						<a {% if item.url %}href="{{ item.url }}" {% endif %}class="icon-60 icon-{{ item.icon }}" id="share"></a>
+						<a {% if item.url %}href="{{ item.url }}" {% endif %}
+							 class="icon-60 icon-{{ item.icon }}" id="share"></a>
 					{% endif %}
 				{% endfor %}
 			</div>

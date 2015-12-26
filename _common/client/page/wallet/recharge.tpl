@@ -16,6 +16,7 @@
 			<a id="pay" class="btn btn-red btn-disabled">去付款</a>
 		</div>
 	</div>
+	<form action="" method="POST" id="payForm"></form>
 	{% script %}
 	require('_common:widget/wallet/recharge.js').init();
 	{% endscript %}

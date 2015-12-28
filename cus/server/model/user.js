@@ -9,7 +9,7 @@ var serverId = server.getServerId();
 
 module.exports = {
   //获取用户个人信息
-  getData: function (data) {
+  getInfo: function (data) {
     var query = server.parserQuery(data, 'user');
     return yog.ral(serverId, {
       method:'GET',

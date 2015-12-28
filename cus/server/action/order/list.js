@@ -8,37 +8,68 @@ var md5 = require('md5');
 var _ = require('lodash');
 var orderModel = yog.require('_common/model/order.js');
 var tip = yog.require('_common/lib/tip.js');
-/**
- * 订单状态,'orderstatus+paystatus+sendflag+receiveflag+pointflag'
- * '订单状态+支付状态+发货状态+收货状态+评论状态'
- */
 var orderStatus = {
-	'00000': '待付款',
-	'01000': '待发货',
-	'01100': '待收货',
-	'11110': '待评价',
-	'11111': '交易完成'
+	'dfk': { // 待付款
+		orderStatus: '0',
+		payStatus: '0'
+	},
+	'dfh': { // 待发货
+		orderStatus: '0',
+		payStatus: '1',
+		sendFlag: '0',
+		revokeStatus: '0'
+	},
+	'dsh': { // 待收货
+		orderStatus: '0',
+		payStatus: '1',
+		sendFlag: '1',
+		receiveFlag: '0',
+		revokeStatus: '0'
+	},
+	'ysh': { // 已收货
+		orderStatus: '1',
+		payStatus: '1',
+		sendFlag: '1',
+		receiveFlag: '1',
+		revokeStatus: '0'
+	},
+	'thz': { // 退货中
+		orderStatus: '0',
+		payStatus: '1',
+		revokeStatus: '1'
+	},
+	'ygb': { // 已关闭
+		orderStatus: '2'
+	}
 };
 module.exports = function (req, res, next) {
-	var params = {
+	var status = 'undefined' == typeof req.query.status ? 'dfk' : req.query.status;
+	var params = _.extend({
 		token: req.session.user.token,
 		page: req.query.page || '1',
 		pageSize: req.query.pageSize || '8'
-	};
+	}, orderStatus[status]);
 	var resObj = req.appData;
 	resObj.header.title = '我的订单';
-	resObj.header.tab = [
-		{val: '待付款', id: "", default: true},
-		{val: '待发货', id: ""},
-		{val: '待收货', id: ""},
-		{val: '已收货', id: ""},
-		{val: '退货中', id: ""},
-		{val: '已关闭', id: ""}];
+	resObj.header.tab = {
+		cur: status,
+		list: [
+			{val: '待付款', id: 'dfk'},
+			{val: '待发货', id: 'dfh'},
+			{val: '待收货', id: 'dsh'},
+			{val: '已收货', id: 'ysh'},
+			{val: '退货中', id: 'thz'},
+			{val: '已关闭', id: 'ygb'}
+		]
+	};
 	orderModel.query(params).then(function (rs) {
 		if (0 == rs.status) {
-			resObj.orderStatus = orderStatus;
 			resObj.orderList = rs.list;
-			res.render('cus/page/order/list.tpl', resObj);
+			if ('page' == req.query.type) {
+				res.render('_common/widget/order/list.tpl', resObj);
+			} else {
+				res.render('cus/page/order/list.tpl', resObj);
+			}
 		} else {
 			var error = _.extend({
 				header: resObj.header

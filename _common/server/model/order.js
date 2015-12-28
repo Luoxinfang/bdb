@@ -20,5 +20,18 @@ module.exports = {
 			path: '/interface/order/query',
 			query: data
 		});
+	},
+	/**
+	 * 查询订单详情
+	 * @param params
+	 * @returns {*}
+	 */
+	queryDetail: function (params) {
+		data = server.parserQuery(params, order);
+		return yog.ral(serverId, {
+			method: 'GET',
+			path: '/interface/order/detail/query',
+			query: data
+		});
 	}
 };

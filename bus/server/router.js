@@ -95,19 +95,15 @@ module.exports = function (router) {
     res.render('bus/page/user/bind-account-pwd.tpl', resObj);
   });
   //修改密码
-  router.get('/change-pwd', function (req, res, next) {
+  router.get('/user/change-pwd', function (req, res, next) {
     var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '修改密码'
-    });
+    resObj.header.title =  '修改密码'
     res.render('bus/page/user/change-pwd.tpl', resObj);
   });
   //更换手机号 —— 验证
-  router.get('/change-tel-info', function (req, res, next) {
+  router.get('/user/change-tel-info', function (req, res, next) {
     var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '更换手机号'
-    });
+    resObj.header.title = '更换手机号'
     res.render('bus/page/user/change-tel-info.tpl', resObj);
   });
   //更换手机号 —— 输入新号码
@@ -283,11 +279,9 @@ module.exports = function (router) {
   //安全设置
   router.get('/settings/safety-settings', function (req, res, next) {
     var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '系统设置',
-      settings: ['修改密码', '更换手机号']
-    });
-    res.render('bus/page/settings/sys-settings.tpl', resObj);
+    resObj.header.title = '系统设置';
+    resObj.header.settings = ['修改密码', '更换手机号']
+    res.render('bus/page/settings/safety-settings.tpl', resObj);
   });
   //推送设置
   router.get('/settings/push-settings', function (req, res, next) {

@@ -54,7 +54,7 @@
 
 						<div class="w-1">客服中心</div>
 					</a>
-					<a href=""><i class="icon icon-09"></i>
+					<a href="/settings/sys-settings"><i class="icon icon-09"></i>
 
 						<div class="w-1">系统设置</div>
 					</a>

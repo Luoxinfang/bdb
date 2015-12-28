@@ -1,25 +1,20 @@
 {% extends '_common:page/layout.tpl' %}
 {% block head %}
-	{% require '_common:widget/activity/activity-index.less' %}
+	{% require "_common:js/plugin/dropload/dropload.less" %}
+	{% require "_common:js/plugin/dropload/dropload.js" %}
 {% endblock %}
 
 {% block header %}
+	{% require '_common:widget/activity/activity-index.less' %}
 	{% widget '_common:widget/common/header/header.tpl' %}
 	{% widget '_common:widget/common/header/header-tab.tpl' %}
 {% endblock %}
 
 {% block content %}
-	<div class="activity-list ">
-		{% for item in activityList %}
-			<div class="activity-item clearfix">
-				<a href="/activity/detail?activename={{ item.activename }}&activityid={{ item.id }}">
-					<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
-				</a>
-				<div class="z-1">
-					<p class="s-1">{{ item.activename }}</p>
-				</div>
-			</div>
-		{% endfor %}
+	<div id="activity-list" class="pb10">
+		<div class="activity-list clearfix" data-page="1">
+			{% widget '_common:widget/activity/activity-list.tpl' %}
+		</div>
 	</div>
 	{% block bus %}
 	{% endblock %}

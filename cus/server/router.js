@@ -144,7 +144,7 @@ module.exports = function (router) {
   router.get('/store', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '小唐的店铺';
-    resObj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
+    resObj.header.rightIcons = [{icon: 'subscribe'}, {icon: 'share'}];
     resObj.banner = [{imgUrl: 'http://img3.imgtn.bdimg.com/it/u=1703259431,1215286552&fm=15&gp=0.jpg'}];
     res.render('cus/page/store.tpl', resObj);
   });

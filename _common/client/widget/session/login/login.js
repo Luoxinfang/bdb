@@ -53,12 +53,12 @@ module.exports = {
         if (0 == data.status) {
           window.location.replace(data.referrer || '/');
         } else {
-          var msg = data.msg || '服务器异常，请稍后再试';
+          var msg = data.msg || B.tips.networkError;
           B.topWarn(msg);
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
-        $tip.html('服务器异常，请稍后再试').show();
+        B.topWarn(B.tips.networkError);
       }
     });
   },

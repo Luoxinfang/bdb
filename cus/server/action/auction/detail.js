@@ -1,5 +1,5 @@
 /**
- * @description
+ * @description 拍品详情
  */
 
 var _ = require('lodash');
@@ -15,7 +15,10 @@ module.exports.get = function (req, res) {
     resObj.data = rs.data;
     resObj.data.id = param.proCode;//回传id
     resObj.header.title = rs.data.proname;
-    resObj.header.rightIcons = [{icon: 'collect'}, {icon: 'share'}];
+    resObj.header.rightIcons = [
+      {icon: 'collect',status: 'on'},
+      {icon: 'share'}
+    ];
     resObj.auctionStatus = req.query.status == null ? 0 : req.query.status;
     res.render('cus/page/auction/detail.tpl', resObj);
   });

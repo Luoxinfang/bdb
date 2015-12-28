@@ -30,7 +30,9 @@
 
 {% block content %}
 	<div class="index">
-		{% widget '_common:widget/common/banner/banner.tpl' %}
+		<div class="banner-wrapper">
+			{% widget '_common:widget/common/banner/banner.tpl' %}
+		</div>
 		<div class="category clearfix">
 			<a href="/auction/list">
 				<i class="icon icon-01"></i><br/>
@@ -57,7 +59,7 @@
 			<div class="content clearfix">
 				<div class="fl">
 					<div class="col col-1">
-						<a href="/auction/detail/10012">
+						<a href="/auction/activity/10012">
 							<img src="http://img5.imgtn.bdimg.com/it/u=261850186,726264967&fm=21&gp=0.jpg" alt="">
 						</a>
 						<div class="d-1">

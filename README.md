@@ -19,7 +19,7 @@
 		http://expressjs.com/zh/
 		
 		yog2
-		https://github.com/fex-********team/yog2
+		https://github.com/fex-team/yog2
 		
 		模板引擎
 		http://paularmstrong.github.io/swig/docs/

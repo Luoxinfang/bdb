@@ -35,6 +35,6 @@ module.exports = {
 		});
 	},
 	event: function () {
-		$(".header").on('click', "#collect", this.attention.bind(this));
+		$(".header").on('click', "#subscribe", this.attention.bind(this));
 	}
 };

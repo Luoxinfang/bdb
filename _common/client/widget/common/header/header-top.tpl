@@ -14,7 +14,7 @@
 				{% for item in header.rightIcons %}
 					{% if item.icon=='collect' %}
 						<a {% if item.url %}href="{{ item.url }}" {% endif %}
-							 class="icon-60 icon-{{ item.icon }} " id="collect"></a>
+							 class="icon-60 icon-{{ item.icon }} {{ item.status }}" id="collect"></a>
 					{% else %}
 						<a {% if item.url %}href="{{ item.url }}" {% endif %}
 							 class="icon-60 icon-{{ item.icon }}" id="share"></a>

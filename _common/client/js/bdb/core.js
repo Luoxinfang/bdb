@@ -8,8 +8,8 @@ module.exports = {
     networkError: '网络错误，请稍后再试'
   },
   //服务器配置
-  server:{
-    file:'http://file.bdbvip.com:8080'
+  server: {
+    file: 'http://file.bdbvip.com:8080'
 
   },
   /**
@@ -219,8 +219,37 @@ module.exports = {
     $('.drawer-holder').on('click', function () {
       $('body').removeClass('with-drawer');
     });
-/*    setTimeout(function () {
+    /*    setTimeout(function () {
      $('.drawer,.page').removeClass('ts8');
      }, 800);*/
   },
+  //把毫秒转成刻度时间
+  milliseconds2time: function (ms) {
+    var day = 0;
+    var hours = 0;
+    var minute = 0;
+    var second = 0;
+    var string = '';
+    second = parseInt(ms / 1000);
+    if (second > 59) {
+      minute = (second - 60) / 60;
+      second = 59;
+    }
+    string = '00:' + second;
+    if (minute > 59) {
+      hours = (minute - 60) / 60;
+      minute = 59;
+      string = minute + ':' + second;
+    }
+    if (hours > 23) {
+      day = (hours - 24) / 24;
+      hours = 23;
+      string = hours + '时' + minute + '分';
+    }
+    if (day > 0) {
+      day = parseInt(day);
+      string = day + '天 ' + hours + '时';
+    }
+    return string;
+  }
 };

@@ -3,6 +3,7 @@
  * @description 拍品详情
  */
 var B = require('_common:js/bdb/core.js');
+var moment = require('_common:js/aid/moment.js');
 module.exports = {
   init: function () {
     this.$collect = $('#collect');
@@ -10,15 +11,47 @@ module.exports = {
     this.$dialog = $('.auction-dialog');
     this.$countdown = $('#countdown');
     this.id = this.$page.data('auctionId');
+    this.pageSize = 10;//默认页大小
+    this.pageNum = 1;//默认页码
     this.getAuctionStatus();
+    this.getBidList(this.pageSize, this.pageNum);
     this.event();
   },
-  //更新倒计时
-  updateCountdown:function(time){
-    var time = B.format
-    setInterval(function () {
+  //获取出价列表
+  getBidList: function () {
+    var that = this;
+    $.ajax({
+      type: 'get',
+      dataType: 'json',
+      url: '/_common/auction/bid',
+      data: {
+        flag: '00',
+        page: that.pageNum,
+        proCode: that.id,
+        pageSize: that.pageSize
+      },
+      success: function (data) {
 
-    },1000);
+
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        B.topWarn(B.tips.networkError);
+      }
+    });
+  },
+  //更新倒计时
+  updateCountdown: function (milliseconds) {
+    var time = B.milliseconds2time(milliseconds);
+    this.$countdown.text(time);
+    var runner = setInterval(function () {
+      milliseconds -= 1000;
+      var time = B.milliseconds2time(milliseconds);
+      this.$countdown.text(time);
+      if (milliseconds == 0) {
+        clearInterval(runner);
+        location.reload();
+      }
+    }.bind(this), 1000);
   },
   //判断拍品的拍卖状态
   getAuctionStatus: function () {
@@ -27,11 +60,10 @@ module.exports = {
     var saleTime = this.$page.data('saleTime');
     var now = +new Date();
     var shortStatus = '';
-    var countdown = 0;//倒计时
 
-    if (now > startTime) {//未开始 || <
+    if (now < startTime) {//未开始 || <
       shortStatus = 'wks';
-      this.updateCountdown(now - startTime);
+      this.updateCountdown(startTime - now);
     } else if (now > saleTime) {//已结束
       //提示结束
       shortStatus = 'yjs';
@@ -41,14 +73,15 @@ module.exports = {
         content: '3秒后返回首页...',
         callback: function () {
           setTimeout(function () {
-            location.href = '/';
+            //location.href = '/';
           });
         }
       });
-
-
     } else {//拍卖中
       shortStatus = 'ppz';
+      $('#time-txt').text('结束时间');
+      this.updateCountdown(endTime - now);
+
 
     }
     this.$dialog.addClass(shortStatus);

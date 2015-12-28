@@ -20,7 +20,10 @@
 				{% widget '_common:widget/common/photo/photo.tpl' %}
 			</div>
 			<a href="/store" class="name">{{ data.shopname }}</a>
-			<span class="time">开始时间 <span id="countdown"></span></span>
+			<span class="time">
+				<em id="time-txt">开始时间</em>
+				<em id="countdown"></em>
+			</span>
 		</div>
 		<div class="desc">
 			<p>{{ data.descs }}</p>
@@ -32,9 +35,7 @@
 		</div>
 		<a class="collect-cnt icon-collect-cnt" id="collect-num">{{ data.browers }}</a>
 	</div>
-	{% block auctionDialog %}
-
-	{% endblock %}
+	{% block auctionDialog %} {% endblock %}
 	{% script %}
 	require('_common:widget/auction/detail/detail.js').init();
 	{% endscript %}

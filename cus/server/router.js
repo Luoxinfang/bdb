@@ -94,16 +94,6 @@ module.exports = function (router) {
     })
     res.render('cus/page/user/check-name.tpl', resObj);
   });
-  //订单详情
-  router.get('/order/detail', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '订单详情';
-    resObj.header.leftUrl = '/order';
-    resObj.header.rightIcon = 'chat';
-    resObj.order = {status: '' + req.query.status};
-    resObj.data = yog.require('cus/test/order.js');
-    res.render('cus/page/order/detail.tpl', resObj);
-  });
   //订单结果
   router.get('/order/result', function (req, res, next) {
     var resObj = req.appData;
@@ -233,6 +223,8 @@ module.exports = function (router) {
   //----------wallet(我的钱包)<<<<<<<<<<
 
 	//>>>>>>>>>>order(订单)----------
-	//order:cus/action/order/index.js
+	//order/list:cus/action/order/list.js
+	//订单详情
+	router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
 	//----------order(订单)<<<<<<<<<<
 };

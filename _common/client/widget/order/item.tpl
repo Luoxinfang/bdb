@@ -4,8 +4,8 @@
 		<div class="line1">
 			<span>成交日期 {{ order.createtime | date('Y-m-d', -480, 'CCT') }}</span>
 	    <span>
-		    {% set orderstatus = order.orderstatus+order.paystatus+order.sendflag+order.receiveflag+order.pointflag %}
-		    {{ orderStatus[orderstatus] }}
+		    {% set orderStatus = {orderStatus:order.orderstatus,payStatus:order.paystatus,sendFlag:order.sendflag,reveiveFlag:order.receiveflag,pointFlag:order.pointflag,revokeStatus:order.revokestatus} %}
+		    {{ orderStatus | orderStatus2name }}
 	    </span>
 			<span class="sr">订单详情</span>
 		</div>
@@ -27,48 +27,33 @@
 		</div>
 		{% endfor %}
 	</a>
-	<div class="line3">
-		{% if '00000' == orderstatus %}
-			<a class="btn btn-red btn-w135 btn-h70 fs-3">确认付款</a>
-		{% elseif '01000' == orderstatus %}
+	{% if '等待买家付款' == orderStatus | orderStatus2name %}
+		<div class="line3">
+			<a class="btn btn-red btn-w135 btn-h70 fs-3">付款</a>
+		</div>
+	{% elseif '等待卖家发货' == orderStatus | orderStatus2name %}
+		<div class="line3">
 			<a class="btn btn-white btn-w135 btn-h70 fs-3">提醒发货</a>
-			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">整单退款</a>
-		{% elseif '01100' == orderstatus %}
-			<a class="btn btn-red btn-w135 btn-h70 fs-3">确认收货</a>
+		</div>
+	{% elseif '卖家已发货' == orderStatus | orderStatus2name %}
+		<div class="line3">
+			<a class="btn btn-white btn-w135 btn-h70 fs-3">确认收货</a>
 			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">延迟收货</a>
-			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">整单退款</a>
-		{% elseif '11110' == orderstatus %}
-			<a class="btn btn-red btn-w135 btn-h70 fs-3">去评论</a>
-		{% elseif '11111' == orderstatus %}
-			<a class="btn btn-white btn-w135 btn-h70 fs-3">申请售后</a>
-		{% else %}
-		{% endif %}
-		{#{% if item.status == 'dfh' && data.form == 'bus' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">确定发货</a>
-		{% endif %}
-		{% if item.status == 'dfh' && data.form == 'cus' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">提醒发货</a>
-		{% endif %}
-		{% if item.status == 'dfk' && data.form == 'bus' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-white btn-w135 btn-h70 fs-3">提醒买家付款</a>
-		{% endif %}
-		{% if item.status == 'dfk' && data.form == 'cus' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">确定付款</a>
-		{% endif %}
-		{% if item.status == 'yfh' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-white btn-w135 btn-h70 fs-3">延迟收货</a>
-		{% endif %}
-		{% if item.status == 'tkz' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">确定退款</a>
-		{% endif %}
-		{% if item.status == 'dsh' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-white btn-w135 btn-h70 fs-3">确定收货</a>
-		{% endif %}
-		{% if item.status == 'dpj' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">去评论</a>
-		{% endif %}
-		{% if item.status == 'ywc' %}
-			<a href="/order/detail?status={{ item.status }}" class="btn btn-white btn-w135 btn-h70 fs-3">申请售后</a>
-		{% endif %}#}
-	</div>
+		</div>
+	{% elseif '待评价' == orderStatus | orderStatus2name %}
+		<div class="line3">
+			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white btn-w135 btn-h70 fs-3">去评价</a>
+		</div>
+	{% elseif '已评价' == orderStatus | orderStatus2name %}
+	{% elseif '等待退款' == orderStatus | orderStatus2name %}
+	{% elseif '平台介入中' == orderStatus | orderStatus2name %}
+		<div class="line3">
+			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white btn-w135 btn-h70 fs-3">举证</a>
+		</div>
+	{% elseif '卖家拒绝退货' == orderStatus | orderStatus2name %}
+		<div class="line3">
+			<a href="/order/detail/{{ order.orderno }}" class="btn btn-red btn-w135 btn-h70 fs-3">申请仲裁</a>
+		</div>
+	{% else %}
+	{% endif %}
 </div>

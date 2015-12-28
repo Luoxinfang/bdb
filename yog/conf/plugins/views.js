@@ -70,8 +70,38 @@ module.exports.views = {
      ***************************************************************************/
     cache: 'memory',
     filters: {
-      addPoint: function (data) {
-        return data + '...';
+      orderStatus2name: function (status){
+	      if ('0' == status.orderStatus) {
+		      if ('0' == status.payStatus) {
+			      return '等待买家付款';
+		      } else if ('1' == status.payStatus) {
+			      if ('0' == status.revokeStatus) {
+				      if ('0' == status.sendFlag) {
+					      return '等待卖家发货';
+				      } else if ('1' == status.sendFlag) {
+					      if ('0' == status.receiveFlag) {
+						      return '卖家已发货';
+					      } else { //???
+						      if ('0' == status.pointFlag) {
+							      return '待评价';
+						      } else if ('1' == status.pointFlag) {
+							      return '已评价';
+						      }
+					      }
+				      }
+			      } else {
+				      return '等待退款';
+			      }
+		      }
+	      } else if ('1' == status.orderStatus) {
+		      if ('0' == status.pointFlag) {
+			      return '待评价';
+		      } else if ('1' == status.pointFlag) {
+			      return '已评价';
+		      }
+	      } else if ('2' == status.orderStatus) {
+		      return '已取消';
+	      }
       }
     }
   }

@@ -2,13 +2,16 @@
 {% block head %}
 	<link rel="stylesheet" href="../less/result.less?__inline">
 {% endblock %}
-{% block content %}
+{% block header %}
 	{% widget '_common:widget/common/header/header.tpl' %}
-	{# type: success error warn #}
+{% endblock %}
+{% block content %}
+{# type: success error warn #}
 <div class="result {{ type }}">
 	<div class="pt70">
 		<div class="icon"></div>
 	</div>
+	l
 	<div class="txt mt40">
 		{% if content.tit %}
 			<div class="tit">{{ content.tit }}</div>
@@ -25,13 +28,10 @@
 	<script>
 		{% if autoJump %}
 		setTimeout(function () {
-			location.replace("{{ btn.href||'/' }}") ;
+			location.replace("{{ btn.href||'/' }}");
 		}, 3000);
 		{%  endif %}
 	</script>
 	{% block result-content %}{% endblock %}
-
 </div>
-
-
 {% endblock %}

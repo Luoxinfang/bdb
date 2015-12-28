@@ -3,10 +3,6 @@
 .auction-detail {
   background: @white;
   border-bottom: 2px solid @lineColor;
-  .banner-wrapper{
-    width: 10rem;
-    height: 370/@rem-pre;
-  }
   .store {
     position: relative;
     height: 70/@rem-pre;
@@ -96,5 +92,153 @@
     z-index: 2;
     top: 100/@rem-pre;
     right: 20/@rem-pre;
+  }
+}
+//拍卖竞价框
+.auction-dialog {
+  position: relative;
+  background: @white;
+  min-height: 312/@rem-pre;
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100/@rem-pre;
+    content: '';
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+  &.wks {
+    background: transparent;
+    &:after {
+      width: 272/@rem-pre;
+      height: 112/@rem-pre;
+      background-image: url('./icon/icon-wks.png');
+    }
+  }
+  &.cj {
+    &:after {
+      width: 180/@rem-pre;
+      height: 88/@rem-pre;
+      background-image: url('./icon/icon-cj.png');
+      margin-top: 12/@rem-pre;
+    }
+  }
+  &.dsh {
+    background: transparent;
+    &:after {
+      width: 276/@rem-pre;
+      height: 112/@rem-pre;
+      background-image: url('./icon/icon-dsh.png');
+    }
+  }
+  .item {
+    position: relative;
+    margin-left: 20/@rem-pre;
+    height: 110/@rem-pre;
+    padding-top: 20/@rem-pre;
+    padding-right: 20/@rem-pre;
+    border-bottom: 1px solid @lineColor;
+    .user-img {
+      width: 64/@rem-pre;
+      height: 64/@rem-pre;
+      border: 2px solid @bgColor;
+      border-radius: 50%;
+      float: left;
+    }
+    .enter-img {
+      width: 40/@rem-pre;
+      height: 40/@rem-pre;
+      float: right;
+      margin-top: 12/@rem-pre;
+    }
+    .d-c {
+      width: 316/@rem-pre;
+      float: left;
+    }
+    .d-t {
+      width: 440/@rem-pre;
+      float: left;
+    }
+    .d-l {
+      width: 230/@rem-pre;
+      float: left;
+    }
+    .d-n {
+      width: 190/@rem-pre;
+      float: right;
+    }
+    .d-r {
+      width: 180/@rem-pre;
+      float: right;
+    }
+    .name {
+      max-width: 270/@rem-pre;
+      height: 30/@rem-pre;
+      line-height: 30/@rem-pre;
+      float: left;
+      color: @mainColor3;
+      font-size: @fontSize2;
+      .ellipsis;
+    }
+    .u-name {
+      max-width: 230/@rem-pre;
+      height: 26/@rem-pre;
+      line-height: 26/@rem-pre;
+      float: left;
+      color: @mainColor3;
+      font-size: @fontSize3;
+      .ellipsis;
+    }
+    .u-time {
+      max-width: 190/@rem-pre;
+      height: 22/@rem-pre;
+      line-height: 22/@rem-pre;
+      float: right;
+      color: @mainColor3;
+      font-size: @fontSize4;
+      .ellipsis;
+      text-align: right;
+    }
+    .emoji {
+      float: right;
+      margin-top: 5/@rem-pre;
+    }
+    .price {
+      height: 26/@rem-pre;
+      line-height: 26/@rem-pre;
+      color: @mainColor4;
+      font-size: 26/@rem-pre;
+      float: left;
+    }
+    .info {
+      max-width:440/@rem-pre;
+      height: 30/@rem-pre;
+      line-height: 30/@rem-pre;
+      color: @mainColor3;
+      font-size: 30/@rem-pre;
+      float: left;
+      .ellipsis;
+    }
+    .state {
+      height: 26/@rem-pre;
+      line-height: 26/@rem-pre;
+      color: @mainColor4;
+      font-size: 26/@rem-pre;
+    }
+    .time {
+      height: 22/@rem-pre;
+      line-height: 22/@rem-pre;
+      color: @mainColor4;
+      font-size: 22/@rem-pre;
+      margin-top: 18/@rem-pre;
+    }
+    &:first-child {
+      .state, .price {
+        color: @mainColor2;
+      }
+    }
   }
 }

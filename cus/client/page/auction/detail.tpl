@@ -1,8 +1,7 @@
 {% extends '_common:page/auction/detail.tpl' %}
 
 {% block auctionDialog %}
-	{% set statusClass = ['wks','wks','',''] %}
-	<div class="auction-dialog {{ statusClass[auctionStatus] }}">
+	<div class="auction-dialog">
 		{% if auctionStatus == 2 || auctionStatus == 3 %}
 			<ul>
 				<li class="item">

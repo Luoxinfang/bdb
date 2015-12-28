@@ -2,27 +2,22 @@
  * @author radish
  * @description 这个路由处理拍品的订阅
  */
-
-var md5 = require('md5');
 var _ = require('lodash');
-var model = require('../model/session.js');
+var tip = yog.require('_common/lib/tip.js');
+var model = require('../../model/auction/subscribe.js');
 
-
-//提交登录信息
+//订阅商品
 module.exports.post = function (req, res, next) {
-  var user = _.extend({
-    requestIP: req.ip
-  }, req.body);
-  user.pwd = md5(req.body.pwd);//传输给后台的密码需要加密
-  model.login(user).then(function (rs) {
-    if (rs.status == 0) {
-      //返回登录前的url
-      rs.referrer = req.session.login_referrer;
-      req.session.user = rs.data;
-      res.cookie('user_info', JSON.stringify(rs.data));
-    }
-    res.json(rs);
-  }).catch(function (error) {
-    yog.log.fatal(error);
-  });
+  var user = req.session.user;
+  if (user) {
+    var data = req.body;
+    data.token = '4addbd89e94d8947a506fe23c61ac613'||user.token;
+    model.subscribe(data).then(function (rs) {
+      res.json(rs);
+    }).catch(function (error) {
+      yog.log.fatal(error);
+    });
+  } else {
+    res.json(tip.sessionExpired);
+  }
 };

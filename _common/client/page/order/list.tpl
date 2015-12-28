@@ -10,6 +10,9 @@
 
 {% block content %}
 	<div id="content">
-		{% widget '_common:widget/order/list.tpl' %}
+		{% require '_common:widget/order/order.less' %}
+		<div class="order-list">
+			{% widget '_common:widget/order/list.tpl' %}
+		</div>
 	</div>
 {% endblock %}

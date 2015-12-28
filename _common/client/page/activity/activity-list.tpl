@@ -11,8 +11,8 @@
 {% block content %}
 	<div class="activity-list ">
 		{% for item in activityList %}
-			<div class="activity-item">
-				<a href="/activity/detail?activename={{ item.activename }}">
+			<div class="activity-item clearfix">
+				<a href="/activity/detail?activename={{ item.activename }}&activityid={{ item.id }}">
 					<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="">
 				</a>
 				<div class="z-1">

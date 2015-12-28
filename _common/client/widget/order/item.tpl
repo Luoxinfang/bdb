@@ -1,51 +1,48 @@
 {% require '_common:widget/order/order.less' %}
 <div class="order-item">
-	<div class="line1">
-		<span>成交日期{{ order.createtime }}</span>
-    <span>
-	    {{ order.orderstatus }}
-      {#{% if item.status == 'dfh' %}
-        待发货
-      {% elseif item.status == 'dsh' %}
-        待收货
-      {% elseif item.status == 'dfk' %}
-        待付款
-      {% elseif item.status == 'yfh' %}
-        已发货
-      {% elseif item.status == 'tkz' %}
-        退款中
-      {% elseif item.status == 'dpj' %}
-	      待评价
-      {% elseif item.status == 'ywc' %}
-        已完成
-      {% elseif item.status == 'tkz' %}
-        退款中
-      {% endif %}#}
-    </span>
-		<a href="/order/detail/{{ order.orderno }}">订单详情</a>
-	</div>
-	<div class="line2">
-		<div class="order-img">
-			<img src="icon/demo.png"/>
+	<a href="/order/detail/{{ order.orderno }}">
+		<div class="line1">
+			<span>成交日期 {{ order.createtime | date('Y-m-d', -480, 'CCT') }}</span>
+	    <span>
+		    {% set orderstatus = order.orderstatus+order.paystatus+order.sendflag+order.receiveflag+order.pointflag %}
+		    {{ orderStatus[orderstatus] }}
+	    </span>
+			<span class="sr">订单详情</span>
 		</div>
-		<div class="order-content">
-			<p>order.name</p>
-			<p>order.money</p>
-			<p>order.num</p>
-			<p>实付款:<span class="fc-1">￥{{ order.ordermoney }}</span></p>
-			{#<p>{{ item.name }}</p>
-			<p>￥{{ item.money }}</p>
-			<p>×{{ item.num }}</p>
-			<p>实付款:<span class="fc-1">￥{{ item.pay }}</span></p>#}
+		{% for product in order.itemlist %}
+		<div class="line2">
+			<div class="order-img">
+				<img src="icon/demo.png"/>
+			</div>
+			<div class="order-content">
+				<p>{{ product.proname }}</p>
+				<p>￥{{ parseFloat(product.price).toFixed(2) }}</p>
+				<p>X{{ product.count }}</p>
+				<p>实付款：<span class="fc-1">￥{{ parseFloat(product.itemmoney).toFixed(2) }}</span></p>
+			</div>
+			<div class="order-small-icon">
+				<span class="icon-22 icon-free-post"></span>
+				<span class="icon-22 icon-7days"></span>
+			</div>
 		</div>
-		<div class="order-small-icon">
-			<span class="icon-jpmj"></span>
-			<span class="icon-qtth"></span>
-			<span class="icon-xxpf"></span>
-		</div>
-	</div>
+		{% endfor %}
+	</a>
 	<div class="line3">
-		<a href="/order/detail/{{ order.orderno }}" class="btn btn-red btn-w135 btn-h70 fs-3">{{ order.orderstatus }}</a>
+		{% if '00000' == orderstatus %}
+			<a class="btn btn-red btn-w135 btn-h70 fs-3">确认付款</a>
+		{% elseif '01000' == orderstatus %}
+			<a class="btn btn-white btn-w135 btn-h70 fs-3">提醒发货</a>
+			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">整单退款</a>
+		{% elseif '01100' == orderstatus %}
+			<a class="btn btn-red btn-w135 btn-h70 fs-3">确认收货</a>
+			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">延迟收货</a>
+			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">整单退款</a>
+		{% elseif '11110' == orderstatus %}
+			<a class="btn btn-red btn-w135 btn-h70 fs-3">去评论</a>
+		{% elseif '11111' == orderstatus %}
+			<a class="btn btn-white btn-w135 btn-h70 fs-3">申请售后</a>
+		{% else %}
+		{% endif %}
 		{#{% if item.status == 'dfh' && data.form == 'bus' %}
 			<a href="/order/detail?status={{ item.status }}" class="btn btn-red btn-w135 btn-h70 fs-3">确定发货</a>
 		{% endif %}

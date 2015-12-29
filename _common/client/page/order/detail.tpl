@@ -1,40 +1,30 @@
 {% extends '_common:page/layout.tpl' %}
-{% block head %}
-
-{% endblock %}
 
 {% block header %}
-    {% widget '_common:widget/common/header/header.tpl' %}
+	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
 {% block content %}
-    <div id="content">
-        {% widget '_common:widget/order/detail.tpl' %}
-    </div>
+	<div id="content">
+		{% widget '_common:widget/order/detail.tpl' %}
+	</div>
 {% endblock %}
 
-
 {% block footer %}
-    {% if data.status == 'dfh' && data.from == 'bus'%}
-        <div class="order-detail-footer">
-            <a class="btn btn-red">确认发货</a>
-        </div>
-    {% elseif data.status == 'dfk' && data.from == 'bus'%}
-        <div class="order-detail-footer">
-            <a class="btn btn-white">提醒买家付款</a>
-        </div>
-    {% elseif data.status == 'yfh' && data.from == 'bus'%}
-        <div class="order-detail-footer">
-            <a class="btn btn-white">延迟收货</a>
-        </div>
-    {% elseif data.status == 'tkz' && data.from == 'bus'%}
-        <div class="order-detail-footer">
-            <a class="btn btn-red">确认退款</a><a class="btn btn-white">拒绝退款</a>
-        </div>
-    {% endif %}
-    {% elseif data.status == 'ywc' && data.from == 'bus'%}
-        <div class="order-detail-footer">
-            <a class="btn btn-red">评价</a>
-        </div>
-    {% endif %}
+	<div class="footer-content order-footer clearfix">
+		{% if '等待买家付款' == orderStatus | orderStatus2name %}
+			<a class="btn btn-red showDialog" dialog="payWay">付款</a>
+		{% elseif '等待卖家发货' == orderStatus | orderStatus2name %}
+			<a class="btn btn-red">提醒发货</a>
+			<a class="btn btn-white mr20">整单退款</a>
+		{% elseif '卖家已发货' == orderStatus | orderStatus2name %}
+			<a href="/order/result?status=confirmReceipt" class="btn btn-red">确认收货</a>
+			<a class="btn btn-white mr20">延迟收货</a>
+			<a href="/order/result?status=applyRefundSuccess" class="btn btn-white mr20">整单退款</a>
+		{% elseif '待评价' == orderStatus | orderStatus2name %}
+			<a href="/order/comment" class="btn btn-red">去评论</a>
+		{% else %}
+			<a href="/order/comment" class="btn btn-white">申请售后</a>
+		{% endif %}
+	</div>
 {% endblock %}

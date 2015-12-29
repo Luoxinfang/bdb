@@ -691,7 +691,6 @@ body.with-drawer {
   top: 0;
   left: 0;
   width: 100%;
-  height: 50/@rem-pre;
   line-height: 50/@rem-pre;
   text-align: center;
   color: @mainColor2;
@@ -702,19 +701,15 @@ body.with-drawer {
     display: inline-block;
   }
   &-icon {
-    float: left;
     display: inline-block;
     width: 26/@rem-pre;
     height: 26/@rem-pre;
     background-size: contain;
     background-repeat: no-repeat;
-    margin: 12/@rem-pre 2/@rem-pre 0 0;
+    margin-right: 5/@rem-pre;
     &.warn {
       background-image: url("../icon/warn-exc.png");
     }
-  }
-  &-content {
-    float: left;
   }
 }
 

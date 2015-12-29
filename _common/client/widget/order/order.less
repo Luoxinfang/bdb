@@ -4,7 +4,7 @@
 	&-list {
 	}
 	//订单列表item
-	&-item, .order-detail {
+	&-item {
 		padding-left: 20/64rem;
 		margin-top: 10/64rem;
 		background: #fff;
@@ -27,6 +27,7 @@
 			}
 		}
 		.line2 {
+			display: block;
 			height: 200/64rem;
 			padding: 20/64rem;
 			padding-left: 0;
@@ -64,7 +65,12 @@
 			padding-right: 20/64rem;
 			padding-left: 0;
 			.btn {
+				width: 135/@rem-pre;
+				display: inline-block;
+				height: 70/@rem-pre;
+				line-height: 70/@rem-pre;
 				float: right;
+				font-size: @fontSize3;
 			}
 		}
 	}
@@ -335,7 +341,7 @@
 }
 
 //detail
-.order {
+/* .order {
 	.order-detail {
 		background: transparent;
 		padding-left: 0;
@@ -416,5 +422,16 @@
 		line-height: 70/64rem;
 		float: right;
 		font-size: 0.40625rem;
+	}
+} */
+
+.order-footer {
+	.btn {
+		width: 135/@rem-pre;
+		display: inline-block;
+		height: 70/@rem-pre;
+		line-height: 70/@rem-pre;
+		float: right;
+		font-size: @fontSize4;
 	}
 }

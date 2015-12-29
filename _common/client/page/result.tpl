@@ -11,8 +11,7 @@
 	<div class="pt70">
 		<div class="icon"></div>
 	</div>
-	l
-	<div class="txt mt40">
+	<div class="txt mt40 ml20 mr20">
 		{% if content.tit %}
 			<div class="tit">{{ content.tit }}</div>
 		{% endif %}

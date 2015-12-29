@@ -1,7 +1,4 @@
 {% extends '_common:page/layout.tpl' %}
-{% block head %}
-
-{% endblock %}
 
 {% block header %}
 	{% widget '_common:widget/common/header/header.tpl' %}
@@ -15,4 +12,8 @@
 			{% widget '_common:widget/order/list.tpl' %}
 		</div>
 	</div>
+	{% script %}
+		require('_common:widget/order/list.js').init();
+	{% endscript %}
 {% endblock %}
+

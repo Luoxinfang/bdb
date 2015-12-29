@@ -5,7 +5,7 @@
  */
 
 var _ = require('lodash');
-var orderModel = yog.require('_common/model/order.js');
+var orderModel = yog.require('cus/model/order.js');
 
 module.exports.get = function (req, res) {
 	var param = {
@@ -19,7 +19,7 @@ module.exports.get = function (req, res) {
 		resObj.header.title = '订单详情';
 		if (0 == rs.status) {
 			resObj.header.rightIcon = 'chat';
-			resObj.order = rs.data;
+			resObj.detail = rs;
 			res.render('cus/page/order/detail.tpl', resObj);
 		} else {
 			var error = _.extend({

@@ -1,10 +1,9 @@
-{% require '_common:widget/order/order.less' %}
-<div class="order-item">
+<div class="order-item" data-order-no="{{ order.orderno }}" data-money="{{ parseFloat(order.ordermoney).toFixed(2) }}">
 	<a href="/order/detail/{{ order.orderno }}">
 		<div class="line1">
 			<span>成交日期 {{ order.createtime | date('Y-m-d', -480, 'CCT') }}</span>
 	    <span>
-		    {% set orderStatus = {orderStatus:order.orderstatus,payStatus:order.paystatus,sendFlag:order.sendflag,reveiveFlag:order.receiveflag,pointFlag:order.pointflag,revokeStatus:order.revokestatus} %}
+		    {% set orderStatus = {orderStatus:order.orderstatus,payStatus:order.paystatus,sendFlag:order.sendflag,receiveFlag:order.receiveflag,pointFlag:order.pointflag,revokeStatus:order.revokestatus} %}
 		    {{ orderStatus | orderStatus2name }}
 	    </span>
 			<span class="sr">订单详情</span>
@@ -29,30 +28,30 @@
 	</a>
 	{% if '等待买家付款' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a class="btn btn-red btn-w135 btn-h70 fs-3">付款</a>
+			<a class="btn btn-red payOrder">付款</a>
 		</div>
 	{% elseif '等待卖家发货' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a class="btn btn-white btn-w135 btn-h70 fs-3">提醒发货</a>
+			<a class="btn btn-white remindDeliver">提醒发货</a>
 		</div>
 	{% elseif '卖家已发货' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a class="btn btn-white btn-w135 btn-h70 fs-3">确认收货</a>
-			<a class="btn btn-white btn-w135 btn-h70 fs-3 mr20">延迟收货</a>
+			<a class="btn btn-white confirmReceive">确认收货</a>
+			<a class="btn btn-white mr20 delayReceive">延迟收货</a>
 		</div>
 	{% elseif '待评价' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white btn-w135 btn-h70 fs-3">去评价</a>
+			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white">去评价</a>
 		</div>
 	{% elseif '已评价' == orderStatus | orderStatus2name %}
 	{% elseif '等待退款' == orderStatus | orderStatus2name %}
 	{% elseif '平台介入中' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white btn-w135 btn-h70 fs-3">举证</a>
+			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white">举证</a>
 		</div>
 	{% elseif '卖家拒绝退货' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a href="/order/detail/{{ order.orderno }}" class="btn btn-red btn-w135 btn-h70 fs-3">申请仲裁</a>
+			<a href="/order/detail/{{ order.orderno }}" class="btn btn-red">申请仲裁</a>
 		</div>
 	{% else %}
 	{% endif %}

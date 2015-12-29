@@ -6,7 +6,7 @@
 
 var md5 = require('md5');
 var _ = require('lodash');
-var orderModel = yog.require('_common/model/order.js');
+var orderModel = yog.require('cus/model/order.js');
 var tip = yog.require('_common/lib/tip.js');
 var orderStatus = {
 	'dfk': { // 待付款

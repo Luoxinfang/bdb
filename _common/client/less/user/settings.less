@@ -9,8 +9,17 @@
       line-height: 45/@rem-pre;
       border-bottom: 2px solid #edeef1;
       padding: 10/@rem-pre 20/@rem-pre;
+      display: -webkit-flex;
+      -webkit-box-align: center;
+      align-items: center;
       .message_text {
         font-size: 30/@rem-pre;
+        max-height: 90/@rem-pre;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
     }
   }

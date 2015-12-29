@@ -12,7 +12,7 @@
         <ul class="item">
           <li class="message_text">{{ items.msgcontent | replace("^(.{37}).*$", "$1") }}</li>
         </ul>
-      {% elseif items.msgcontent.length >20 && items.msgcontent.length <40 %}
+      {% elseif items.msgcontent.length >20  %}
       <ul class="item">
         <li class="message_text">{{ items.msgcontent }}</li>
       </ul>

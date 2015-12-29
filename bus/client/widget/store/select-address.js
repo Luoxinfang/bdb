@@ -5,7 +5,14 @@ var B = require('_common:js/bdb/core.js');
 
 module.exports = {
 	init: function () {
+		this.updateInfo();
 		this.event();
+	},
+	//修改身份和城市
+	updateInfo: function () {
+		$('.page>.content').on('change', '.input-wrap select', function () {
+			$(this).parent().find('[data-role="input"]').html($(this).val());
+		});
 	},
 	//修改店铺地址信息
 	updateAdress: function () {

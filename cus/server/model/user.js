@@ -1,7 +1,7 @@
 /**
  * @author pulang
  * @createTime 2015-12-16
- * @description 这个路由处理后端请求
+ * @description 这个处理用户模块接口
  */
 
 var server = yog.require('_common/lib/server.js');
@@ -83,11 +83,6 @@ module.exports = {
       path: '/interface/msg/queryplatform',
       query: query
     });
-    //var data = server.parserQuery(data, 'msg');
-    //return yog.ral(serverId, {
-    //  path: '/interface/msg/query',
-    //  data: data
-    //});
   },
   //获取系统信息
   queryDetail: function (data) {

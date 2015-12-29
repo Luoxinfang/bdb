@@ -39,13 +39,27 @@ module.exports = function (req, res, next) {
 			]
 		};
 	}
-	var params = _.extend({
-		token: req.session.user.token
-	}, {status:status,page:'1',pagesize:'4'});
+	var params = {
+		token: req.session.user.token,
+		status:status,
+		page: req.query.page || 1,
+		pageSize: req.query.pageSize || 6
+	};
 	//查询店铺活动信息
 	model.queryShopActivity(params).then(function (rs) {
-		resObj.activityList = rs.data;
-		res.render('bus/page/activity/store-activity.tpl', resObj);
+		if (0 == rs.status) {
+			resObj.activityList = rs.data;
+			if (req.query.type) {
+				res.render('_common/widget/activity/activity-list.tpl', resObj);
+			} else {
+				res.render('bus/page/activity/store-activity.tpl', resObj);
+			}
+		} else {
+			resObj.rs = {};
+			resObj.rs.status = rs.status;
+			resObj.rs.msg = rs.msg || '服务器异常，请稍后再试';
+			res.render('_common/page/error.tpl', resObj);
+		}
 	}).catch(function (error) {
 		yog.log.fatal(error);
 	});

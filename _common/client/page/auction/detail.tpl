@@ -7,9 +7,9 @@
 {% block content %}
 	{% require '_common:widget/auction/detail/detail.less' %}
 	<div class="auction-detail" data-auction-id="{{ data.id }}"
-		data-start-time="{{ data.salestarttime }}"
-		data-end-time="{{ data.saleendtime }}"
-		data-sale-time="{{ data.saletime }}">
+			 data-start-time="{{ data.salestarttime }}"
+			 data-end-time="{{ data.saleendtime }}"
+			 data-sale-time="{{ data.saletime }}">
 		<div class="banner-wrapper">
 			{% set banner={showNav:false,images:data.images}; %}
 			{% widget '_common:widget/common/banner/banner.tpl' %}
@@ -25,17 +25,22 @@
 				<em id="countdown"></em>
 			</span>
 		</div>
+
+		<a class="collect-cnt icon-collect-cnt" id="collect-num">{{ data.browers }}</a>
+	</div>
+
+	<div class="auction-dialog">
 		<div class="desc">
 			<p>{{ data.descs }}</p>
 		</div>
-		<div class="price">
-			<div class="item"><span class="qi">￥{{ data.price }}</span></div>
-			<div class="item"><span class="jia">￥{{ data.addprice }}</span></div>
-			<div class="item"><span class="bao">￥{{ data.bound }}</span></div>
+		<div class="prices">
+			<div class="prices-item"><span class="qi">￥{{ data.price }}</span></div>
+			<div class="prices-item"><span class="jia">￥{{ data.addprice }}</span></div>
+			<div class="prices-item"><span class="bao">￥{{ data.bound }}</span></div>
 		</div>
-		<a class="collect-cnt icon-collect-cnt" id="collect-num">{{ data.browers }}</a>
+		{% block auctionDialog %}{% endblock %}
 	</div>
-	{% block auctionDialog %} {% endblock %}
+
 	{% script %}
 	require('_common:widget/auction/detail/detail.js').init();
 	{% endscript %}

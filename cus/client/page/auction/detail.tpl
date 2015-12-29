@@ -1,9 +1,12 @@
 {% extends '_common:page/auction/detail.tpl' %}
 
+{% block head %}
+	{% require "_common:js/plugin/dropload/dropload.less" %}
+	{% require "_common:js/plugin/dropload/dropload.js" %}
+{% endblock %}
+
 {% block auctionDialog %}
-	<div class="auction-dialog">
-			<ul id="bid-list"></ul>
-	</div>
+	<ul id="bid-list" class="clearfix"></ul>
 {% endblock %}
 
 {% block footer %}

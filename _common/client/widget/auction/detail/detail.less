@@ -4,7 +4,6 @@
 .auction-detail {
   position: relative;
   background: @white;
-  border-bottom: 2px solid @lineColor;
   .store {
     position: relative;
     height: 70/@rem-pre;
@@ -39,6 +38,16 @@
       float: right;
     }
   }
+  .collect-cnt {
+    position: absolute;
+    z-index: 2;
+    top: 100/@rem-pre;
+    right: 20/@rem-pre;
+  }
+}
+//拍卖竞价框
+.auction-dialog {
+  /*---------从detail迁移过来的 为了和list一起滑动----------*/
   .desc {
     padding: 22/@rem-pre 20/@rem-pre 22/@rem-pre 0;
     margin-left: 20/@rem-pre;
@@ -52,11 +61,12 @@
       overflow: hidden;
     }
   }
-  .price {
-    margin: 0 20/@rem-pre;
+  .prices {
+    padding: 0 20/@rem-pre;
     height: 60/@rem-pre;
     line-height: 60/@rem-pre;
-    .item {
+    border-bottom: 2px solid @lineColor;
+    &-item {
       width: 180/@rem-pre;
       float: left;
       margin-left: 10/@rem-pre;
@@ -95,15 +105,7 @@
       }
     }
   }
-  .collect-cnt {
-    position: absolute;
-    z-index: 2;
-    top: 100/@rem-pre;
-    right: 20/@rem-pre;
-  }
-}
-//拍卖竞价框
-.auction-dialog {
+  /*---------从detail迁移过来的 为了和list一起滑动----------*/
   flex: 1;
   position: relative;
   overflow-y: auto;

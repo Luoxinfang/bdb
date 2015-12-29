@@ -9,10 +9,10 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 {% block drawer %}
+	{{ user }}
 	<div class="drawer-user">
 		<a class="photo" href="/user/personal">
-			{% set photo = {notEditable : true, url:user.imgurl} %}
-			{% widget '_common:widget/common/photo/photo.tpl' %}
+			{% widget '_common:widget/common/photo/photo.tpl'%}
 		</a>
 		{% if user %}
 			<p class="name">{{ user.username }}</p>

@@ -11,6 +11,7 @@ module.exports.post = function (req, res, next) {
       if (req.body.type === 'photo') {
         //更新用户头像
         req.session.user.imgurl = rs.path;
+        console.log(req.session.user);
       }
     }
     res.json(rs);

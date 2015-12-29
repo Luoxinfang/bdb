@@ -2,8 +2,11 @@
  * @author xf.radish
  * @description 拍品详情
  */
+
 var B = require('_common:js/bdb/core.js');
 var moment = require('_common:js/aid/moment.js');
+
+
 module.exports = {
   init: function () {
     this.$collect = $('#collect');
@@ -15,11 +18,24 @@ module.exports = {
     this.pageSize = 10;//默认页大小
     this.pageNum = 1;//默认页码
     this.getAuctionStatus();
-    this.getBidList(this.pageSize, this.pageNum);
+    this.getBidList('init');
+
     this.event();
   },
+  //绑定出价列表的滑动
+  bindScroll: function () {
+    var that = this;
+    $('.auction-dialog').dropload({
+      loadUpFn: function (me) {
+        that.getBidList.bind(that)('more',me);
+      },
+      loadDownFn: function (me) {
+        that.getBidList.bind(that)('append',me);
+      }
+    });
+  },
   //获取出价列表
-  getBidList: function (type) {
+  getBidList: function (type, dropLoad) {
     var that = this;
     $.ajax({
       type: 'get',
@@ -32,9 +48,15 @@ module.exports = {
         pageSize: that.pageSize
       },
       success: function (html) {
+        if (dropLoad) {
+          dropLoad.resetload();
+        }
         if (type === 'append') {
           that.$bidList.append(html);
-        } else {
+        } else if (type === 'init') {
+          that.$bidList.html(html);
+          that.bindScroll.bind(that)();
+        }else{
           that.$bidList.html(html);
         }
       },
@@ -115,6 +137,5 @@ module.exports = {
   },
   event: function () {
     this.$collect.on('click', this.subscribe.bind(this));
-
   }
 };

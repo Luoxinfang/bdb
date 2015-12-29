@@ -71,6 +71,6 @@
 		</a>
 	</div>
 	{% script %}
-		require('cus:widget/user/personal.js').init();
+	require('cus:widget/user/personal.js').init();
 	{% endscript %}
 {% endblock %}

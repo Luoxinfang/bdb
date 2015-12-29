@@ -11,7 +11,6 @@ module.exports = function (req, res, next) {
 	var resObj = req.appData;
 	resObj.header.title = '平台活动';
 	var status = req.query.status || '0';
-
 	if(req.query.status=='1'){
 		resObj.header.tab = {
 			cur: 'start',
@@ -29,7 +28,6 @@ module.exports = function (req, res, next) {
 			]
 		};
 	};
-
 	var params = {
 		token: req.session.user.token,
 		status:status,

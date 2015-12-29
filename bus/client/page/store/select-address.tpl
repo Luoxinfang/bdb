@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-	{#<div id="content">
+	<div id="content">
 		<div class="form">
 			<ul class="form-ul">
 				<li class='form-li-input'>
@@ -34,18 +34,8 @@
 			</ul>
 			<a class="btn btn-red" id="btn-complete">完成</a>
 		</div>
-	</div>#}
-	<div data-toggle="distpicker">
-		<select data-province="浙江省"></select>
-		<select data-city="杭州市"></select>
-		<select data-district="西湖区"></select>
-	</div>
-	<div data-toggle="distpicker" id="distpicker3">
-		<select></select>
-		<select></select>
-		<select></select>
 	</div>
 	{% script %}
-		require('bus:widget/store/select-address.js').init();
+	require('bus:widget/store/select-address.js').init();
 	{% endscript %}
 {% endblock %}

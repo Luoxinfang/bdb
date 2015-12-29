@@ -11,13 +11,13 @@
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as anonymous module.
-		define(['jquery', 'ChineseDistricts'], factory);
+		define(['zepto', 'ChineseDistricts'], factory);
 	} else if (typeof exports === 'object') {
 		// Node / CommonJS
-		factory(require('jquery'), require('ChineseDistricts'));
+		factory(require('zepto'), require('ChineseDistricts'));
 	} else {
 		// Browser globals.
-		factory(jQuery, ChineseDistricts);
+		factory(Zepto, ChineseDistricts);
 	}
 })(function ($, ChineseDistricts) {
 

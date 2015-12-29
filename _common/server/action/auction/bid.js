@@ -8,10 +8,8 @@ module.exports.get = function (req, res) {
   var param = _.extend({
     token: req.session.user.token
   }, req.query);
-  console.log('------------------\n',param);
+  //这里响应的是页面的片段
   model.getBid(param).then(function (rs) {
-    var resObj = req.appData;
-
-    res.render('_common/page/auction/bid-list.tpl', resObj);
+    res.render('_common/page/auction/bid-list.tpl', rs);
   });
 };

@@ -10,6 +10,7 @@ module.exports = {
     this.$page = $('.auction-detail');
     this.$dialog = $('.auction-dialog');
     this.$countdown = $('#countdown');
+    this.$bidList = $('#bid-list');
     this.id = this.$page.data('auctionId');
     this.pageSize = 10;//默认页大小
     this.pageNum = 1;//默认页码
@@ -18,11 +19,11 @@ module.exports = {
     this.event();
   },
   //获取出价列表
-  getBidList: function () {
+  getBidList: function (type) {
     var that = this;
     $.ajax({
       type: 'get',
-      dataType: 'json',
+      dataType: 'html',
       url: '/_common/auction/bid',
       data: {
         flag: '00',
@@ -30,9 +31,12 @@ module.exports = {
         proCode: that.id,
         pageSize: that.pageSize
       },
-      success: function (data) {
-
-
+      success: function (html) {
+        if (type === 'append') {
+          that.$bidList.append(html);
+        } else {
+          that.$bidList.html(html);
+        }
       },
       error: function (jqXHR, textStatus, errorThrown) {
         B.topWarn(B.tips.networkError);

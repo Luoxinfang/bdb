@@ -13,10 +13,10 @@ module.exports = {
 		retry: 0,
 		timeout: 500,
 		server: [
-			//{host: '192.168.0.105', port: 8080}
+			{host: '192.168.0.105', port: 8080}
 			//{host: '192.168.0.133', port: 8080}  //王天文
 			//{host: '192.168.0.131', port: 8080}  //王勇
-			{host: 'flying', port: 8080}         //周少飞
+			//{host: '192.168.0.110', port: 8080}  //周少飞
 		]
 	}
 };

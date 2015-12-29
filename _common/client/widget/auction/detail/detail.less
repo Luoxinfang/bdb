@@ -1,6 +1,8 @@
 //拍品详情
 @import "@{_common}/public/mixin";
+
 .auction-detail {
+  position: relative;
   background: @white;
   border-bottom: 2px solid @lineColor;
   .store {
@@ -57,7 +59,7 @@
     .item {
       width: 180/@rem-pre;
       float: left;
-      margin-left: 30/@rem-pre;
+      margin-left: 10/@rem-pre;
       &:first-child {
         margin-left: 0;
       }
@@ -102,7 +104,9 @@
 }
 //拍卖竞价框
 .auction-dialog {
+  flex: 1;
   position: relative;
+  overflow-y: auto;
   background: @white;
   min-height: 312/@rem-pre;
   &:after {

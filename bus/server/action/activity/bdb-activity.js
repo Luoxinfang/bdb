@@ -12,21 +12,24 @@ module.exports = function (req, res, next) {
 	resObj.header.title = '平台活动';
 	var status = req.query.status || '0';
 
-	/*if(req.query.status=='1'){
-
-		resObj.header.tab = [{val: '报名中',default:false,id:'registration'},{val: '已开始',default:true,id:'start'}];
+	if(req.query.status=='1'){
+		resObj.header.tab = {
+			cur: 'start',
+			list: [
+				{val: '报名中', id: 'registration'},
+				{val: '已开始', id: 'start'}
+			]
+		};
 	}else{
-		resObj.header.tab = [{val: '报名中',default:true,id:'registration'},{val: '已开始',default:false,id:'start'}];
-	}*/
+		resObj.header.tab = {
+			cur: 'registration',
+			list: [
+				{val: '报名中', id: 'registration'},
+				{val: '已开始', id: 'start'}
+			]
+		};
+	};
 
-	/*tab: {
-	 cus: 'all',
-	 list: [
-	 {val: '全部', id: 'all'},
-	 {val: '进行中', id: 'underway'},
-	 {val: '未开始', id: 'notStart'}
-	 ]
-	 },*/  //头部tab数组*/
 	var params = {
 		token: req.session.user.token,
 		status:status,

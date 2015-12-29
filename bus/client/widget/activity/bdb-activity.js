@@ -5,13 +5,13 @@ var B = require('_common:js/bdb/core.js');
 
 module.exports = {
 	init: function () {
+		var status = '';
 		this.event();
 	},
 	/**
 	 * 带参数跳转
 	 */
 	jump: function (e) {
-		var status = '';
 		var url = '/activity/bdb-activity?';
 		if($("#registration").hasClass("on")) {
 			status = '0';
@@ -38,6 +38,11 @@ module.exports = {
 	 * 上拉加载
 	 */
 	dropLoad: function () {
+		if($("#registration").hasClass("on")) {
+			status = '0';
+		}else {
+			status = '1';
+		}
 		var dropload = $('.page>.content').dropload({
 			domDown: {
 				domClass: 'dropload-down',
@@ -52,6 +57,7 @@ module.exports = {
 					url: '/activity/bdb-activity',
 					data: {
 						type: 'page',
+						status:status,
 						page: $('.activity-list').data('page') + 1
 					},
 					success: function (data) {

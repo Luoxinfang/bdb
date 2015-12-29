@@ -198,19 +198,20 @@ module.exports = function (router) {
     //resObj.header.backUrl = '/wallet';
     res.render('bus/page/order/evaluation.tpl', resObj);
   });
-  /*//店铺活动
-  router.get('/activity/store-activity', function (req, res, next) {
+  //活动专场
+  router.get('/activity/activity-session', function (req, res, next) {
     var resObj = req.appData;
-    resObj.header.title = '店铺活动';
-    resObj.header.tab = ['已开始', '未开始', '已介绍'];
-    res.render('bus/page/activity/store-activity.tpl', resObj);
-  });*/
-  //国庆专场
-  router.get('/activity/national-day', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '国庆专场';
+    resObj.header.title = req.query.activename;
     resObj.header.tab = ['拍卖中', '未开始', '已结束'];
-    res.render('bus/page/activity/national-day.tpl', resObj);
+    resObj.header.tab = {
+      cur: 'auction',
+      list: [
+        {val: '拍卖中', id: 'auction'},
+        {val: '未开始', id: 'notStart'},
+        {val: '已结束', id: 'end'}
+      ]
+    };
+    res.render('bus/page/activity/activity-session.tpl', resObj);
   });
   //添加活动
   router.get('/activity/add-activity', function (req, res, next) {

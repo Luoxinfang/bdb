@@ -12,11 +12,32 @@ module.exports = function (req, res, next) {
 	resObj.header.title = '店铺活动';
 	var status = req.query.status || '1';
 	if(req.query.status=='2'){
-		resObj.header.tab = [{val: '已开始',default:false,id:'start'},{val: '未开始',default:false,id:'notStart'},{val: '已结束',default:true,id:'introduced'}];
-	}else if(req.query.status=='0') {
-		resObj.header.tab = [{val: '已开始',default:false,id:'start'},{val: '未开始',default:true,id:'notStart'},{val: '已结束',default:false,id:'introduced'}];
+		resObj.header.tab = {
+			cur: 'introduced',
+			list: [
+				{val: '已开始', id: 'start'},
+				{val: '未开始', id: 'notStart'},
+				{val: '已结束', id: 'introduced'}
+			]
+		};
+	}else if(req.query.status=='0'){
+		resObj.header.tab = {
+			cur: 'notStart',
+			list: [
+				{val: '已开始', id: 'start'},
+				{val: '未开始', id: 'notStart'},
+				{val: '已结束', id: 'introduced'}
+			]
+		};
 	}else {
-		resObj.header.tab = [{val: '已开始',default:true,id:'start'},{val: '未开始',default:false,id:'notStart'},{val: '已结束',default:false,id:'introduced'}];
+		resObj.header.tab = {
+			cur: 'start',
+			list: [
+				{val: '已开始', id: 'start'},
+				{val: '未开始', id: 'notStart'},
+				{val: '已结束', id: 'introduced'}
+			]
+		};
 	}
 	var params = _.extend({
 		token: req.session.user.token

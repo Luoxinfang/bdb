@@ -1,26 +1,30 @@
 {% extends '_common:page/layout.tpl' %}
 {% block head %}
-	{% require "_common:less/public/address.less" %}
+	{% require '_common:js/plugin/distpicker/distpicker.data.js' %}
+	{% require '_common:js/plugin/distpicker/distpicker.js' %}
 {% endblock %}
 
 {% block header %}
+	{% require "_common:less/public/address.less" %}
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
 {% block content %}
 	<div id="content">
-		<div class="form">
+		<div class="form" data-toggle="distpicker">
 			<ul class="form-ul">
 				<li class='form-li-input'>
 					<input type="text" id="country" class="bg-f" value="中国" disabled="disabled"/>
 				</li>
 			</ul>
-			<ul class="form-ul">
+			<ul class="form-ul input-wrap">
 				<li class='form-li-input'>
-					<input type="text" id="province" placeholder="广东" value="{{ province }}"/>
+					<i data-role="input">省份</i>
+					<select data-province="---- 选择省 ----"></select>
 				</li>
 				<li class='form-li-input'>
-					<input type="text" id="city" placeholder="深圳" value="{{ city }}"/>
+					<i data-role="input">城市</i>
+					<select data-city="---- 选择市 ----"></select>
 				</li>
 			</ul>
 			<ul class="form-ul">

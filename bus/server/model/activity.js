@@ -18,7 +18,7 @@ module.exports = {
 			query: query
 		});
 	},
-	//获取平台活动详情
+	//获取拍品详情详情
 	getBdbDetail: function (data) {
 		var query = server.parserQuery(data, service);
 		return yog.ral(serverId, {

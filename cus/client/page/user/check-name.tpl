@@ -1,7 +1,7 @@
 {% extends '_common:page/layout.tpl' %}
 
 {% block header %}
-	{% require "_common:less/public/form.less" %}
+	{% require "_common:less/user/check.less" %}
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
@@ -16,8 +16,19 @@
 					<input type="text" id="cardno" placeholder="请输入身份证号" />
 				</li>
 			</ul>
-			<a class="icon-add btn-file mt-40"></a>
-		</div>
+			<div class="remind mb30">请正确输入相关信息,该信息是找回用户名和密码的关键信息。</div>
+			<div class="cardno">
+				<p class="mb10">请上传身份证照片</p>
+				<div class="cardno-img">
+					<div class="collet">示例图</div>
+					<div class="upload"></div>
+				</div>
+			</div>
+			<div class="form-text">
+				注意事项：<br>
+				1,白色背景,本人持身份证免冠照;<br>
+				2,持证人面部清晰,身份证文字清晰;<br>
+			</div>
 	</div>
 	{% script %}
 	require("cus:widget/user/check-name.js").init();

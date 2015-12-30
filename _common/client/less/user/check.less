@@ -1,0 +1,82 @@
+@import "@{_common}/public/mixin";
+
+.form {
+	padding: 20/@rem-pre 20/@rem-pre 0 20/@rem-pre;
+	.form-ul {
+		position: relative;
+	}
+	.remind {
+		width: 100%;
+		height:80/@rem-pre;
+		font-size: @fontSize3;
+		line-height: 40/@rem-pre;
+	}
+	.cardno {
+		p {
+			font-size: @fontSize3;
+		}
+		&-img {
+			max-height: 450/@rem-pre;
+			position: relative;
+			width: 100%;
+			height: 450/@rem-pre;
+			background: url('../../icon/cardno-img.png') no-repeat;
+			background-size: contain;
+			border: 2px solid #e7e7e8;
+			.collet {
+				position: absolute;
+				top:20/@rem-pre;
+				right: 20/@rem-pre;
+				height:40/@rem-pre;
+				width: 120/@rem-pre;
+				background: url('../../icon/collet.png') no-repeat;
+				background-size: contain;
+				text-align: center;
+				font-size: @fontSize3;
+				line-height: 40/@rem-pre;
+			}
+			.upload {
+				width: 160/@rem-pre;
+				height: 160/@rem-pre;
+				position: absolute;
+				background: url('../../icon/upload.png') no-repeat;
+				background-size: contain;
+				top:145/@rem-pre;
+				right: 220/@rem-pre;
+			}
+		}
+	}
+	&-text {
+		width: 100%;
+		height: 120/@rem-pre;
+		font-size: @fontSize3;
+		line-height: 40/@rem-pre;
+	}
+	.form-li-input {
+		background: @white;
+		height: 90/@rem-pre;
+		line-height: 90/@rem-pre;
+		border: 1px solid #e7e7e8;
+		border-top: 0rem;
+		position: relative;
+		padding:0 20/@rem-pre;
+		font-size: 30/@rem-pre;
+	}
+	.form-li-input input {
+		display: block;
+		border-style: none;
+		width: 100%;
+		height: 100%;
+		line-height: 100%;
+		font-size: @fontSize2;
+	}
+	.form-li-input:first-child {
+		border-top: 1px solid #e7e7e8;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+	.form-li-input:last-child {
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+}

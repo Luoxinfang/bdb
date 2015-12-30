@@ -4,6 +4,7 @@
   &-list {
     margin-top: 20/@rem-pre;
     .item {
+      position: relative;
       height:110/@rem-pre;
       background-color: #ffffff;
       line-height: 45/@rem-pre;
@@ -50,10 +51,6 @@
         display: inherit;
       }
     }
-  }
-}
-.set {
-  &-list {
     .set-item:last-child {
       border-bottom:0;
     }
@@ -83,14 +80,79 @@
       font-size: @fontSize2;
       margin-right: 20/@rem-pre;
     }
+    .push-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }
-.push-list .push-item .push-btn{
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.mt{
-  margin-top: 10/@rem-pre;
+.message {
+  &-dialog {
+    position: relative;
+    background: @white;
+    min-height: 312/@rem-pre;
+    .li {
+      position: relative;
+      margin-left: 20/@rem-pre;
+      height: 110/@rem-pre;
+      padding-top: 20/@rem-pre;
+      padding-right: 20/@rem-pre;
+      border-bottom: 1px solid @lineColor;
+      .user-img {
+        width: 64/@rem-pre;
+        height: 64/@rem-pre;
+        border: 2px solid @bgColor;
+        border-radius: 50%;
+        float: left;
+      }
+      .enter-img {
+        width: 40/@rem-pre;
+        height: 40/@rem-pre;
+        float: right;
+        margin-top: 12/@rem-pre;
+      }
+      .d-t {
+        width: 440/@rem-pre;
+        float: left;
+      }
+      .d-l {
+        width: 230/@rem-pre;
+        float: left;
+      }
+      .d-n {
+        width: 190/@rem-pre;
+        float: right;
+      }
+      .u-name {
+        max-width: 230/@rem-pre;
+        height: 26/@rem-pre;
+        line-height: 26/@rem-pre;
+        float: left;
+        color: @mainColor3;
+        font-size: @fontSize3;
+        .ellipsis;
+      }
+      .u-time {
+        max-width: 190/@rem-pre;
+        height: 22/@rem-pre;
+        line-height: 22/@rem-pre;
+        float: right;
+        color: @mainColor3;
+        font-size: @fontSize4;
+        .ellipsis;
+        text-align: right;
+      }
+      .info {
+        max-width:440/@rem-pre;
+        height: 30/@rem-pre;
+        line-height: 30/@rem-pre;
+        color: @mainColor3;
+        font-size: 30/@rem-pre;
+        float: left;
+        .ellipsis;
+      }
+    }
+  }
 }
 

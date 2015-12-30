@@ -1,4 +1,4 @@
-<div class="order" data-order-no="{{ detail.order.orderno }}" data-money="{{ parseFloat(detail.order.ordermoney).toFixed(2) }}">
+<div class="order" data-order-id="{{ detail.order.orderid }}" data-order-no="{{ detail.order.orderno }}" data-money="{{ parseFloat(detail.order.ordermoney).toFixed(2) }}">
 	{% set orderStatus = {orderStatus:detail.order.orderstatus,payStatus:detail.order.paystatus,sendFlag:detail.order.sendflag,receiveFlag:detail.order.receiveflag,pointFlag:detail.order.pointflag,revokeStatus:detail.order.revokestatus} %}
 	<div class="order-status">订单状态：{{ orderStatus | orderStatus2name }}</div>
 	<div class="order-store">

@@ -28,7 +28,7 @@
 			<a class="btn btn-white mr20 delayReceive">延迟收货</a>
 			<a href="/order/result?status=applyRefundSuccess" class="btn btn-white mr20">整单退款</a>
 		{% elseif '待评价' == orderStatus | orderStatus2name %}
-			<a href="/order/comment" class="btn btn-red">去评论</a>
+			<a href="/order/comment/{{ detail.order.orderno }}" class="btn btn-red">去评论</a>
 		{% else %}
 			<a href="/order/comment" class="btn btn-white">申请售后</a>
 		{% endif %}

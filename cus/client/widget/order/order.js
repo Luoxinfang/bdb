@@ -8,6 +8,59 @@ var B = require('_common:js/bdb/core.js');
 var Cash = require('_common:js/bdb/cash.js');
 
 module.exports = {
+	result: {
+		paySuccess: function (order) {
+			return {
+				type: 'success',
+				header: {
+					title: '我的订单'
+				},
+				content: {
+					tit: '支付成功，请耐心等待商家发货！',
+					msg: '我们会以短信的方式通知您订单发货，请注意查收！\n3秒后自动跳转到我的订单页面...'
+				},
+				btn: {
+					href: '/order/list',
+					txt: '完成'
+				},
+				autoJump: true
+			};
+		},
+		payFail: function (order) {
+			return {
+				type: "error",
+				header: {
+					title: "我的订单"
+				},
+				content: {
+					tit: "支付失败",
+					msg: "抱歉，支付失败，3秒后自动返回到订单页面..."
+				},
+				btn: {
+					href: "/order/list",
+					txt: "继续支付"
+				},
+				autoJump: true
+			};
+		},
+		receiveSuccess: function (order) {
+			return {
+				type: 'success',
+				header: {
+					title: '确认收货',
+					rightText: '完成',
+					rightUrl: '/order/list'
+				},
+				content: {
+					tit: '订单：' + order.orderNo + '，已确认收货！'
+				},
+				btn: {
+					href: '/order/comment/' + order.orderNo,
+					txt: '去评论'
+				}
+			}
+		}
+	},
 	// 延时收货
 	delayReceive: function (order) {
 		$.ajax({
@@ -38,6 +91,7 @@ module.exports = {
 	},
 	// 确认收货
 	confirmReceive: function (order) {
+		var that = this;
 		var html = [];
 		html.push('<div class="dialog-wrap order-pay" style="display: block" id="pay">');
 		html.push('	<div class="dialog-mask"></div>');
@@ -73,22 +127,7 @@ module.exports = {
 					},
 					success: function (data) {
 						if (0 == data.status) {
-							var result = {
-								type: 'success',
-								header: {
-									title: '确认收货',
-									rightText: '完成',
-									rightUrl: '/order/list'
-								},
-								content: {
-									tit: '订单：' + order.orderNo + '，已确认收货！'
-								},
-								btn: {
-									href: '/order/comment/' + order.orderNo,
-									txt: '去评论'
-								}
-							};
-							location.replace('/_common/result?data=' + JSON.stringify(result));
+							location.href = '/_common/result?data=' + JSON.stringify(that.result.receiveSuccess(order));
 						} else {
 							var msg = data.msg || B.tips.networkError;
 							$('.toolbar .password-wrap .password').val('');
@@ -148,7 +187,7 @@ module.exports = {
 		html.push('			</label>');
 		html.push('			<label for="way-2" class="way">');
 		html.push('				<span>使用京东支付</span>');
-		html.push('				<input type="radio" value="2" name="payWay" id="way-2">');
+		html.push('				<input type="radio" value="4" name="payWay" id="way-2">');
 		html.push('				<i class="icon-40 icon-radio"></i>');
 		html.push('			</label>');
 		html.push('			<label for="way-3" class="way">');
@@ -170,12 +209,13 @@ module.exports = {
 		var that = this;
 		if ('1' == payWay) {
 			that.payByWallet(order);
-		} else if ('2' == payWay) {
-			that.payByJdpay(order);
-		} else if ('3' == payWay) {
-			that.payByYeepay(order);
+		} else {
+			var way = {
+				type: payWay,
+				code: '2'
+			};
+			that.payOnline(order, way);
 		}
-		;
 	},
 	// 零钱支付
 	payByWallet: function (order) {
@@ -216,22 +256,7 @@ module.exports = {
 					},
 					success: function (data) {
 						if (0 == data.status) {
-							var result = {
-								type: 'success',
-								header: {
-									title: '我的订单'
-								},
-								content: {
-									tit: '支付成功，请耐心等待商家发货！',
-									msg: '我们会以短信的方式通知您订单发货，请注意查收！\n3秒后自动跳转到我的订单页面...'
-								},
-								btn: {
-									href: '/order/list',
-									txt: '完成'
-								},
-								autoJump: true
-							};
-							location.replace('/_common/result?data=' + JSON.stringify(result));
+							location.replace('/_common/result?data=' + JSON.stringify(that.result.paySuccess(order)));
 						} else {
 							var msg = data.msg || B.tips.networkError;
 							$('.toolbar .password-wrap .password').val('');
@@ -248,12 +273,37 @@ module.exports = {
 			}
 		});
 	},
-	// 京东支付
-	payByJdpay: function (order) {
-
-	},
-	// 易宝支付
-	payByYeepay: function (order) {
-
+	// 在线支付
+	payOnline: function (order, payWay) {
+		var that = this;
+		$.ajax({
+			type: 'post',
+			dataType: 'json',
+			url: '/_common/cash/recharge',
+			data: {
+				money: order.money,
+				type: payWay.type,
+				code: payWay.code,
+				successUrl: location.host + '/_common/result?data=' + JSON.stringify(that.result.paySuccess(order)),
+				failUrl: location.host + '/_common/result?data=' + JSON.stringify(that.result.payFail(order)),
+				orderIds: order.orderId
+			},
+			success: function (data) {
+				if (0 == data.status) {
+					$('.toolbar').append('<form id="payForm" method="POST"></form>');
+					for (var key in data.data) {
+						$('#payForm').append('<input type="hidden" name="' + key + '" value="' + data.data[key] + '">');
+					}
+					$('#payForm').attr('action', data.url);
+					$('#payForm').submit();
+				} else {
+					var msg = data.msg || B.tips.networkError;
+					B.topWarn(msg);
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				B.topWarn(B.tips.networkError);
+			}
+		});
 	}
 }

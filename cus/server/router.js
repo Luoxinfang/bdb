@@ -106,13 +106,6 @@ module.exports = function (router) {
     }
     res.render('cus/page/order/result.tpl', resObj);
   });
-  //订单评论
-  router.get('/order/comment', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '评论';
-    resObj.header.leftUrl = '/order';
-    res.render('cus/page/order/comment.tpl', resObj);
-  });
   //拍卖列表
   router.get('/auction/list', function (req, res, next) {
     var resObj = req.appData;
@@ -224,7 +217,7 @@ module.exports = function (router) {
 
 	//>>>>>>>>>>order(订单)----------
 	//order/list:cus/action/order/list.js
-	//订单详情
 	router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
+	router.route('/order/comment/:orderNo').get(router.action('order/comment').get);
 	//----------order(订单)<<<<<<<<<<
 };

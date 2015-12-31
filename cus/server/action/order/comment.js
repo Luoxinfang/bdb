@@ -34,8 +34,9 @@ module.exports.get = function (req, res) {
 module.exports.put = function (req, res) {
 	var param = {
 		token: req.session.user.token,
-		orderNo: req.params.orderNo,
+		orderNo: req.body.orderNo,
 		data: req.body.data,
+		qualityStar: req.body.qualityStar,
 		serviceStar: req.body.serviceStar,
 		sendStar: req.body.sendStar
 	};

@@ -20,12 +20,15 @@
 	<div class="footer-content order-footer clearfix">
 		{% if '等待买家付款' == orderStatus | orderStatus2name %}
 			<a class="btn btn-red payOrder">付款</a>
+			{#<a class="btn btn-white mr20 cancelOrder">取消订单</a>#}
 		{% elseif '等待卖家发货' == orderStatus | orderStatus2name %}
 			<a class="btn btn-red remindDeliver">提醒发货</a>
 			<a class="btn btn-white mr20">整单退款</a>
 		{% elseif '卖家已发货' == orderStatus | orderStatus2name %}
 			<a class="btn btn-red confirmReceive">确认收货</a>
-			<a class="btn btn-white mr20 delayReceive">延迟收货</a>
+			{% if '0' == order.delayreceiveflag %}
+				<a class="btn btn-white mr20 delayReceive">延迟收货</a>
+			{% endif %}
 			<a href="/order/result?status=applyRefundSuccess" class="btn btn-white mr20">整单退款</a>
 		{% elseif '待评价' == orderStatus | orderStatus2name %}
 			<a href="/order/comment/{{ detail.order.orderno }}" class="btn btn-red">去评论</a>

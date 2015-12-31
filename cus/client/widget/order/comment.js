@@ -11,17 +11,58 @@ module.exports = {
 	init: function () {
 		this.event();
 	},
+	uploadImg: function () {
+		$('.imgForm').each(function () {
+			$(this).submit();
+		});
+	},
 	comment: function (e) {
+		var before = +new Date();
+		var timer = setTimeout(function () {
+			B.alert({
+				title: '数据提交中...',
+				icon: 'loading',
+				time: false
+			});
+		}, 400);
 		var orderNo = $('.order').data('orderNo');
-		var data = [];
+		var datas = [];
+		var qualityStar = $('input[name="qualityStar"]:checked').val();
 		var serviceStar = $('input[name="serviceStar"]:checked').val();
 		var sendStar = $('input[name="sendStar"]:checked').val();
 		$('.orderItem').each(function () {
 			var orderItem = {};
+			var imgUrls = [];
 			orderItem.orderitemid = $(this).data('orderItemId');
-			orderItem.rate = $(this).find('input[type="radio"][name="' + orderItem.orderitemid + '"]:checked').val();
 			orderItem.comment = $(this).find('textarea[name="' + orderItem.orderitemid + '"]').val();
-			data.push(orderItem);
+			orderItem.satisFactionStar = $(this).find('input[type="radio"][name="' + orderItem.orderitemid + '"]:checked').val();
+			$(this).find('.icon-add.has-img').each(function () {
+				var imgBase64 = $(this).css('background-image');
+				imgBase64 = imgBase64.substring(4, imgBase64.length - 1);
+				$.ajax({
+					type: "POST",
+					url: "http://192.168.0.105:8080/interface/file/baseload",
+					data: imgBase64,
+					contentType: "application/octet-stream",
+					dataType: "json",
+					async: false,
+					success: function (data) {
+						if (0 == data.status) {
+							imgUrls.push(data.path);
+						} else {
+							var msg = data.msg || B.tips.networkError;
+							B.topWarn(msg);
+							return false;
+						}
+					},
+					error: function (XMLHttpRequest, textStatus, errorThrown) {
+						B.topWarn(B.tips.networkError);
+						return false;
+					}
+				});
+			});
+			orderItem.imageUrl = imgUrls.join(',');
+			datas.push(orderItem);
 		})
 		$.ajax({
 			type: 'put',
@@ -29,12 +70,18 @@ module.exports = {
 			url: '/order/comment',
 			data: {
 				orderNo: orderNo,
-				data: data,
+				data: JSON.stringify(datas),
+				qualityStar: qualityStar,
 				serviceStar: serviceStar,
 				sendStar: sendStar
 			},
 			success: function (data) {
+				var after = +new Date();
+				if (before + 400 > after) {
+					clearTimeout(timer);
+				}
 				if (0 == data.status) {
+					B.clearAlert();
 					B.alert({
 						icon: 'success',
 						title: '评价成功',
@@ -45,23 +92,30 @@ module.exports = {
 						}
 					});
 				} else {
+					B.clearAlert();
 					var msg = data.msg || B.tips.networkError;
 					B.topWarn(msg);
 				}
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
+				var after = +new Date();
+				if (before + 400 > after) {
+					clearTimeout(timer);
+				}
+				B.clearAlert();
 				B.topWarn(B.tips.networkError);
 			}
 		});
 	},
 	readFile: function (e) {
 		var $this = $(e.currentTarget);
+		var file = e.target.files[0];
 		var reader = new FileReader();
-		for(file in e.files){
-			reader.readAsDataURL(file);
-			reader.onload = function(e){
-				$this.parent().parent().prepend('<a class="icon-add btn-file"><input type="file" class="file" accept="image/*" multiple></a>');
-				$this.parent().parent().css('background-image', 'url(' + this.result + ')');
+		reader.readAsDataURL(file);
+		reader.onload = function (e) {
+			$this.parent().addClass('has-img').css('background-image', 'url(' + this.result + ')');
+			if ($this.siblings().size() < 8) {
+				$this.parent().parent().append('<a class="icon-add btn-file ml10 mb10"><input name="' + $this.attr('name') + '" type="file" class="file" accept="image/*"></a>');
 			}
 		}
 	},

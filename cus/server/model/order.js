@@ -82,5 +82,17 @@ module.exports = {
 			path: '/interface/order/ordreceive',
 			data: data
 		});
+	},
+	/**
+	 * 订单评价
+	 * @param params
+	 * @returns {*}
+	 */
+	comment: function (params) {
+		data = server.parserData(params, order);
+		return yog.ral(serverId, {
+			path: '/interface/order/evaluate',
+			data: data
+		});
 	}
 };

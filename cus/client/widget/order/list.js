@@ -38,6 +38,7 @@ module.exports = {
 		$('.header-tab').on('click', 'a:not(.on)', this.changeStatus.bind(this));
 		$('.order-list').on('click', '.payOrder', function () {
 			var order = {};
+			order.orderId = $(this).parents('.order-item').data('orderId');
 			order.orderNo = $(this).parents('.order-item').data('orderNo');
 			order.money = $(this).parents('.order-item').data('money');
 			Order.showPay(order);

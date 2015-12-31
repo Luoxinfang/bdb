@@ -14,6 +14,7 @@ module.exports = {
 	event: function () {
 		$('.footer').on('click', '.payOrder', function () {
 			var order = {};
+			order.orderId = $('.order').data('orderId');
 			order.orderNo = $('.order').data('orderNo');
 			order.money = $('.order').data('money');
 			Order.showPay(order);

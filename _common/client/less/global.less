@@ -431,22 +431,12 @@ body.with-drawer {
   width: 100/@rem-pre;
   height: 100/@rem-pre;
   vertical-align: top;
-  background: @white;
   border: 1px solid @lineColor;
   border-radius: 5px;
-  background-size: 100%;
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 60/@rem-pre;
-    height: 60/@rem-pre;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    background: url('../icon/add.png') no-repeat;
+  background: url('../icon/add.png') @white no-repeat center center;
+  background-size: 60/@rem-pre;
+  float: left;
+  &.has-img {
     background-size: contain;
   }
 }

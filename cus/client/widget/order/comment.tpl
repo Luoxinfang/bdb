@@ -22,14 +22,14 @@
 			</div>
 			<div class="comment">
 				<div class="dt">
-					<div class="item"><label for="{{ product.orderitemid }}-1"><input type="radio" name="{{ product.orderitemid }}" id="{{ product.orderitemid }}-1" value="好" checked><span class="good">好评</span></label></div>
-					<div class="item tc"><label for="{{ product.orderitemid }}-2"><input type="radio" name="{{ product.orderitemid }}" id="{{ product.orderitemid }}-2" value="中"><span class="mid">中评</span></label></div>
-					<div class="item tr"><label for="{{ product.orderitemid }}-3"><input type="radio" name="{{ product.orderitemid }}" id="{{ product.orderitemid }}-3" value="差"><span class="bad">差评</span></label></div>
+					<div class="item"><label for="{{ product.orderitemid }}-1"><input type="radio" name="{{ product.orderitemid }}" id="{{ product.orderitemid }}-1" value="0" checked><span class="good">好评</span></label></div>
+					<div class="item tc"><label for="{{ product.orderitemid }}-2"><input type="radio" name="{{ product.orderitemid }}" id="{{ product.orderitemid }}-2" value="1"><span class="mid">中评</span></label></div>
+					<div class="item tr"><label for="{{ product.orderitemid }}-3"><input type="radio" name="{{ product.orderitemid }}" id="{{ product.orderitemid }}-3" value="2"><span class="bad">差评</span></label></div>
 				</div>
 				<div class="ml20 mr20"><textarea name="{{ product.orderitemid }}" id="" placeholder="说点什么"></textarea></div>
 			</div>
-			<div class="ml20 mb20">
-				<a class="icon-add btn-file"><input type="file" class="file" accept="image/*" multiple></a>
+			<div class="clearfix ml20 mb10">
+				<a class="icon-add btn-file mb10"><input name="file" type="file" class="file" accept="image/*"></a>
 			</div>
 		</div>
 	{% endfor %}
@@ -45,7 +45,7 @@
 				<i class="icon-40 icon-star"></i>
 				<i class="icon-40 icon-star"></i>
 			</div>
-			<input type="radio" name="rate-1" class="radio" value="1">
+			<input type="radio" name="qualityStar" class="radio" value="1">
 			<div class="stars stars-1">
 				<i class="icon-40 icon-star-full"></i>
 				<i class="icon-40 icon-star"></i>
@@ -53,7 +53,7 @@
 				<i class="icon-40 icon-star"></i>
 				<i class="icon-40 icon-star"></i>
 			</div>
-			<input type="radio" name="rate-1" class="radio" value="2">
+			<input type="radio" name="qualityStar" class="radio" value="2">
 			<div class="stars stars-2">
 				<i class="icon-40 icon-star-full"></i>
 				<i class="icon-40 icon-star-full"></i>
@@ -61,7 +61,7 @@
 				<i class="icon-40 icon-star"></i>
 				<i class="icon-40 icon-star"></i>
 			</div>
-			<input type="radio" name="rate-1" class="radio" value="3">
+			<input type="radio" name="qualityStar" class="radio" value="3">
 			<div class="stars stars-3">
 				<i class="icon-40 icon-star-full"></i>
 				<i class="icon-40 icon-star-full"></i>
@@ -69,7 +69,7 @@
 				<i class="icon-40 icon-star"></i>
 				<i class="icon-40 icon-star"></i>
 			</div>
-			<input type="radio" name="rate-1" class="radio" value="4" checked>
+			<input type="radio" name="qualityStar" class="radio" value="4" checked>
 			<div class="stars stars-4">
 				<i class="icon-40 icon-star-full"></i>
 				<i class="icon-40 icon-star-full"></i>
@@ -77,7 +77,7 @@
 				<i class="icon-40 icon-star-full"></i>
 				<i class="icon-40 icon-star"></i>
 			</div>
-			<input type="radio" name="rate-1" class="radio" value="5">
+			<input type="radio" name="qualityStar" class="radio" value="5">
 			<div class="stars stars-5">
 				<i class="icon-40 icon-star-full"></i>
 				<i class="icon-40 icon-star-full"></i>

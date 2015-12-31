@@ -121,33 +121,6 @@ module.exports = function (router) {
     resObj.header.title = '收货地址';
     res.render('bus/page/user/receipt-address.tpl', resObj);
   });
-  //我的钱包 —— 首页
-  router.get('/wallet', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '我的钱包';
-    res.render('bus/page/wallet/index.tpl', resObj);
-  });
-  //我的钱包 —— 提现
-  router.get('/withdrawals', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '提现';
-    resObj.header.leftUrl = '/wallet';
-    res.render('bus/page/wallet/withdrawals.tpl', resObj);
-  });
-  //我的钱包 —— 提现结果页
-  router.get('/withdrawals-result', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '提现';
-    resObj.header.leftUrl = '/wallet';
-    res.render('bus/page/wallet/withdrawals-result.tpl', resObj);
-  });
-  //我的钱包 ——添加银行卡
-  router.get('/add-bank-card', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '添加银行卡';
-    resObj.header.leftUrl = '/wallet';
-    res.render('bus/page/wallet/add-bank-card.tpl', resObj);
-  });
   //订单管理 ——首页
   router.get('/order', function (req, res, next) {
     var resObj = req.appData;
@@ -409,4 +382,17 @@ module.exports = function (router) {
     });
     res.render('bus/page/shelves/shelve.tpl', resObj);
   });
+
+	//>>>>>>>>>>wallet(我的钱包)----------
+	//wallet:cus/action/wallet/index.js
+	//wallet/bank:cus/action/wallet/bank/index.js
+	//wallet/bank/add:cus/action/wallet/bank/add.js
+	//wallet/withdraw:cus/action/wallet/withdraw.js
+	router.get('/wallet/recharge', function (req, res, next) {
+		req.appData.header.title = '充值';
+		res.render('cus/page/wallet/recharge.tpl', req.appData);
+	});
+	//wallet/trans-list:ucs/action/wallet/trans-list
+	//----------wallet(我的钱包)<<<<<<<<<<
+
 };

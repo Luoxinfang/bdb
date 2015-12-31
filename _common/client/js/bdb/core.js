@@ -225,31 +225,47 @@ module.exports = {
   },
   //把毫秒转成刻度时间
   milliseconds2time: function (ms) {
-    var day = 0;
-    var hours = 0;
-    var minute = 0;
-    var second = 0;
+    var day = parseInt(ms / (1000 * 60 * 60 * 24));
+    var hours = parseInt(ms / (1000 * 60 * 60)) % 24;
+    var minute = parseInt(ms / (1000 * 60)) % 60;
+    var second = parseInt(ms / 1000) % 60;
     var string = '';
-    second = parseInt(ms / 1000);
-    if (second > 59) {
-      minute = (second - 60) / 60;
-      second = 59;
-    }
-    string = '00:' + second;
-    if (minute > 59) {
-      hours = (minute - 60) / 60;
-      minute = 59;
-      string = minute + ':' + second;
-    }
-    if (hours > 23) {
-      day = (hours - 24) / 24;
-      hours = 23;
-      string = hours + '时' + minute + '分';
-    }
     if (day > 0) {
-      day = parseInt(day);
-      string = day + '天 ' + hours + '时';
+      string = day + '天'
+    }
+    if (hours > 0) {
+      string = hours + ':' + minute;
+    }
+    if (minute > 0) {
+      string = minute + ':' + second;
+    } else {
+      string = '0:' + second;
+    }
+    if (-1 !== string.indexOf(':')) {
+      var array = string.split(':');
+      array[0] = array[0] < 10 ? '0' + array[0] : array[0];
+      array[1] = array[1] < 10 ? '0' + array[1] : array[1];
+      string = array.join(':');
     }
     return string;
+  },
+  //显示键盘输入框
+  showKeyboard: function () {
+    $('.toolbar').show();
+    var html = [];
+    var $dom = $('.keyboard');
+    var $show = $dom.find('.input');
+    $dom.on('click', '.number', function () {
+      var text = $show.text();
+      $show.text(text + $(this).text());
+    });
+    $dom.on('click', '.del', function () {
+      var text = $show.text();
+      var length = text.length;
+      if (length) {
+        $show.text(text.substring(0, length - 1));
+      }
+    });
+
   }
 };

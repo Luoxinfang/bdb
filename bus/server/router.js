@@ -217,8 +217,6 @@ module.exports = function (router) {
   router.get('/activity/add-activity', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '发起活动';
-    resObj.sTime =
-
     res.render('bus/page/activity/add-activity.tpl',resObj);
   });
   //地址选择

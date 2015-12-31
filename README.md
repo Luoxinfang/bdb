@@ -42,7 +42,12 @@
 		
 ####本地改进
 		1.less编译模块-支持了跨模块的引用
+			找到 npm\node_modules\yog2\node_modules\fis-parser-less
+			把index.js替换掉
 		2.ral模块-更加符合需要的日志输出
+			找到 yog\node_modules\yog2-kernel\node_modules\node-ral\lib
+			把ral.js替换掉
+		
 		
 		
 		

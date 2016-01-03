@@ -19,7 +19,7 @@ module.exports = {
     this.pageNum = 1;//默认页码
     this.getAuctionStatus();
     this.getBidList('init');
-    B.showKeyboard();
+
     this.event();
   },
   //绑定出价列表的滑动

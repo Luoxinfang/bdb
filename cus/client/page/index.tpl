@@ -35,19 +35,19 @@
 		</div>
 		<div class="category clearfix">
 			<a href="/auction/list">
-				<i class="icon icon-01"></i><br/>
+				<i class="facial icon-01"></i><br/>
 				<span>翡翠</span>
 			</a>
 			<a href="/auction/list">
-				<i class="icon icon-02"></i><br/>
+				<i class="facial icon-02"></i><br/>
 				<span>黄金</span>
 			</a>
 			<a href="/auction/list">
-				<i class="icon icon-03"></i><br/>
+				<i class="facial icon-03"></i><br/>
 				<span>钻石</span>
 			</a>
 			<a href="/auction/list">
-				<i class="icon icon-04"></i><br/>
+				<i class="facial icon-04"></i><br/>
 				<span>更多</span>
 			</a>
 		</div>

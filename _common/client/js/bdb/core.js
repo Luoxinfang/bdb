@@ -250,22 +250,48 @@ module.exports = {
     return string;
   },
   //显示键盘输入框
-  showKeyboard: function () {
-    $('.toolbar').show();
-    var html = [];
+  showKeyboard: function (callback) {
+
     var $dom = $('.keyboard');
     var $show = $dom.find('.input');
+    $dom.show();
+    $('.toolbar').show();
+    //数字键盘事件
     $dom.on('click', '.number', function () {
-      var text = $show.text();
-      $show.text(text + $(this).text());
+      var content = $show.html();
+      $show.html(content + $(this).text());
     });
+    //表情键盘事件
+    $dom.on('click', '.facial', function () {
+      var content = $show.html();
+      $show.html(content + this.outerHTML);
+    });
+    //删除输入事件
     $dom.on('click', '.del', function () {
-      var text = $show.text();
-      var length = text.length;
+      var content = $show.html();
+      var length = content.length;
       if (length) {
-        $show.text(text.substring(0, length - 1));
+        var reg = /<span data-name="\w+" class="facial \w+"><\/span>$/gi;
+        if(reg.test(content)){
+          $show.html(content.replace(reg,''));
+        }else{
+          $show.html(content.substring(0, length - 1));
+        }
       }
     });
-
+    //切换表情界面
+    $dom.on('click', '.btn-icon', function () {
+      $dom.toggleClass('icon');
+    });
+    //关闭键盘
+    $dom.on('click', '.close', function () {
+      $dom.hide();
+    });
+    //执行回调 并返回值
+    $dom.on('click', '.keyboard-submit', function () {
+      if (callback && typeof callback === 'function') {
+        callback($show.html());
+      }
+    });
   }
 };

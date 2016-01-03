@@ -28,5 +28,13 @@ module.exports = {
       path: '/interface/auction/record',
       query: data
     });
-  }
+  },
+  //托管出价
+  entrust: function (data) {
+    data = server.parserData(data, 'user');
+    return yog.ral(serverId, {
+      path: '/interface/user/sethostingbid',
+      data: data
+    });
+  },
 };

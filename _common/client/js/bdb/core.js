@@ -291,9 +291,18 @@ module.exports = {
     });
     //执行回调 并返回值
     $dom.on('click', '.keyboard-submit', function () {
-      if (callback && typeof callback === 'function') {
-        callback($show.html());
+      var content = $show.html();
+      if(content){
+        if (callback && typeof callback === 'function') {
+          callback(content);
+        }
+      }else{
+        this.topWarn('请输入价格');
       }
-    });
-  }
+    }.bind(this));
+  },
+  //隐藏键盘输入框
+  hideKeyboard:function(){
+
+  },
 };

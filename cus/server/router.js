@@ -108,7 +108,6 @@ module.exports = function (router) {
   router.route('/auction/activity/:id').get(router.action('auction/activity').get);
   //拍品详情
   router.route('/auction/detail/:id').get(router.action('auction/detail').get);
-  //
 
 
   //店铺首页

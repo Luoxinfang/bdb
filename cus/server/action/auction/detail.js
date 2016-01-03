@@ -17,8 +17,6 @@ module.exports.get = function (req, res) {
   }).then(function (rs) {
     var resObj = req.appData;
     resObj.bail = rs.bail;
-
-
     resObj.data = rs.detail.data;
     resObj.data.id = param.proCode;//回传id
     resObj.header.title = rs.detail.data.proname;

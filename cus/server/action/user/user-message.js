@@ -6,21 +6,15 @@
 
 var _ = require('lodash');
 var model = yog.require('cus/model/user.js');
+var moment = require('moment');
 
 module.exports = function (req, res, next) {
 	var resObj = req.appData;
 	resObj.header.nav = [{val:'系统消息',url:'/user/sys-message',default:false},
 		{val:'用户消息',url:'/user/user-message',default:true}];
-	var page = {
-		page: "1",
-		pagesize:"20",
-		status: 0
-	};
-	var params = _.extend({
-		token: req.session.user.token
-	}, page);
+	var param = {token: req.session.user.token}
 	//获取系统信息
-	model.queryDetail(params).then(function (rs) {
+	model.recentconsult(param).then(function (rs) {
 		resObj.userMsg = rs.data;
 		res.render('cus/page/user/user-message.tpl', resObj);
 	}).catch(function (error) {

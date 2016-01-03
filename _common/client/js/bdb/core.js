@@ -250,12 +250,14 @@ module.exports = {
     return string;
   },
   //显示键盘输入框
-  showKeyboard: function (callback) {
-
+  showKeyboard: function (opt) {
+    var callback = opt.callback;
+    var btnName = opt.btnName || '出价';
     var $dom = $('.keyboard');
     var $show = $dom.find('.input');
     $dom.show();
     $('.toolbar').show();
+    $dom.find('.keyboard-submit').text(btnName);
     //数字键盘事件
     $dom.on('click', '.number', function () {
       var content = $show.html();
@@ -272,9 +274,9 @@ module.exports = {
       var length = content.length;
       if (length) {
         var reg = /<span data-name="\w+" class="facial \w+"><\/span>$/gi;
-        if(reg.test(content)){
-          $show.html(content.replace(reg,''));
-        }else{
+        if (reg.test(content)) {
+          $show.html(content.replace(reg, ''));
+        } else {
           $show.html(content.substring(0, length - 1));
         }
       }

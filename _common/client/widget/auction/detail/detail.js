@@ -151,13 +151,41 @@ module.exports = {
   contributeBail: function () {
 
   },
-  //显示输入键盘
-  showKeyboard: function () {
-    B.showKeyboard();
+  //显示托管键盘
+  showEntrust: function () {
+    B.showKeyboard({
+      btnName: '托管',
+      callback: function (content) {
+        this.postEntrust.bind(this)(content);
+      }.bind(this)
+    });
+  },
+  //提交委托出价
+  postEntrust: function (price) {
+    var that = this;
+    $.ajax({
+      type: 'post',
+      dataType: 'json',
+      url: '/auction/entrust',
+      data: {
+        productCode: that.id,
+        maxValue: price
+      },
+      success: function (data) {
+        if (0 == data.status) {
+          B.topWarn(data.msg);
+        } else {
+          B.topWarn(B.tips.networkError);
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        B.topWarn(B.tips.networkError);
+      }
+    });
   },
   event: function () {
     this.$collect.on('click', this.subscribe.bind(this));
     $('#btn-bail').on('click', this.contributeBail.bind(this));
-    $('#btn-entrust').on('click', this.showKeyboard.bind(this));
+    $('#btn-entrust').on('click', this.showEntrust.bind(this));
   }
 };

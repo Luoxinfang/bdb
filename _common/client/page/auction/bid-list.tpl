@@ -1,6 +1,6 @@
 {#出价列表#}
 {% for item in data %}
-	<li class="item clearfix">
+	<li class="item" data-total="{{ total }}">
 		<img class="user-img" src="{{ item.imgurl }}" alt="">
 
 		<div class="d-c ml20">
@@ -14,7 +14,7 @@
 		</div>
 		<div class="d-r tr">
 			{% if page==1 && loop.index==1 %}
-				<div class="state">领先</div>
+				<div class="state">(<span id="first-price"></span>)领先</div>
 			{% else %}
 				<div class="state">出局</div>
 			{% endif %}

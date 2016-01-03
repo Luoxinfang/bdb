@@ -1,5 +1,9 @@
 {% extends '_common:page/auction/detail.tpl' %}
 
+{% block toolbar %}
+	{% widget '_common:widget/common/keyboard/keyboard.tpl' %}
+{% endblock %}
+
 {% block head %}
 	{% require "_common:js/plugin/dropload/dropload.less" %}
 	{% require "_common:js/plugin/dropload/dropload.js" %}
@@ -10,23 +14,15 @@
 {% endblock %}
 
 {% block footer %}
-	{% if auctionStatus == 0 || auctionStatus == 2 %}
-		<div class="footer-content">
-			<button class="btn btn-red">交保证金参加拍卖</button>
+	{% if bail.complete == 1 %}
+		<div class="footer-content" id="group-bail">
+			<button class="btn btn-red" id="btn-bail">交保证金参加拍卖</button>
 		</div>
-	{% endif %}
-	{% if auctionStatus == 1 %}
-		<div class="footer-content">
+	{% else %}
+		<div class="footer-content" id="group-bid">
 			<button class="btn btn-white btn-disabled btn-l">自定出价</button>
 			<button class="btn btn-red btn-disabled btn-c ml20">出价100</button>
-			<button class="btn btn-white btn-r ml20">托管</button>
-		</div>
-	{% endif %}
-	{% if auctionStatus == 3 %}
-		<div class="footer-content">
-			<button class="btn btn-white btn-l">自定出价</button>
-			<button class="btn btn-red btn-c ml20">出价100</button>
-			<button class="btn btn-white btn-r ml20">托管</button>
+			<button class="btn btn-white btn-r ml20" id="btn-entrust">托管</button>
 		</div>
 	{% endif %}
 	{% script %}

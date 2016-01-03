@@ -1,0 +1,82 @@
+@import "@{_common}/public/mixin";
+//自定义键盘
+.keyboard {
+  position: absolute;
+  z-index: 900;
+  bottom: 0;
+  left: 0;
+  background-color: @white;
+  width: 100%;
+  height: 420/@rem-pre;
+  overflow: hidden;
+  &-top {
+    border-top: 1px solid @mainColor5;
+    background-color: @bgColor2;
+    height: 100/@rem-pre;
+    padding: 0 20/@rem-pre;
+    .input, .placeholder {
+      float: left;
+      margin-top: 14/@rem-pre;
+      width: 82%;
+      height: 70/@rem-pre;
+      padding: 0 2%;
+      font-size: @fontSize2;
+      line-height: 70/@rem-pre;
+      border-radius: 5px;
+      background-color: @mainColor5;
+    }
+    .placeholder {
+      display: none;
+    }
+    .input:empty {
+      display: none;
+    }
+    .input:empty + .placeholder {
+      display: block;
+    }
+
+    .icon {
+      float: right;
+      margin-top: 16/@rem-pre;
+      width: 60/@rem-pre;
+      height: 60/@rem-pre;
+      background: url("./icon/wx.png") no-repeat;
+      background-size: contain;
+    }
+  }
+  .number-table {
+    width: 100%;
+    text-align: center;
+    font-size: @fontSize1;
+    tr {
+      height: 80/@rem-pre;
+    }
+    td {
+      width: 25%;
+      border: 1px solid @mainColor5;
+    }
+    a {
+      display: inline-block;
+      height: 80/@rem-pre;
+      width: 100%;
+    }
+    a:active {
+      background-color: @mainColor5;
+    }
+  }
+  .icon-table {
+    width: 100%;
+    height: 320/@rem-pre;
+    padding: 5/@rem-pre;
+    .icon {
+      width: 40/@rem-pre;
+      height: 40/@rem-pre;
+      display: inline-block;
+      margin: 5/@rem-pre;
+    }
+    .icon.wx{
+      background-image: url('./icon/1.png');
+      background-size: contain;
+    }
+  }
+}

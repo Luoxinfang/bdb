@@ -29,7 +29,6 @@ module.exports = {
 			url: '/_common/cash/bank',
 			data: $('#form').serialize(),
 			success: function (data) {
-				console.log(data);
 				if (0 == data.status) {
 					B.alert({
 						title: '银行卡新增成功',
@@ -41,14 +40,14 @@ module.exports = {
 						}
 					});
 				} else {
-					var msg = data.msg || '服务器异常，请稍后再试';
+					var msg = data.msg || B.tips.networkError;
 					$('#addBank').removeClass('btn-disabled');
 					B.topWarn(msg);
 				}
 			},
 			error: function (jqXHR, textStatus, errorThrown) {
 				$('#addBank').removeClass('btn-disabled');
-				B.topWarn('服务器异常，请稍后再试');
+				B.topWarn(B.tips.networkError);
 			}
 		});
 
@@ -83,7 +82,7 @@ module.exports = {
 						$('#validPayPwd').hide();
 						$('#addBankDiv').show();
 					} else {
-						var msg = data.msg || '服务器异常，请稍后再试';
+						var msg = data.msg || B.tips.networkError;
 						B.clearAlert();
 						$('#payPwd').val('');
 						$('.password-wrap .word').removeClass('filled');
@@ -98,7 +97,7 @@ module.exports = {
 					B.clearAlert();
 					$('#payPwd').val('');
 					$('.password-wrap .word').removeClass('filled');
-					B.topWarn('服务器异常，请稍后再试');
+					B.topWarn(B.tips.networkError);
 				}
 			});
 		}

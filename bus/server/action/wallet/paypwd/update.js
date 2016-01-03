@@ -16,7 +16,7 @@ module.exports = function (req, res, next) {
 	var resObj = req.appData;
 	resObj.header.title = '修改支付密码';
 	resObj.validPayPwd = (+new Date() - req.session.validPayPwdTime) <= 10000;
-	res.render('cus/page/wallet/paypwd/update.tpl', resObj);
+	res.render('bus/page/wallet/paypwd/update.tpl', resObj);
 };
 // get
 module.exports.get = function (req, res, next) {

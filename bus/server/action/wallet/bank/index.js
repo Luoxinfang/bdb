@@ -21,7 +21,7 @@ module.exports = function (req, res, next) {
 	cashModel.queryBankList(params).then(function (rs) {
 		if (0 == rs.status) {
 			resObj.bankList = rs.list;
-			res.render('cus/page/wallet/bank/index.tpl', resObj);
+			res.render('bus/page/wallet/bank/index.tpl', resObj);
 		} else {
 			resObj.rs = {};
 			resObj.rs.status = rs.status;

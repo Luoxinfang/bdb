@@ -9,12 +9,8 @@ var Order = require('cus:widget/order/order.js');
 
 module.exports = {
 	init: function () {
+		B.bindAddImage(9);
 		this.event();
-	},
-	uploadImg: function () {
-		$('.imgForm').each(function () {
-			$(this).submit();
-		});
 	},
 	comment: function (e) {
 		var before = +new Date();
@@ -39,27 +35,18 @@ module.exports = {
 			$(this).find('.icon-add.has-img').each(function () {
 				var imgBase64 = $(this).css('background-image');
 				imgBase64 = imgBase64.substring(4, imgBase64.length - 1);
-				$.ajax({
-					type: "POST",
-					url: "http://192.168.0.105:8080/interface/file/baseload",
-					data: imgBase64,
-					contentType: "application/octet-stream",
-					dataType: "json",
-					async: false,
-					success: function (data) {
-						if (0 == data.status) {
-							imgUrls.push(data.path);
-						} else {
-							var msg = data.msg || B.tips.networkError;
-							B.topWarn(msg);
-							return false;
-						}
-					},
-					error: function (XMLHttpRequest, textStatus, errorThrown) {
-						B.topWarn(B.tips.networkError);
-						return false;
-					}
+				var data = B.uploadImage({
+					path: '/tmp',
+					fileName: 'comment',
+					img: imgBase64
 				});
+				if (0 == data.status) {
+					imgUrls.push(data.path);
+				} else {
+					var msg = data.msg || B.tips.networkError;
+					B.topWarn(msg);
+					return false;
+				}
 			});
 			orderItem.imageUrl = imgUrls.join(',');
 			datas.push(orderItem);
@@ -107,20 +94,7 @@ module.exports = {
 			}
 		});
 	},
-	readFile: function (e) {
-		var $this = $(e.currentTarget);
-		var file = e.target.files[0];
-		var reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = function (e) {
-			$this.parent().addClass('has-img').css('background-image', 'url(' + this.result + ')');
-			if ($this.siblings().size() < 8) {
-				$this.parent().parent().append('<a class="icon-add btn-file ml10 mb10"><input name="' + $this.attr('name') + '" type="file" class="file" accept="image/*"></a>');
-			}
-		}
-	},
 	event: function () {
 		$('.commentOrder').on('click', this.comment.bind(this));
-		$('.orderItem').on('change', 'input.file', this.readFile.bind(this));
 	}
 }

@@ -207,5 +207,6 @@ module.exports = function (router) {
 	//order/list:cus/action/order/list.js
 	router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
 	router.route('/order/comment/:orderNo').get(router.action('order/comment').get);
+	router.route('/order/complain/:orderNo').get(router.action('order/complain').get);
 	//----------order(订单)<<<<<<<<<<
 };

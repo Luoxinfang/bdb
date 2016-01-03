@@ -17,5 +17,5 @@ module.exports = function (req, res, next) {
 	resObj.header.title = '忘记支付密码';
 	resObj.header.leftUrl = '/wallet/paypwd/update';
 	resObj.telphone = req.session.user.mobile;
-	res.render('cus/page/wallet/paypwd/forget.tpl', resObj);
+	res.render('bus/page/wallet/paypwd/forget.tpl', resObj);
 }

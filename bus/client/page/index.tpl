@@ -46,7 +46,7 @@
 			</div>
 			<div class="swiper-slide">
 				<div class="bdb-list clearfix">
-					<a href=""><i class="icon icon-07"></i>
+					<a href="/wallet"><i class="icon icon-07"></i>
 
 						<div class="w-1">财务中心</div>
 					</a>

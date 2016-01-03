@@ -26,7 +26,7 @@ module.exports = function (req, res, next) {
 			}, params)).then(function (result) {
 				if (0 == result.status) {
 					resObj.bankList = result.list;
-					res.render('cus/page/wallet/withdraw.tpl', resObj);
+					res.render('bus/page/wallet/withdraw.tpl', resObj);
 				} else {
 					resObj.rs = {};
 					resObj.rs.status = result.status;

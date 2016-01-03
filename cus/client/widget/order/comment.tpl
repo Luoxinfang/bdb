@@ -28,8 +28,8 @@
 				</div>
 				<div class="ml20 mr20"><textarea name="{{ product.orderitemid }}" id="" placeholder="说点什么"></textarea></div>
 			</div>
-			<div class="clearfix ml20 mb10">
-				<a class="icon-add btn-file mb10"><input name="file" type="file" class="file" accept="image/*"></a>
+			<div class="clearfix ml20 mt-10 mb20">
+				<a class="icon-add btn-file mr10 mt10"><input name="file" type="file" class="file" accept="image/*" multiple></a>
 			</div>
 		</div>
 	{% endfor %}

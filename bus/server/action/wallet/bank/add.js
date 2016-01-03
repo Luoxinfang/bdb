@@ -23,7 +23,7 @@ module.exports = function (req, res, next) {
 		if ('0' == rs.status) {
 			resObj.realInfo = rs.data;
 			resObj.validPayPwd = (+new Date() - req.session.validPayPwdTime) <= 60000;
-			res.render('cus/page/wallet/bank/add.tpl', resObj);
+			res.render('bus/page/wallet/bank/add.tpl', resObj);
 		} else {
 			var error = _.extend({
 				header: resObj.header

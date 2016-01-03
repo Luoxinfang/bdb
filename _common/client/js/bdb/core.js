@@ -251,5 +251,62 @@ module.exports = {
 			string = day + '天 ' + hours + '时';
 		}
 		return string;
+	},
+	/**
+	 * 绑定添加图片
+	 * @param size 图片最大张数
+	 */
+	bindAddImage: function (size) {
+		var maxSize = size || 9;
+		$(document).on('change input', '.icon-add .file', function (e) {
+			var $this = $(e.currentTarget),
+				files = e.target.files,
+				readers = [],
+				num = files.length >= maxSize ? maxSize : files.length;
+			for (var i = 0; i < num; i++) {
+				readers[i] = new FileReader();
+				readers[i].readAsDataURL(files[i]);
+				readers[i].onload = function () {
+					if ($this.parent().hasClass('has-img')) {
+						$this.parent().css('background-image', 'url(' + this.result + ')');
+					} else {
+						$this.parent().before('<a class="icon-add btn-file has-img mt10 mr10" style="background-image:url(' + this.result + ')"><input name="' + $this.attr('name') + '" type="file" class="file" accept="image/*"></a>');
+						if ($this.parent().siblings().size() >= maxSize) {
+							$this.parent().parent().find('.icon-add:not(.has-img)').remove();
+						}
+					}
+				}
+			}
+		});
+	},
+	/**
+	 * 上传图片到服务器
+	 * @param data 图片数据
+	 */
+	uploadImage: function (data) {
+		var B = this;
+		var url = B.server.file + '/interface/file/baseload?';
+		if (data.path) {
+			url += '&path=' + data.path;
+		}
+		if (data.fileName) {
+			url += '&filename=' + data.fileName;
+		}
+		var result = {};
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: data.img,
+			contentType: "application/octet-stream",
+			dataType: "json",
+			async: false,
+			success: function (data2) {
+				result = data2;
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				result = {status: 0, msg: B.tips.networkError};
+			}
+		});
+		return result;
 	}
 };

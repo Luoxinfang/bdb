@@ -20,11 +20,11 @@ module.exports = function (req, res, next) {
 		if (0 == rs.status) {
 			resObj.cashMoney = rs.cashmoney;
 			if (resObj.cashMoney > 0) {
-				res.render('cus/page/wallet/index.tpl', resObj);
+				res.render('bus/page/wallet/index.tpl', resObj);
 			} else {
 				cashModel.queryPwd(params).then(function (rs) {
 					resObj.payPwdRecomplete = rs.recomplete;
-					res.render('cus/page/wallet/index.tpl', resObj);
+					res.render('bus/page/wallet/index.tpl', resObj);
 				}).catch(function (error) {
 					yog.log.fatal(error);
 				});

@@ -1,7 +1,7 @@
 /**
  * @author chenzhenhua
  * @createTime 2015-12-28
- * @description 这个路由处理订单详情页
+ * @description 订单评论
  */
 
 var _ = require('lodash');

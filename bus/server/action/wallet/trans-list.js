@@ -66,7 +66,7 @@ module.exports = function (req, res, next) {
 			if (req.query.type) {
 				res.render('_common/widget/wallet/trans-list.tpl', resObj);
 			} else {
-				res.render('cus/page/wallet/trans-list.tpl', resObj);
+				res.render('bus/page/wallet/trans-list.tpl', resObj);
 			}
 		} else {
 			resObj.rs = {};

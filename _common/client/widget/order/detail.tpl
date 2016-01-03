@@ -42,7 +42,7 @@
 	<div class="order-info mt20">
 		<div class="tlt">
 			<span class="fl">收货信息</span>
-			<a class="fc-2 fr">修改地址</a>
+			{#<a class="fc-2 fr">修改地址</a>#}
 		</div>
 		<div class="content">
 			<p>姓名：{{ detail.address.username }}</p>

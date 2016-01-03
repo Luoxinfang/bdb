@@ -30,9 +30,6 @@ body {
   height: inherit;
   overflow-x: hidden;
   overflow-y: auto;
-
-  display: flex;
-  flex-direction: column;
 }
 
 .drawer {
@@ -69,7 +66,10 @@ body.with-drawer {
     .transform(translateX(426/@rem-pre) scale(0.8, 0.8));
   }
 }
-
+.toolbar{
+  //工具栏
+  display: none;
+}
 .overlay {
   //首页侧边栏
   position: absolute;
@@ -359,10 +359,10 @@ body.with-drawer {
   &-7days {
     background-image: url('../icon/auction/icon-7days.png');
   }
-	//包邮
-	&-free-post {
-		background-image: url('../icon/auction/icon-free-postage.png');
-	}
+  //包邮
+  &-free-post {
+    background-image: url('../icon/auction/icon-free-postage.png');
+  }
   &-radio {
     background-image: url('../icon/radio.png');
   }
@@ -373,7 +373,7 @@ body.with-drawer {
     background-image: url('../icon/success-2.png');
   }
   &-fail {
-    background-image: url('../icon/fail.png');
+    background-image: url('');
   }
   &-loading {
     position: relative;
@@ -434,22 +434,12 @@ body.with-drawer {
   width: 100/@rem-pre;
   height: 100/@rem-pre;
   vertical-align: top;
-  background: @white;
   border: 1px solid @lineColor;
   border-radius: 5px;
-  background-size: 100%;
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 60/@rem-pre;
-    height: 60/@rem-pre;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    background: url('../icon/add.png') no-repeat;
+  background: url('../icon/add.png') @white no-repeat center center;
+  background-size: 60/@rem-pre;
+  float: left;
+  &.has-img {
     background-size: contain;
   }
 }
@@ -471,6 +461,10 @@ body.with-drawer {
 //外边距
 .mb5 {
   margin-bottom: 5/@rem-pre !important;
+}
+
+.mt-10 {
+	margin-top: -10/@rem-pre !important;
 }
 
 .mt10 {
@@ -544,6 +538,7 @@ body.with-drawer {
 .mb40 {
   margin-bottom: 40/@rem-pre !important;
 }
+
 .mb60 {
   margin-bottom: 60/@rem-pre !important;
 }
@@ -798,7 +793,7 @@ body.with-drawer {
   top: 50%;
   left: 0;
   right: 0;
-  margin: -100px auto 0 auto;
+  margin: -40/@rem-pre auto 0 auto;
   background: rgba(0, 0, 0, .6);
   border-radius: 5px;
   color: @white;
@@ -827,8 +822,9 @@ body.with-drawer {
     line-height: 30/@rem-pre;
   }
 }
+
 //banner
-.banner-wrapper{
+.banner-wrapper {
   width: 10rem;
   height: 370/@rem-pre;
 }

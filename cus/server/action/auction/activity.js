@@ -10,7 +10,6 @@ module.exports.get = function (req, res) {
     proCode: req.params.id,
     token: req.session.user.token
   };
-  console.log(model);
   model.getData(param).then(function (rs) {
     var resObj = req.appData;
     resObj.data = rs.data;

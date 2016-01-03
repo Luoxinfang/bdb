@@ -94,18 +94,6 @@ module.exports = function (router) {
     })
     res.render('cus/page/user/check-name.tpl', resObj);
   });
-  //订单结果
-  router.get('/order/result', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '我的订单';
-    resObj.header.leftIcon = false;
-    resObj.result = {status: '' + req.query.status};
-    if (resObj.result.status == 'confirmReceipt') {
-      resObj.header.title = '确认收货';
-      resObj.header.rightText = '完成';
-    }
-    res.render('cus/page/order/result.tpl', resObj);
-  });
   //拍卖列表
   router.get('/auction/list', function (req, res, next) {
     var resObj = req.appData;
@@ -120,7 +108,6 @@ module.exports = function (router) {
   router.route('/auction/activity/:id').get(router.action('auction/activity').get);
   //拍品详情
   router.route('/auction/detail/:id').get(router.action('auction/detail').get);
-  //
 
 
   //店铺首页
@@ -225,5 +212,6 @@ module.exports = function (router) {
 	//order/list:cus/action/order/list.js
 	router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
 	router.route('/order/comment/:orderNo').get(router.action('order/comment').get);
+	router.route('/order/complain/:orderNo').get(router.action('order/complain').get);
 	//----------order(订单)<<<<<<<<<<
 };

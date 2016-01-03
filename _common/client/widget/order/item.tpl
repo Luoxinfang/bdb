@@ -36,8 +36,10 @@
 		</div>
 	{% elseif '卖家已发货' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a class="btn btn-white confirmReceive">确认收货</a>
-			<a class="btn btn-white mr20 delayReceive">延迟收货</a>
+			<a class="btn btn-red confirmReceive">确认收货</a>
+			{% if '0' == order.delayreceiveflag %}
+				<a class="btn btn-white mr20 delayReceive">延迟收货</a>
+			{% endif %}
 		</div>
 	{% elseif '待评价' == orderStatus | orderStatus2name %}
 		<div class="line3">

@@ -1,3 +1,7 @@
+.content{
+  display: flex;
+  flex-direction: column;
+}
 //拍品详情
 @import "@{_common}/public/mixin";
 
@@ -253,5 +257,21 @@
         color: @mainColor2;
       }
     }
+  }
+}
+
+//底部
+.footer {
+  .btn-l {
+    width: 160/@rem-pre;
+    float: left;
+  }
+  .btn-c {
+    width: 240/@rem-pre;
+    float: left;
+  }
+  .btn-r {
+    width: 160/@rem-pre;
+    float: left;
   }
 }

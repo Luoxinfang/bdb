@@ -20,14 +20,14 @@ module.exports.put = function (req, res, next) {
 	var params = {
 		token: req.session.user.token,
 		sign: req.session.sign,
-		bankCode: req.body.bankCode || '',
-		bankName: req.body.bankName || '',
+		bankCode: req.body.bankCode || 'null',
+		bankName: req.body.bankName || 'null',
 		bankNo: req.body.bankNo,
-		realName: encodeURIComponent(req.body.realName),
-		provider: req.body.provider || '',
-		city: req.body.city || '',
+		realName: req.body.realName,
+		provider: req.body.provider || 'null',
+		city: req.body.city || 'null',
 		openAddress: req.body.openAddress,
-		flag: req.body.flag || 0
+		flag: req.body.flag || '0'
 	}
 	bankModel.addBank(params).then(function (rs) {
 		res.json(rs);

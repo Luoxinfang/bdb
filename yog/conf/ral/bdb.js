@@ -11,10 +11,10 @@ module.exports = {
 		encoding: 'utf-8',
 		balance: 'random',
 		retry: 0,
-		timeout: 500,
+		timeout: 5000,
 		server: [
-			{host: '192.168.0.105', port: 8080}
-			//{host: '192.168.0.133', port: 8080}  //王天文
+			//{host: '192.168.0.105', port: 8080},
+			{host: '192.168.0.129', port: 8080},  //王天文
 			//{host: '192.168.0.131', port: 8080}  //王勇
 			//{host: '192.168.0.110', port: 8080}  //周少飞
 		]

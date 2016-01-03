@@ -27,10 +27,11 @@ module.exports = {
     var that = this;
     $('.auction-dialog').dropload({
       loadUpFn: function (me) {
-        that.getBidList.bind(that)('more',me);
+        that.getBidList.bind(that)('more', me);
       },
       loadDownFn: function (me) {
-        that.getBidList.bind(that)('append',me);
+        that.pageNum = that.pageNum + 1;
+        that.getBidList.bind(that)('append', me);
       }
     });
   },
@@ -48,32 +49,44 @@ module.exports = {
         pageSize: that.pageSize
       },
       success: function (html) {
-        if (dropLoad) {
-          dropLoad.resetload();
-        }
         if (type === 'append') {
           that.$bidList.append(html);
-        } else if (type === 'init') {
+          var maxPage = Math.ceil(that.total / that.pageSize);
+          if (that.pageNum > maxPage) {
+            dropLoad.lock();
+            dropLoad.noData();
+          }
+        } else {
+          that.total = +that.$bidList.children('.item').data('total')
+              || that.pageSize;
           that.$bidList.html(html);
-          that.bindScroll.bind(that)();
-        }else{
-          that.$bidList.html(html);
+          that.updateCountdown(5 * 60 * 1000, $('#first-price'));
+          if (type === 'init') {
+            that.bindScroll.bind(that)();
+          }
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {
         B.topWarn(B.tips.networkError);
+      },
+      complete: function () {
+        if (dropLoad) {
+          dropLoad.resetload();
+        }
       }
     });
   },
   //更新倒计时
-  updateCountdown: function (milliseconds) {
-    var time = B.milliseconds2time(milliseconds);
-    this.$countdown.text(time);
+  updateCountdown: function (milliseconds, $dom) {
+    var ms = milliseconds;
+    var time = B.milliseconds2time(ms);
+    var $dom = $dom || this.$countdown;
+    $dom.text(time);
     var runner = setInterval(function () {
-      milliseconds -= 1000;
-      var time = B.milliseconds2time(milliseconds);
-      this.$countdown.text(time);
-      if (milliseconds == 0) {
+      ms = ms - 1000;
+      var time = B.milliseconds2time(ms);
+      $dom.text(time);
+      if (ms == 0) {
         clearInterval(runner);
         location.reload();
       }
@@ -86,7 +99,6 @@ module.exports = {
     var saleTime = this.$page.data('saleTime');
     var now = +new Date();
     var shortStatus = '';
-
     if (now < startTime) {//未开始 || <
       shortStatus = 'wks';
       this.updateCountdown(startTime - now);
@@ -135,7 +147,45 @@ module.exports = {
       }
     });
   },
+  //缴纳保证金
+  contributeBail: function () {
+
+  },
+  //显示托管键盘
+  showEntrust: function () {
+    B.showKeyboard({
+      btnName: '托管',
+      callback: function (content) {
+        this.postEntrust.bind(this)(content);
+      }.bind(this)
+    });
+  },
+  //提交委托出价
+  postEntrust: function (price) {
+    var that = this;
+    $.ajax({
+      type: 'post',
+      dataType: 'json',
+      url: '/auction/entrust',
+      data: {
+        productCode: that.id,
+        maxValue: price
+      },
+      success: function (data) {
+        if (0 == data.status) {
+          B.topWarn(data.msg);
+        } else {
+          B.topWarn(B.tips.networkError);
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        B.topWarn(B.tips.networkError);
+      }
+    });
+  },
   event: function () {
     this.$collect.on('click', this.subscribe.bind(this));
+    $('#btn-bail').on('click', this.contributeBail.bind(this));
+    $('#btn-entrust').on('click', this.showEntrust.bind(this));
   }
 };

@@ -225,31 +225,141 @@ module.exports = {
   },
   //把毫秒转成刻度时间
   milliseconds2time: function (ms) {
-    var day = 0;
-    var hours = 0;
-    var minute = 0;
-    var second = 0;
+    var day = parseInt(ms / (1000 * 60 * 60 * 24));
+    var hours = parseInt(ms / (1000 * 60 * 60)) % 24;
+    var minute = parseInt(ms / (1000 * 60)) % 60;
+    var second = parseInt(ms / 1000) % 60;
     var string = '';
-    second = parseInt(ms / 1000);
-    if (second > 59) {
-      minute = (second - 60) / 60;
-      second = 59;
-    }
-    string = '00:' + second;
-    if (minute > 59) {
-      hours = (minute - 60) / 60;
-      minute = 59;
-      string = minute + ':' + second;
-    }
-    if (hours > 23) {
-      day = (hours - 24) / 24;
-      hours = 23;
-      string = hours + '时' + minute + '分';
-    }
     if (day > 0) {
-      day = parseInt(day);
-      string = day + '天 ' + hours + '时';
+      string = day + '天'
+    }
+    if (hours > 0) {
+      string = hours + ':' + minute;
+    }
+    if (minute > 0) {
+      string = minute + ':' + second;
+    } else {
+      string = '0:' + second;
+    }
+    if (-1 !== string.indexOf(':')) {
+      var array = string.split(':');
+      array[0] = array[0] < 10 ? '0' + array[0] : array[0];
+      array[1] = array[1] < 10 ? '0' + array[1] : array[1];
+      string = array.join(':');
     }
     return string;
-  }
+  },
+  //显示键盘输入框
+  showKeyboard: function (opt) {
+    var callback = opt.callback;
+    var btnName = opt.btnName || '出价';
+    var $dom = $('.keyboard');
+    var $show = $dom.find('.input');
+    $dom.show();
+    $('.toolbar').show();
+    $dom.find('.keyboard-submit').text(btnName);
+    //数字键盘事件
+    $dom.on('click', '.number', function () {
+      var content = $show.html();
+      $show.html(content + $(this).text());
+    });
+    //表情键盘事件
+    $dom.on('click', '.facial', function () {
+      var content = $show.html();
+      $show.html(content + this.outerHTML);
+    });
+    //删除输入事件
+    $dom.on('click', '.del', function () {
+      var content = $show.html();
+      var length = content.length;
+      if (length) {
+        var reg = /<span data-name="\w+" class="facial \w+"><\/span>$/gi;
+        if (reg.test(content)) {
+          $show.html(content.replace(reg, ''));
+        } else {
+          $show.html(content.substring(0, length - 1));
+        }
+      }
+    });
+    //切换表情界面
+    $dom.on('click', '.btn-icon', function () {
+      $dom.toggleClass('icon');
+    });
+    //关闭键盘
+    $dom.on('click', '.close', function () {
+      $dom.hide();
+    });
+	  //执行回调 并返回值
+	  $dom.on('click', '.keyboard-submit', function () {
+		  var content = $show.html();
+		  if(content){
+			  if (callback && typeof callback === 'function') {
+				  callback(content);
+			  }
+		  }else{
+			  this.topWarn('请输入价格');
+		  }
+	  }.bind(this));
+  },
+	//隐藏键盘输入框
+	hideKeyboard:function(){
+
+	},
+	/**
+	 * 绑定添加图片
+	 * @param size 图片最大张数
+	 */
+	bindAddImage: function (size) {
+		var maxSize = size || 9;
+		$(document).on('change input', '.icon-add .file', function (e) {
+			var $this = $(e.currentTarget),
+				files = e.target.files,
+				readers = [],
+				num = files.length >= maxSize ? maxSize : files.length;
+			for (var i = 0; i < num; i++) {
+				readers[i] = new FileReader();
+				readers[i].readAsDataURL(files[i]);
+				readers[i].onload = function () {
+					if ($this.parent().hasClass('has-img')) {
+						$this.parent().css('background-image', 'url(' + this.result + ')');
+					} else {
+						$this.parent().before('<a class="icon-add btn-file has-img mt10 mr10" style="background-image:url(' + this.result + ')"><input name="' + $this.attr('name') + '" type="file" class="file" accept="image/*"></a>');
+						if ($this.parent().siblings().size() >= maxSize) {
+							$this.parent().parent().find('.icon-add:not(.has-img)').remove();
+						}
+					}
+				}
+			}
+		});
+	},
+	/**
+	 * 上传图片到服务器
+	 * @param data 图片数据
+	 */
+	uploadImage: function (data) {
+		var B = this;
+		var url = B.server.file + '/interface/file/baseload?';
+		if (data.path) {
+			url += '&path=' + data.path;
+		}
+		if (data.fileName) {
+			url += '&filename=' + data.fileName;
+		}
+		var result = {};
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: data.img,
+			contentType: "application/octet-stream",
+			dataType: "json",
+			async: false,
+			success: function (data2) {
+				result = data2;
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				result = {status: 0, msg: B.tips.networkError};
+			}
+		});
+		return result;
+	}
 };

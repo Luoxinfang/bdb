@@ -9,7 +9,7 @@
 {# type: success error warn #}
 <div class="result {{ type }}">
 	<div class="pt70">
-		<div class="icon"></div>
+		<div class="facial"></div>
 	</div>
 	<div class="txt mt40 ml20 mr20">
 		{% if content.tit %}

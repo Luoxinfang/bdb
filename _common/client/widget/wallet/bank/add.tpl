@@ -7,7 +7,7 @@
 			<div class="form">
 				<ul class="form-ul">
 					<li class='form-li-input'>
-						<input type="hidden" name="realName" value="陈振华"/>
+						<input type="hidden" name="realName" value="{{ realInfo.realname }}"/>
 						<span class="fl">{{ realInfo.realname }}</span>
 						<span class="fl fc-4">（实名认证姓名，不能更改）</span>
 					</li>

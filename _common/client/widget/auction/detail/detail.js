@@ -4,6 +4,7 @@
  */
 
 var B = require('_common:js/bdb/core.js');
+var cash = require('_common:js/bdb/cash.js');
 var moment = require('_common:js/aid/moment.js');
 
 
@@ -118,7 +119,7 @@ module.exports = {
     } else {//拍卖中
       shortStatus = 'ppz';
       $('#time-txt').text('结束时间');
-      this.updateCountdown(endTime - now);
+      this.updateCountdown(saleTime - now);
 
 
     }
@@ -149,7 +150,7 @@ module.exports = {
   },
   //缴纳保证金
   contributeBail: function () {
-
+    cash.showQuickPay();
   },
   //显示托管键盘
   showEntrust: function () {
@@ -173,9 +174,15 @@ module.exports = {
       },
       success: function (data) {
         if (0 == data.status) {
-          B.topWarn(data.msg);
+          B.alert({
+            icon: 'success',
+            title: data.msg,
+            callback: function () {
+              location.reload();
+            }
+          });
         } else {
-          B.topWarn(B.tips.networkError);
+          B.topWarn(data.msg);
         }
       },
       error: function (jqXHR, textStatus, errorThrown) {

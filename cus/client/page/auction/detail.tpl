@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block footer %}
-	{% if bail.complete == 1 %}
+	{% if bail.complete == 0 %}
 		<div class="footer-content" id="group-bail">
 			<button class="btn btn-red" id="btn-bail">交保证金参加拍卖</button>
 		</div>

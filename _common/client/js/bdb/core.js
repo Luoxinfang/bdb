@@ -303,7 +303,7 @@ module.exports = {
   },
 	//隐藏键盘输入框
 	hideKeyboard:function(){
-
+    $('.keyboard').hide();
 	},
 	/**
 	 * 绑定添加图片

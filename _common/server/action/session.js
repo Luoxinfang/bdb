@@ -11,6 +11,7 @@ var model = require('../model/session.js');
 //提交登录信息
 module.exports.post = function (req, res, next) {
 	var type = req.hostname.split('.')[0];
+	//user 0 用户 1商家
 	var user = _.extend({
 		requestIP: req.ip,
 		type: 'cus' == type ? '0' : '1'

@@ -199,7 +199,7 @@ module.exports = {
 		html.push('		</div>');
 		html.push('	</div>');
 		html.push('</div>');
-		$('.toolbar').html(html.join(''));
+		$('.toolbar').html(html.join('')).show();
 		$('.toolbar').on('click', '#pay-' + order.orderNo + ' .sure', function () {
 			that.pay(order, $('#pay-' + order.orderNo + ' input[name="payWay"]:checked').val());
 		});
@@ -241,7 +241,7 @@ module.exports = {
 		html.push('		</div>');
 		html.push('	</div>');
 		html.push('</div>');
-		$('.toolbar').html(html.join(''));
+		$('.toolbar').html(html.join('')).show();
 		$('.toolbar').on('input', '.password-wrap .password', function () {
 			var payPwd = $(this).val();
 			if (payPwd.length >= 6) {

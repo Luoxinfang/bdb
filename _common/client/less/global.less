@@ -71,7 +71,7 @@ body.with-drawer {
   display: none;
 }
 .overlay {
-  //首页侧边栏
+  //弹出框
   position: absolute;
   width: @rem-max;
   top: 0;
@@ -80,7 +80,20 @@ body.with-drawer {
   z-index: 1000;
   display: none;
 }
-
+.overlay-mask{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.overlay-content{
+  height: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
 @font-face {
   font-family: "iconfont";
   //IE

@@ -36,8 +36,6 @@ module.exports = {
 				var imgBase64 = $(this).css('background-image');
 				imgBase64 = imgBase64.substring(4, imgBase64.length - 1);
 				var data = B.uploadImage({
-					path: '/tmp',
-					fileName: 'comment',
 					img: imgBase64
 				});
 				if (0 == data.status) {

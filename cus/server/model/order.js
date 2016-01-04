@@ -94,5 +94,17 @@ module.exports = {
 			path: '/interface/order/evaluate',
 			data: data
 		});
+	},
+	/**
+	 * 订单投诉
+	 * @param params
+	 * @returns {*}
+	 */
+	complain: function (params) {
+		data = server.parserData(params, order);
+		return yog.ral(serverId, {
+			path: '/interface/order/applybdb',
+			data: data
+		});
 	}
 };

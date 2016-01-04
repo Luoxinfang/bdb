@@ -43,7 +43,14 @@ var orderStatus = {
 	}
 };
 module.exports = function (req, res, next) {
-	var status = 'undefined' == typeof req.query.status ? 'dfk' : req.query.status;
+	var sessionStatus = '';
+	if (req.session.orderList) {
+		sessionStatus = req.session.orderList.status;
+	} else {
+		req.session.orderList = {};
+	}
+	var status = 'undefined' == typeof req.query.status ? (sessionStatus || 'dfk') : req.query.status;
+	req.session.orderList.status = status;
 	var params = _.extend({
 		token: req.session.user.token,
 		page: req.query.page || '1',

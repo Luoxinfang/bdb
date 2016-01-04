@@ -112,7 +112,7 @@ module.exports = {
 		html.push('		</div>');
 		html.push('	</div>');
 		html.push('</div>');
-		$('.toolbar').html(html.join(''));
+		$('.toolbar').html(html.join('')).show();
 		$('.toolbar').on('input', '.password-wrap .password', function () {
 			var payPwd = $(this).val();
 			if (payPwd.length >= 6) {

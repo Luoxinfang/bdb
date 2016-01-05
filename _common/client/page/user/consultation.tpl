@@ -1,12 +1,17 @@
 {% extends '_common:page/layout.tpl' %}
 
+{% block head %}
+	{% require "_common:js/plugin/dropload/dropload.less" %}
+	{% require "_common:js/plugin/dropload/dropload.js" %}
+{% endblock %}
+
 {% block header %}
 	{% require '_common:less/user/consultation.less' %}
 	{% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 
 {% block content %}
-		<div class="consultation-dialog clearfix">
+		<div class="consultation-dialog clearfix" style="display: none">
 			<a href="/user/consultation?username=15989387109" class="li">
 				<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="" class="user-img">
 					<div class="text-content">
@@ -16,28 +21,11 @@
 				<img src="/static/_common/icon/enter.png" alt="" class="enter-img">
 			</a>
 		</div>
-	<div class="consultation-ul">
-	<div class="consultation-sTime">12:02</div>
-	<div class="consultation-li other clearfix">
-		<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="" class="img fl ml20">
-		<div class="info">掌柜你好！</div>
-	</div>
-	<div class="consultation-sTime">12:02</div>
-	<div class="consultation-li self clearfix">
-		<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="" class="img fr mr20">
-		<div class="info">你好！请问有什么可以帮到您？</div>
-	</div>
-	<div class="consultation-sTime">12:02</div>
-	<div class="consultation-li other clearfix">
-		<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="" class="img fl ml20">
-		<div class="info">请问你的千年古玉有证书吗？</div>
-	</div>
-	<div class="consultation-sTime">12:02</div>
-	<div class="consultation-li self clearfix">
-		<img src="http://img5.imgtn.bdimg.com/it/u=346760668,2243348761&fm=21" alt="" class="img fr mr20">
-		<div class="info">亲！我们家的商品全部都有证书的</div>
-	</div>
-	</div>
+		<div class="consultation-ul" id="chat-list" data-total="{{ total }}"  data-shopid="{{ consultInfo[0].shopid }}" data-userid="{{ consultInfo[0].userid }}">
+			{% widget '_common:widget/user/consult-list.tpl' %}
+		</div>
+	{% block cus %}
+	{% endblock %}
 {% endblock %}
 {% block footer %}
 		<div class="footer-content clearfix">
@@ -48,7 +36,5 @@
 		</div>
 		<button class="btn btn-red send-out" id="btn-send">发送</button>
 	</div>
-	{% block cus %}
-	{% endblock %}
 {% endblock %}
 

@@ -3,19 +3,29 @@
  * 银行卡组件
  */
 var B = require('_common:js/bdb/core.js');
+var BCI = require('_common:js/aid/bank-card-info.js');
+
 module.exports = {
 	init: function () {
 		this.events();
 	},
-	checkForm: function () {
-		var valid = function () {
-			if ($('input[name="bankNo"]').val() != '' && $('input[name="openAddress"]').val() != '') {
-				return true;
+	checkForm: function (e) {
+		var $this = $(e.currentTarget);
+		var bankNo = $('input[name="bankNo"]').val();
+		var openAddress = $('input[name="openAddress"]').val();
+		if ('bankNo' == $this.attr('name')) {
+			var bankInfo = BCI.getBankInfoByCardNo(bankNo);
+			if (/^\d{16,19}$/.test(bankNo) && bankInfo) {
+				$('#bankName').html(bankInfo.bankName);
+				$('input[name="bankName"]').val(bankInfo.bankName);
+				$('input[name="bankCode"]').val(bankInfo.bankCode);
 			} else {
-				return false;
+				$('#bankName').html('');
+				$('input[name="bankName"]').val('其他银行');
+				$('input[name="bankCode"]').val('');
 			}
 		}
-		if (valid()) {
+		if (/^\d{16,19}$/.test(bankNo) && openAddress) {
 			$('#addBank').removeClass('btn-disabled');
 		} else {
 			$('#addBank').addClass('btn-disabled');

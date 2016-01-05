@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-	<div id="content">
+	<div id="order" data-order-no="{{ detail.order.orderno }}" data-order-item-id="{{ detail.list[0].orderitemid }}" data-touser-id="{{ detail.order.touserid }}">
 		{% require '_common:less/public/form.less' %}
 		{% widget '_common:widget/order/complain.tpl' %}
 	</div>

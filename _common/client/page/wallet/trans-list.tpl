@@ -23,8 +23,8 @@
 {% block content %}
 	{% require '_common:widget/wallet/trans.less' %}
 	{% widget '_common:widget/dialog/dialog.tpl' %}
-	<div id="trans-list" class="pb20">
-		<div class="trans-list mt10" data-page="1">
+	<div id="trans-list" class="flex pb20">
+		<div class="trans-list mt10" data-total="{{ data.total }}">
 			{% widget '_common:widget/wallet/trans-list.tpl' %}
 		</div>
 	</div>

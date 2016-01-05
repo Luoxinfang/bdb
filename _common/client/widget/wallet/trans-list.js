@@ -8,11 +8,14 @@ module.exports = {
 	init: function () {
 		require('_common:widget/common/header/header-filter.js').init();
 		B.bindInput();
+		this.$transList = $('.trans-list');
+		this.pageSize = 10;
+		this.pageNum = 1;
+		this.total = +this.$transList.data('total') || this.pageSize;
+		this.bindScroll();
 		this.event();
 	},
-	/**
-	 * 点击显示详情
-	 */
+	// 显示详情
 	showDetail: function (e) {
 		var item = $(e.currentTarget);
 		var html = [];
@@ -87,9 +90,7 @@ module.exports = {
 			}
 		});
 	},
-	/**
-	 * 带参数跳转
-	 */
+	// 带参数跳转
 	jump: function (e) {
 		var url = '/wallet/trans-list?';
 		var bTime = $('.trans-time input[name="bTime"]').val();
@@ -113,60 +114,66 @@ module.exports = {
 		}
 		location.href = url;
 	},
-	/**
-	 * 点击筛选
-	 */
+	// 点击筛选
 	filter: function (e) {
 		var $this = $(e.currentTarget);
 		$('.header .filter span').text($this.text());
 		$('.header .filter span').data('filter', $this.data('filter'));
 		this.jump();
 	},
-	/**
-	 * 上拉加载
-	 */
-	dropLoad: function () {
+	// 绑定交易明细列表的滑动
+	bindScroll: function () {
+		var that = this;
+		$('#trans-list').dropload({
+			loadUpFn: function (me) {
+				that.pageNum = 1;
+				that.getTransList.bind(that)('refresh', me);
+			},
+			loadDownFn: function (me) {
+				that.pageNum = that.pageNum + 1;
+				that.getTransList.bind(that)('append', me);
+			}
+		});
+	},
+	// 获取交易明细列表
+	getTransList: function (type, dropLoad) {
+		var that = this;
 		var bTime = $('.trans-time input[name="bTime"]').val() == '' ? '' : $('.trans-time input[name="bTime"]').val() + ' 00:00:00';
 		var eTime = $('.trans-time input[name="eTime"]').val() == '' ? '' : $('.trans-time input[name="eTime"]').val() + ' 23:59:59';
 		var tradeType = $('.header .filter span').data('filter');
-		var dropload = $('.page>.content').dropload({
-			domDown: {
-				domClass: 'dropload-down',
-				domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
-				domUpdate: '<div class="dropload-update">↓释放加载</div>',
-				domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+		$.ajax({
+			type: 'get',
+			dataType: 'html',
+			url: '/wallet/trans-list',
+			data: {
+				type: 'get',
+				page: that.pageNum,
+				pageSize: that.pageSize,
+				bTime: bTime,
+				eTime: eTime,
+				tradeType: tradeType
 			},
-			loadDownFn: function (me) {
-				$.ajax({
-					type: 'get',
-					dataType: 'html',
-					url: '/wallet/trans-list',
-					data: {
-						type: 'page',
-						page: $('.trans-list').data('page') + 1,
-						bTime: bTime,
-						eTime: eTime,
-						tradeType: tradeType
-					},
-					success: function (data) {
-						if (data) {
-							$('.trans-list').data('page', $('.trans-list').data('page') + 1);
-							$('.trans-list').append(data);
-							$('.dropload-load').html('加载完毕~');
-							setTimeout(function () {
-								me.resetload();
-							}, 800);
-						} else {
-							$('.dropload-load').html('没有更多记录了~');
-							setTimeout(function () {
-								me.resetload();
-							}, 800);
-						}
-					},
-					error: function (jqXHR, textStatus, errorThrown) {
-						B.topWarn(B.tips.networkError);
+			success: function (html) {
+				if (type === 'append') {
+					that.$transList.append(html);
+					var maxPage = Math.ceil(that.total / that.pageSize);
+					if (that.pageNum >= maxPage) {
+						dropLoad.lock();
+						dropLoad.noData();
 					}
-				});
+				} else {
+					that.total = +that.$transList.data('total')
+						|| that.pageSize;
+					that.$transList.html(html);
+				}
+			},
+			error: function (jqXHR, textStatus, errorThrown) {
+				B.topWarn(B.tips.networkError);
+			},
+			complete: function () {
+				if (dropLoad) {
+					dropLoad.resetload();
+				}
 			}
 		});
 	},
@@ -175,6 +182,5 @@ module.exports = {
 		$('.trans-time').on('change', 'input[name="bTime"]', this.jump.bind(this));
 		$('.trans-time').on('change', 'input[name="eTime"]', this.jump.bind(this));
 		$('.header').on('click', '.filter-list a', this.filter.bind(this));
-		this.dropLoad();
 	}
 }

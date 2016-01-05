@@ -5,14 +5,14 @@
  */
 
 var _ = require('lodash');
-var orderModel = yog.require('cus/model/order.js');
+var orderModel = yog.require('_common/model/order.js');
 
 module.exports.get = function (req, res) {
 	var param = {
 		token: req.session.user.token,
 		orderNo: req.params.orderNo,
 		page: '1',
-		pageSize: '8'
+		pageSize: '10'
 	};
 	orderModel.queryDetail(param).then(function (rs) {
 		var resObj = req.appData;

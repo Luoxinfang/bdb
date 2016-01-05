@@ -121,56 +121,46 @@ module.exports = function (router) {
     resObj.header.title = '收货地址';
     res.render('bus/page/user/receipt-address.tpl', resObj);
   });
-  //订单管理 ——首页
-  router.get('/order', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '订单管理';
-    resObj.header.tab = ['待发货', '待付款', '已发货', '退款中'];
-    //假数据
-    resObj.data = yog.require('bus/test/order.js');
-    //obj.header.leftUrl = '/wallet';
-    res.render('bus/page/order/index.tpl', resObj);
-  });
-  //订单管理 ——订单详情
-  router.get('/order-detail', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '订单详情';
-    //假数据
-    resObj.data = yog.require('bus/test/order-detail.js');
-    resObj.header.leftUrl = '/bus/order';
-    res.render('bus/page/order/detail.tpl', resObj);
-  });
-  //订单管理 ——已完成
-  router.get('/completed', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '订单管理';
-    resObj.header.rightText = '已完成';
-    //假数据
-    resObj.data = yog.require('bus/test/order.js');
-    resObj.data.status = 'ywc';
-    //obj.header.backUrl = '/wallet';
-    res.render('bus/page/order/completed.tpl', resObj);
-  });
-  //订单管理 ——已关闭
-  router.get('/closed', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '订单管理';
-    resObj.header.rightText = '已关闭';
-    //假数据
-    resObj.data = yog.require('bus/test/order.js');
-    resObj.data.status = 'ygb';
-    //resObj.header.backUrl = '/wallet';
-    res.render('bus/page/order/closed.tpl', resObj);
-  });
-  //评论
-  router.get('/evaluation', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '评论';
-    //假数据
-    resObj.data = yog.require('bus/test/order.js');
-    //resObj.header.backUrl = '/wallet';
-    res.render('bus/page/order/evaluation.tpl', resObj);
-  });
+  ////订单管理 ——订单详情
+  //router.get('/order-detail', function (req, res, next) {
+  //  var resObj = req.appData;
+  //  resObj.header.title = '订单详情';
+  //  //假数据
+  //  resObj.data = yog.require('bus/test/order-detail.js');
+  //  resObj.header.leftUrl = '/bus/order';
+  //  res.render('bus/page/order/detail.tpl', resObj);
+  //});
+  ////订单管理 ——已完成
+  //router.get('/completed', function (req, res, next) {
+  //  var resObj = req.appData;
+  //  resObj.header.title = '订单管理';
+  //  resObj.header.rightText = '已完成';
+  //  //假数据
+  //  resObj.data = yog.require('bus/test/order.js');
+  //  resObj.data.status = 'ywc';
+  //  //obj.header.backUrl = '/wallet';
+  //  res.render('bus/page/order/completed.tpl', resObj);
+  //});
+  ////订单管理 ——已关闭
+  //router.get('/closed', function (req, res, next) {
+  //  var resObj = req.appData;
+  //  resObj.header.title = '订单管理';
+  //  resObj.header.rightText = '已关闭';
+  //  //假数据
+  //  resObj.data = yog.require('bus/test/order.js');
+  //  resObj.data.status = 'ygb';
+  //  //resObj.header.backUrl = '/wallet';
+  //  res.render('bus/page/order/closed.tpl', resObj);
+  //});
+  ////评论
+  //router.get('/evaluation', function (req, res, next) {
+  //  var resObj = req.appData;
+  //  resObj.header.title = '评论';
+  //  //假数据
+  //  resObj.data = yog.require('bus/test/order.js');
+  //  //resObj.header.backUrl = '/wallet';
+  //  res.render('bus/page/order/evaluation.tpl', resObj);
+  //});
   //活动专场
   router.get('/activity/activity-session', function (req, res, next) {
     var resObj = req.appData;
@@ -394,5 +384,10 @@ module.exports = function (router) {
 	});
 	//wallet/trans-list:ucs/action/wallet/trans-list
 	//----------wallet(我的钱包)<<<<<<<<<<
+
+	//>>>>>>>>>>order(订单)----------
+	//order/list:cus/action/order/list.js
+	router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
+	//----------order(订单)<<<<<<<<<<
 
 };

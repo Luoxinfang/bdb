@@ -6,7 +6,7 @@
 
 var _ = require('lodash');
 var md5 = require('md5');
-var orderModel = yog.require('cus/model/order.js');
+var orderModel = yog.require('_common/model/order.js');
 
 module.exports.post = function (req, res, next) {
 	var params = {

@@ -14,6 +14,8 @@
 					<li class='form-li-input'>
 						<input type="number" name="bankNo" placeholder="请输入您的银行卡卡号" />
 						<span id="bankName" class="bank-name"></span>
+						<input type="hidden" name="bankName" value="">
+						<input type="hidden" name="bankCode" value="">
 					</li>
 					<li class='form-li-input'>
 						<input type="text" name="openAddress" placeholder="请输入开户支行" />

@@ -139,12 +139,6 @@ module.exports = function (router) {
     var resObj = req.appData;
     res.render('cus/page/weui.tpl', resObj);
   });
-  //用户咨询
-  router.get('/user/consultation', function (req, res, next) {
-    var resObj = req.appData;
-    resObj.header.title = '与'+req.query.shopname+'对话中';
-    res.render('cus/page/user/consultation.tpl', resObj);
-  });
   //系统设置
   router.get('/settings/sys-settings', function (req, res, next) {
     var resObj = req.appData;

@@ -1,13 +1,14 @@
 /**
  * @author pulang
- * @createTime 2016-1-3
- * @description 这个处理用户咨询模块
+ * @createTime 2015-12-17
+ * @description 这个路由处理店铺页面
  */
 
+var md5 = require('md5');
 var _ = require('lodash');
-var model = require('../../model/user.js')
+var model = require('../model/consultation.js');
 
-//报名参加活动
+//用户咨询
 module.exports.post = function (req, res, next) {
 	var params = _.extend({
 		token: req.session.user.token,

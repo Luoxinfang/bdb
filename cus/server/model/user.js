@@ -99,21 +99,5 @@ module.exports = {
       path: '/interface/user/changephoneno',
       data: query
     });
-  },
-  //用户咨询
-  consult: function (data) {
-    var query = server.parserData(data, 'user');
-    return yog.ral(serverId, {
-      path: '/interface/user/consult',
-      data: query
-    });
-  },
-  //用户最新咨询列表
-  recentconsult: function (data) {
-    var query = server.parserQuery(data, 'user');
-    return yog.ral(serverId, {
-      path: '/interface/user/recentconsult',
-      query: query
-    });
   }
 };

@@ -2,6 +2,6 @@
 
 {% block _common %}
 	{% script %}
-	require("cus:widget/user/consultation.js").init();
+	require("bus:widget/user/consultation.js").init();
 	{% endscript %}
 {% endblock %}

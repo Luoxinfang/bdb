@@ -220,14 +220,14 @@ module.exports = function (router) {
     });
     res.render('bus/page/user/sys-message.tpl', resObj);
   });
-  //用户消息
+  /*//用户消息
   router.get('/user/user-message', function (req, res, next) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '用户消息'
     });
-    res.render('bus/page/user/user-message.tpl', obj);
-  });
+
+  });*/
   //卡片管理
   router.get('/account/card-management', function (req, res, next) {
     var resObj = req.appData;

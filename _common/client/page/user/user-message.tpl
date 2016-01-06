@@ -6,7 +6,8 @@
 {% endblock %}
 {% block header %}
 	{% require '_common:less/user/settings.less' %}
-	{% widget '_common:widget/common/header/header-nav.tpl' %}
+	{% block _common %}
+	{% endblock %}
 {% endblock %}
 {% block content %}
 	<div class="message-dialog mt10" id="userInfo">
@@ -26,6 +27,4 @@
 			</a>
 		{% endfor %}
 	</div>
-	{% block cus %}
-	{% endblock %}
 {% endblock %}

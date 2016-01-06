@@ -457,12 +457,12 @@ body.with-drawer {
   border-radius: 5px;
   background: url('../icon/add.png') @white no-repeat center center;
   background-size: 60/@rem-pre;
-  float: left;
+  overflow: hidden;
+  background-size: contain;
   &.has-img {
     background-size: contain;
   }
 }
-
 //上传文件按钮
 .btn-file {
   position: relative;

@@ -45,11 +45,14 @@ module.exports = {
     });
   },
   //显示快捷支付
-  showQuickPay: function () {
+  showQuickPay: function (opt) {
+    var opt = opt || {};
+    opt.money = isNaN(opt.money) ? 0 : opt.money;
     $.ajax({
       type: 'get',
       dataType: 'html',
       url: '/_common/cash/quick-pay',
+      data: opt,
       success: function (html) {
         $('.overlay').show();
         $('.overlay-content').html(html);

@@ -4,9 +4,7 @@ module.exports = function (router) {
 
   router.get('*', function (req, res, next) {
     //需要验证登录的接口
-    var userPath = /^\/(user|order|wallet)\/*\w*/;
-    //console.log(userPath.test(req.path) && !req.session.user);
-    if (userPath.test(req.path) && !req.session.user) {
+    if (!req.session.user) {
       req.session.login_referrer = req.originalUrl;
       res.redirect('/login');
     } else {
@@ -16,15 +14,21 @@ module.exports = function (router) {
       next();
     }
   });
-  //商家端首页--我的百多宝
+  //商家端首页
   router.get('/', function (req, res, next) {
-    var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '我的百多宝',
-      leftUrl: false,
-      rightIcon: 'msg'
-    });
-    res.render('bus/page/index.tpl', resObj);
+    var storeStatus = req.session.user.flag;
+    if(storeStatus == 0){
+      //没有开店
+      res.redirect('/store/apply');
+    }else{
+      var resObj = req.appData;
+      _.extend(resObj.header, {
+        title: '我的百多宝',
+        leftUrl: false,
+        rightIcon: 'msg'
+      });
+      res.render('bus/page/index.tpl', resObj);
+    }
   });
   //登录
   router.get('/login', function (req, res, next) {
@@ -306,13 +310,7 @@ module.exports = function (router) {
     res.render('bus/page/user/application-bdb.tpl', resObj);
   });
   //店铺
-  router.get('/store/apply', function (req, res, next) {
-    var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '申请开店',
-    });
-    res.render('bus/page/store/apply.tpl', resObj);
-  });
+
   //资质认证
   router.get('/store/qualification', function (req, res, next) {
     var resObj = req.appData;

@@ -18,8 +18,11 @@ module.exports = {
     this.id = this.$page.data('auctionId');
     this.pageSize = 10;//默认页大小
     this.pageNum = 1;//默认页码
+    this.startPrice = $('#start-price').data('price');//起拍价
+    this.increasePrice = $('#increase-price').data('price');//加价幅度
+    this.bailPrcie = $('#bail-price').data('price');//保证金
+
     this.getAuctionStatus();
-    this.getBidList('init');
 
     this.event();
   },
@@ -28,6 +31,7 @@ module.exports = {
     var that = this;
     $('.auction-dialog').dropload({
       loadUpFn: function (me) {
+        that.pageNum = 1;
         that.getBidList.bind(that)('more', me);
       },
       loadDownFn: function (me) {
@@ -53,14 +57,16 @@ module.exports = {
         if (type === 'append') {
           that.$bidList.append(html);
           var maxPage = Math.ceil(that.total / that.pageSize);
-          if (that.pageNum > maxPage) {
+          if (that.pageNum >= maxPage) {
             dropLoad.lock();
             dropLoad.noData();
           }
         } else {
-          that.total = +that.$bidList.children('.item').data('total')
-              || that.pageSize;
           that.$bidList.html(html);
+          that.total = +that.$bidList.find('.max-price').data('total')
+              || that.pageSize;
+          var increasePrice = that.increasePrice + $('.max-price').data('maxPrice');
+          $('#btn-increase').data('price', increasePrice).text('出价' + increasePrice);
           that.updateCountdown(5 * 60 * 1000, $('#first-price'));
           if (type === 'init') {
             that.bindScroll.bind(that)();
@@ -103,6 +109,7 @@ module.exports = {
     if (now < startTime) {//未开始 || <
       shortStatus = 'wks';
       this.updateCountdown(startTime - now);
+      $('#btn-custom,#btn-increase').addClass('btn-disabled');
     } else if (now > saleTime) {//已结束
       //提示结束
       shortStatus = 'yjs';
@@ -112,7 +119,7 @@ module.exports = {
         content: '3秒后返回首页...',
         callback: function () {
           setTimeout(function () {
-            //location.href = '/';
+            location.href = '/';
           });
         }
       });
@@ -120,7 +127,7 @@ module.exports = {
       shortStatus = 'ppz';
       $('#time-txt').text('结束时间');
       this.updateCountdown(saleTime - now);
-
+      this.getBidList('init');
 
     }
     this.$dialog.addClass(shortStatus);
@@ -150,15 +157,21 @@ module.exports = {
   },
   //缴纳保证金
   contributeBail: function () {
-    cash.showQuickPay();
+    var that = this;
+    cash.showQuickPay({
+      title: '交纳保证金',
+      price: that.bailPrice,
+      serialNumber: that.id
+    });
   },
   //显示托管键盘
   showEntrust: function () {
+    var that = this;
     B.showKeyboard({
       btnName: '托管',
       callback: function (content) {
-        this.postEntrust.bind(this)(content);
-      }.bind(this)
+        that.postEntrust.bind(this)(content);
+      }
     });
   },
   //提交委托出价
@@ -190,9 +203,54 @@ module.exports = {
       }
     });
   },
+  //出价参与竞拍
+  bid: function (price) {
+    var that = this;
+    $.ajax({
+      type: 'post',
+      dataType: 'json',
+      url: '/auction/bid',
+      data: {
+        proCode: that.id,
+        amount: price
+      },
+      success: function (data) {
+        if (0 == data.status) {
+          B.alert({
+            icon: 'success',
+            title: data.msg,
+            callback: function () {
+              location.reload();
+            }
+          });
+        } else {
+          B.topWarn(data.msg);
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        B.topWarn(B.tips.networkError);
+      }
+    });
+  },
+  //显示自定义出价
+  showCustomBid: function () {
+    var that = this;
+    B.showKeyboard({
+      btnName: '出价',
+      callback: function (content) {
+        that.bid.bind(that)(content);
+      }
+    });
+  },
+  //直接加价出价
+  increaseBid: function (e) {
+    this.bid.bind(this)($(e.target).data('price'));
+  },
   event: function () {
     this.$collect.on('click', this.subscribe.bind(this));
     $('#btn-bail').on('click', this.contributeBail.bind(this));
     $('#btn-entrust').on('click', this.showEntrust.bind(this));
+    $('#btn-increase').on('click', this.increaseBid.bind(this));
+    $('#btn-custom').on('click', this.showCustomBid.bind(this));
   }
 };

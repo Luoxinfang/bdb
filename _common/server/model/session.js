@@ -11,5 +11,13 @@ module.exports = {
 			path: '/interface/login/login2',
 			data: user
 		});
-	}
+	},
+	//穿越到买/卖家版
+	cross:function(data){
+		data = server.parserData(data, serviceName);
+		return yog.ral(serverId, {
+			path: '/interface/login/change',
+			data: data
+		});
+	},
 };

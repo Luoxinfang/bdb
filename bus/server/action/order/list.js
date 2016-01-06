@@ -58,6 +58,7 @@ module.exports = function (req, res, next) {
 	orderModel.query(params).then(function (rs) {
 		if (0 == rs.status) {
 			resObj.data = rs;
+			resObj.type = 'bus';
 			if (req.query.type) {
 				res.render('_common/widget/order/list.tpl', resObj);
 			} else {

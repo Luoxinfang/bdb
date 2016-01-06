@@ -27,6 +27,7 @@
     }
     .placeholder {
       display: none;
+      color: @bgColor3;
     }
     .input:empty {
       display: none;
@@ -34,14 +35,17 @@
     .input:empty + .placeholder {
       display: block;
     }
-
-    .icon {
+    .btn-icon {
       float: right;
       margin-top: 16/@rem-pre;
       width: 60/@rem-pre;
       height: 60/@rem-pre;
-      background: url("./icon/wx.png") no-repeat;
+      background: url("./icon/btn-icon.png") no-repeat;
       background-size: contain;
+    }
+    .facial {
+      margin-top: -1px;
+      vertical-align: middle;
     }
   }
   .number-table {
@@ -67,16 +71,114 @@
   .icon-table {
     width: 100%;
     height: 320/@rem-pre;
-    padding: 5/@rem-pre;
-    .icon {
-      width: 40/@rem-pre;
-      height: 40/@rem-pre;
-      display: inline-block;
-      margin: 5/@rem-pre;
-    }
-    .icon.wx{
-      background-image: url('./icon/1.png');
-      background-size: contain;
+    padding: 5/@rem-pre 10/@rem-pre;
+    .facial {
+      width: 50/@rem-pre;
+      height: 50/@rem-pre;
     }
   }
+  //界面切换
+  &.icon {
+    .number-table {
+      display: none;
+    }
+    .icon-table {
+      display: block;
+    }
+  }
+}
+
+//表情
+.facial {
+  width: 45/@rem-pre;
+  height: 45/@rem-pre;
+  display: inline-block;
+  background-size: contain;
+}
+
+.facial.am {
+  background-image: url('./icon/am.png');
+}
+
+.facial.bs {
+  background-image: url('./icon/bs.png');
+}
+
+.facial.by {
+  background-image: url('./icon/by.png');
+}
+
+.facial.cy {
+  background-image: url('./icon/cy.png');
+}
+
+.facial.dy {
+  background-image: url('./icon/dy.png');
+}
+
+.facial.fd {
+  background-image: url('./icon/fd.png');
+}
+
+.facial.gg {
+  background-image: url('./icon/gg.png');
+}
+
+.facial.han {
+  background-image: url('./icon/han.png');
+}
+
+.facial.hx {
+  background-image: url('./icon/hx.png');
+}
+
+.facial.je {
+  background-image: url('./icon/je.png');
+}
+
+.facial.jk {
+  background-image: url('./icon/jk.png');
+}
+
+.facial.jy {
+  background-image: url('./icon/jy.png');
+}
+
+.facial.ku {
+  background-image: url('./icon/ku.png');
+}
+
+.facial.kun {
+  background-image: url('./icon/kun.png');
+}
+
+.facial.ng {
+  background-image: url('./icon/ng.png');
+}
+
+.facial.nu {
+  background-image: url('./icon/nu.png');
+}
+
+.facial.pz {
+  background-image: url('./icon/pz.png');
+}
+
+.facial.sj {
+  background-image: url('./icon/sj.png');
+}
+.facial.tu {
+  background-image: url('./icon/tu.png');
+}
+.facial.tx {
+  background-image: url('./icon/tx.png');
+}
+.facial.wq {
+  background-image: url('./icon/wq.png');
+}
+.facial.wx {
+  background-image: url('./icon/wx.png');
+}
+.facial.zk {
+  background-image: url('./icon/zk.png');
 }

@@ -50,7 +50,7 @@
 
 						<div class="w-1">财务中心</div>
 					</a>
-					<a href="/activity/store-activity"><i class="icon icon-08"></i>
+					<a href="/user/user-message"><i class="icon icon-08"></i>
 
 						<div class="w-1">客服中心</div>
 					</a>

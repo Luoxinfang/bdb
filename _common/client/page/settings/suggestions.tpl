@@ -1,23 +1,16 @@
 {% extends '_common:page/layout.tpl' %}
 
-{% block head %}
-  {% require "_common:less/public/address.less" %}
-{% endblock %}
-
 {% block header %}
+  {% require "_common:less/public/form.less" %}
   {% widget '_common:widget/common/header/header.tpl' %}
 {% endblock %}
 {%  block content %}
-  <div id="content">
-    <div class="form">
-      <ul class="form-ul">
-        <li class='form-li-input form-li-textarea'>
-          <textarea id="problem" placeholder="问题说明..."></textarea>
-        </li>
-      </ul>
-      <a class="icon-add btn-file mt-40 mb60"><input type="file" class="file" accept="image/*"></a>
-      <a class="btn btn-red" id="btn-submit">提交</a>
+  <div class="form">
+    <textarea name="comment" class="textarea" placeholder="问题说明..."></textarea>
+    <div class="clearfix mt10">
+      <a class="icon-add btn-file mt10 mr10"><input type="file" name="file" class="file" accept="image/*" multiple></a>
     </div>
+    <a id="complain" class="btn btn-red btn-disabled mt40">提交</a>
   </div>
   {% script %}
   require('_common:widget/settings/suggestions.js').init();

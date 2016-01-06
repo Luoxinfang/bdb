@@ -24,7 +24,7 @@
 		<div class="consultation-ul" id="chat-list" data-total="{{ total }}"  data-shopid="{{ consultInfo[0].shopid }}" data-userid="{{ consultInfo[0].userid }}">
 			{% widget '_common:widget/user/consult-list.tpl' %}
 		</div>
-	{% block cus %}
+	{% block _common %}
 	{% endblock %}
 {% endblock %}
 {% block footer %}

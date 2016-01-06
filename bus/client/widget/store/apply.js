@@ -12,23 +12,38 @@ module.exports = {
   applyStore: function () {
     var storeName = $('#store-name').val();
     var cardImg = $('#card-file').data('url');
-    var licenseImg = $('#card-file').data('url');
+    var licenseImg = $('#license-file').data('url');
+    var kindsCode = [];
+    var agree = ~~$('#agree').prop('checked');
+    $('.category-list').find('input').each(function () {
+      kindsCode.push($(this).val());
+    });
     if (storeName.length < 3) {
       B.topWarn('店铺名称需要大于3个字');
+      return false;
     }
     if (!cardImg) {
-      B.topWarn('请上传');
+      B.topWarn('请上传身份证');
+      return false;
+    }
+    if (kindsCode.length < 1) {
+      B.topWarn('至少需要选择一个主营分类');
+      return false;
+    }
+    if (!agree) {
+      B.topWarn('请同意用户协议和免责条款');
+      return false;
     }
     $.ajax({
       type: 'post',
       dataType: 'json',
-      url: '/store/store',
+      url: '/store/apply',
       data: {
         shopName: storeName,
-        cardImg: '55',
-        telephone: '1111',
-        kindscode: '1',
-        agree: '1'
+        cardImg: cardImg,
+        cardImg2: licenseImg,
+        kindsCode: kindsCode.join(','),
+        agree: agree
       },
       success: function (data) {
         if (0 == data.status) {
@@ -54,13 +69,13 @@ module.exports = {
     reader.readAsDataURL(file);
     reader.onload = function () {
       var rs = B.uploadImage({
-        img: this.result.substr(4)
+        img: this.result
       });
       if (rs.status == 0) {
         var url = rs.path.replace(/\\/g, '/');
         $tar.data('url', url);
         $tar.parent().css('background-image', 'url("' + url + '")');
-      }else{
+      } else {
         B.topWarn(rs.msg);
       }
     };

@@ -6,6 +6,7 @@ module.exports = function (router) {
     //需要验证登录的接口
     var exclude = ['/login', '/reg'];
     if (-1 === exclude.indexOf(req.path) && !req.session.user) {
+      var referrer = req.originalUrl == '/login' ? '/' : req.originalUrl;
       req.session.login_referrer = req.originalUrl;
       res.redirect('/login');
     } else {

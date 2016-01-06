@@ -30,12 +30,36 @@
 			<p class="tip mt20">主营分类（必填，最多可选3种）</p>
 			{% require '_common:widget/auction/auction.less' %}
 			<div class="category-list pl0 clearfix">
-				<div class="category-item"><input type="checkbox" name="catetory" checked><a>翡翠</a></div>
-				<div class="category-item"><input type="checkbox" name="catetory" checked><a>文玩</a></div>
-				<div class="category-item"><input type="checkbox" name="catetory"><a>贵金属</a></div>
-				<div class="category-item"><input type="checkbox" name="catetory"><a>彩宝</a></div>
-				<div class="category-item"><input type="checkbox" name="catetory" checked><a>饰品</a></div>
-				<div class="category-item"><input type="checkbox" name="catetory"><a>水晶</a></div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="1" checked><a>黄金铂金</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="2"><a>钻石</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="3"><a>翡翠</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="4"><a>玉</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="5"><a>彩宝</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="6"><a>琥珀蜜蜡</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="7"><a>珍珠</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="8"><a>天然宝石</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="9"><a>银饰</a>
+				</div>
+				<div class="category-item">
+					<input type="checkbox" name="category" value="10"><a>文玩</a>
+				</div>
 			</div>
 			<div class="store-agree mt20">
 				<input type="checkbox" id="agree">

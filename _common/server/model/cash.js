@@ -8,177 +8,185 @@ var cash = 'cash';
 var bank = 'bank';
 var draw = 'draw';
 module.exports = {
-	/**
-	 * 查询是否设置支付密码
-	 * @param token
-	 * @returns recomplete:1已设置,0未设置
-	 */
-	queryPwd: function (params) {
-		data = server.parserQuery(params, cash);
-		return yog.ral(serverId, {
-			method: 'GET',
-			path: '/interface/cash/querypwd',
-			query: data
-		});
-	},
-	/**
-	 * 查询账户余额
-	 * @param token
-	 * @returns cashmoney:现金余额,frozemoney:非现金余额
-	 */
-	queryCash: function (params) {
-		data = server.parserQuery(params, cash);
-		return yog.ral(serverId, {
-			method: 'GET',
-			path: '/interface/cash/query',
-			query: data
-		});
-	},
-	/**
-	 * 设置支付密码
-	 * @param {token,payPwd(支付密码),drawPwd(提款密码——预留)}
-	 * @returns
-	 */
-	setPwd: function (params) {
-		data = server.parserData(params, cash);
-		return yog.ral(serverId, {
-			path: '/interface/cash/setpwd',
-			data: data
-		});
-	},
-	/**
-	 * 校验支付密码
-	 * @param params
-	 * @returns {*}
-	 */
-	validPwd: function (params) {
-		data = server.parserQuery(params, cash);
-		return yog.ral(serverId, {
-			method: 'GET',
-			path: '/interface/cash/validpwd',
-			query: data
-		});
-	},
-	/**
-	 * 修改支付密码
-	 * @param params
-	 * @returns {*}
-	 */
-	updatePwd: function (params) {
-		data = server.parserData(params, cash);
-		return yog.ral(serverId, {
-			path: '/interface/cash/updatepwd',
-			data: data
-		});
-	},
-	/**
-	 * 银行卡列表查询
-	 * @param params
-	 * @returns
-	 */
-	queryBankList: function (params) {
-		data = server.parserQuery(params, bank);
-		return yog.ral(serverId, {
-			method: 'GET',
-			path: '/interface/cash/bank/list',
-			query: data
-		});
-	},
-	/**
-	 * 设置默认银行卡
-	 * @param {token,bankNo}
-	 * @returns
-	 */
-	setDefaultBank: function (params) {
-		data = server.parserData(params, bank);
-		return yog.ral(serverId, {
-			path: '/interface/cash/bank/setdefault',
-			data: data
-		});
-	},
-	/**
-	 * 添加银行卡
-	 * @param params
-	 * @returns
-	 */
-	addBank: function (params) {
-		data = server.parserData(params, bank);
-		return yog.ral(serverId, {
-			path: '/interface/cash/bank/add',
-			data: data
-		});
-	},
-	/**
-	 * 删除银行卡
-	 * @param params
-	 * @returns
-	 */
-	deleteBank: function (params) {
-		data = server.parserData(params, bank);
-		return yog.ral(serverId, {
-			path: '/interface/cash/bank/delete',
-			data: data
-		});
-	},
-	/**
-	 * 账户相关操作前验证
-	 * @param params
-	 * @returns {*}
-	 */
-	opsAccount: function (params) {
-		data = server.parserQuery(params, cash);
-		return yog.ral(serverId, {
-			method: 'GET',
-			path: '/interface/cash/opsaccount',
-			query: data
-		});
-	},
-	/**
-	 * 提现
-	 * @param params
-	 * @returns {*}
-	 */
-	withdraw: function (params) {
-		data = server.parserData(params, draw);
-		return yog.ral(serverId, {
-			path: '/interface/cash/draw/add',
-			data: data
-		});
-	},
-	/**
-	 * 充值
-	 * @param params
-	 * @returns {*}
-	 */
-	recharge: function (params) {
-		data = server.parserData(params, draw);
-		return yog.ral(serverId, {
-			path: '/interface/cash/pay/recharge',
-			data: data
-		});
-	},
-	/**
-	 * 交易记录
-	 * @param params
-	 * @returns {*}
-	 */
-	transList: function (params) {
-		data = server.parserData(params, cash);
-		return yog.ral(serverId, {
-			path: '/interface/cash/tradrecords',
-			data: data
-		});
-	},
-	/**
-	 * 交易详情
-	 * @param params
-	 * @returns {*}
-	 */
-	transDetail: function (params) {
-		data = server.parserData(params, cash);
-		return yog.ral(serverId, {
-			path: '/interface/cash/flowdetails',
-			data: data
-		});
-	}
+  /**
+   * 查询是否设置支付密码
+   * @param token
+   * @returns recomplete:1已设置,0未设置
+   */
+  queryPwd: function (params) {
+    data = server.parserQuery(params, cash);
+    return yog.ral(serverId, {
+      method: 'GET',
+      path: '/interface/cash/querypwd',
+      query: data
+    });
+  },
+  /**
+   * 查询账户余额
+   * @param token
+   * @returns cashmoney:现金余额,frozemoney:非现金余额
+   */
+  queryCash: function (params) {
+    data = server.parserQuery(params, cash);
+    return yog.ral(serverId, {
+      method: 'GET',
+      path: '/interface/cash/query',
+      query: data
+    });
+  },
+  /**
+   * 设置支付密码
+   * @param {token,payPwd(支付密码),drawPwd(提款密码——预留)}
+   * @returns
+   */
+  setPwd: function (params) {
+    data = server.parserData(params, cash);
+    return yog.ral(serverId, {
+      path: '/interface/cash/setpwd',
+      data: data
+    });
+  },
+  /**
+   * 校验支付密码
+   * @param params
+   * @returns {*}
+   */
+  validPwd: function (params) {
+    data = server.parserQuery(params, cash);
+    return yog.ral(serverId, {
+      method: 'GET',
+      path: '/interface/cash/validpwd',
+      query: data
+    });
+  },
+  /**
+   * 修改支付密码
+   * @param params
+   * @returns {*}
+   */
+  updatePwd: function (params) {
+    data = server.parserData(params, cash);
+    return yog.ral(serverId, {
+      path: '/interface/cash/updatepwd',
+      data: data
+    });
+  },
+  /**
+   * 银行卡列表查询
+   * @param params
+   * @returns
+   */
+  queryBankList: function (params) {
+    data = server.parserQuery(params, bank);
+    return yog.ral(serverId, {
+      method: 'GET',
+      path: '/interface/cash/bank/list',
+      query: data
+    });
+  },
+  /**
+   * 设置默认银行卡
+   * @param {token,bankNo}
+   * @returns
+   */
+  setDefaultBank: function (params) {
+    data = server.parserData(params, bank);
+    return yog.ral(serverId, {
+      path: '/interface/cash/bank/setdefault',
+      data: data
+    });
+  },
+  /**
+   * 添加银行卡
+   * @param params
+   * @returns
+   */
+  addBank: function (params) {
+    data = server.parserData(params, bank);
+    return yog.ral(serverId, {
+      path: '/interface/cash/bank/add',
+      data: data
+    });
+  },
+  /**
+   * 删除银行卡
+   * @param params
+   * @returns
+   */
+  deleteBank: function (params) {
+    data = server.parserData(params, bank);
+    return yog.ral(serverId, {
+      path: '/interface/cash/bank/delete',
+      data: data
+    });
+  },
+  /**
+   * 账户相关操作前验证
+   * @param params
+   * @returns {*}
+   */
+  opsAccount: function (params) {
+    data = server.parserQuery(params, cash);
+    return yog.ral(serverId, {
+      method: 'GET',
+      path: '/interface/cash/opsaccount',
+      query: data
+    });
+  },
+  /**
+   * 提现
+   * @param params
+   * @returns {*}
+   */
+  withdraw: function (params) {
+    data = server.parserData(params, draw);
+    return yog.ral(serverId, {
+      path: '/interface/cash/draw/add',
+      data: data
+    });
+  },
+  /**
+   * 充值
+   * @param params
+   * @returns {*}
+   */
+  recharge: function (params) {
+    data = server.parserData(params, draw);
+    return yog.ral(serverId, {
+      path: '/interface/cash/pay/recharge',
+      data: data
+    });
+  },
+  /**
+   * 交易记录
+   * @param params
+   * @returns {*}
+   */
+  transList: function (params) {
+    data = server.parserData(params, cash);
+    return yog.ral(serverId, {
+      path: '/interface/cash/tradrecords',
+      data: data
+    });
+  },
+  /**
+   * 交易详情
+   * @param params
+   * @returns {*}
+   */
+  transDetail: function (params) {
+    data = server.parserData(params, cash);
+    return yog.ral(serverId, {
+      path: '/interface/cash/flowdetails',
+      data: data
+    });
+  },
+  //支付模型
+  pay: function (params, path, serviceName) {
+    data = server.parserData(params, serviceName);
+    return yog.ral(serverId, {
+      path: path,
+      data: data
+    });
+  }
 };

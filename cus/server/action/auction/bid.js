@@ -10,7 +10,7 @@ module.exports.post = function (req, res) {
   var user = req.session.user
   if (user) {
     param.token = user.token;
-    model.entrust(param).then(function (data) {
+    model.bid(param).then(function (data) {
       res.json(data);
     });
   } else {

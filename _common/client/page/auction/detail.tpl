@@ -34,9 +34,15 @@
 			<p>{{ data.descs }}</p>
 		</div>
 		<div class="prices">
-			<div class="prices-item"><span class="qi">￥{{ data.price }}</span></div>
-			<div class="prices-item"><span class="jia">￥{{ data.addprice }}</span></div>
-			<div class="prices-item"><span class="bao">￥{{ data.bound }}</span></div>
+			<div class="prices-item" id="start-price" data-price="{{ data.price }}">
+				<span class="qi">￥{{ data.price }}</span>
+			</div>
+			<div class="prices-item" id="increase-price"  data-price="{{ data.addprice }}">
+				<span class="jia">￥{{ data.addprice }}</span>
+			</div>
+			<div class="prices-item" id="bail-price" data-price="{{ data.bound }}">
+				<span class="bao">￥{{ data.bound }}</span>
+			</div>
 		</div>
 		{% block auctionDialog %}{% endblock %}
 	</div>

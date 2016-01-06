@@ -24,7 +24,7 @@ module.exports = function (req, res, next) {
 			if(typeof rs.data != 'undefined'){
 				resObj.consultInfo = _.sortByOrder(rs.data,['createtime'], ['asc']);
 				if (req.query.type) {
-					res.render('_common/  widget/user/consult-list.tpl', resObj);
+					res.render('_common/widget/user/consult-list.tpl', resObj);
 				} else {
 					resObj.total = rs.total;
 					res.render('cus/page/user/consultation.tpl', resObj);

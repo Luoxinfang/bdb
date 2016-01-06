@@ -4,9 +4,8 @@ module.exports = function (router) {
 
   router.get('*', function (req, res, next) {
     //需要验证登录的接口
-    var userPath = /^\/(user|order|wallet)\/*\w*/;
-    //console.log(userPath.test(req.path) && !req.session.user);
-    if (userPath.test(req.path) && !req.session.user) {
+    var exclude = ['/login', '/reg'];
+    if (-1 === exclude.indexOf(req.path) && !req.session.user) {
       req.session.login_referrer = req.originalUrl;
       res.redirect('/login');
     } else {
@@ -16,15 +15,21 @@ module.exports = function (router) {
       next();
     }
   });
-  //商家端首页--我的百多宝
+  //商家端首页
   router.get('/', function (req, res, next) {
-    var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '我的百多宝',
-      leftUrl: false,
-      rightIcon: 'msg'
-    });
-    res.render('bus/page/index.tpl', resObj);
+    var storeStatus = req.session.user.flag;
+    if (storeStatus == 0) {
+      //没有开店
+      res.redirect('/store/apply');
+    } else {
+      var resObj = req.appData;
+      _.extend(resObj.header, {
+        title: '我的百多宝',
+        leftUrl: false,
+        rightIcon: 'msg'
+      });
+      res.render('bus/page/index.tpl', resObj);
+    }
   });
   //登录
   router.get('/login', function (req, res, next) {
@@ -45,7 +50,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '注册',
-      leftUrl : '/reg-tel'
+      leftUrl: '/reg-tel'
     });
     res.render('bus/page/user/reg-pwd.tpl', resObj);
   });
@@ -54,7 +59,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '找回密码',
-      leftUrl : '/login'
+      leftUrl: '/login'
     });
     res.render('bus/page/user/find-pwd-info.tpl', resObj);
   });
@@ -63,7 +68,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '找回密码',
-      leftUrl : '/find-pwd-info'
+      leftUrl: '/find-pwd-info'
     });
     res.render('bus/page/user/find-pwd-new.tpl', resObj);
   });
@@ -72,7 +77,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '找回密码',
-      leftIcon : false
+      leftIcon: false
     });
     res.render('bus/page/user/find-pwd-result.tpl', resObj);
   });
@@ -81,7 +86,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '绑定第三方账号',
-      leftIcon : false
+      leftIcon: false
     });
     res.render('bus/page/user/bind-account-info.tpl', resObj);
   });
@@ -90,14 +95,14 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '绑定第三方账号',
-      leftUrl : '/bind-account-info'
+      leftUrl: '/bind-account-info'
     });
     res.render('bus/page/user/bind-account-pwd.tpl', resObj);
   });
   //修改密码
   router.get('/user/change-pwd', function (req, res, next) {
     var resObj = req.appData;
-    resObj.header.title =  '修改密码'
+    resObj.header.title = '修改密码'
     res.render('bus/page/user/change-pwd.tpl', resObj);
   });
   //更换手机号 —— 验证
@@ -111,7 +116,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '更换手机号',
-      leftUrl : '/change-tel-info'
+      leftUrl: '/change-tel-info'
     });
     res.render('bus/page/user/change-tel-new.tpl', resObj);
   });
@@ -180,15 +185,15 @@ module.exports = function (router) {
   router.get('/activity/add-activity', function (req, res, next) {
     var resObj = req.appData;
     resObj.header.title = '发起活动';
-    res.render('bus/page/activity/add-activity.tpl',resObj);
+    res.render('bus/page/activity/add-activity.tpl', resObj);
   });
   //地址选择
   router.get('/address/select-address', function (req, res, next) {
     var resObj = req.appData;
-      resObj.header.title = '地址';
-      resObj.province = req.query.province;
-      resObj.city = req.query.city;
-      resObj.street = req.query.street;
+    resObj.header.title = '地址';
+    resObj.province = req.query.province;
+    resObj.city = req.query.city;
+    resObj.street = req.query.street;
     res.render('bus/page/store/select-address.tpl', resObj);
   });
   //输入邮箱
@@ -227,7 +232,7 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '银行卡管理',
-      rightText:'删除'
+      rightText: '删除'
     });
     res.render('bus/page/account/card-management.tpl', resObj);
   });
@@ -296,13 +301,7 @@ module.exports = function (router) {
     res.render('bus/page/user/application-bdb.tpl', resObj);
   });
   //店铺
-  router.get('/store/apply', function (req, res, next) {
-    var resObj = req.appData;
-    _.extend(resObj.header, {
-      title: '申请开店',
-    });
-    res.render('bus/page/store/apply.tpl', resObj);
-  });
+
   //资质认证
   router.get('/store/qualification', function (req, res, next) {
     var resObj = req.appData;
@@ -316,7 +315,7 @@ module.exports = function (router) {
     _.extend(resObj.header, {
       title: '拍卖行',
       tab: ['拍卖中', '未开始', '已结束'],
-      data:yog.require('bus/test/auction.js')
+      data: yog.require('bus/test/auction.js')
     });
     res.render('bus/page/auction/list.tpl', resObj);
   });
@@ -327,7 +326,7 @@ module.exports = function (router) {
       title: '千年古玉',
       rightIcon: 'share',
       leftUrl: '/auction/list',
-      auctionStatus:req.query.status == null ? 0 : req.query.status
+      auctionStatus: req.query.status == null ? 0 : req.query.status
     });
     res.render('bus/page/auction/detail.tpl', resObj);
   });
@@ -336,13 +335,13 @@ module.exports = function (router) {
     var resObj = req.appData;
     _.extend(resObj.header, {
       title: '货架',
-      rightText : '上传商品',
-      rightUrl : '/shelves/add',
-      tab:['拍品', '一口价', '审核中'],
-      data:yog.require('bus/test/auction.js'),
+      rightText: '上传商品',
+      rightUrl: '/shelves/add',
+      tab: ['拍品', '一口价', '审核中'],
+      data: yog.require('bus/test/auction.js'),
       rightIcon: 'share',
       leftUrl: '/auction/list',
-      auctionStatus:req.query.status == null ? 0 : req.query.status
+      auctionStatus: req.query.status == null ? 0 : req.query.status
     });
     res.render('bus/page/shelves/list.tpl', resObj);
   });
@@ -368,26 +367,26 @@ module.exports = function (router) {
     _.extend(resObj.header, {
       title: '拍品上架',
       shelvesEditable: true,
-      data:yog.require('bus/test/auction.js')
+      data: yog.require('bus/test/auction.js')
     });
     res.render('bus/page/shelves/shelve.tpl', resObj);
   });
 
-	//>>>>>>>>>>wallet(我的钱包)----------
-	//wallet:cus/action/wallet/index.js
-	//wallet/bank:cus/action/wallet/bank/index.js
-	//wallet/bank/add:cus/action/wallet/bank/add.js
-	//wallet/withdraw:cus/action/wallet/withdraw.js
-	router.get('/wallet/recharge', function (req, res, next) {
-		req.appData.header.title = '充值';
-		res.render('cus/page/wallet/recharge.tpl', req.appData);
-	});
-	//wallet/trans-list:ucs/action/wallet/trans-list
-	//----------wallet(我的钱包)<<<<<<<<<<
+  //>>>>>>>>>>wallet(我的钱包)----------
+  //wallet:cus/action/wallet/index.js
+  //wallet/bank:cus/action/wallet/bank/index.js
+  //wallet/bank/add:cus/action/wallet/bank/add.js
+  //wallet/withdraw:cus/action/wallet/withdraw.js
+  router.get('/wallet/recharge', function (req, res, next) {
+    req.appData.header.title = '充值';
+    res.render('cus/page/wallet/recharge.tpl', req.appData);
+  });
+  //wallet/trans-list:ucs/action/wallet/trans-list
+  //----------wallet(我的钱包)<<<<<<<<<<
 
-	//>>>>>>>>>>order(订单)----------
-	//order/list:cus/action/order/list.js
-	router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
-	//----------order(订单)<<<<<<<<<<
+  //>>>>>>>>>>order(订单)----------
+  //order/list:cus/action/order/list.js
+  router.route('/order/detail/:orderNo').get(router.action('order/detail').get);
+  //----------order(订单)<<<<<<<<<<
 
 };

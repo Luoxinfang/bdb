@@ -37,4 +37,12 @@ module.exports = {
       data: data
     });
   },
+  //竞拍出价
+  bid: function (data) {
+    data = server.parserData(data, 'product');
+    return yog.ral(serverId, {
+      path: '/interface/auction/doauction',
+      data: data
+    });
+  }
 };

@@ -9,7 +9,6 @@
 	{% widget '_common:widget/common/header/header-top.tpl' %}
 {% endblock %}
 {% block drawer %}
-	{{ user }}
 	<div class="drawer-user">
 		<a class="photo" href="/user/personal">
 			{% widget '_common:widget/common/photo/photo.tpl'%}
@@ -22,7 +21,7 @@
 	<div class="drawer-menu">
 		<a href="/wallet">我的钱包</a>
 		<a href="/order/list">我的订单</a>
-		<a href="javascript:void(0);" class="">穿越到卖家版</a>
+		<a href="javascript:void(0);" class="cross-bus">穿越到卖家版</a>
 		<a href="/sys-settings">系统设置</a>
 		<a href="javascript:void(0);" class="logout">退出登陆</a>
 	</div>
@@ -298,23 +297,4 @@
 	require('cus:widget/index/index.js').init();
 	})
 	{% endscript %}
-{% endblock %}
-
-{% block drawer %}
-	<div class="drawer-user">
-		<a class="photo" href="/user/personal">
-			{% widget '_common:widget/common/photo/photo.tpl' %}
-		</a>
-
-		<p class="name">大魔王</p>
-
-		<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
-	</div>
-	<div class="drawer-menu">
-		<a href="/wallet">我的钱包</a>
-		<a href="/order/list">我的订单</a>
-		<a href="/bus">穿越到卖家版</a>
-		<a href="/settings/sys-settings">系统设置</a>
-		<a href="javascript:void(0);" class="logout">退出登陆</a>
-	</div>
 {% endblock %}

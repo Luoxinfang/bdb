@@ -24,8 +24,27 @@ module.exports = {
       }
     });
   },
+  //穿越到卖家版
+  crossBus:function(){
+    $.ajax({
+      type: 'put',
+      dataType: 'json',
+      url: '/_common/session',
+      success: function (data) {
+        if (0 == data.status) {
+          location.replace('//bus.bdbvip.com:8085');
+        } else {
+          B.topWarn('穿越失败了，请检查一下您的时光机！');
+        }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+    		B.topWarn(B.tips.networkError);
+      }
+    });
+  },
   event: function () {
     $('.icon-me').on('click', B.toggleDrawer);
     $('.logout').on('click', this.logout);
+    $('.cross-bus').on('click', this.crossBus)
   }
 };

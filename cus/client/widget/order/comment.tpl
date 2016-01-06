@@ -3,7 +3,9 @@
 	{% widget '_common:widget/common/photo/photo.tpl' %}
 	<div class="tlt">{{ detail.shop.shopname }}</div>
 	<div class="rank-wrap">{% widget '_common:widget/common/level/level.tpl' %}</div>
-	<a href="/store/{{ detail.shop.id }}" class="url btn btn-white btn-w135 btn-h70 fs-4">进入店铺</a>
+	<a href="/store/{{ detail.shop.id }}" class="url btn btn-white btn-w135 btn-h70 fs-4">
+		进入店铺
+	</a>
 </div>
 <div class="order-auction order-comment mt20">
 	{% for product in detail.list %}

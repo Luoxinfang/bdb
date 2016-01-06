@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	{% script %}
-		require('cus:widget/order/list.js').init();
+	require('bus:widget/order/list.js').init();
 	{% endscript %}
 {% endblock %}
 

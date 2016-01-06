@@ -1,4 +1,4 @@
-<div class="order-item" data-order-id="{{ order.orderid }}" data-order-no="{{ order.orderno }}" data-money="{{ parseFloat(order.ordermoney).toFixed(2) }}">
+<div class="order-item" data-total="{{ data.total }}" data-order-id="{{ order.orderid }}" data-order-no="{{ order.orderno }}" data-money="{{ parseFloat(order.ordermoney).toFixed(2) }}">
 	<a href="/order/detail/{{ order.orderno }}">
 		<div class="line1">
 			<span>成交日期 {{ order.createtime | date('Y-m-d', -480, 'CCT') }}</span>
@@ -46,14 +46,15 @@
 			<a href="/order/comment/{{ order.orderno }}" class="btn btn-white">去评价</a>
 		</div>
 	{% elseif '已评价' == orderStatus | orderStatus2name %}
+	{% elseif '申请退货中' == orderStatus | orderStatus2name %}
 	{% elseif '等待退款' == orderStatus | orderStatus2name %}
-	{% elseif '平台介入中' == orderStatus | orderStatus2name %}
-		<div class="line3">
-			<a href="/order/detail/{{ order.orderno }}" class="btn btn-white">举证</a>
-		</div>
 	{% elseif '卖家拒绝退货' == orderStatus | orderStatus2name %}
 		<div class="line3">
-			<a href="/order/detail/{{ order.orderno }}" class="btn btn-red">申请仲裁</a>
+			<a href="/order/complain/{{ order.orderno }}" class="btn btn-red">申请仲裁</a>
+		</div>
+	{% elseif '平台介入中' == orderStatus | orderStatus2name %}
+		<div class="line3">
+			<a href="/order/complain/{{ order.orderno }}" class="btn btn-white">举证</a>
 		</div>
 	{% else %}
 	{% endif %}

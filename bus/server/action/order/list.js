@@ -8,48 +8,14 @@ var md5 = require('md5');
 var _ = require('lodash');
 var orderModel = yog.require('_common/model/order.js');
 var tip = yog.require('_common/lib/tip.js');
-//var orderStatus = {
-//	'dfk': { // 待付款
-//		orderStatus: '0',
-//		payStatus: '0'
-//	},
-//	'dfh': { // 待发货
-//		orderStatus: '0',
-//		payStatus: '1',
-//		sendFlag: '0',
-//		revokeStatus: '0'
-//	},
-//	'dsh': { // 待收货
-//		orderStatus: '0',
-//		payStatus: '1',
-//		sendFlag: '1',
-//		receiveFlag: '0',
-//		revokeStatus: '0'
-//	},
-//	'ysh': { // 已收货
-//		orderStatus: '1',
-//		payStatus: '1',
-//		sendFlag: '1',
-//		receiveFlag: '1',
-//		revokeStatus: '0'
-//	},
-//	'thz': { // 退货中
-//		orderStatus: '0',
-//		payStatus: '1',
-//		revokeStatus: '1'
-//	},
-//	'ygb': { // 已关闭
-//		orderStatus: '2'
-//	}
-//};
 var orderStatus = {
-	'dfk': { // 待付款
-		orderStatus: '1'
-	},
 	'dfh': { // 待发货
 		orderStatus: '2'
 	},
-	'dsh': { // 待收货
+	'dfk': { // 待付款
+		orderStatus: '1'
+	},
+	'yfh': { // 已发货
 		orderStatus: '3'
 	},
 	'ysh': { // 已收货
@@ -69,7 +35,7 @@ module.exports = function (req, res, next) {
 	} else {
 		req.session.orderList = {};
 	}
-	var status = 'undefined' == typeof req.query.status ? (sessionStatus || 'dfk') : req.query.status;
+	var status = 'undefined' == typeof req.query.status ? (sessionStatus || 'dfh') : req.query.status;
 	req.session.orderList.status = status;
 	var params = _.extend({
 		token: req.session.user.token,
@@ -81,9 +47,9 @@ module.exports = function (req, res, next) {
 	resObj.header.tab = {
 		cur: status,
 		list: [
-			{val: '待付款', id: 'dfk'},
 			{val: '待发货', id: 'dfh'},
-			{val: '待收货', id: 'dsh'},
+			{val: '待付款', id: 'dfk'},
+			{val: '已发货', id: 'yfh'},
 			{val: '已收货', id: 'ysh'},
 			{val: '退货中', id: 'thz'},
 			{val: '已关闭', id: 'ygb'}
@@ -95,7 +61,7 @@ module.exports = function (req, res, next) {
 			if (req.query.type) {
 				res.render('_common/widget/order/list.tpl', resObj);
 			} else {
-				res.render('cus/page/order/list.tpl', resObj);
+				res.render('bus/page/order/list.tpl', resObj);
 			}
 		} else {
 			var error = _.extend({

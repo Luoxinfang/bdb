@@ -10,8 +10,8 @@ var model = yog.require('cus/model/user.js');
 module.exports = function (req, res, next) {
 	var resObj = req.appData;
 	var page = {
-		page:"1",
-		pagesize:"20",
+		page:req.query.page || '1',
+		pagesize:req.query.pageSize || '10',
 		status:0
 	};
 	var params = _.extend({
@@ -19,8 +19,20 @@ module.exports = function (req, res, next) {
 	},page);
 	//获取系统信息
 	model.queryMsg(params).then(function (rs) {
-		resObj.sysInfo = rs.data;
-		res.render('cus/page/user/sys-message.tpl',resObj);
+		if (0 == rs.status) {
+				resObj.sysInfo = rs.data;
+				if (req.query.type) {
+					res.render('_common/widget/user/sysInfo-list.tpl', resObj);
+				} else {
+					resObj.total = rs.total;
+					res.render('cus/page/user/sys-message.tpl',resObj);
+				}
+		} else {
+			resObj.rs = {};
+			resObj.rs.status = rs.status;
+			resObj.rs.msg = rs.msg || '服务器异常，请稍后再试';
+			res.render('_common/page/error.tpl', resObj);
+		}
 	}).catch(function (error) {
 		console.log(error);
 		yog.log.fatal(error);

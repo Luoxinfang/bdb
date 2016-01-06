@@ -1,11 +1,11 @@
 /**
  * @author chenzhenhua
- * @createTime 2015-12-28
+ * @createTime 2016-01-05
  * @description 订单列表页面JS
  */
 
 var B = require('_common:js/bdb/core.js');
-var Order = require('cus:widget/order/order.js');
+var Order = require('bus:widget/order/order.js');
 
 module.exports = {
 	init: function () {

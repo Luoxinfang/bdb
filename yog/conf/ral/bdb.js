@@ -14,9 +14,9 @@ module.exports = {
 		timeout: 5000,
 		server: [
 			//{host: '192.168.0.105', port: 8080}
-			//{host: '192.168.0.129', port: 8080},  //王天文
-			//{host: '192.168.0.131', port: 8080}  //王勇
-			{host: '192.168.0.110', port: 8080}  //周少飞
+			{host: 'wangtianwen', port: 8080}
+			//{host: '192.168.0.131', port: 8080}
+			//{host: 'flying', port: 8080}
 		]
 	}
 };

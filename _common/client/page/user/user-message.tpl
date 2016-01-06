@@ -1,10 +1,15 @@
 {% extends '_common/page/layout.tpl' %}
+
+{% block head %}
+	{% require "_common:js/plugin/dropload/dropload.less" %}
+	{% require "_common:js/plugin/dropload/dropload.js" %}
+{% endblock %}
 {% block header %}
 	{% require '_common:less/user/settings.less' %}
 	{% widget '_common:widget/common/header/header-nav.tpl' %}
 {% endblock %}
 {% block content %}
-	<div class="message-dialog mt10" style="min-height:0">
+	<div class="message-dialog mt10" id="userInfo">
 		{% for item in userMsg %}
 			<a href="/user/consultation?shopname={{ item.shopname }}&&userid={{ item.userid }}&&shopid={{ item.shopid }}" class="li">
 				<img src="http://img2.imgtn.bdimg.com/it/u=1341923083,1900907467&fm=23&gp=0.jpg" alt="" class="user-img">

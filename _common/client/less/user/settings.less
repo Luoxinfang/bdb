@@ -1,7 +1,14 @@
 @import "@{_common}/public/mixin";
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
 .message {
   &-list {
+    flex: 1;
+    position: relative;
+    overflow-y: auto;
     margin-top: 10/@rem-pre;
     .item {
       position: relative;

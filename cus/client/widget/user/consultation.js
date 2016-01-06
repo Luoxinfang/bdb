@@ -33,7 +33,6 @@ module.exports = {
 				that.getConsultList.bind(that)('append', me);
 			},
 			loadDownFn: function (me) {
-				console.log('--------------------------');
 				that.pageNum = 1;
 				that.getConsultList.bind(that)('refresh', me);
 			}
